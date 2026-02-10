@@ -41,11 +41,11 @@
   background: var(--color-text-tertiary);
 }
 
-/* Mobile Toggle Button (hidden on desktop) */
+/* Toggle Button (visible on both desktop and mobile) */
 .sidebar-nav__toggle {
-  display: none;
+  display: flex;
   position: fixed;
-  top: 138px; /* Below global nav + breadcrumb */
+  top: 90px; /* Below global nav */
   left: var(--space-4);
   width: 44px;
   height: 44px;
@@ -56,8 +56,8 @@
   border-radius: var(--radius-md);
   color: var(--color-text-secondary);
   cursor: pointer;
-  z-index: 16;
-  font-size: var(--text-xs);
+  z-index: 21; /* Above sidebar */
+  font-size: var(--text-lg);
   font-weight: var(--weight-medium);
   transition: all var(--transition-base);
   box-shadow: var(--shadow-sm);
@@ -79,11 +79,19 @@
 
 .sidebar-nav__toggle span::before {
   content: "☰";
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
 }
 
-.sidebar-nav--open .sidebar-nav__toggle span::before {
-  content: "✕";
+/* Collapsed state: show close icon */
+.sidebar-nav--collapsed .sidebar-nav__toggle span::before {
+  content: "→";
+}
+
+/* Mobile open state: show X icon */
+@media (max-width: 767px) {
+  .sidebar-nav--open .sidebar-nav__toggle span::before {
+    content: "✕";
+  }
 }
 
 /* Backdrop Overlay (mobile only) */
@@ -208,23 +216,23 @@
     box-shadow: none;
   }
 
-  /* Show sidebar when open */
+  /* Remove collapsed class effect on mobile */
+  .sidebar-nav.sidebar-nav--collapsed {
+    transform: translateX(-100%);
+  }
+
+  /* Show sidebar when open on mobile */
   .sidebar-nav--open {
-    transform: translateX(0);
+    transform: translateX(0) !important;
     box-shadow: var(--shadow-2xl);
   }
 
-  /* Show toggle button on mobile */
-  .sidebar-nav__toggle {
-    display: flex;
-  }
-
-  /* Show backdrop on mobile when sidebar open */
+  /* Show backdrop when mobile sidebar is open */
   .sidebar-nav--open ~ .sidebar-nav__backdrop {
     display: block;
   }
 
-  /* Adjust sidebar for mobile safe area */
+  /* Adjust sidebar for mobile */
   .sidebar-nav {
     top: 64px; /* Mobile nav height */
     height: calc(100vh - 64px);
@@ -232,7 +240,7 @@
   }
 
   .sidebar-nav__toggle {
-    top: 120px; /* Adjusted for mobile nav + breadcrumb */
+    top: 76px; /* Adjusted for mobile nav */
   }
 }
 
@@ -241,19 +249,35 @@
    ============================================ */
 
 @media (min-width: 768px) {
-  /* Sidebar always visible on desktop */
+  /* Sidebar visible on desktop */
   .sidebar-nav {
     transform: translateX(0);
   }
 
-  /* Hide toggle button on desktop */
-  .sidebar-nav__toggle {
+  /* Collapsed state on desktop */
+  .sidebar-nav--collapsed {
+    transform: translateX(-100%);
+  }
+
+  /* Adjust toggle button position when sidebar collapsed */
+  .sidebar-nav--collapsed .sidebar-nav__toggle {
+    left: var(--space-4);
+  }
+
+  /* No backdrop on desktop */
+  .sidebar-nav__backdrop {
     display: none;
   }
 
-  /* Hide backdrop on desktop */
-  .sidebar-nav__backdrop {
-    display: none;
+  /* Adjust page content margin when sidebar is visible */
+  .page-content {
+    margin-left: 260px;
+    transition: margin-left 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Remove margin when sidebar is collapsed */
+  .sidebar-nav--collapsed ~ .page-content {
+    margin-left: 0;
   }
 }
 
@@ -315,28 +339,22 @@
 
 /* Layout container for pages with sidebar */
 .page-layout {
-  display: flex;
+  display: block;
   position: relative;
   min-height: calc(100vh - 72px);
 }
 
 /* Main content area */
 .page-content {
-  flex: 1;
   width: 100%;
   min-width: 0; /* Prevents flex overflow issues */
+  margin-left: 0;
+  transition: margin-left 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Desktop: Push content right for sidebar */
-@media (min-width: 768px) {
-  .page-content {
-    margin-left: 260px;
-  }
-}
-
-/* Mobile: Full width content */
+/* Mobile: Full width content always */
 @media (max-width: 767px) {
   .page-content {
-    margin-left: 0;
+    margin-left: 0 !important;
   }
 }
