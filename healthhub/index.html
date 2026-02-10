@@ -72,6 +72,48 @@
         </ul>
     </nav>
 
+    <!-- Page Layout with Sidebar -->
+    <div class="page-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <!-- Mobile Toggle -->
+            <button class="sidebar-nav__toggle" data-sidebar-toggle aria-expanded="false">
+                <span></span>
+            </button>
+
+            <!-- Health Section -->
+            <div class="sidebar-nav__section">
+                <h3 class="sidebar-nav__heading">Health</h3>
+                <ul class="sidebar-nav__items">
+                    <li class="sidebar-nav__item">
+                        <a href="/healthhub/" class="sidebar-nav__link">Overview</a>
+                    </li>
+                    <li class="sidebar-nav__item">
+                        <a href="/healthhub/training.html" class="sidebar-nav__link">
+                            💪 Training
+                        </a>
+                    </li>
+                    <li class="sidebar-nav__item">
+                        <a href="/healthhub/nutrition.html" class="sidebar-nav__link">
+                            🍽️ Nutrition
+                        </a>
+                    </li>
+                    <li class="sidebar-nav__item">
+                        <a href="/healthhub/recovery.html" class="sidebar-nav__link">
+                            😴 Recovery
+                        </a>
+                    </li>
+                    <li class="sidebar-nav__item">
+                        <a href="/healthhub/metrics.html" class="sidebar-nav__link">
+                            📊 Metrics
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="page-content">
     <!-- Breadcrumb -->
     <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -234,6 +276,8 @@
             </div>
         </div>
     </footer>
+        </main>
+    </div>
 
     <script src="/resources/js/navigation.js"></script>
 </body>

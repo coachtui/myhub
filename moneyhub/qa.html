@@ -72,6 +72,62 @@
         </ul>
     </nav>
 
+    <!-- Page Layout with Sidebar -->
+    <div class="page-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav">
+            <!-- Mobile Toggle -->
+            <button class="sidebar-nav__toggle" data-sidebar-toggle aria-expanded="false">
+                <span></span>
+            </button>
+
+            <!-- Wealth Section -->
+            <div class="sidebar-nav__section">
+                <h3 class="sidebar-nav__heading">Wealth</h3>
+                <ul class="sidebar-nav__items">
+                    <li class="sidebar-nav__item">
+                        <a href="/moneyhub/" class="sidebar-nav__link">Overview</a>
+                    </li>
+                    <li class="sidebar-nav__item">
+                        <a href="/moneyhub/portfolio.html" class="sidebar-nav__link">
+                            📊 Portfolio
+                        </a>
+                    </li>
+                    <li class="sidebar-nav__item">
+                        <a href="/moneyhub/analysis.html" class="sidebar-nav__link">
+                            🔍 Analysis
+                        </a>
+                    </li>
+                    <li class="sidebar-nav__item">
+                        <a href="/moneyhub/trading-journal.html" class="sidebar-nav__link">
+                            📝 Trading Journal
+                        </a>
+                    </li>
+                    <li class="sidebar-nav__item">
+                        <a href="/moneyhub/investing/" class="sidebar-nav__link">
+                            📈 Strategy
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="sidebar-nav__section">
+                <h3 class="sidebar-nav__heading">Resources</h3>
+                <ul class="sidebar-nav__items">
+                    <li class="sidebar-nav__item">
+                        <a href="/moneyhub/topics.html" class="sidebar-nav__link">Topics & Guides</a>
+                    </li>
+                    <li class="sidebar-nav__item">
+                        <a href="/moneyhub/qa.html" class="sidebar-nav__link">Q&A</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="page-content">
+
     <!-- Breadcrumb -->
     <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -240,6 +296,9 @@
             </div>
         </div>
     </footer>
+
+        </main>
+    </div>
 
     <script src="/resources/js/navigation.js"></script>
 </body>

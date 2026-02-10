@@ -22,6 +22,7 @@
    2. COMPONENTS
    ============================================ */
 @import url('components/navigation.css');
+@import url('components/sidebar-nav.css');
 @import url('components/button.css');
 @import url('components/card.css');
 @import url('components/hero.css');
