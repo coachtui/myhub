@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Hub | Tui Alailima</title>
+    <meta name="description" content="Simple, repeatable approach to budgeting, saving, and long-term investing.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/resources/images/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/resources/css/style.css">
+
+    <!-- JavaScript -->
+    <script src="/resources/js/theme.js"></script>
+</head>
+
+<body>
+    <!-- Global Navigation -->
+    <nav class="nav-global">
+        <div class="nav-global__container">
+            <a href="/" class="nav-global__logo">Tui</a>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-global__links">
+                <li><a href="/healthhub/" class="nav-global__link">Health</a></li>
+                <li><a href="/moneyhub/" class="nav-global__link" aria-current="page">Wealth</a></li>
+                <li><a href="/#whatevs" class="nav-global__link">Whatevs</a></li>
+            </ul>
+
+            <!-- Actions -->
+            <div class="nav-global__actions">
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <nav class="nav-mobile">
+        <ul class="nav-mobile__links">
+            <li><a href="/" class="nav-mobile__link">Home</a></li>
+            <li><a href="/healthhub/" class="nav-mobile__link">Health</a></li>
+            <li><a href="/moneyhub/" class="nav-mobile__link" aria-current="page">Wealth</a></li>
+            <li><a href="/#whatevs" class="nav-mobile__link">Whatevs</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li aria-current="page">Money Hub</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="container">
+        <aside class="disclaimer">
+            <svg class="disclaimer__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p class="disclaimer__text">
+                I'm not a CPA or licensed financial advisor. This explains how I personally think about money.
+                It's for education only, not tailored advice. Please make your own decisions or consult a
+                qualified professional before acting on anything here.
+            </p>
+        </aside>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="section-hero">
+        <div class="section-hero__content">
+            <h1 class="section-hero__title">The Money Hub</h1>
+            <p class="section-hero__description">
+                How I think about budgeting, saving, and investing for the long term.
+            </p>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="section">
+        <div class="container container--md">
+            <div class="text-center" style="margin-bottom: var(--space-8);">
+                <h2 style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--color-text-primary); margin-bottom: var(--space-4);">
+                    My Money Philosophy
+                </h2>
+                <p style="font-size: var(--text-base); color: var(--color-text-tertiary);">
+                    Before the tactics, here's the lens.
+                </p>
+            </div>
+
+            <div style="font-size: var(--text-base); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
+                <p style="margin-bottom: var(--space-6);">
+                    I'm not a financial advisor. I'm a civil construction superintendent who has spent years
+                    obsessing over how to use money to build a stable, flexible life. I think in decades,
+                    not weeks. I care more about systems that are simple and repeatable than about finding
+                    the "perfect" investment.
+                </p>
+                <p style="margin-bottom: var(--space-6); font-weight: var(--weight-medium); color: var(--color-text-primary);">
+                    In short, my approach is built on a few ideas:
+                </p>
+                <ul style="list-style: none; padding-left: 0; margin-bottom: var(--space-8);">
+                    <li style="position: relative; padding-left: var(--space-6); margin-bottom: var(--space-3);">
+                        <span style="position: absolute; left: 0; color: var(--color-accent-primary); font-weight: var(--weight-bold);">→</span>
+                        Think in 10–20 year windows, not day-to-day moves.
+                    </li>
+                    <li style="position: relative; padding-left: var(--space-6); margin-bottom: var(--space-3);">
+                        <span style="position: absolute; left: 0; color: var(--color-accent-primary); font-weight: var(--weight-bold);">→</span>
+                        Automate good behavior so willpower doesn't matter as much.
+                    </li>
+                    <li style="position: relative; padding-left: var(--space-6); margin-bottom: var(--space-3);">
+                        <span style="position: absolute; left: 0; color: var(--color-accent-primary); font-weight: var(--weight-bold);">→</span>
+                        Kill high-interest debt as fast as possible.
+                    </li>
+                    <li style="position: relative; padding-left: var(--space-6); margin-bottom: var(--space-3);">
+                        <span style="position: absolute; left: 0; color: var(--color-accent-primary); font-weight: var(--weight-bold);">→</span>
+                        Use tax-advantaged accounts when they make sense.
+                    </li>
+                    <li style="position: relative; padding-left: var(--space-6); margin-bottom: var(--space-3);">
+                        <span style="position: absolute; left: 0; color: var(--color-accent-primary); font-weight: var(--weight-bold);">→</span>
+                        Keep the plan simple enough that you will actually stick to it.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5-Step Path -->
+    <section class="section" style="background: var(--color-bg-secondary);">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: var(--space-12);">
+                <h2 style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--color-text-primary); margin-bottom: var(--space-4);">
+                    Start Here: Simple 5-Step Path
+                </h2>
+                <p style="font-size: var(--text-lg); color: var(--color-text-tertiary); max-width: 600px; margin: 0 auto;">
+                    If you're just getting serious about money, this is the order I'd work through.
+                </p>
+            </div>
+
+            <div class="stack stack--lg" style="max-width: 800px; margin: 0 auto;">
+                <!-- Step 1 -->
+                <a href="/moneyhub/step1-know-your-money.html" class="card card--step">
+                    <div class="card__number">1</div>
+                    <div class="card__content">
+                        <h3 class="card__title">Know Your Money</h3>
+                        <p class="card__description">
+                            Get clear on your current situation. Track where your money really goes, separate Needs, Fun, and Waste,
+                            and build a simple monthly cash flow view.
+                        </p>
+                        <div class="card__meta">
+                            <span class="card__time">
+                                <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                10 min read
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Step 2 -->
+                <a href="/moneyhub/step2-high-interest-debt.html" class="card card--step">
+                    <div class="card__number">2</div>
+                    <div class="card__content">
+                        <h3 class="card__title">Kill High-Interest Debt</h3>
+                        <p class="card__description">
+                            Treat high-interest debt as a negative investment. Understand the real cost and use methods like the
+                            avalanche approach to get rid of it as fast as is reasonable.
+                        </p>
+                        <div class="card__meta">
+                            <span class="card__time">
+                                <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                8 min read
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Step 3 -->
+                <a href="/moneyhub/step3-emergency-fund.html" class="card card--step">
+                    <div class="card__number">3</div>
+                    <div class="card__content">
+                        <h3 class="card__title">Build an Emergency Fund</h3>
+                        <p class="card__description">
+                            Create a cash buffer so life's surprises don't knock you into more debt. Start with 1 month of expenses,
+                            then grow toward 3, 6, and eventually 12 months.
+                        </p>
+                        <div class="card__meta">
+                            <span class="card__time">
+                                <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                7 min read
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Step 4 -->
+                <a href="/moneyhub/step4-investing-basics.html" class="card card--step">
+                    <div class="card__number">4</div>
+                    <div class="card__content">
+                        <h3 class="card__title">Simple Long-Term Investing</h3>
+                        <p class="card__description">
+                            Use the right account types, think about taxes now vs later, and invest in basic, broad index funds.
+                            No need to trade or time the market.
+                        </p>
+                        <div class="card__meta">
+                            <span class="card__time">
+                                <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                15 min read
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Step 5 -->
+                <a href="/moneyhub/step5-automation.html" class="card card--step">
+                    <div class="card__number">5</div>
+                    <div class="card__content">
+                        <h3 class="card__title">Automate Your Money</h3>
+                        <p class="card__description">
+                            Automate transfers, debt payments, and investing so the system runs even when you are busy.
+                            The goal is fewer decisions and more progress.
+                        </p>
+                        <div class="card__meta">
+                            <span class="card__time">
+                                <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                6 min read
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Resources -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: var(--space-12);">
+                <h2 style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--color-text-primary); margin-bottom: var(--space-4);">
+                    Additional Resources
+                </h2>
+            </div>
+
+            <div class="grid grid--2" style="max-width: 700px; margin: 0 auto;">
+                <a href="/moneyhub/topics.html" class="card">
+                    <div class="card__icon">📚</div>
+                    <h3 class="card__title">Topics & Guides</h3>
+                    <p class="card__description">
+                        Browse all available guides organized by topic.
+                    </p>
+                </a>
+
+                <a href="/moneyhub/qa.html" class="card">
+                    <div class="card__icon">💬</div>
+                    <h3 class="card__title">Q&A</h3>
+                    <p class="card__description">
+                        Common questions about budgeting, debt, investing, and accounts.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <!-- Brand -->
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">Tui Alailima</a>
+                    <p class="footer__tagline">
+                        Documenting lessons on money, health, and long-term thinking.
+                    </p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/coach.tui/" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram footer__social-icon"></i>
+                        </a>
+                        <a href="https://github.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github footer__social-icon"></i>
+                        </a>
+                        <a href="https://twitter.com/tuialailima" class="footer__social-link" target="_blank" rel="noopener" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter footer__social-icon"></i>
+                        </a>
+                        <a href="https://codepen.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="CodePen">
+                            <i class="fa-brands fa-codepen footer__social-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Money Hub</h3>
+                    <ul>
+                        <li><a href="/moneyhub/step1-know-your-money.html">Step 1: Know Your Money</a></li>
+                        <li><a href="/moneyhub/step2-high-interest-debt.html">Step 2: Kill Debt</a></li>
+                        <li><a href="/moneyhub/step3-emergency-fund.html">Step 3: Emergency Fund</a></li>
+                        <li><a href="/moneyhub/step4-investing-basics.html">Step 4: Investing</a></li>
+                        <li><a href="/moneyhub/step5-automation.html">Step 5: Automation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Resources</h3>
+                    <ul>
+                        <li><a href="/moneyhub/topics.html">Topics & Guides</a></li>
+                        <li><a href="/moneyhub/qa.html">Q&A</a></li>
+                        <li><a href="/moneyhub/investing/">Investing Hub</a></li>
+                        <li><a href="mailto:tui@tuialailima.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2026 Tui Alailima. All rights reserved.
+                </p>
+                <p class="footer__disclaimer">
+                    I am not a CPA, financial advisor, or attorney. Everything here reflects my personal opinions
+                    on money and investing, not professional advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/resources/js/navigation.js"></script>
+</body>
+</html>

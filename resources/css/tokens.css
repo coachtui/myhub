@@ -1,0 +1,197 @@
+/* ============================================
+   DESIGN TOKENS
+   Modern App-Like Design System
+   ============================================ */
+
+:root {
+  /* ============================================
+     COLOR PALETTE - LIGHT MODE
+     ============================================ */
+
+  /* Backgrounds */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8f9fa;
+  --color-bg-tertiary: #f1f3f5;
+  --color-bg-elevated: #ffffff;
+  --color-bg-overlay: rgba(0, 0, 0, 0.03);
+
+  /* Text Hierarchy */
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-tertiary: #737373;
+  --color-text-quaternary: #a3a3a3;
+
+  /* Brand Accent - Refined Red */
+  --color-accent-primary: #dc2626;
+  --color-accent-primary-hover: #b91c1c;
+  --color-accent-secondary: #f87171;
+  --color-accent-tertiary: #fef2f2;
+
+  /* Borders */
+  --color-border: #e5e7eb;
+  --color-border-strong: #d1d5db;
+
+  /* Semantic Colors */
+  --color-success: #10b981;
+  --color-success-bg: #d1fae5;
+  --color-warning: #f59e0b;
+  --color-warning-bg: #fef3c7;
+  --color-info: #3b82f6;
+  --color-info-bg: #dbeafe;
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+
+  /* Font Families */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Fraunces', 'Source Serif 4', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Source Code Pro', Consolas, monospace;
+
+  /* Font Sizes (Fluid Typography) */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);      /* 12-14px */
+  --text-sm: clamp(0.875rem, 0.85rem + 0.2vw, 0.9375rem);   /* 14-15px */
+  --text-base: clamp(1rem, 0.95rem + 0.3vw, 1.0625rem);     /* 16-17px */
+  --text-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);     /* 18-20px */
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);       /* 20-24px */
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);            /* 24-32px */
+  --text-3xl: clamp(1.875rem, 1.6rem + 1.4vw, 2.5rem);      /* 30-40px */
+  --text-4xl: clamp(2.25rem, 1.8rem + 2vw, 3.5rem);         /* 36-56px */
+  --text-5xl: clamp(3rem, 2.5rem + 2.5vw, 4.5rem);          /* 48-72px */
+
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Font Weights */
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* ============================================
+     SPACING (8px Base Grid)
+     ============================================ */
+
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+
+  /* ============================================
+     BORDER RADIUS
+     ============================================ */
+
+  --radius-none: 0;
+  --radius-sm: 0.25rem;   /* 4px - subtle */
+  --radius-md: 0.5rem;    /* 8px - cards */
+  --radius-lg: 0.75rem;   /* 12px - elevated cards */
+  --radius-xl: 1rem;      /* 16px - hero sections */
+  --radius-2xl: 1.5rem;   /* 24px - large elements */
+  --radius-full: 9999px;  /* pills, avatars */
+
+  /* ============================================
+     SHADOWS (Layered Elevation)
+     ============================================ */
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  /* ============================================
+     MAX WIDTHS
+     ============================================ */
+
+  --width-content-sm: 42rem;   /* 672px - narrow reading */
+  --width-content-md: 48rem;   /* 768px - standard reading */
+  --width-content-lg: 56rem;   /* 896px - wide content */
+  --width-content-xl: 72rem;   /* 1152px - hero sections */
+  --width-full: 100%;
+
+  /* ============================================
+     Z-INDEX SCALE
+     ============================================ */
+
+  --z-base: 0;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-fixed: 30;
+  --z-modal: 40;
+  --z-popover: 50;
+  --z-tooltip: 60;
+
+  /* ============================================
+     TRANSITIONS
+     ============================================ */
+
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+  --transition-slower: 400ms ease;
+
+  /* Timing Functions */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   DARK MODE OVERRIDES
+   ============================================ */
+
+[data-theme="dark"] {
+  /* Backgrounds */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #171717;
+  --color-bg-tertiary: #262626;
+  --color-bg-elevated: #1a1a1a;
+  --color-bg-overlay: rgba(255, 255, 255, 0.05);
+
+  /* Text Hierarchy */
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #d4d4d4;
+  --color-text-tertiary: #a3a3a3;
+  --color-text-quaternary: #737373;
+
+  /* Brand Accent - Softer for Dark Mode */
+  --color-accent-primary: #f87171;
+  --color-accent-primary-hover: #fca5a5;
+  --color-accent-secondary: #dc2626;
+  --color-accent-tertiary: #450a0a;
+
+  /* Borders */
+  --color-border: #404040;
+  --color-border-strong: #525252;
+
+  /* Semantic Colors - Adjusted */
+  --color-success: #34d399;
+  --color-success-bg: #064e3b;
+  --color-warning: #fbbf24;
+  --color-warning-bg: #78350f;
+  --color-info: #60a5fa;
+  --color-info-bg: #1e3a8a;
+
+  /* Shadows - Deeper for Dark Mode */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.7);
+}

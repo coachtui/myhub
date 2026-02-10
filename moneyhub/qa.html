@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A | Money Hub</title>
+    <meta name="description" content="Common questions I get about money, answered.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/resources/images/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/resources/css/style.css">
+
+    <!-- JavaScript (load early for theme) -->
+    <script src="/resources/js/theme.js"></script>
+</head>
+<body>
+    <!-- Global Navigation -->
+    <nav class="nav-global">
+        <div class="nav-global__container">
+            <a href="/" class="nav-global__logo">Tui</a>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-global__links">
+                <li><a href="/healthhub/" class="nav-global__link">Health</a></li>
+                <li><a href="/moneyhub/" class="nav-global__link" aria-current="page">Wealth</a></li>
+                <li><a href="/#whatevs" class="nav-global__link">Whatevs</a></li>
+            </ul>
+
+            <!-- Actions -->
+            <div class="nav-global__actions">
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <nav class="nav-mobile">
+        <ul class="nav-mobile__links">
+            <li><a href="/" class="nav-mobile__link">Home</a></li>
+            <li><a href="/healthhub/" class="nav-mobile__link">Health</a></li>
+            <li><a href="/moneyhub/" class="nav-mobile__link" aria-current="page">Wealth</a></li>
+            <li><a href="/#whatevs" class="nav-mobile__link">Whatevs</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/moneyhub/">Money Hub</a></li>
+                <li aria-current="page">Q&A</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="container">
+        <aside class="disclaimer">
+            <svg class="disclaimer__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p class="disclaimer__text">I'm not a CPA or licensed financial advisor. This Q&A explains how I personally think about money. It's for education only, not tailored advice.</p>
+        </aside>
+    </div>
+
+    <!-- Article Content -->
+    <article class="article">
+        <header class="article__header">
+            <h1 class="article__title">Common Questions I Get</h1>
+            <p class="article__subtitle">The stuff people ask me over and over</p>
+        </header>
+
+        <div class="article__content">
+            <p>These are the questions I get most often from coworkers, friends, and family. If you asked me something about money and I sent you this link, your answer is probably here.</p>
+
+            <h2>Getting Started</h2>
+
+            <h3>"I'm completely new to this. Where do I actually start?"</h3>
+            <p>Start with <a href="/moneyhub/step1-know-your-money.html">Step 1: Know Your Money</a>. Seriously—spend one month tracking where your money actually goes. You can't fix what you can't see. From there, the rest of the 5-step path gives you a realistic order: emergency fund → kill high-interest debt → simple investing → automate it all.</p>
+
+            <h3>"I don't make that much money. Does this still apply to me?"</h3>
+            <p>Yes. The framework works at any income level because it's about <strong>percentages and priorities</strong>, not absolute dollar amounts. If you're making $40K or $140K, the same principles apply: know where it goes, build a buffer, avoid toxic debt, invest what you can consistently.</p>
+
+            <h3>"I feel like I'm too far behind to catch up. Is it too late?"</h3>
+            <p>No. I've talked to people in their 20s who think they're behind and people in their 50s who think it's hopeless. The best time to start was 10 years ago. The second best time is today. You can't change the past, but you can change the next 10–20 years.</p>
+
+            <h2>Debt & Emergency Funds</h2>
+
+            <h3>"Should I pay off debt first or invest?"</h3>
+            <p>It depends on the interest rate. High-interest debt (18–25%+) is like a guaranteed negative return dragging you backward. I treat that as an emergency and attack it hard while building a small safety net (1 month of expenses). Once high-interest debt is under control, I shift toward investing more aggressively. Low-rate debt (mortgage at 3%, federal student loans at 4%) is different—you can often invest while paying those down slowly.</p>
+
+            <h3>"How much emergency fund do I really need?"</h3>
+            <p>Start with 1 month of essential expenses. Then aim for 3 months. If your income is stable and you have decent job security, 3–6 months is solid. If your income is variable or you're the sole earner in your household, push toward 6–12 months. The goal is enough cash to keep life stable when something goes wrong—or to avoid selling investments at a loss during a market downturn in retirement.</p>
+
+            <h3>"Should I keep my emergency fund in a regular savings account or invest it?"</h3>
+            <p>Keep it in cash—specifically a high-yield savings account (HYSA) at a different bank than your main checking. You're not trying to grow it aggressively; you're trying to protect it and keep it accessible. Investing your emergency fund defeats the purpose because you might need it right when the market is down 30%.</p>
+
+            <h3>"What if I have student loans? Should I still invest?"</h3>
+            <p>Look at the interest rate. Federal student loans at 4–5%? I'd make minimum payments and invest the rest. Private loans at 8–10%+? That's closer to high-interest debt territory—I'd prioritize paying those down faster. Also check if your employer offers loan repayment assistance or 401(k) match; don't leave free money on the table.</p>
+
+            <h2>Investing & Retirement Accounts</h2>
+
+            <h3>"Should I use my 401(k) even if there's no match?"</h3>
+            <p>It depends on the fees and investment options. If your 401(k) has reasonable fees and decent fund choices, it's still a solid tax-advantaged option. But if there's no match, I often suggest maxing a Roth IRA first ($7,000/year as of 2024) for the flexibility and tax-free growth. Then come back to the 401(k) if you have more to invest.</p>
+
+            <h3>"Roth or Traditional? How do I decide?"</h3>
+            <p>Ask yourself: do I think my tax rate will be higher or lower in retirement? If you're in a high bracket now and expect to be in a lower one later, Traditional (tax-deferred) makes sense. If you're early in your career or expect higher income later, Roth (tax-free withdrawals) is often better. I like having <strong>both</strong> over time so future-me has tax flexibility.</p>
+
+            <h3>"What should I actually invest in? I don't want to pick individual stocks."</h3>
+            <p>Keep it simple: broad, low-cost index funds. Something like a total U.S. stock market fund (VTI, FSKAX, SWTSX) gives you exposure to thousands of companies in one fund. Add some international diversification (VXUS, FTIHX) and maybe bonds as you get older. You don't need 30 funds. You need 2–4 good ones you can hold for decades.</p>
+
+            <h3>"Is now a bad time to invest? The market seems high / scary / uncertain."</h3>
+            <p>The market <strong>always</strong> feels uncertain in the moment. That's the nature of it. I assume I can't predict short-term moves, so I build a plan I'm willing to stick with through good years and bad. If you're investing for 20+ years, trying to time the market is a losing game. Just show up consistently.</p>
+
+            <h3>"I have a lump sum to invest. Should I put it all in at once or spread it out?"</h3>
+            <p>Mathematically, lump sum tends to win more often because markets go up more than they go down. But emotionally, if you're worried about investing everything right before a drop, you can split it into 6–12 monthly chunks (dollar-cost averaging). The important thing is to actually get it invested on a schedule you'll stick to, not sit in cash forever waiting for the "perfect" moment.</p>
+
+            <h3>"Should I invest in a taxable brokerage account if I haven't maxed my 401(k) and IRA?"</h3>
+            <p>It depends on your goals. If you're saving for retirement and can contribute more, max the tax-advantaged accounts first (401(k), IRA). But if you're building toward early retirement or need flexibility before age 59½, a taxable account makes sense even if you haven't maxed everything else. I use a mix: tax-advantaged for long-term retirement, taxable for flexibility.</p>
+
+            <h2>Specific Situations</h2>
+
+            <h3>"I'm self-employed. How does this change things?"</h3>
+            <p>Your income is probably less predictable, so lean toward a bigger emergency fund (6–12 months). Set up a Solo 401(k) or SEP IRA for tax-advantaged retirement savings. Automate quarterly tax withholding so you're not scrambling in April. The 5-step framework still applies—you just need more margin for the income swings.</p>
+
+            <h3>"I'm married. Should we combine finances or keep them separate?"</h3>
+            <p>There's no one right answer. Some couples fully merge, some keep separate accounts with a joint account for shared expenses, some stay completely separate. What matters is: do you both understand where the money goes? Are you aligned on priorities (debt, savings, investing)? Communication matters more than the account structure.</p>
+
+            <h3>"I have kids. How does that change the plan?"</h3>
+            <p>Your emergency fund probably needs to be bigger. Childcare, medical costs, and "kid expenses" add up fast. I'd still prioritize your own retirement accounts over college savings—you can't borrow for retirement, but kids can borrow for college. Once you're on track with retirement and emergency savings, then look at 529 plans for education.</p>
+
+            <h3>"I'm close to retirement. What should I focus on now?"</h3>
+            <p>Build up 1–2 years of expenses in cash or near-cash so you're not forced to sell investments during a market downturn. Review your withdrawal strategy and tax situation (traditional vs Roth, Social Security timing). Make sure your plan can handle a bad sequence of returns early in retirement. This is where having a financial advisor often makes sense.</p>
+
+            <h2>Behavior & Staying on Track</h2>
+
+            <h3>"How do I stop myself from impulse spending?"</h3>
+            <p>Two things help me: <strong>automation</strong> and <strong>separation</strong>. Automate your savings, debt payments, and investments so they happen before you see the money. Keep your emergency fund at a different bank so it's not sitting there tempting you. When spending money is left in checking after priorities, it's easier to feel okay spending it.</p>
+
+            <h3>"I keep starting and stopping. How do I actually stick with this?"</h3>
+            <p>Make the system simple enough that you can maintain it even when life gets busy. Automate as much as possible. Don't try to track every dollar or be perfect—just aim for "good enough, consistently" instead of "perfect for two months then quit." The plan that you actually follow beats the perfect plan you abandon.</p>
+
+            <h3>"My partner and I don't agree on money. How do we get on the same page?"</h3>
+            <p>Start with shared goals, not tactics. "Do we want to retire early? Buy a house? Have financial security?" is easier to align on than "Should we invest in this specific fund?" Once you agree on where you're going, you can compromise on how to get there. If it's really stuck, a financial advisor or counselor can help mediate.</p>
+
+            <h2>Next Steps</h2>
+
+            <h3>"I have a specific question that's not here. Can I ask you?"</h3>
+            <p>If we've talked in person and I sent you here, feel free to text or email me. I'll either point you to the right section of the site or we can talk through it. I'm not a financial advisor, but I'm happy to share how I'd think about it.</p>
+
+            <h3>"I want to go deeper on investing. Where should I look?"</h3>
+            <p>Check out the <a href="/moneyhub/investing/">Investing Hub</a> for more detail on brokerage accounts, account types, portfolio construction, and staying invested through volatility. If you want book recommendations, email me—I have a short list I always suggest.</p>
+
+            <h3>"This is overwhelming. What's the absolute minimum I should do right now?"</h3>
+            <p>Three things:</p>
+            <ol>
+                <li>Track your spending for one month so you know where your money actually goes.</li>
+                <li>Start building a 1-month emergency fund—even $50/month adds up.</li>
+                <li>If your employer offers a 401(k) match, contribute at least enough to get the full match. That's free money.</li>
+            </ol>
+            <p>Do those three things, then come back when you're ready for the next step.</p>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">Tui Alailima</a>
+                    <p class="footer__tagline">Documenting lessons on money, health, and long-term thinking.</p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/coach.tui/" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram footer__social-icon"></i>
+                        </a>
+                        <a href="https://github.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github footer__social-icon"></i>
+                        </a>
+                        <a href="https://twitter.com/tuialailima" class="footer__social-link" target="_blank" rel="noopener" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter footer__social-icon"></i>
+                        </a>
+                        <a href="https://codepen.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="CodePen">
+                            <i class="fa-brands fa-codepen footer__social-icon"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Money Hub</h3>
+                    <ul>
+                        <li><a href="/moneyhub/step1-know-your-money.html">Step 1: Know Your Money</a></li>
+                        <li><a href="/moneyhub/step2-high-interest-debt.html">Step 2: Kill Debt</a></li>
+                        <li><a href="/moneyhub/step3-emergency-fund.html">Step 3: Emergency Fund</a></li>
+                        <li><a href="/moneyhub/step4-investing-basics.html">Step 4: Investing</a></li>
+                        <li><a href="/moneyhub/step5-automation.html">Step 5: Automation</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Resources</h3>
+                    <ul>
+                        <li><a href="/moneyhub/topics.html">Topics & Guides</a></li>
+                        <li><a href="/moneyhub/qa.html">Q&A</a></li>
+                        <li><a href="/moneyhub/investing/">Investing Hub</a></li>
+                        <li><a href="mailto:tui@tuialailima.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2026 Tui Alailima. All rights reserved.</p>
+                <p class="footer__disclaimer">I am not a CPA, financial advisor, or attorney. Everything here reflects my personal opinions on money and investing, not professional advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/resources/js/navigation.js"></script>
+</body>
+</html>

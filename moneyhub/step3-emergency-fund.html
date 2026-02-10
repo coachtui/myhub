@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 3: Build an Emergency Fund | Money Hub</title>
+    <meta name="description" content="Build a financial shock absorber so life doesn't knock you out.">
+
+    <link rel="icon" href="/resources/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/resources/css/style.css">
+    <script src="/resources/js/theme.js"></script>
+</head>
+
+<body>
+    <nav class="nav-global">
+        <div class="nav-global__container">
+            <a href="/" class="nav-global__logo">Tui</a>
+            <ul class="nav-global__links">
+                <li><a href="/healthhub/" class="nav-global__link">Health</a></li>
+                <li><a href="/moneyhub/" class="nav-global__link" aria-current="page">Wealth</a></li>
+                <li><a href="/#whatevs" class="nav-global__link">Whatevs</a></li>
+            </ul>
+            <div class="nav-global__actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="nav-mobile">
+        <ul class="nav-mobile__links">
+            <li><a href="/" class="nav-mobile__link">Home</a></li>
+            <li><a href="/healthhub/" class="nav-mobile__link">Health</a></li>
+            <li><a href="/moneyhub/" class="nav-mobile__link" aria-current="page">Wealth</a></li>
+            <li><a href="/#whatevs" class="nav-mobile__link">Whatevs</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/moneyhub/">Money Hub</a></li>
+                <li aria-current="page">Step 3: Build an Emergency Fund</li>
+            </ol>
+        </nav>
+    </div>
+
+    <nav class="step-progress" aria-label="Money Hub steps">
+        <div class="step-progress__bar">
+            <div class="step-progress__fill" style="width: 60%"></div>
+        </div>
+        <ol class="step-progress__steps">
+            <li class="step-progress__step completed">
+                <a href="/moneyhub/step1-know-your-money.html">
+                    <span class="step-progress__number">1</span>
+                    <span class="step-progress__label">Know Money</span>
+                </a>
+            </li>
+            <li class="step-progress__step completed">
+                <a href="/moneyhub/step2-high-interest-debt.html">
+                    <span class="step-progress__number">2</span>
+                    <span class="step-progress__label">Kill Debt</span>
+                </a>
+            </li>
+            <li class="step-progress__step active">
+                <a href="/moneyhub/step3-emergency-fund.html" aria-current="page">
+                    <span class="step-progress__number">3</span>
+                    <span class="step-progress__label">Emergency Fund</span>
+                </a>
+            </li>
+            <li class="step-progress__step">
+                <a href="/moneyhub/step4-investing-basics.html">
+                    <span class="step-progress__number">4</span>
+                    <span class="step-progress__label">Investing</span>
+                </a>
+            </li>
+            <li class="step-progress__step">
+                <a href="/moneyhub/step5-automation.html">
+                    <span class="step-progress__number">5</span>
+                    <span class="step-progress__label">Automation</span>
+                </a>
+            </li>
+        </ol>
+    </nav>
+
+    <div class="container">
+        <aside class="disclaimer">
+            <svg class="disclaimer__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p class="disclaimer__text">
+                I'm not a CPA or licensed financial advisor. This explains how I personally think about money.
+                It's for education only, not tailored advice.
+            </p>
+        </aside>
+    </div>
+
+    <article class="article">
+        <header class="article__header">
+            <h1 class="article__title">Step 3 – Build an Emergency Fund</h1>
+            <p class="article__subtitle">
+                So life doesn't knock you out
+            </p>
+            <div class="article__meta">
+                <span>
+                    <svg style="width: 16px; height: 16px; display: inline;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    7 min read
+                </span>
+                <span>Step 3 of 5</span>
+            </div>
+        </header>
+
+        <div class="article__content">
+            <p>
+                Once you know where your money actually goes (Step 1), and started killing high-interest debt (Step 2),
+                the next move is to build a layer of protection between you and life. This is your emergency fund.
+            </p>
+
+            <aside class="callout callout--info">
+                <div class="callout__icon">🛡️</div>
+                <div class="callout__content">
+                    <h4>An emergency fund is cash set aside for the things you didn't plan:</h4>
+                    <ul style="margin-bottom: 0;">
+                        <li>Job loss or reduced hours</li>
+                        <li>Medical expenses</li>
+                        <li>Car or home repairs</li>
+                        <li>Helping family when something serious comes up</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <p>
+                And later in life, it also protects you when the market is down in retirement, so you're not forced to sell
+                investments at bad prices just to pay the bills.
+            </p>
+            <p>
+                Think of it as a personal shock absorber. It doesn't make problems disappear, but it keeps them from throwing
+                your entire financial plan off the road.
+            </p>
+
+            <h3>1. What an emergency fund is (and what it is not)</h3>
+            <h4>What it is:</h4>
+            <ul>
+                <li>Cash you can access quickly (preferably in a HYSA)</li>
+                <li>Meant for true needs, not regular bills or "I just feel like buying something"</li>
+                <li>A buffer to keep you stable when life throws curveballs</li>
+            </ul>
+            <h4>What it is not:</h4>
+            <ul>
+                <li>A slush fund for random wants or impulse buys</li>
+                <li>Money you invest in stocks, crypto, or other volatile assets</li>
+                <li>A way to avoid budgeting or knowing where your money goes</li>
+            </ul>
+            <p>You sacrifice return in exchange for safety and flexibility. That trade-off is on purpose.</p>
+
+            <h3>2. Why this matters now and later</h3>
+            <h4>In your working years</h4>
+            <p><strong>Without an emergency fund, every problem turns into:</strong></p>
+            <ul>
+                <li>Stress and anxiety</li>
+                <li>High-interest debt (credit cards, payday loans)</li>
+                <li>Hard choices between bills, food, and other essentials</li>
+            </ul>
+            <p><strong>With an emergency fund:</strong></p>
+            <ul>
+                <li>You can handle most problems without going into debt</li>
+                <li>You reduce stress by knowing you have a buffer</li>
+                <li>You can make clearer decisions instead of desperate ones</li>
+            </ul>
+
+            <h4>In retirement</h4>
+            <ul>
+                <li>An emergency fund keeps you from selling investments at a loss during market downturns</li>
+                <li>It provides stability when your income sources (like Social Security or pensions) may not cover unexpected costs</li>
+                <li>It allows you to maintain your lifestyle without dipping into long-term savings</li>
+            </ul>
+
+            <h2>How much should you aim for?</h2>
+            <p>
+                You don't have to go from $0 to 6–12 months in one sprint. It's more realistic (and motivating) to think in stages:
+            </p>
+
+            <h3>Stage 1: Starter emergency fund (1 month of expenses)</h3>
+            <p>This is your first goal. It covers most minor emergencies and gives you a basic safety net.</p>
+            <ul>
+                <li>Look at your Step 1 numbers: take your essential monthly needs (Not total income, not total spending—your actual "keep-the-lights-on" number).</li>
+                <li>Round up a bit</li>
+                <li>That number is your starter emergency fund target.</li>
+            </ul>
+
+            <h3>Stage 2: Core security (3 months of expenses)</h3>
+            <p>This is the classic recommendation. It covers most job loss scenarios and bigger emergencies.</p>
+            <ul>
+                <li>Take your essential monthly needs from Step 1</li>
+                <li>Multiply by 3</li>
+                <li>This is your core security target.</li>
+            </ul>
+            <p>This is the level where many people start to feel genuinely stable. It covers:</p>
+            <ul>
+                <li>Most job loss scenarios</li>
+                <li>Bigger emergencies (car repairs, medical bills)</li>
+                <li>Peace of mind for many unexpected events</li>
+            </ul>
+
+            <h3>Stage 3: Strong buffer (6 months of expenses)</h3>
+            <p>Third target: 6 months of essentials.</p>
+            <p>Who tends to benefit from this level?</p>
+            <ul>
+                <li>People with variable income (freelancers, commission-based jobs)</li>
+                <li>Those in industries prone to layoffs</li>
+                <li>Families with dependents or higher expenses</li>
+            </ul>
+            <p>This level provides a robust safety net for most situations.</p>
+
+            <h3>Stage 4: Maximum flexibility (12 months of expenses)</h3>
+            <p>Finally, a 12-month buffer is the conservative end of the spectrum.</p>
+            <p>This is not required for everyone, but it can make sense if:</p>
+            <ul>
+                <li>Your income is highly unpredictable</li>
+                <li>You're the primary or only income earner</li>
+                <li>You work in a volatile industry</li>
+                <li>You want maximum peace of mind</li>
+            </ul>
+            <p>
+                You don't have to stay at 12 months forever. But building toward it, especially as you get close to retirement,
+                can drastically reduce risk of having to sell investments when markets are ugly.
+            </p>
+
+            <h3>Where should you keep your emergency fund?</h3>
+            <p>Your emergency fund needs to be:</p>
+            <ul>
+                <li>Safe</li>
+                <li>Easy to access within a few days</li>
+                <li>Separated enough that you don't casually dip into it</li>
+            </ul>
+
+            <aside class="callout callout--success">
+                <div class="callout__icon">💰</div>
+                <div class="callout__content">
+                    <h4>My preferred place: High-Yield Savings Account (HYSA)</h4>
+                    <p>This account is suggested to be at a different banking institution than your main checking account.</p>
+                    <p><strong>Why a HYSA?</strong></p>
+                    <ul style="margin-bottom: 0;">
+                        <li><strong>Safety</strong> - it's just cash, typically FDIC/NCUA insured up to standard limits</li>
+                        <li><strong>Liquidity</strong> - easy to access within a few days without penalties</li>
+                        <li><strong>Some return</strong> - better than traditional brick-and-mortar savings, without taking on market risk</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <p>You're not trying to hit big returns here; you just want your emergency money to at least keep up a bit while it sits.</p>
+
+            <h4>Why at a different bank than your main checking account?</h4>
+            <p>This is a behavior move, not a technical one.</p>
+            <p>When your emergency fund sits inside the same bank and app as your daily checking:</p>
+            <ul>
+                <li>It always looks available</li>
+                <li>It's easy to justify dipping into it for non-emergencies</li>
+                <li>One bad mood or impulse click can undo months of discipline</li>
+            </ul>
+            <p>By keeping it at a different bank:</p>
+            <ul>
+                <li>There's a small barrier to access (you have to log into a different app or website)</li>
+                <li>It feels more "set apart" from daily spending</li>
+                <li>You're less likely to treat it as casual spending money</li>
+            </ul>
+
+            <h3>How to actually build it (without quitting)</h3>
+            <p>You know your monthly needs from Step 1. You know the stages:</p>
+            <ul>
+                <li>Stage 1: 1 month of expenses</li>
+                <li>Stage 2: 3 months of expenses</li>
+                <li>Stage 3: 6 months of expenses</li>
+                <li>Stage 4: 12 months of expenses</li>
+            </ul>
+            <p>Now, you decide:</p>
+            <ul>
+                <li>How much per month can I realistically put towards this?</li>
+                <li>Which stage am I aiming for right now?</li>
+            </ul>
+
+            <aside class="callout callout--warning">
+                <div class="callout__icon">⚡</div>
+                <div class="callout__content">
+                    <h4>The most important thing is to automate it</h4>
+                    <ul style="margin-bottom: 0;">
+                        <li>Set up an automatic transfer from checking to your HYSA each payday</li>
+                        <li>Treat it like a non-negotiable bill</li>
+                        <li>Adjust as needed, but keep the habit going</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <h3>How the emergency fund works with investing</h3>
+            <p>This is where people get stuck: "Shouldn't I invest instead? Isn't cash a waste?" The answer is: They have different jobs.</p>
+            <ul>
+                <li><strong>Emergency fund:</strong> Safety, stability, and quick access for unexpected needs</li>
+                <li><strong>Investing:</strong> Growth over time to build wealth and reach long-term goals</li>
+            </ul>
+            <p>Without an emergency fund:</p>
+            <ul>
+                <li>You risk having to sell investments at a loss during emergencies</li>
+                <li>You may incur high-interest debt to cover unexpected costs</li>
+                <li>You face increased stress and uncertainty</li>
+            </ul>
+            <p>With an emergency fund in place:</p>
+            <ul>
+                <li>You can invest more confidently, knowing you have a safety net</li>
+                <li>You avoid the pitfalls of debt and forced investment sales</li>
+                <li>You gain peace of mind, allowing you to focus on long-term growth</li>
+            </ul>
+
+            <h3>Put it all together</h3>
+            <p>Step 3 is all about <strong>resilience</strong></p>
+            <ul>
+                <li>Start with a 1-month emergency fund as your first, achievable milestone.</li>
+                <li>Then aim for 3 months, then 6 months, and eventually 12 months if your situation or peace of mind calls for it.</li>
+                <li>Keep it safe, separate, and accessible.</li>
+                <li>Build it gradually, automatically, using the clarity you've gained from Step 1.</li>
+            </ul>
+            <p>
+                Once your emergency fund is in place, you're no longer one "bad month" away from financial chaos. And when you
+                later start investing more aggressively and planning for retirement, you'll do it from a stronger, more confident position.
+            </p>
+            <blockquote class="principle">
+                <p>From here, the next step is the fun part. We get to start creating your investing plan.</p>
+            </blockquote>
+        </div>
+    </article>
+
+    <nav class="step-nav-footer">
+        <a href="/moneyhub/step2-high-interest-debt.html" class="step-nav-footer__prev">
+            <span class="arrow">←</span>
+            <span>
+                <span class="label">Previous</span>
+                <span class="title">Kill High-Interest Debt</span>
+            </span>
+        </a>
+        <a href="/moneyhub/" class="step-nav-footer__home">Money Hub</a>
+        <a href="/moneyhub/step4-investing-basics.html" class="step-nav-footer__next">
+            <span>
+                <span class="label">Next Step</span>
+                <span class="title">Investing Basics</span>
+            </span>
+            <span class="arrow">→</span>
+        </a>
+    </nav>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">Tui Alailima</a>
+                    <p class="footer__tagline">Documenting lessons on money, health, and long-term thinking.</p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/coach.tui/" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram footer__social-icon"></i>
+                        </a>
+                        <a href="https://github.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github footer__social-icon"></i>
+                        </a>
+                        <a href="https://twitter.com/tuialailima" class="footer__social-link" target="_blank" rel="noopener" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter footer__social-icon"></i>
+                        </a>
+                        <a href="https://codepen.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="CodePen">
+                            <i class="fa-brands fa-codepen footer__social-icon"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Money Hub</h3>
+                    <ul>
+                        <li><a href="/moneyhub/step1-know-your-money.html">Step 1: Know Your Money</a></li>
+                        <li><a href="/moneyhub/step2-high-interest-debt.html">Step 2: Kill Debt</a></li>
+                        <li><a href="/moneyhub/step3-emergency-fund.html">Step 3: Emergency Fund</a></li>
+                        <li><a href="/moneyhub/step4-investing-basics.html">Step 4: Investing</a></li>
+                        <li><a href="/moneyhub/step5-automation.html">Step 5: Automation</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Resources</h3>
+                    <ul>
+                        <li><a href="/moneyhub/topics.html">Topics & Guides</a></li>
+                        <li><a href="/moneyhub/qa.html">Q&A</a></li>
+                        <li><a href="/moneyhub/investing/">Investing Hub</a></li>
+                        <li><a href="mailto:tui@tuialailima.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2026 Tui Alailima. All rights reserved.</p>
+                <p class="footer__disclaimer">
+                    I am not a CPA, financial advisor, or attorney. Everything here reflects my personal opinions
+                    on money and investing, not professional advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/resources/js/navigation.js"></script>
+</body>
+</html>

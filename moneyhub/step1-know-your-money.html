@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 1: Know Your Money | Money Hub</title>
+    <meta name="description" content="Get clear on where your money actually goes each month.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/resources/images/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/resources/css/style.css">
+
+    <!-- JavaScript -->
+    <script src="/resources/js/theme.js"></script>
+</head>
+
+<body>
+    <!-- Global Navigation -->
+    <nav class="nav-global">
+        <div class="nav-global__container">
+            <a href="/" class="nav-global__logo">Tui</a>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-global__links">
+                <li><a href="/healthhub/" class="nav-global__link">Health</a></li>
+                <li><a href="/moneyhub/" class="nav-global__link" aria-current="page">Wealth</a></li>
+                <li><a href="/#whatevs" class="nav-global__link">Whatevs</a></li>
+            </ul>
+
+            <!-- Actions -->
+            <div class="nav-global__actions">
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <nav class="nav-mobile">
+        <ul class="nav-mobile__links">
+            <li><a href="/" class="nav-mobile__link">Home</a></li>
+            <li><a href="/healthhub/" class="nav-mobile__link">Health</a></li>
+            <li><a href="/moneyhub/" class="nav-mobile__link" aria-current="page">Wealth</a></li>
+            <li><a href="/#whatevs" class="nav-mobile__link">Whatevs</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/moneyhub/">Money Hub</a></li>
+                <li aria-current="page">Step 1: Know Your Money</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Step Progress Indicator -->
+    <nav class="step-progress" aria-label="Money Hub steps">
+        <div class="step-progress__bar">
+            <div class="step-progress__fill" style="width: 20%"></div>
+        </div>
+        <ol class="step-progress__steps">
+            <li class="step-progress__step active">
+                <a href="/moneyhub/step1-know-your-money.html" aria-current="page">
+                    <span class="step-progress__number">1</span>
+                    <span class="step-progress__label">Know Money</span>
+                </a>
+            </li>
+            <li class="step-progress__step">
+                <a href="/moneyhub/step2-high-interest-debt.html">
+                    <span class="step-progress__number">2</span>
+                    <span class="step-progress__label">Kill Debt</span>
+                </a>
+            </li>
+            <li class="step-progress__step">
+                <a href="/moneyhub/step3-emergency-fund.html">
+                    <span class="step-progress__number">3</span>
+                    <span class="step-progress__label">Emergency Fund</span>
+                </a>
+            </li>
+            <li class="step-progress__step">
+                <a href="/moneyhub/step4-investing-basics.html">
+                    <span class="step-progress__number">4</span>
+                    <span class="step-progress__label">Investing</span>
+                </a>
+            </li>
+            <li class="step-progress__step">
+                <a href="/moneyhub/step5-automation.html">
+                    <span class="step-progress__number">5</span>
+                    <span class="step-progress__label">Automation</span>
+                </a>
+            </li>
+        </ol>
+    </nav>
+
+    <!-- Disclaimer -->
+    <div class="container">
+        <aside class="disclaimer">
+            <svg class="disclaimer__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p class="disclaimer__text">
+                I'm not a CPA or licensed financial advisor. This explains how I personally think about money.
+                It's for education only, not tailored advice.
+            </p>
+        </aside>
+    </div>
+
+    <!-- Article Content -->
+    <article class="article">
+        <!-- Article Header -->
+        <header class="article__header">
+            <h1 class="article__title">Step 1 – Know Your Money</h1>
+            <p class="article__subtitle">
+                Get clear on where your money actually goes each month.
+            </p>
+            <div class="article__meta">
+                <span>
+                    <svg style="width: 16px; height: 16px; display: inline;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    10 min read
+                </span>
+                <span>Step 1 of 5</span>
+            </div>
+        </header>
+
+        <!-- Article Body -->
+        <div class="article__content">
+            <h2>Know Where Your Money Actually Goes</h2>
+            <p>
+                Before you talk about investing, retirement, or "what should I do with my 401(k)?", you need one thing first:
+            </p>
+
+            <aside class="callout callout--info">
+                <div class="callout__icon">💡</div>
+                <div class="callout__content">
+                    <h4>You need to understand your current financial reality</h4>
+                    <p>That means knowing:</p>
+                    <ul style="margin-bottom: 0;">
+                        <li>How much money actually comes in</li>
+                        <li>Where it goes every month</li>
+                        <li>How much is necessary to keep life running</li>
+                        <li>How much is fun or extracurricular</li>
+                        <li>How much is just waste</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <p>
+                This is not about shame. It is about visibility and being willing to adjust your habits so more of your money
+                supports the life you want, not just the life you drifted into.
+            </p>
+
+            <h2>The 8 Parts of Knowing Your Money</h2>
+            <p>
+                A clear, honest picture of your income and spending so you can make better decisions going forward.
+            </p>
+
+            <h3>1. Start with your real numbers, not your memory</h3>
+            <p>
+                Your memory will lie to you. Your statements will not. For at least one full month (ideally 2–3), gather:
+            </p>
+            <ul>
+                <li>Bank statements for your main checking account</li>
+                <li>Credit card statements for every card you use</li>
+                <li>Any other accounts you regularly spend from (Venmo, Cash App, etc.)</li>
+            </ul>
+            <p>
+                Get them in one place. If you're comfortable with a spreadsheet, export to CSV and load them there.
+                If not, PDFs or even printed statements work. The point is to see everything together.
+            </p>
+
+            <h3>2. Understand your income and how stable it is</h3>
+            <p>First, map the money coming in. This is the fuel for everything else.</p>
+            <p>List each source of income:</p>
+            <ul>
+                <li>Main job: your net pay (what hits your bank after taxes and deductions)</li>
+                <li>Overtime or side work: anything that shows up regularly enough to matter</li>
+                <li>Other recurring income: rental income, support payments, etc.</li>
+            </ul>
+            <p>For each, note:</p>
+            <ul>
+                <li>Average net amount per month</li>
+                <li>How stable it is (very stable / somewhat variable / highly variable)</li>
+            </ul>
+            <p>You want one simple summary:</p>
+            <blockquote class="principle">
+                <p>"On average, I have about $X of net income each month, and this is how predictable it is."</p>
+            </blockquote>
+            <p>
+                If your income is stable, most of the work will be on the spending side. If your income jumps around,
+                you'll later build more margin into your plan.
+            </p>
+
+            <h3>3. List out every expense for one month</h3>
+            <p>Next, go to the spending side. Pick a recent month (not a weird one like a vacation month, if you can avoid it) and list:</p>
+            <ul>
+                <li>Every transaction</li>
+                <li>The date</li>
+                <li>Description (store, vendor, or biller)</li>
+                <li>Amount</li>
+                <li>Which account it came from</li>
+            </ul>
+            <p>
+                Do this across checking and all credit cards. You want one combined view so you're not tricked by "I don't spend that
+                much on my card" while your account is quietly bleeding from subscriptions, fees, or automatic payments.
+            </p>
+
+            <aside class="callout callout--warning">
+                <div class="callout__icon">⚠️</div>
+                <div class="callout__content">
+                    <p>
+                        This can feel tedious, but this is the part that changes people's perspective the fastest.
+                    </p>
+                </div>
+            </aside>
+
+            <h3>4. Break expenses into needs, fun, and waste</h3>
+            <p>Once everything is listed, you're going to tag each expense. Keep it simple:</p>
+
+            <h4>A. Necessary / Obligations (Needs)</h4>
+            <p>These keep life functioning and you out of trouble:</p>
+            <ul>
+                <li>Housing (rent/mortgage)</li>
+                <li>Utilities (power, water, basic internet)</li>
+                <li>Food (groceries, dining out)</li>
+                <li>Transportation to work</li>
+                <li>Health (insurance, medications)</li>
+                <li>Minimum debt payments</li>
+                <li>Childcare or other essential family costs</li>
+            </ul>
+            <p>Ask: "Would my life fall apart or get significantly worse if I stopped paying this?" If yes, it goes here.</p>
+
+            <h4>B. Fun / Extras</h4>
+            <p>These are things that enhance your life but aren't strictly necessary:</p>
+            <ul>
+                <li>Dining out beyond basic food needs</li>
+                <li>Entertainment (movies, events)</li>
+                <li>Hobbies and leisure activities</li>
+                <li>Non-essential shopping</li>
+                <li>Subscriptions (streaming services, apps)</li>
+                <li>Travel and weekend trips</li>
+            </ul>
+            <p>
+                Ask: "Does this bring me joy or enrich my life in a meaningful way?" If yes, it goes here.
+                The goal is not to delete all of this. The goal is to understand how much of your income is being used to enjoy life now.
+            </p>
+
+            <h4>C. Waste / Unnecessary</h4>
+            <p>These are expenses that don't add value to your life and can often be reduced or eliminated. This is the uncomfortable bucket, but it is where change starts:</p>
+            <ul>
+                <li>Impulse purchases</li>
+                <li>Unused subscriptions or memberships</li>
+                <li>Frequent small purchases (daily coffee runs, snacks)</li>
+                <li>Late fees or penalties</li>
+                <li>Anything that doesn't fit in the first two categories</li>
+                <li>Things you'd honestly say, "If I could click undo on that, I would."</li>
+            </ul>
+            <p>
+                Ask: "Did this genuinely improve my life, or was it just a momentary want?" If no, it goes here.
+                You might be surprised how much lands here in a month. That is good information.
+            </p>
+
+            <h3>5. Summarize: what does your month actually look like?</h3>
+            <p>Now you roll everything up. For that month:</p>
+            <ul>
+                <li>Total Income</li>
+                <li>Total Needs</li>
+                <li>Total Fun</li>
+                <li>Total Waste</li>
+                <li>Total you put toward savings and investing (We'll cover this in Step 2)</li>
+            </ul>
+            <p>Calculate what percentage of your income goes to each category. This gives you a clear picture of where your money is going.</p>
+            <ul>
+                <li>Needs: ___%</li>
+                <li>Fun: ___%</li>
+                <li>Waste: ___%</li>
+                <li>Savings/Investing: ___%</li>
+            </ul>
+            <p>This is your current reality. Not the one you want, not the one you imagine, but the one you're actually living in.</p>
+
+            <h3>6. Reflect and adjust</h3>
+            <p>Now we move from awareness to possibility.</p>
+            <p>Go back through your Fun and Waste categories and ask:</p>
+            <ul>
+                <li>What shows up every month that I wouldn't really miss?</li>
+                <li>Are there subscriptions or memberships I forgot about or don't use?</li>
+                <li>Is eating out or delivery doing more damage than I thought?</li>
+                <li>Are there fees or interest I could eliminate with a few changes?</li>
+            </ul>
+            <p>You're especially looking at <strong>extracurricular and impulse spending:</strong></p>
+            <ul>
+                <li>Nights out that blend together</li>
+                <li>Random Amazon or app store purchases</li>
+                <li>"I was bored, so I bought something" patterns</li>
+            </ul>
+            <p>You do not need to kill all of this. But you do want to see:</p>
+            <blockquote class="principle">
+                <p>"If I cut back 10–20% of this extracurricular spending, how much money could I free up each month for goals that matter more?"</p>
+            </blockquote>
+
+            <h3>7. Stay flexible, but make clear decisions</h3>
+            <p>This step does not require you to go from zero to "no fun, ever." What it does ask is that you:</p>
+            <ul>
+                <li>Know the difference between necessary, fun, and waste</li>
+                <li>Decide what you are willing to adjust in the short term</li>
+                <li>Stay flexible enough to change habits as your goals become clearer</li>
+            </ul>
+            <p>For example:</p>
+            <ul>
+                <li>If you find you're spending $200 a month on dining out, could you cut that to $150 and redirect $50 to savings?</li>
+                <li>If you have subscriptions you never use, can you cancel them and save $30 a month?</li>
+                <li>If impulse purchases are adding up to $100 a month, can you set a rule to limit that to $50?</li>
+                <li>Maybe you commit that every time you catch a wasteful expense (fees, forgotten subs), you redirect that same amount to savings or debt next month</li>
+            </ul>
+            <p>
+                The goal is not perfection. The goal is to <strong>change where your money flows</strong>—slowly pushing more of it away from extracurricular
+                and wasteful spending and toward stability, debt payoff, and investing.
+            </p>
+
+            <h3>8. Make "knowing your numbers" part of your life</h3>
+            <p>Last piece: this is not a one-time exercise you do and forget.</p>
+            <p>You can keep it light:</p>
+            <ul>
+                <li>Once a month: quick review of the last statement, check your Needs/Fun/Waste balance.</li>
+                <li>Every 3 months: deeper check-in—are you actually spending closer to what you said you wanted?</li>
+            </ul>
+
+            <aside class="callout callout--success">
+                <div class="callout__icon">✓</div>
+                <div class="callout__content">
+                    <h4>What Happens Next</h4>
+                    <p>If you understand your current state and stay willing to adjust your extracurricular spending, everything else in your money plan becomes easier:</p>
+                    <ul style="margin-bottom: 0;">
+                        <li>You'll have more clarity on how much you can save or invest</li>
+                        <li>You'll be able to build an emergency fund faster</li>
+                        <li>You'll reduce stress by knowing where your money goes</li>
+                        <li>You'll create space for the life you actually want, not just the life you drifted into</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <p>
+                <strong>Step 1</strong> is about honesty and flexibility. Once you have that, you're ready to move into building your safety net and long-term plan.
+            </p>
+        </div>
+    </article>
+
+    <!-- Step Navigation Footer -->
+    <nav class="step-nav-footer">
+        <a href="/moneyhub/" class="step-nav-footer__prev">
+            <span class="arrow">←</span>
+            <span>
+                <span class="label">Back to</span>
+                <span class="title">Overview</span>
+            </span>
+        </a>
+
+        <a href="/moneyhub/" class="step-nav-footer__home">
+            Money Hub
+        </a>
+
+        <a href="/moneyhub/step2-high-interest-debt.html" class="step-nav-footer__next">
+            <span>
+                <span class="label">Next Step</span>
+                <span class="title">Kill High-Interest Debt</span>
+            </span>
+            <span class="arrow">→</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <!-- Brand -->
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">Tui Alailima</a>
+                    <p class="footer__tagline">
+                        Documenting lessons on money, health, and long-term thinking.
+                    </p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/coach.tui/" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram footer__social-icon"></i>
+                        </a>
+                        <a href="https://github.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github footer__social-icon"></i>
+                        </a>
+                        <a href="https://twitter.com/tuialailima" class="footer__social-link" target="_blank" rel="noopener" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter footer__social-icon"></i>
+                        </a>
+                        <a href="https://codepen.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="CodePen">
+                            <i class="fa-brands fa-codepen footer__social-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Money Hub</h3>
+                    <ul>
+                        <li><a href="/moneyhub/step1-know-your-money.html">Step 1: Know Your Money</a></li>
+                        <li><a href="/moneyhub/step2-high-interest-debt.html">Step 2: Kill Debt</a></li>
+                        <li><a href="/moneyhub/step3-emergency-fund.html">Step 3: Emergency Fund</a></li>
+                        <li><a href="/moneyhub/step4-investing-basics.html">Step 4: Investing</a></li>
+                        <li><a href="/moneyhub/step5-automation.html">Step 5: Automation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Resources</h3>
+                    <ul>
+                        <li><a href="/moneyhub/topics.html">Topics & Guides</a></li>
+                        <li><a href="/moneyhub/qa.html">Q&A</a></li>
+                        <li><a href="/moneyhub/investing/">Investing Hub</a></li>
+                        <li><a href="mailto:tui@tuialailima.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2026 Tui Alailima. All rights reserved.
+                </p>
+                <p class="footer__disclaimer">
+                    I am not a CPA, financial advisor, or attorney. Everything here reflects my personal opinions
+                    on money and investing, not professional advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/resources/js/navigation.js"></script>
+</body>
+</html>

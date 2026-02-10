@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automating Contributions | Investing Hub</title>
+    <meta name="description" content="Set your investing on autopilot - learn how to automate contributions for consistent, long-term wealth building.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/resources/images/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/resources/css/style.css">
+
+    <!-- JavaScript -->
+    <script src="/resources/js/theme.js"></script>
+</head>
+
+<body>
+    <!-- Global Navigation -->
+    <nav class="nav-global">
+        <div class="nav-global__container">
+            <a href="/" class="nav-global__logo">Tui</a>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-global__links">
+                <li><a href="/healthhub/" class="nav-global__link">Health</a></li>
+                <li><a href="/moneyhub/" class="nav-global__link" aria-current="page">Wealth</a></li>
+                <li><a href="/#whatevs" class="nav-global__link">Whatevs</a></li>
+            </ul>
+
+            <!-- Actions -->
+            <div class="nav-global__actions">
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <nav class="nav-mobile">
+        <ul class="nav-mobile__links">
+            <li><a href="/" class="nav-mobile__link">Home</a></li>
+            <li><a href="/healthhub/" class="nav-mobile__link">Health</a></li>
+            <li><a href="/moneyhub/" class="nav-mobile__link" aria-current="page">Wealth</a></li>
+            <li><a href="/#whatevs" class="nav-mobile__link">Whatevs</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/moneyhub/">Money Hub</a></li>
+                <li><a href="/moneyhub/investing/">Investing Hub</a></li>
+                <li aria-current="page">Automating Contributions</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="container">
+        <aside class="disclaimer">
+            <svg class="disclaimer__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p class="disclaimer__text">
+                I'm not a CPA, financial advisor, or attorney. This page explains how I personally automate
+                my investing. It's for education only, not tailored advice.
+            </p>
+        </aside>
+    </div>
+
+    <!-- Article Content -->
+    <article class="article">
+        <!-- Article Header -->
+        <header class="article__header">
+            <h1 class="article__title">Automating Contributions</h1>
+            <p class="article__subtitle">
+                Set It Once, Let It Run
+            </p>
+        </header>
+
+        <!-- Article Body -->
+        <div class="article__content">
+            <p>You've picked your brokerage, chosen your accounts, and decided on a simple portfolio.</p>
+            <p>Now comes the part that makes everything actually work: <strong>automation</strong>.</p>
+            <p>The difference between a plan that works and a plan that sits on paper is whether money actually moves from your paycheck into investments—consistently, automatically, without you having to think about it every week.</p>
+            <p>This page is about how to set that up so the system runs even when you're busy, tired, or not thinking about money at all.</p>
+
+            <h2>1. Why automation is non-negotiable</h2>
+            <p>Manual investing sounds reasonable at first:</p>
+            <ul>
+                <li>"I'll just move money when I have extra"</li>
+                <li>"I'll invest when the market looks good"</li>
+                <li>"I'll remember to log in and buy every month"</li>
+            </ul>
+            <p>In practice, this falls apart fast:</p>
+            <ul>
+                <li>Life gets busy – you forget</li>
+                <li>The market feels "too high" – you hesitate</li>
+                <li>You see something you want to buy – the investing money disappears</li>
+            </ul>
+            <h3>Automation fixes all of this:</h3>
+            <ul>
+                <li>Money moves before you can spend it</li>
+                <li>Investments buy regardless of how the market "feels"</li>
+                <li>The system runs whether you're motivated or not</li>
+            </ul>
+            <p>The people who build wealth aren't the ones with perfect plans. They're the ones whose plans actually run in the background for 20-30 years.</p>
+
+            <h2>2. The three layers of investment automation</h2>
+            <p>You want to automate at three levels:</p>
+            <ol>
+                <li><strong>Payroll contributions</strong> (401(k), 403(b), TSP)</li>
+                <li><strong>Scheduled transfers</strong> (bank to brokerage)</li>
+                <li><strong>Automatic investing</strong> (cash to funds)</li>
+            </ol>
+            <p>Let's break down each one.</p>
+
+            <h2>3. Layer 1: Automating 401(k) contributions</h2>
+            <p>This is the easiest automation to set up because it happens through payroll.</p>
+            <h3>How it works:</h3>
+            <ol>
+                <li>Log into your employer's 401(k) system (Fidelity, Vanguard, Empower, etc.)</li>
+                <li>Choose your contribution percentage or dollar amount</li>
+                <li>Select which funds to invest in (or use a target date fund)</li>
+                <li>Save your settings</li>
+            </ol>
+            <p>From that point forward:</p>
+            <ul>
+                <li>Money comes out of every paycheck before you see it</li>
+                <li>It automatically buys your chosen funds</li>
+                <li>You never have to log in unless you want to make changes</li>
+            </ul>
+            <h3>What percentage to choose:</h3>
+            <ul>
+                <li>Minimum: enough to get the full match (usually 3-6%)</li>
+                <li>Ideal: 10-15% if you can afford it</li>
+                <li>Aggressive: 15-20%+ if you're pushing for early retirement</li>
+            </ul>
+            <p>You can always adjust, but starting with "at least the match" is non-negotiable—that's free money.</p>
+
+            <h2>4. Layer 2: Automating IRA transfers (bank → brokerage)</h2>
+            <p>For Roth IRAs and Traditional IRAs, the money flow is different. You need to move cash from your bank to your brokerage first, then invest it.</p>
+            <h3>Setting up automatic transfers:</h3>
+            <ol>
+                <li>Log into your brokerage (Fidelity, Schwab, Vanguard, etc.)</li>
+                <li>Link your bank account if you haven't already</li>
+                <li>Set up a recurring transfer (ACH pull)</li>
+                <ul>
+                    <li>Example: $500 on the 5th of every month from checking to Roth IRA</li>
+                </ul>
+                <li>Most brokerages let you set this up once and it repeats automatically</li>
+            </ol>
+            <h3>How to decide the amount:</h3>
+            <ul>
+                <li>2024 IRA contribution limit: $7,000/year ($583/month)</li>
+                <li>If you can't do the full $583, start with $200, $300, $400—whatever fits</li>
+                <li>You can always increase it later as income grows or debt drops</li>
+            </ul>
+            <h3>Timing tip:</h3>
+            <ul>
+                <li>Schedule it a few days after your paycheck hits</li>
+                <li>This ensures the money is there and doesn't bounce</li>
+            </ul>
+
+            <h2>5. Layer 3: Automating the actual investing (cash → funds)</h2>
+            <p>Just because money is in your brokerage account doesn't mean it's invested. Cash sitting there earns almost nothing and doesn't grow.</p>
+            <p>You need to set it to automatically buy your funds.</p>
+            <h3>How to set up automatic investing:</h3>
+            <h4>Option 1: Automatic Investment Plans (most brokerages)</h4>
+            <ul>
+                <li>Log into your brokerage</li>
+                <li>Go to "Automatic Investments" or "Recurring Investments"</li>
+                <li>Choose the fund (e.g., FSKAX, VTI, target date fund)</li>
+                <li>Set the dollar amount and frequency (e.g., $500 monthly)</li>
+                <li>Link it to your automatic transfer date</li>
+            </ul>
+            <p>Example flow:</p>
+            <ul>
+                <li>5th of the month: $500 transfers from bank to brokerage</li>
+                <li>6th of the month: $500 automatically buys FSKAX</li>
+            </ul>
+            <h4>Option 2: Manual with reminders (backup plan)</h4>
+            <ul>
+                <li>If your brokerage doesn't have great auto-invest features</li>
+                <li>Set a calendar reminder to log in and buy once a month</li>
+                <li>Not ideal, but better than nothing</li>
+            </ul>
+            <h4>For multiple funds:</h4>
+            <ul>
+                <li>Some brokerages let you split: 60% to Fund A, 30% to Fund B, 10% to Fund C</li>
+                <li>Or you can set up separate automatic investments for each fund</li>
+            </ul>
+
+            <h2>6. Automating taxable brokerage accounts</h2>
+            <p>The process is identical to IRAs:</p>
+            <ol>
+                <li>Set up recurring transfer from bank to taxable brokerage</li>
+                <li>Set up automatic investment into your chosen funds</li>
+            </ol>
+            <p>The only difference is there's no contribution limit, so you can invest as much as you want.</p>
+            <h3>When to prioritize taxable accounts:</h3>
+            <ul>
+                <li>After maxing 401(k) match and Roth IRA</li>
+                <li>If you're saving for goals before age 59½ (early retirement, house, etc.)</li>
+                <li>If you want maximum flexibility</li>
+            </ul>
+
+            <h2>7. The complete automation blueprint</h2>
+            <p>Here's what a fully automated investing system looks like:</p>
+            <h3>Every paycheck (automatic):</h3>
+            <ul>
+                <li>10-15% goes to 401(k) before you see it</li>
+                <li>401(k) automatically buys your chosen funds</li>
+            </ul>
+            <h3>Every month (automatic):</h3>
+            <ul>
+                <li>5th: $500 transfers from checking to Roth IRA</li>
+                <li>6th: $500 automatically invests in FSKAX (or your chosen fund)</li>
+                <li>15th: $300 transfers from checking to taxable brokerage</li>
+                <li>16th: $300 automatically invests in VTI (or your chosen fund)</li>
+            </ul>
+            <h3>Your job:</h3>
+            <ul>
+                <li>Check once every 3-6 months that everything is running smoothly</li>
+                <li>Rebalance once a year if needed</li>
+                <li>Increase contributions when income goes up</li>
+            </ul>
+            <p>That's it. The system runs itself.</p>
+
+            <h2>8. How to handle raises and bonuses</h2>
+            <p>When your income increases, you have a choice:</p>
+            <ul>
+                <li>Let lifestyle inflation eat it all</li>
+                <li>Redirect some or all of it to investing</li>
+            </ul>
+            <h3>My approach:</h3>
+            <ul>
+                <li>Get a raise → immediately increase 401(k) contribution by 1-2%</li>
+                <li>Or increase automatic IRA transfers by $50-100/month</li>
+                <li>This "pay raise to future me" strategy compounds fast</li>
+            </ul>
+            <h3>For bonuses:</h3>
+            <ul>
+                <li>Take 50-75% and make a one-time investment</li>
+                <li>Use the rest for fun or current goals</li>
+                <li>This way you get the dopamine hit now and the long-term benefit later</li>
+            </ul>
+
+            <h2>9. What if I can't afford much right now?</h2>
+            <p>Start small. The habit matters more than the amount.</p>
+            <p>Even if you can only do:</p>
+            <ul>
+                <li>$50/month to a Roth IRA</li>
+                <li>3% to your 401(k)</li>
+            </ul>
+            <p>That's still building the system. Once the automation is in place, increasing it later is just changing a number.</p>
+            <h3>The key is this:</h3>
+            <ul>
+                <li>Automate something, even if it's small</li>
+                <li>Get comfortable seeing money leave your account</li>
+                <li>Let your lifestyle adjust around what's left</li>
+                <li>Increase gradually as income grows or debt clears</li>
+            </ul>
+            <p>People who automate $100/month for 20 years beat people who plan to invest $500/month but never actually do it.</p>
+
+            <h2>10. Common automation mistakes to avoid</h2>
+            <h3>Mistake 1: Automating transfers but not investing</h3>
+            <ul>
+                <li>Money piles up in cash at the brokerage</li>
+                <li>You're not actually invested</li>
+                <li>Fix: Set up automatic fund purchases</li>
+            </ul>
+
+            <h3>Mistake 2: Setting it and literally never checking</h3>
+            <ul>
+                <li>Automation doesn't mean total neglect</li>
+                <li>Check quarterly or semi-annually that it's running</li>
+                <li>Make sure nothing broke or changed</li>
+            </ul>
+
+            <h3>Mistake 3: Overcommitting and then quitting</h3>
+            <ul>
+                <li>You automate $1,000/month but can't sustain it</li>
+                <li>You turn it off and never turn it back on</li>
+                <li>Better to start with $300 and increase gradually</li>
+            </ul>
+
+            <h3>Mistake 4: Not coordinating with paydays</h3>
+            <ul>
+                <li>Transfers hit before your paycheck arrives</li>
+                <li>Overdrafts or bounced transfers</li>
+                <li>Fix: Schedule everything 2-3 days after payday</li>
+            </ul>
+
+            <h2>11. The behavioral edge of automation</h2>
+            <p>Automation removes three major failure points:</p>
+            <ol>
+                <li><strong>Decision fatigue</strong>
+                    <ul>
+                        <li>You don't have to decide "should I invest this month?"</li>
+                        <li>The system decides for you</li>
+                    </ul>
+                </li>
+                <li><strong>Market timing temptation</strong>
+                    <ul>
+                        <li>You can't wait for "better prices" because it happens automatically</li>
+                        <li>You buy whether the market is up or down</li>
+                        <li>This is exactly what you want for long-term wealth building</li>
+                    </ul>
+                </li>
+                <li><strong>Lifestyle creep</strong>
+                    <ul>
+                        <li>Money goes to investments before you can spend it</li>
+                        <li>You build your lifestyle around what's left</li>
+                        <li>This forces you to "pay yourself first" without willpower</li>
+                    </ul>
+                </li>
+            </ol>
+            <p>The people who succeed long-term aren't the ones with the most willpower. They're the ones who built a system that runs regardless of motivation.</p>
+
+            <h2>12. Putting it all together</h2>
+            <p>If you take one thing from this page, it's this:</p>
+            <p><strong>Wealth building is not about perfect decisions. It's about a system that keeps running.</strong></p>
+            <p>Your automated investing system should:</p>
+            <ul>
+                <li>Move money from paychecks to investments without you touching it</li>
+                <li>Buy the same broad index funds every month</li>
+                <li>Keep running whether the market is up 30% or down 30%</li>
+                <li>Require minimal maintenance (quarterly check-ins at most)</li>
+            </ul>
+            <p>Set it up once. Let it run for decades. That's how you build wealth while living your life.</p>
+        </div>
+    </article>
+
+    <!-- Step Navigation Footer -->
+    <nav class="step-nav-footer">
+        <a href="/moneyhub/investing/starter-portfolios.html" class="step-nav-footer__prev">
+            <span class="arrow">←</span>
+            <span>
+                <span class="label">Previous</span>
+                <span class="title">Starter Portfolios</span>
+            </span>
+        </a>
+
+        <a href="/moneyhub/investing/" class="step-nav-footer__home">
+            Investing Hub
+        </a>
+
+        <a href="/moneyhub/investing/staying-invested.html" class="step-nav-footer__next">
+            <span>
+                <span class="label">Next</span>
+                <span class="title">Staying Invested</span>
+            </span>
+            <span class="arrow">→</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <!-- Brand -->
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">Tui Alailima</a>
+                    <p class="footer__tagline">
+                        Documenting lessons on money, health, and long-term thinking.
+                    </p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/coach.tui/" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram footer__social-icon"></i>
+                        </a>
+                        <a href="https://github.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github footer__social-icon"></i>
+                        </a>
+                        <a href="https://twitter.com/tuialailima" class="footer__social-link" target="_blank" rel="noopener" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter footer__social-icon"></i>
+                        </a>
+                        <a href="https://codepen.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="CodePen">
+                            <i class="fa-brands fa-codepen footer__social-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Money Hub</h3>
+                    <ul>
+                        <li><a href="/moneyhub/step1-know-your-money.html">Step 1: Know Your Money</a></li>
+                        <li><a href="/moneyhub/step2-high-interest-debt.html">Step 2: Kill Debt</a></li>
+                        <li><a href="/moneyhub/step3-emergency-fund.html">Step 3: Emergency Fund</a></li>
+                        <li><a href="/moneyhub/step4-investing-basics.html">Step 4: Investing</a></li>
+                        <li><a href="/moneyhub/step5-automation.html">Step 5: Automation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Resources</h3>
+                    <ul>
+                        <li><a href="/moneyhub/topics.html">Topics & Guides</a></li>
+                        <li><a href="/moneyhub/qa.html">Q&A</a></li>
+                        <li><a href="/moneyhub/investing/">Investing Hub</a></li>
+                        <li><a href="mailto:tui@tuialailima.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2026 Tui Alailima. All rights reserved.
+                </p>
+                <p class="footer__disclaimer">
+                    I am not a CPA, financial advisor, or attorney. Everything here reflects my personal opinions
+                    on money and investing, not professional advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/resources/js/navigation.js"></script>
+</body>
+</html>

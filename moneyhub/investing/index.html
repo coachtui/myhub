@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investing Hub | Money Hub</title>
+    <meta name="description" content="Deeper dive on investing: accounts, brokerages, portfolios, and staying invested through volatility.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/resources/images/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/resources/css/style.css">
+
+    <!-- JavaScript (load early for theme) -->
+    <script src="/resources/js/theme.js"></script>
+</head>
+<body>
+    <!-- Global Navigation -->
+    <nav class="nav-global">
+        <div class="nav-global__container">
+            <a href="/" class="nav-global__logo">Tui</a>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-global__links">
+                <li><a href="/healthhub/" class="nav-global__link">Health</a></li>
+                <li><a href="/moneyhub/" class="nav-global__link" aria-current="page">Wealth</a></li>
+                <li><a href="/#whatevs" class="nav-global__link">Whatevs</a></li>
+            </ul>
+
+            <!-- Actions -->
+            <div class="nav-global__actions">
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <nav class="nav-mobile">
+        <ul class="nav-mobile__links">
+            <li><a href="/" class="nav-mobile__link">Home</a></li>
+            <li><a href="/healthhub/" class="nav-mobile__link">Health</a></li>
+            <li><a href="/moneyhub/" class="nav-mobile__link" aria-current="page">Wealth</a></li>
+            <li><a href="/#whatevs" class="nav-mobile__link">Whatevs</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/moneyhub/">Money Hub</a></li>
+                <li aria-current="page">Investing Hub</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="container">
+        <aside class="disclaimer">
+            <svg class="disclaimer__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p class="disclaimer__text">I'm not a CPA, financial advisor, or attorney. This page explains how I personally think about investing. It's for education only, not tailored advice.</p>
+        </aside>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="section-hero">
+        <div class="container">
+            <div class="section-hero__content">
+                <h1 class="section-hero__title">Investing Hub</h1>
+                <p class="section-hero__description">This is where I go deeper on the investing side of the Money Hub – account setup, brokerages, simple long-term portfolios, and how to stay invested through volatility.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="section">
+        <div class="container">
+            <h2 style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--color-text-primary); text-align: center; margin-bottom: var(--space-4);">How I Think About Investing</h2>
+            <p style="text-align: center; color: var(--color-text-secondary); font-size: var(--text-lg); max-width: 600px; margin: 0 auto var(--space-12) auto;">Simple, long-term, and built so you can actually stick with it.</p>
+
+            <div style="max-width: var(--width-content-md); margin: 0 auto;">
+                <p>I'm not trying to out-trade Wall Street. My goal is to own good assets for a long time, in the right accounts, with a plan I can stick to when the market gets ugly. Most of the work is front-loaded: pick where your money lives, what you own, and how often you invest. After that, the job is mostly to keep showing up.</p>
+
+                <p>At a high level, I break investing into a few layers:</p>
+                <ul>
+                    <li><strong>Where it lives:</strong> which brokerage and which account type.</li>
+                    <li><strong>What you own:</strong> simple, diversified funds you understand.</li>
+                    <li><strong>How you fund it:</strong> consistent contributions over years.</li>
+                    <li><strong>How you behave:</strong> staying calm during dips and booms.</li>
+                </ul>
+
+                <aside class="callout callout--info">
+                    <div class="callout__icon">💡</div>
+                    <div class="callout__content">
+                        <h4>Start with the 5-Step Path</h4>
+                        <p>This hub sits under <a href="/moneyhub/step4-investing-basics.html">Step 4</a> of the Money Hub. If you haven't gone through the <a href="/moneyhub/">5-step path</a> yet, I'd start there, then come back here when you're ready to go deeper on the investing side.</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investing Steps -->
+    <section class="section" style="background: var(--color-bg-secondary);">
+        <div class="container">
+            <h2 style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--color-text-primary); text-align: center; margin-bottom: var(--space-4);">Investing – Step by Step</h2>
+            <p style="text-align: center; color: var(--color-text-secondary); font-size: var(--text-lg); max-width: 600px; margin: 0 auto var(--space-12) auto;">These are the specific investing steps I get asked about most often.</p>
+
+            <div class="grid grid--2" style="max-width: var(--width-content-xl); margin: 0 auto;">
+                <!-- Step 1 -->
+                <a href="/moneyhub/investing/brokerage-basics.html" class="card">
+                    <div class="card__header">
+                        <div class="card__icon">🏦</div>
+                    </div>
+                    <h3 class="card__title">Step 1 – Brokerage Basics</h3>
+                    <p class="card__description">What a brokerage actually is, the difference between a bank account and a brokerage account, and how opening one works in practice.</p>
+                    <div class="card__footer">
+                        <span class="card__link">Read more <span class="card__arrow">→</span></span>
+                    </div>
+                </a>
+
+                <!-- Step 2 -->
+                <a href="/moneyhub/investing/account-types.html" class="card">
+                    <div class="card__header">
+                        <div class="card__icon">📊</div>
+                    </div>
+                    <h3 class="card__title">Step 2 – Account Types</h3>
+                    <p class="card__description">A deeper dive into taxable accounts vs Roth IRA vs traditional IRA, and how I decide which to use based on taxes and time horizon.</p>
+                    <div class="card__footer">
+                        <span class="card__link">Read more <span class="card__arrow">→</span></span>
+                    </div>
+                </a>
+
+                <!-- Step 3 -->
+                <a href="/moneyhub/investing/starter-portfolios.html" class="card">
+                    <div class="card__header">
+                        <div class="card__icon">📈</div>
+                    </div>
+                    <h3 class="card__title">Step 3 – Simple Starter Portfolios</h3>
+                    <p class="card__description">How to pick a small number of broad funds or ETFs instead of trying to chase every hot stock. Think "boring but effective" long-term setups.</p>
+                    <div class="card__footer">
+                        <span class="card__link">Read more <span class="card__arrow">→</span></span>
+                    </div>
+                </a>
+
+                <!-- Step 4 -->
+                <a href="/moneyhub/investing/automating-contributions.html" class="card">
+                    <div class="card__header">
+                        <div class="card__icon">⚡</div>
+                    </div>
+                    <h3 class="card__title">Step 4 – Automating Contributions</h3>
+                    <p class="card__description">Setting up automatic transfers and investments so new money flows into your plan without you having to log in every week.</p>
+                    <div class="card__footer">
+                        <span class="card__link">Read more <span class="card__arrow">→</span></span>
+                    </div>
+                </a>
+
+                <!-- Step 5 -->
+                <a href="/moneyhub/investing/staying-invested.html" class="card">
+                    <div class="card__header">
+                        <div class="card__icon">🎯</div>
+                    </div>
+                    <h3 class="card__title">Step 5 – Staying Invested Through Volatility</h3>
+                    <p class="card__description">What I remind myself during market drawdowns or crazy bull runs so I don't panic sell or chase nonsense and blow up a long-term plan.</p>
+                    <div class="card__footer">
+                        <span class="card__link">Read more <span class="card__arrow">→</span></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Topics -->
+    <section class="section">
+        <div class="container">
+            <h2 style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--color-text-primary); text-align: center; margin-bottom: var(--space-4);">Additional Topics</h2>
+            <p style="text-align: center; color: var(--color-text-secondary); font-size: var(--text-lg); max-width: 600px; margin: 0 auto var(--space-12) auto;">Deeper dives you can pair with the steps above.</p>
+
+            <div style="max-width: var(--width-content-md); margin: 0 auto;">
+                <h3>Brokerage Reviews</h3>
+                <p>Brief overviews of popular brokerages (Fidelity, Schwab, Vanguard, Robinhood, etc.) and how I think about choosing between them.</p>
+
+                <h3>Index Funds & ETFs</h3>
+                <p>Why I like broad index funds as a core, how they work, and what I look at when choosing one.</p>
+
+                <h3>Dollar-Cost Averaging vs Lump Sum</h3>
+                <p>How I think about putting in a big chunk of money vs spreading it over time, and why consistency usually beats trying to be perfect.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">Tui Alailima</a>
+                    <p class="footer__tagline">Documenting lessons on money, health, and long-term thinking.</p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/coach.tui/" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram footer__social-icon"></i>
+                        </a>
+                        <a href="https://github.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github footer__social-icon"></i>
+                        </a>
+                        <a href="https://twitter.com/tuialailima" class="footer__social-link" target="_blank" rel="noopener" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter footer__social-icon"></i>
+                        </a>
+                        <a href="https://codepen.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="CodePen">
+                            <i class="fa-brands fa-codepen footer__social-icon"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Money Hub</h3>
+                    <ul>
+                        <li><a href="/moneyhub/step1-know-your-money.html">Step 1: Know Your Money</a></li>
+                        <li><a href="/moneyhub/step2-high-interest-debt.html">Step 2: Kill Debt</a></li>
+                        <li><a href="/moneyhub/step3-emergency-fund.html">Step 3: Emergency Fund</a></li>
+                        <li><a href="/moneyhub/step4-investing-basics.html">Step 4: Investing</a></li>
+                        <li><a href="/moneyhub/step5-automation.html">Step 5: Automation</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Resources</h3>
+                    <ul>
+                        <li><a href="/moneyhub/topics.html">Topics & Guides</a></li>
+                        <li><a href="/moneyhub/qa.html">Q&A</a></li>
+                        <li><a href="/moneyhub/investing/">Investing Hub</a></li>
+                        <li><a href="mailto:tui@tuialailima.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2026 Tui Alailima. All rights reserved.</p>
+                <p class="footer__disclaimer">I am not a CPA, financial advisor, or attorney. Everything here reflects my personal opinions on money and investing, not professional advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/resources/js/navigation.js"></script>
+</body>
+</html>

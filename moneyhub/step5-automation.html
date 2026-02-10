@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 5: Automate Your Money | Money Hub</title>
+    <meta name="description" content="Build a system that runs even when you're not thinking about money.">
+    <link rel="icon" href="/resources/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/resources/css/style.css">
+    <script src="/resources/js/theme.js"></script>
+</head>
+<body>
+    <nav class="nav-global">
+        <div class="nav-global__container">
+            <a href="/" class="nav-global__logo">Tui</a>
+            <ul class="nav-global__links">
+                <li><a href="/healthhub/" class="nav-global__link">Health</a></li>
+                <li><a href="/moneyhub/" class="nav-global__link" aria-current="page">Wealth</a></li>
+                <li><a href="/#whatevs" class="nav-global__link">Whatevs</a></li>
+            </ul>
+            <div class="nav-global__actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <div class="hamburger"><span></span><span></span><span></span><span></span></div>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <nav class="nav-mobile">
+        <ul class="nav-mobile__links">
+            <li><a href="/" class="nav-mobile__link">Home</a></li>
+            <li><a href="/healthhub/" class="nav-mobile__link">Health</a></li>
+            <li><a href="/moneyhub/" class="nav-mobile__link" aria-current="page">Wealth</a></li>
+            <li><a href="/#whatevs" class="nav-mobile__link">Whatevs</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol><li><a href="/">Home</a></li><li><a href="/moneyhub/">Money Hub</a></li><li aria-current="page">Step 5: Automate Your Money</li></ol>
+        </nav>
+    </div>
+    <nav class="step-progress" aria-label="Money Hub steps">
+        <div class="step-progress__bar"><div class="step-progress__fill" style="width: 100%"></div></div>
+        <ol class="step-progress__steps">
+            <li class="step-progress__step completed"><a href="/moneyhub/step1-know-your-money.html"><span class="step-progress__number">1</span><span class="step-progress__label">Know Money</span></a></li>
+            <li class="step-progress__step completed"><a href="/moneyhub/step2-high-interest-debt.html"><span class="step-progress__number">2</span><span class="step-progress__label">Kill Debt</span></a></li>
+            <li class="step-progress__step completed"><a href="/moneyhub/step3-emergency-fund.html"><span class="step-progress__number">3</span><span class="step-progress__label">Emergency Fund</span></a></li>
+            <li class="step-progress__step completed"><a href="/moneyhub/step4-investing-basics.html"><span class="step-progress__number">4</span><span class="step-progress__label">Investing</span></a></li>
+            <li class="step-progress__step active"><a href="/moneyhub/step5-automation.html" aria-current="page"><span class="step-progress__number">5</span><span class="step-progress__label">Automation</span></a></li>
+        </ol>
+    </nav>
+    <div class="container">
+        <aside class="disclaimer">
+            <svg class="disclaimer__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            <p class="disclaimer__text">I'm not a CPA or licensed financial advisor. This explains how I personally think about money. It's for education only, not tailored advice.</p>
+        </aside>
+    </div>
+    <article class="article">
+        <header class="article__header">
+            <h1 class="article__title">Step 5 – Automate Your Money</h1>
+            <p class="article__subtitle">So the System Runs Without You</p>
+            <div class="article__meta">
+                <span><svg style="width: 16px; height: 16px; display: inline;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>6 min read</span>
+                <span>Step 5 of 5</span>
+            </div>
+        </header>
+        <div class="article__content">
+            <p>By this point you've:</p>
+            <ul><li>Mapped your spending and know where your money actually goes</li><li>Identified and attacked high-interest debt</li><li>Started building an emergency fund</li><li>Set up a simple, long-term investing plan</li></ul>
+            <p>The last step is what makes everything stick. You automate as much as possible so your system runs even when you're busy, tired, or not thinking about money at all.</p>
+            <p>Manual money management works for a little while. But long term, life will get in the way. Work ramps up, family needs attention, something random comes up—and "I'll move money this weekend" doesn't happen.</p>
+            <blockquote class="principle"><p>Automation fixes that.</p></blockquote>
+            <h2>Why automation matters</h2>
+            <p>Automation does three things for you:</p>
+            <ol><li><strong>Takes willpower out of the equation</strong> - You don't have to remember to move money around every week. Transfers happen whether you feel motivated or not.</li><li><strong>Makes your priorities happen first</strong> - If saving, debt payoff, and investing are automated, they happen before you have a chance to spend the money on something else.</li><li><strong>Simplifies your financial life</strong> - Instead of juggling a mess of manual moves, you have a repeatable flow: Paycheck arrives → Emergency fund transfer → Debt payment → Investment contribution → Bills paid → Leftover for spending</li></ol>
+            <p>The goal is not to micro-manage every dollar. It's to build a system that quietly does the right thing in the background.</p>
+            <h2>Automate each step of the plan</h2>
+            <p>Let's walk automation across the framework you've already built.</p>
+            <h3>Step 1: Spending (maintenance mode)</h3>
+            <p>You don't need to automate "awareness," but you can:</p>
+            <ul><li>Keep your transaction imports easy: Set up automatic bank syncs in your budgeting app, use a single card for most purchases to simplify tracking</li><li>Set a monthly calendar reminder: Review spending categories, adjust budget as needed</li></ul>
+            <p>You're not trying to track every dollar daily. Just enough structure to course-correct monthly.</p>
+            <h3>Step 2: Emergency Fund</h3>
+            <p>This is one of the easiest and most important things to automate.</p>
+            <aside class="callout callout--success">
+                <div class="callout__icon">💰</div>
+                <div class="callout__content"><h4>Emergency Fund Automation</h4>
+                    <ul style="margin-bottom: 0;"><li>Open a separate high-yield savings account (ideally at a different bank than your main checking).</li><li>Set up an automatic monthly transfer from checking to that savings account.</li><li>Example: On the first Friday after payday, $300 automatically moves to "Emergency Fund."</li></ul>
+                </div>
+            </aside>
+            <p>Treat it like a bill: You don't "see if there's extra." The transfer just happens, then you live on what's left.</p>
+            <h3>Step 3: High-Interest Debt Payoff</h3>
+            <p>You want the system to attack high-interest debt without you manually deciding every time.</p>
+            <p>Basic automation setup:</p>
+            <ol><li>Autopay at least the minimum on all cards and loans - This prevents late fees and credit damage</li><li>Automate extra payments to your highest-interest debt - Pick the card/loan you're targeting (based on the avalanche method) and set a scheduled payment from checking—same day every month—for that extra amount.</li></ol>
+            <h3>Step 4: Investing</h3>
+            <p>The most important parts of investing to automate:</p>
+            <ol><li><strong>401(k) or workplace plan contributions</strong> - Do this via payroll. Choose a percentage of your paycheck (e.g., 10%, 15%). Make sure at minimum you capture any employer match automatically.</li><li><strong>Automatic IRA or Roth IRA contributions</strong> - Set up a monthly ACH pull from your checking account into your IRA/Roth.</li><li><strong>Automatic investing in a taxable brokerage</strong> - A monthly transfer plus an auto-invest into your core index fund(s).</li></ol>
+            <aside class="callout callout--info">
+                <div class="callout__icon">💡</div>
+                <div class="callout__content"><h4>Pay Yourself First</h4>
+                    <p>You don't wait to see "what's left over" to invest. You set your saving/investing amounts up front, automate them, and let your lifestyle settle around what remains in checking.</p>
+                </div>
+            </aside>
+            <h2>Build a simple money flow</h2>
+            <p>You don't need a complex structure. Something like this works well:</p>
+            <ol><li><strong>Paycheck arrives in Checking</strong></li><li>On specific dates (aligned with paydays), the automations fire:<ul><li>Money moves to the emergency fund savings account.</li><li>Money goes to extra debt payments (highest APR first).</li><li>Retirement contributions are already pulled from your paycheck (401(k)).</li><li>Money is pulled into IRA/Roth and taxable accounts and automatically invested.</li></ul></li><li><strong>Bills and spending</strong> are paid from what stays in checking:<ul><li>Auto-bill-pay for rent/mortgage, utilities, phone, etc.</li><li>Card autopay for at least minimums.</li><li>Day-to-day spending is whatever remains after those priorities.</li></ul></li></ol>
+            <p>Visually, it's: <strong>Income → checking → automatic moves to savings/debt/investing → you live on the rest.</strong></p>
+            <h3>Guardrails and sanity checks</h3>
+            <p>Automation doesn't mean you never look at your money. It means you stop wrestling with it every few days.</p>
+            <p>A few guardrails help:</p>
+            <ul><li><strong>Keep a small buffer in checking</strong> - Enough to handle minor timing issues (e.g., autopay hits a day before the paycheck).</li><li><strong>Do a quick monthly or bi-monthly review</strong> - Check that transfers and autopays ran as planned. Look at your emergency fund progress, debt balances, and investment contributions.</li><li><strong>Do a deeper check-in 1-2 times per year</strong> - Confirm your savings rate still matches your goals. Decide if any automated amounts should go up.</li></ul>
+            <aside class="callout callout--warning">
+                <div class="callout__icon">⚡</div>
+                <div class="callout__content"><h4>Start Small, Then Dial It Up</h4>
+                    <p>You don't have to automate massive amounts from day one. Start with small automatic transfers ($50, $100) to your emergency fund or IRA. See how it feels over a month or two. If your cash flow is comfortable, bump them up.</p>
+                </div>
+            </aside>
+            <h2>The point of Step 5</h2>
+            <p>Step 1–4 set the strategy. Step 5 makes it realistic and sustainable.</p>
+            <ul><li>You know where your money goes.</li><li>You build protection with an emergency fund.</li><li>You remove high-interest debt dragging you backward.</li><li>You invest simply and consistently over 20+ years.</li><li>Then you automate as much of that as possible so your system keeps running even when you're not thinking about it.</li></ul>
+            <blockquote class="principle"><p>The goal is not to make money your full-time job. The goal is: Build a simple, automated system that moves you toward your future—while you focus on your work, your health, your family, and your life.</p></blockquote>
+        </div>
+    </article>
+    <nav class="step-nav-footer">
+        <a href="/moneyhub/step4-investing-basics.html" class="step-nav-footer__prev"><span class="arrow">←</span><span><span class="label">Previous</span><span class="title">Investing Basics</span></span></a>
+        <a href="/moneyhub/" class="step-nav-footer__home">Money Hub</a>
+        <a href="/moneyhub/" class="step-nav-footer__next"><span><span class="label">Finish</span><span class="title">Back to Overview</span></span><span class="arrow">→</span></a>
+    </nav>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__brand"><a href="/" class="footer__logo">Tui Alailima</a><p class="footer__tagline">Documenting lessons on money, health, and long-term thinking.</p><div class="footer__social"><a href="https://www.instagram.com/coach.tui/" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram footer__social-icon"></i></a><a href="https://github.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github footer__social-icon"></i></a><a href="https://twitter.com/tuialailima" class="footer__social-link" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-twitter footer__social-icon"></i></a><a href="https://codepen.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="CodePen"><i class="fa-brands fa-codepen footer__social-icon"></i></a></div></div>
+                <div class="footer__links"><h3 class="footer__links-title">Money Hub</h3><ul><li><a href="/moneyhub/step1-know-your-money.html">Step 1: Know Your Money</a></li><li><a href="/moneyhub/step2-high-interest-debt.html">Step 2: Kill Debt</a></li><li><a href="/moneyhub/step3-emergency-fund.html">Step 3: Emergency Fund</a></li><li><a href="/moneyhub/step4-investing-basics.html">Step 4: Investing</a></li><li><a href="/moneyhub/step5-automation.html">Step 5: Automation</a></li></ul></div>
+                <div class="footer__links"><h3 class="footer__links-title">Resources</h3><ul><li><a href="/moneyhub/topics.html">Topics & Guides</a></li><li><a href="/moneyhub/qa.html">Q&A</a></li><li><a href="/moneyhub/investing/">Investing Hub</a></li><li><a href="mailto:tui@tuialailima.com">Contact</a></li></ul></div>
+            </div>
+            <div class="footer__bottom"><p class="footer__copyright">© 2026 Tui Alailima. All rights reserved.</p><p class="footer__disclaimer">I am not a CPA, financial advisor, or attorney. Everything here reflects my personal opinions on money and investing, not professional advice.</p></div>
+        </div>
+    </footer>
+    <script src="/resources/js/navigation.js"></script>
+</body>
+</html>

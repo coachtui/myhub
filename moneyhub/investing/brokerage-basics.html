@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brokerage Basics | Investing Hub</title>
+    <meta name="description" content="Understanding where investments actually live and how to choose the right brokerage for long-term investing.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/resources/images/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/resources/css/style.css">
+
+    <!-- JavaScript -->
+    <script src="/resources/js/theme.js"></script>
+</head>
+
+<body>
+    <!-- Global Navigation -->
+    <nav class="nav-global">
+        <div class="nav-global__container">
+            <a href="/" class="nav-global__logo">Tui</a>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-global__links">
+                <li><a href="/healthhub/" class="nav-global__link">Health</a></li>
+                <li><a href="/moneyhub/" class="nav-global__link" aria-current="page">Wealth</a></li>
+                <li><a href="/#whatevs" class="nav-global__link">Whatevs</a></li>
+            </ul>
+
+            <!-- Actions -->
+            <div class="nav-global__actions">
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <nav class="nav-mobile">
+        <ul class="nav-mobile__links">
+            <li><a href="/" class="nav-mobile__link">Home</a></li>
+            <li><a href="/healthhub/" class="nav-mobile__link">Health</a></li>
+            <li><a href="/moneyhub/" class="nav-mobile__link" aria-current="page">Wealth</a></li>
+            <li><a href="/#whatevs" class="nav-mobile__link">Whatevs</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/moneyhub/">Money Hub</a></li>
+                <li><a href="/moneyhub/investing/">Investing Hub</a></li>
+                <li aria-current="page">Brokerage Basics</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="container">
+        <aside class="disclaimer">
+            <svg class="disclaimer__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p class="disclaimer__text">
+                I'm not a CPA, financial advisor, or attorney. This page explains how I personally think
+                about investing and setting up accounts. It's for education only, not tailored advice.
+            </p>
+        </aside>
+    </div>
+
+    <!-- Article Content -->
+    <article class="article">
+        <!-- Article Header -->
+        <header class="article__header">
+            <h1 class="article__title">Brokerage Basics</h1>
+            <p class="article__subtitle">
+                Where Investments Actually Live
+            </p>
+        </header>
+
+        <!-- Article Body -->
+        <div class="article__content">
+            <p>Most people start with the question, "What should I buy?"</p>
+            <p>But the real first question is, "Where does this money actually live?"</p>
+            <p>That "where" is your brokerage.</p>
+            <p>This page is about what a brokerage is, how the old system used to work, how the modern version works, and how I think about choosing between the big names.</p>
+            <p>I'm not a financial advisor. This is just how I look at it for my own money.</p>
+
+            <h2>1. How people used to invest (pre-internet)</h2>
+            <p>For most of modern stock market history, regular people couldn't just open an app and buy an ETF for free.</p>
+            <h3>Full-service brokers and high commissions</h3>    
+            <p>Historically, trading happened through full-service stockbrokers who were members of an exchange like the New York Stock Exchange (NYSE). The NYSE traces its roots back to the late 1700s and was formally organized in 1817 as the New York Stock & Exchange Board.</p>
+            <p>If you wanted to invest:</p>
+            <ul>
+                <li>You called your broker on the phone or met in person.</li>
+                <li>Told them what you wanted to buy or sell.</li>
+                <li>They placed the order on your behalf on the exchange floor.</li>
+            </ul>       
+            <p>This was expensive:</p>
+            <ul>
+                <li>Trades through full-service brokers commonly cost tens or even hundreds of dollars per trade, which made frequent trading or small trades unrealistic for most individuals.</li>
+                <li>Brokers often earned commissions based on the trade size, creating potential conflicts of interest.</li>
+            </ul>
+            <p>Because of those high costs, investing was:</p>
+            <ul>
+                <li>Something you did occasionally, with larger amounts.</li>
+                <li>Usually accompanied by "advice" from the broker (for better or worse).</li>
+                <li>Mostly out of reach for smaller investors.</li>
+            </ul>
+            
+            <h3>Discount brokers and online trading</h3>
+            <p>In the late 20th century, two big changes hit:</p>   
+            <ol>
+                <li>Discount brokers showed up, charging much lower commissions and offering fewer bells and whistles.</li>
+                <li>Online brokerages arrived with personal computers and the internet, letting people place trades themselves for far less than full-service brokers.</li>
+            </ol>
+            <p>That was the start of what we're used to now: logging in from home, clicking "buy," and managing your own portfolio.</p>
+            
+            <h3>The $0 commission era</h3>
+            <p>Over the last decade, competition between online brokers drove trading costs even lower. Today, the major U.S. brokerages generally offer:</p>
+            <ul>
+                <li>$0 commissions on online trades of U.S. stocks and ETFs, and low per-contract fees for options.</li>
+                <ul>
+                    <li>Fidelity charges $0 for online U.S. equity, ETF, and options trades (options still have a $0.65 per-contract fee).</li>
+                    <li>Schwab similarly advertises $0 commissions on online listed stock, ETF, and options trades with a standard options contract fee.</li>
+                    <li>Vanguard also offers $0 commissions for many online stock and ETF trades, though they may charge an annual brokerage account service fee if certain conditions aren't met.</li>
+                    <li>Robinhood built its entire brand on commission-free trading for stocks, ETFs, and options, with no account opening or maintenance fees.</li>
+                </ul>
+            </ul>
+            <p>Bottom line: today the barrier to entry is way lower. You don't need thousands of dollars or a "guy" on Wall Street. You need:</p>
+            <ul>
+                <li>A brokerage account,</li>
+                <li>A linked bank,</li>
+                <li>And a basic sense of what you're buying and why.</li>
+            </ul>
+
+            <h2>2. What a brokerage is (in simple terms)</h2>
+            <p>When people say "open a brokerage," they're really talking about two things:</p>
+            <ol>
+                <li><strong>The company</strong> – Fidelity, Schwab, Vanguard, Robinhood, SoFi, Interactive Brokers, etc.</li>
+                <li><strong>The account</strong> you open with that company – an individual brokerage account, Roth IRA, traditional IRA, etc.</li>
+            </ol>
+            
+            <h3>Bank vs brokerage</h3>
+            <p>Think of it like this:</p>
+            <ul>
+                <li><strong>Bank account</strong>
+                    <ul>
+                        <li>Main job: hold cash for day-to-day life.</li>
+                        <li>You get: checking, savings, debit card, bill pay.</li>
+                        <li>You don't: directly buy stocks or ETFs here.</li>
+                    </ul>
+                </li>
+                <li><strong>Brokerage account</strong>
+                    <ul>
+                        <li>Main job: hold investments.</li>
+                        <li>You can: deposit cash, then buy stocks, ETFs, mutual funds, bonds, etc.</li>
+                        <li>Cash may earn some interest, but the goal is to own assets, not just sit in cash.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Both matter:</p>
+            <ul>
+                <li>Cash at the bank = short-term, bills, emergencies.</li>
+                <li>Investments at the brokerage = long-term growth and wealth building.</li>
+            </ul>
+            
+            <h3>Taxable vs retirement accounts (high level)</h3>
+            <p>With one brokerage login, you can often have multiple accounts:</p>
+            <ul>
+                <li>Individual taxable brokerage account – fully flexible; you can add/withdraw whenever, but you'll pay taxes on dividends, interest, and capital gains.</li>
+                <li>Roth IRA / traditional IRA – retirement accounts with tax rules and penalties if you pull money out too early.</li>
+                <li>401(k) – usually tied to your employer, not directly opened at your chosen brokerage (though sometimes they're hosted by these same firms).</li>
+            </ul>
+
+            <h2>3. How opening a brokerage usually works</h2>
+            <p>Every platform looks a little different, but the flow is basically:</p>
+            <ol>
+                <li><strong>Choose a brokerage</strong>
+                    <ul>
+                        <li>This is where the reviews below come in.</li>
+                    </ul>
+                </li>
+                <li><strong>Create an online login</strong>
+                    <ul>
+                        <li>Email, password, text verification, etc.</li>
+                    </ul>
+                </li>
+                <li><strong>Fill in your personal details</strong>
+                    <ul>
+                        <li>Name, address, Social Security number / tax ID, employment. This is required by regulation (KYC/AML).</li>
+                    </ul>
+                </li>
+                <li><strong>Answer a few investing questions</strong>
+                    <ul>
+                        <li>Experience, goals, risk tolerance. Mostly for compliance and internal profiling.</li>
+                    </ul>
+                </li>
+                <li><strong>Choose your account type</strong>
+                    <ul>
+                        <li>For first-timers, that's often "individual brokerage account" (taxable).</li>
+                        <li>Later you might add a Roth IRA, traditional IRA, etc. (I suggest a Roth first though)</li>
+                    </ul>
+                </li>
+                <li><strong>Link your bank account</strong>
+                    <ul>
+                        <li>Using instant verification (Plaid, etc.) or small test deposits.</li>
+                    </ul>
+                </li>
+                <li><strong>Move money in</strong>
+                    <ul>
+                        <li>One-time transfer or recurring monthly transfer.</li>
+                    </ul>
+                </li>
+                <li><strong>Choose your investments</strong>
+                    <ul>
+                        <li>This is where your Money Hub steps and future investing pages come in (index funds, ETFs, contribution strategy).</li>
+                    </ul>
+                </li>
+            </ol>
+            <p>You can absolutely do a separate step-by-step with screenshots per brokerage later if you want, but most people relax a lot once they see that it's basically "open account → link bank → transfer → invest."</p>
+
+            <h2>4. Choosing a brokerage – how I think about the big names</h2>
+            <p>There's no single "best" brokerage. There's:</p>
+            <ul>
+                <li>"Best for long-term index investing."</li>
+                <li>"Best simple phone app."</li>
+                <li>"Best if you want a lot of tools."</li>
+                <li>"Best if you want global markets," etc.</li>
+            </ul>
+            <p>Below is a quick rundown of some of the big names I'd feel comfortable pointing people toward. You can adjust this list around your own preferences.</p>
+
+            <h3><a href="https://www.fidelity.com" target="_blank" rel="noopener noreferrer">Fidelity</a></h3>
+            <p>Fidelity is consistently rated as one of the strongest all-around brokers: low costs, robust tools, and strong customer service</p>              
+            <ul>
+                <li>$0 commissions on online U.S. stock, ETF, and options trades (options still have a per-contract fee).</li>
+                <li>No minimum to open a standard retail brokerage account.</li>
+                <li>Very solid research tools, screeners, and educational content.</li>
+                <li>Good app + desktop combo.</li>
+            </ul>
+            <p><strong>Who I'd send here:</strong></p>
+            <p>Someone who wants a long-term home for investing, likes to poke around in research tools, and wants low friction on costs.</p>
+
+            <h3><a href="https://www.schwab.com/open-an-account" target="_blank" rel="noopener noreferrer">Charles Schwab</a></h3>
+            <p>Schwab is another "core" brokerage with a strong reputation, especially for customer service and ease of use.</p>
+            <p><strong>What stands out:</strong></p>
+            <ul>
+                <li>$0 online commissions on U.S.-listed stocks, ETFs, and options, with a standard per-contract fee for options.</li>
+                <li>Schwab One brokerage has no account minimum.</li>
+                <li>Solid in-house ETFs and index funds.</li>
+                <li>Integration with Schwab Bank (checking, ATM fee reimbursements, etc.) if you want everything under one roof.</li>
+            </ul>
+            <p><strong>Who I'd send here:</strong></p>
+            <p>Someone who wants one of the big, stable platforms, especially if they like the idea of linking banking and investing.</p>
+
+            <h3><a href="https://investor.vanguard.com/" target="_blank" rel="noopener noreferrer">Vanguard</a></h3>
+            <p>Vanguard is basically the home base of low-cost index investing. A lot of long-term "buy and hold" people spend their entire investing life here.</p>
+            <p><strong>What stands out:</strong></p>
+            <ul>
+                <li>Founder John Bogle pioneered the first index fund for individual investors in the 1970s.</li>
+                <li>Focus on index funds and ETFs, with some of the lowest expense ratios in the industry.</li>
+                <li>Online stock and ETF trades can be $0 commission, but Vanguard charges an annual service fee (around $25 per brokerage account) unless certain conditions are met or you opt into e-delivery.</li>
+                <li>Many Vanguard mutual funds have minimum investments (for example, $1,000–$3,000).</li>
+            </ul>
+            <p><strong>Who I'd send here:</strong></p>
+            <p>Someone whose plan is essentially "own a few Vanguard index funds for 20–30 years and not mess with it much," and who doesn't care about fancy trading tools.</p>
+
+            <h3><a href="https://robinhood.com/signup/" target="_blank" rel="noopener noreferrer">Robinhood</a></h3>
+            <p>Robinhood popularized the "invest from your phone, $0 commissions, no account minimum" experience.</p>
+            <p><strong>What stands out:</strong></p>
+            <ul>
+                <li>Commission-free trading for stocks, ETFs, and options with no account opening or maintenance fees.</li>
+                <li>Very simple, app-centric interface; feels like a consumer app, not old-school finance software.</li>
+                <li>Extras like fractional shares and extended-hours trading.</li>
+            </ul>
+            <p><strong>Watch-outs:</strong></p>
+            <ul>
+                <li>The app design encourages frequent checking and trading, which can be dangerous behavior-wise for new investors.</li>
+                <li>Fewer traditional research/reporting tools than big full-service brokers.</li>
+            </ul>
+            <p><strong>Who I'd send here (with caveats):</strong></p>
+            <p>Someone who absolutely wants a phone-first experience, but I'd still stress long-term, low-churn investing rather than constant trading.</p>
+
+            <h3><a href="https://www.sofi.com/apply/invest-standard/" target="_blank" rel="noopener noreferrer">SoFi Invest</a></h3>
+            <p>SoFi is a fintech platform that mixes banking, loans, and investing in one ecosystem.</p>
+            <p><strong>What stands out:</strong></p>
+            <ul>
+                <li>Commission-free trading on stocks and ETFs in its Active Investing accounts.</li>
+                <li>Option for automated portfolios (robo-advisor style) and self-directed trading in the same app.</li>
+                <li>Tight integration with SoFi banking, credit, and loans.</li>
+            </ul>
+            <p><strong>Who I'd send here:</strong></p>
+            <p>Someone who likes the idea of a "financial super-app" and wants basic investing without dealing with a more traditional brokerage interface.</p>
+
+            <h3>Interactive Brokers (IBKR)</h3>
+            <p>Interactive Brokers is kind of the opposite of Robinhood in terms of vibe: extremely powerful, global, and feature-rich, but with more complexity.</p>
+            <p><strong>What stands out:</strong></p>
+            <ul>
+                <li>Access to a huge number of global markets and asset classes from a single account.</li>
+                <li>Very competitive margin rates and advanced trading tools.</li>
+                <li>Designed with active traders and professionals in mind.</li>
+            </ul>
+            <p><strong>Who I'd send here:</strong></p>
+            <p>Not beginners. This is for people who already know they want global access, advanced order types, and are comfortable with more complexity.</p>
+
+            <h2>5. How I'd help someone pick one</h2>
+            <p>If someone calls you and says "Which brokerage should I use?" you can keep it simple and map it like this:</p>
+            <ul>
+                <li>"I just want a solid place to invest for the long term." → Fidelity, Schwab, or Vanguard.</li>
+                <li>"I like apps and want something really simple." → Robinhood or SoFi (plus a big warning about not turning it into a casino).</li>
+                <li>"I want to trade lots of stuff in lots of countries." → Interactive Brokers (but this is not where most first-time investors need to start).</li>
+            </ul>
+            <p>Once your brokerage is open and linked to your bank, the hard part isn't the website anymore. The hard part is sticking to a plan.</p>
+
+            <h2>6. Where this fits in your overall Money Hub</h2>
+            <p>In your 5-step path, this page naturally sits under:</p>
+            <ul>
+                <li>Step 4 – Simple Long-Term Investing</li>
+                <li>Investing Hub → Step 1 – Brokerage Basics</li>
+            </ul>
+            <p>You're answering the "plumbing" question first:</p>
+            <ul>
+                <li>What a brokerage is.</li>
+                <li>Why it exists.</li>
+                <li>How to open one.</li>
+                <li>How to choose one that fits.</li>
+            </ul>
+            <p>From here, you can link out to:</p>
+            <ul>
+                <li><strong>Account types</strong> (taxable vs Roth vs 401(k)).</li>
+                <li><strong>Simple starter portfolios</strong> (index funds / ETFs).</li>
+                <li><strong>Automation</strong> (how to set up recurring transfers and investments).</li>
+            </ul>
+        </div>
+    </article>
+
+    <!-- Step Navigation Footer -->
+    <nav class="step-nav-footer">
+        <a href="/moneyhub/investing/" class="step-nav-footer__prev">
+            <span class="arrow">←</span>
+            <span>
+                <span class="label">Back to</span>
+                <span class="title">Investing Hub</span>
+            </span>
+        </a>
+
+        <a href="/moneyhub/investing/" class="step-nav-footer__home">
+            Investing Hub
+        </a>
+
+        <a href="/moneyhub/investing/account-types.html" class="step-nav-footer__next">
+            <span>
+                <span class="label">Next</span>
+                <span class="title">Account Types</span>
+            </span>
+            <span class="arrow">→</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <!-- Brand -->
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">Tui Alailima</a>
+                    <p class="footer__tagline">
+                        Documenting lessons on money, health, and long-term thinking.
+                    </p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/coach.tui/" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram footer__social-icon"></i>
+                        </a>
+                        <a href="https://github.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github footer__social-icon"></i>
+                        </a>
+                        <a href="https://twitter.com/tuialailima" class="footer__social-link" target="_blank" rel="noopener" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter footer__social-icon"></i>
+                        </a>
+                        <a href="https://codepen.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="CodePen">
+                            <i class="fa-brands fa-codepen footer__social-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Money Hub</h3>
+                    <ul>
+                        <li><a href="/moneyhub/step1-know-your-money.html">Step 1: Know Your Money</a></li>
+                        <li><a href="/moneyhub/step2-high-interest-debt.html">Step 2: Kill Debt</a></li>
+                        <li><a href="/moneyhub/step3-emergency-fund.html">Step 3: Emergency Fund</a></li>
+                        <li><a href="/moneyhub/step4-investing-basics.html">Step 4: Investing</a></li>
+                        <li><a href="/moneyhub/step5-automation.html">Step 5: Automation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Resources</h3>
+                    <ul>
+                        <li><a href="/moneyhub/topics.html">Topics & Guides</a></li>
+                        <li><a href="/moneyhub/qa.html">Q&A</a></li>
+                        <li><a href="/moneyhub/investing/">Investing Hub</a></li>
+                        <li><a href="mailto:tui@tuialailima.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2026 Tui Alailima. All rights reserved.
+                </p>
+                <p class="footer__disclaimer">
+                    I am not a CPA, financial advisor, or attorney. Everything here reflects my personal opinions
+                    on money and investing, not professional advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/resources/js/navigation.js"></script>
+</body>
+</html>

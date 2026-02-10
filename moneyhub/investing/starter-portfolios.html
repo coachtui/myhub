@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Starter Portfolios | Investing Hub</title>
+    <meta name="description" content="Boring, broad, and built to last - simple portfolio strategies for long-term wealth building.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/resources/images/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/resources/css/style.css">
+
+    <!-- JavaScript -->
+    <script src="/resources/js/theme.js"></script>
+</head>
+
+<body>
+    <!-- Global Navigation -->
+    <nav class="nav-global">
+        <div class="nav-global__container">
+            <a href="/" class="nav-global__logo">Tui</a>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-global__links">
+                <li><a href="/healthhub/" class="nav-global__link">Health</a></li>
+                <li><a href="/moneyhub/" class="nav-global__link" aria-current="page">Wealth</a></li>
+                <li><a href="/#whatevs" class="nav-global__link">Whatevs</a></li>
+            </ul>
+
+            <!-- Actions -->
+            <div class="nav-global__actions">
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <nav class="nav-mobile">
+        <ul class="nav-mobile__links">
+            <li><a href="/" class="nav-mobile__link">Home</a></li>
+            <li><a href="/healthhub/" class="nav-mobile__link">Health</a></li>
+            <li><a href="/moneyhub/" class="nav-mobile__link" aria-current="page">Wealth</a></li>
+            <li><a href="/#whatevs" class="nav-mobile__link">Whatevs</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/moneyhub/">Money Hub</a></li>
+                <li><a href="/moneyhub/investing/">Investing Hub</a></li>
+                <li aria-current="page">Simple Starter Portfolios</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="container">
+        <aside class="disclaimer">
+            <svg class="disclaimer__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p class="disclaimer__text">
+                I'm not a CPA, financial advisor, or attorney. This page explains how I personally think
+                about building a simple portfolio. It's for education only, not tailored advice.
+            </p>
+        </aside>
+    </div>
+
+    <!-- Article Content -->
+    <article class="article">
+        <!-- Article Header -->
+        <header class="article__header">
+            <h1 class="article__title">Simple Starter Portfolios</h1>
+            <p class="article__subtitle">
+                Boring, Broad, and Built to Last
+            </p>
+        </header>
+
+        <!-- Article Body -->
+        <div class="article__content">
+            <p>Once you've got your brokerage open and you understand account types, the next question is:</p>
+            <p><strong>"What do I actually buy?"</strong></p>
+            <p>This is where most people freeze up. They think they need to pick the perfect stocks, time the market, or build some complex strategy.</p>
+            <p>You don't.</p>
+            <p>The best long-term portfolios are usually the simplest ones: a few broad, low-cost index funds that you can hold for decades without overthinking it.</p>
+
+            <h2>1. The Bogle Philosophy (Keep It Simple)</h2>
+            <p>John Bogle, founder of Vanguard, spent his career hammering home a few core ideas:</p>
+            <ul>
+                <li><strong>Own the whole market</strong> – don't try to pick winners</li>
+                <li><strong>Keep costs low</strong> – fees compound against you</li>
+                <li><strong>Don't trade in and out</strong> – time in the market beats timing the market</li>
+                <li><strong>Stay the course</strong> – through ups, downs, and scary headlines</li>
+            </ul>
+            <p>That's the foundation of what I'm about to show you.</p>
+
+            <h2>2. The Three-Fund Portfolio (Classic Starting Point)</h2>
+            <p>This is one of the most popular "set it and forget it" portfolios. It's simple, diversified, and easy to rebalance.</p>
+            <h3>The Three Funds:</h3>
+            <ol>
+                <li><strong>U.S. Total Stock Market</strong>
+                    <ul>
+                        <li>Examples: VTI (ETF), FSKAX (Fidelity), SWTSX (Schwab), VTSAX (Vanguard)</li>
+                        <li>What it does: owns thousands of U.S. companies across all sizes</li>
+                    </ul>
+                </li>
+                <li><strong>International Total Stock Market</strong>
+                    <ul>
+                        <li>Examples: VXUS (ETF), FTIHX (Fidelity), SWISX (Schwab), VTIAX (Vanguard)</li>
+                        <li>What it does: owns companies outside the U.S. for global diversification</li>
+                    </ul>
+                </li>
+                <li><strong>U.S. Total Bond Market</strong>
+                    <ul>
+                        <li>Examples: BND (ETF), FXNAX (Fidelity), SWAGX (Schwab), VBTLX (Vanguard)</li>
+                        <li>What it does: provides stability and income, less volatile than stocks</li>
+                    </ul>
+                </li>
+            </ol>
+            <h3>Sample allocation (age 30-40, moderate risk):</h3>
+            <ul>
+                <li>60% U.S. Total Stock</li>
+                <li>30% International Stock</li>
+                <li>10% U.S. Bonds</li>
+            </ul>
+            <p>As you get older, you gradually increase bonds to smooth out volatility.</p>
+
+            <h2>3. The Two-Fund Portfolio (Even Simpler)</h2>
+            <p>If three funds feels like too much, you can simplify further:</p>
+            <ol>
+                <li><strong>Total World Stock Market</strong>
+                    <ul>
+                        <li>Examples: VT (ETF), covers U.S. + International in one fund</li>
+                    </ul>
+                </li>
+                <li><strong>Total Bond Market</strong>
+                    <ul>
+                        <li>Same as above: BND, FXNAX, SWAGX, VBTLX</li>
+                    </ul>
+                </li>
+            </ol>
+            <h3>Sample allocation:</h3>
+            <ul>
+                <li>90% Total World Stock</li>
+                <li>10% Bonds</li>
+            </ul>
+            <p>This is as simple as it gets while still being globally diversified.</p>
+
+            <h2>4. The One-Fund Portfolio (Target Date Funds)</h2>
+            <p>If you want maximum simplicity and don't want to rebalance yourself:</p>
+            <h3>Target Date Funds</h3>
+            <ul>
+                <li>Examples: Vanguard Target Retirement 2060 (VTTSX), Fidelity Freedom Index 2060 (FDKLX)</li>
+                <li>Pick the year closest to when you plan to retire</li>
+                <li>The fund automatically adjusts from aggressive (more stocks) to conservative (more bonds) as you age</li>
+            </ul>
+            <h3>Who this works for:</h3>
+            <ul>
+                <li>People who want one fund and never think about it again</li>
+                <li>401(k) investors where target date funds are the simplest option</li>
+            </ul>
+            <h3>Tradeoff:</h3>
+            <ul>
+                <li>Slightly higher expense ratio than building your own (but still low)</li>
+                <li>Less control over exact asset allocation</li>
+            </ul>
+
+            <h2>5. How to adjust based on age and risk tolerance</h2>
+            <p>A common rule of thumb is:</p>
+            <h3>"Your age in bonds"</h3>
+            <ul>
+                <li>Age 30 → 30% bonds, 70% stocks</li>
+                <li>Age 50 → 50% bonds, 50% stocks</li>
+            </ul>
+            <p>But this is a guideline, not a law. You can adjust based on:</p>
+            <ul>
+                <li><strong>Risk tolerance</strong> – can you stomach a 30-40% drop without panic selling?</li>
+                <li><strong>Time horizon</strong> – if retirement is 30+ years away, you can handle more stocks</li>
+                <li><strong>Other income</strong> – pension, rental income, part-time work can allow more stock risk</li>
+            </ul>
+            <h3>My approach:</h3>
+            <ul>
+                <li>Early years (20s-30s): 90-100% stocks, 0-10% bonds</li>
+                <li>Mid-career (40s-50s): 70-80% stocks, 20-30% bonds</li>
+                <li>Near retirement (60s+): 50-60% stocks, 40-50% bonds</li>
+            </ul>
+            <p>The goal is enough growth to build wealth, but enough stability to sleep at night.</p>
+
+            <h2>6. What about individual stocks?</h2>
+            <p>This is where people get tempted to chase "the next Tesla" or "beat the market."</p>
+            <h3>My take:</h3>
+            <ul>
+                <li>Most people (including professionals) don't beat broad index funds over 20+ years</li>
+                <li>Stock picking requires time, research, and emotional discipline most people don't have</li>
+                <li>One bad pick can wipe out years of gains</li>
+            </ul>
+            <h3>If you still want to do it:</h3>
+            <ul>
+                <li>Keep it to 5-10% of your portfolio max</li>
+                <li>Treat it as "fun money" you're willing to lose</li>
+                <li>Build your core with index funds first</li>
+            </ul>
+            <p>The boring index fund approach wins for most people, most of the time.</p>
+
+            <h2>7. Rebalancing (once a year is plenty)</h2>
+            <p>As markets move, your allocation drifts. If stocks surge, you might go from 80/20 to 90/10.</p>
+            <p><strong>Rebalancing means selling some of what went up and buying what lagged to get back to your target.</strong></p>
+            <h3>How often?</h3>
+            <ul>
+                <li><strong>Once a year</strong> is fine for most people</li>
+                <li><strong>Or when you're 5-10% off target</strong></li>
+            </ul>
+            <p>You don't need to obsess over this. Set a calendar reminder, check once a year, adjust if needed, move on.</p>
+
+            <h2>8. Sample portfolios by age/stage</h2>
+            <h3>Age 25-35 (Long time horizon, high risk tolerance):</h3>
+            <ul>
+                <li>90% Total U.S. Stock (VTI)</li>
+                <li>10% International Stock (VXUS)</li>
+                <li>0% Bonds (optional: add 5-10% if you want any stability)</li>
+            </ul>
+
+            <h3>Age 35-50 (Building wealth, moderate risk):</h3>
+            <ul>
+                <li>60% Total U.S. Stock</li>
+                <li>25% International Stock</li>
+                <li>15% Bonds</li>
+            </ul>
+
+            <h3>Age 50-65 (Nearing retirement, lower risk):</h3>
+            <ul>
+                <li>45% Total U.S. Stock</li>
+                <li>20% International Stock</li>
+                <li>35% Bonds</li>
+            </ul>
+
+            <h3>Age 65+ (In retirement, preservation focus):</h3>
+            <ul>
+                <li>35% Total U.S. Stock</li>
+                <li>15% International Stock</li>
+                <li>50% Bonds/Cash</li>
+            </ul>
+            <p>These are starting points, not rules. Adjust based on your situation.</p>
+
+            <h2>9. Expense ratios matter (but don't obsess)</h2>
+            <p>Index funds are already cheap, but some are cheaper than others:</p>
+            <ul>
+                <li><strong>Good:</strong> 0.10% or lower</li>
+                <li><strong>Excellent:</strong> 0.05% or lower</li>
+                <li><strong>Watch out:</strong> anything above 0.50%</li>
+            </ul>
+            <p>The difference between 0.03% and 0.10% is real over decades, but it's not worth paralysis. Pick good, low-cost funds and move on.</p>
+
+            <h2>10. The real edge: staying invested</h2>
+            <p>The hardest part isn't picking the right fund. It's staying invested when:</p>
+            <ul>
+                <li>The market drops 20-30%</li>
+                <li>Your portfolio is down for 2 years straight</li>
+                <li>Your friends are bragging about crypto gains</li>
+                <li>Headlines are screaming about crashes or bubbles</li>
+            </ul>
+            <h3>This is where simple portfolios win:</h3>
+            <ul>
+                <li>They're boring enough that you don't check them constantly</li>
+                <li>They're diversified enough that one bad sector doesn't kill you</li>
+                <li>They're easy enough that you can explain your plan in one sentence</li>
+            </ul>
+            <p>The person who holds a boring three-fund portfolio for 30 years will almost always beat the person who's constantly chasing the next big thing.</p>
+
+            <h2>11. How to actually implement this</h2>
+            <ol>
+                <li><strong>Pick your portfolio approach</strong>
+                    <ul>
+                        <li>Three-fund, two-fund, or target date fund</li>
+                    </ul>
+                </li>
+                <li><strong>Choose your specific funds based on your brokerage</strong>
+                    <ul>
+                        <li>Fidelity → use Fidelity index funds (FSKAX, FTIHX, etc.)</li>
+                        <li>Schwab → use Schwab index funds (SWTSX, SWISX, etc.)</li>
+                        <li>Vanguard → use Vanguard index funds (VTSAX, VTIAX, etc.)</li>
+                        <li>Any brokerage → use ETFs (VTI, VXUS, BND) for flexibility</li>
+                    </ul>
+                </li>
+                <li><strong>Set up automatic monthly contributions</strong>
+                    <ul>
+                        <li>Same day every month, same funds</li>
+                        <li>Let the system run on autopilot</li>
+                    </ul>
+                </li>
+                <li><strong>Check in once a year</strong>
+                    <ul>
+                        <li>Rebalance if you're way off target</li>
+                        <li>Otherwise, leave it alone</li>
+                    </ul>
+                </li>
+            </ol>
+            <p>That's it. Simple, repeatable, sustainable.</p>
+        </div>
+    </article>
+
+    <!-- Step Navigation Footer -->
+    <nav class="step-nav-footer">
+        <a href="/moneyhub/investing/account-types.html" class="step-nav-footer__prev">
+            <span class="arrow">←</span>
+            <span>
+                <span class="label">Previous</span>
+                <span class="title">Account Types</span>
+            </span>
+        </a>
+
+        <a href="/moneyhub/investing/" class="step-nav-footer__home">
+            Investing Hub
+        </a>
+
+        <a href="/moneyhub/investing/automating-contributions.html" class="step-nav-footer__next">
+            <span>
+                <span class="label">Next</span>
+                <span class="title">Automating Contributions</span>
+            </span>
+            <span class="arrow">→</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <!-- Brand -->
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">Tui Alailima</a>
+                    <p class="footer__tagline">
+                        Documenting lessons on money, health, and long-term thinking.
+                    </p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/coach.tui/" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram footer__social-icon"></i>
+                        </a>
+                        <a href="https://github.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github footer__social-icon"></i>
+                        </a>
+                        <a href="https://twitter.com/tuialailima" class="footer__social-link" target="_blank" rel="noopener" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter footer__social-icon"></i>
+                        </a>
+                        <a href="https://codepen.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="CodePen">
+                            <i class="fa-brands fa-codepen footer__social-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Money Hub</h3>
+                    <ul>
+                        <li><a href="/moneyhub/step1-know-your-money.html">Step 1: Know Your Money</a></li>
+                        <li><a href="/moneyhub/step2-high-interest-debt.html">Step 2: Kill Debt</a></li>
+                        <li><a href="/moneyhub/step3-emergency-fund.html">Step 3: Emergency Fund</a></li>
+                        <li><a href="/moneyhub/step4-investing-basics.html">Step 4: Investing</a></li>
+                        <li><a href="/moneyhub/step5-automation.html">Step 5: Automation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer__links">
+                    <h3 class="footer__links-title">Resources</h3>
+                    <ul>
+                        <li><a href="/moneyhub/topics.html">Topics & Guides</a></li>
+                        <li><a href="/moneyhub/qa.html">Q&A</a></li>
+                        <li><a href="/moneyhub/investing/">Investing Hub</a></li>
+                        <li><a href="mailto:tui@tuialailima.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2026 Tui Alailima. All rights reserved.
+                </p>
+                <p class="footer__disclaimer">
+                    I am not a CPA, financial advisor, or attorney. Everything here reflects my personal opinions
+                    on money and investing, not professional advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/resources/js/navigation.js"></script>
+</body>
+</html>

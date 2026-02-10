@@ -1,0 +1,226 @@
+/**
+ * MODERN UI/UX DESIGN SYSTEM
+ * Main stylesheet - imports all modules
+ *
+ * Architecture:
+ * 1. Design Tokens (variables)
+ * 2. Reset & Base
+ * 3. Utilities
+ * 4. Components
+ * 5. Pages
+ */
+
+/* ============================================
+   1. FOUNDATION
+   ============================================ */
+@import url('tokens.css');
+@import url('reset.css');
+@import url('base.css');
+@import url('utilities.css');
+
+/* ============================================
+   2. COMPONENTS
+   ============================================ */
+@import url('components/navigation.css');
+@import url('components/button.css');
+@import url('components/card.css');
+@import url('components/hero.css');
+@import url('components/callout.css');
+@import url('components/step-progress.css');
+@import url('components/footer.css');
+
+/* ============================================
+   3. PAGES (Optional page-specific styles)
+   ============================================ */
+/* @import url('pages/home.css'); */
+/* @import url('pages/hub.css'); */
+/* @import url('pages/article.css'); */
+
+/* ============================================
+   4. ADDITIONAL STYLES
+   ============================================ */
+
+/* Article/Content Wrapper */
+.article {
+  max-width: var(--width-content-md);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .article {
+    padding: var(--space-12) var(--space-4);
+  }
+}
+
+.article__header {
+  margin-bottom: var(--space-12);
+  text-align: center;
+}
+
+.article__title {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-4);
+}
+
+.article__subtitle {
+  font-size: var(--text-xl);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-6);
+}
+
+.article__meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* Content Typography */
+.article__content h2 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-tight);
+  font-family: var(--font-display);
+}
+
+.article__content h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+  line-height: var(--leading-snug);
+}
+
+.article__content p {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-6);
+}
+
+.article__content strong {
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+}
+
+/* Enhanced Lists */
+.article__content ul,
+.article__content ol {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: var(--space-6);
+}
+
+.article__content li {
+  position: relative;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-3);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.article__content ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent-primary);
+  font-weight: var(--weight-bold);
+}
+
+.article__content ol {
+  counter-reset: list-counter;
+}
+
+.article__content ol li::before {
+  counter-increment: list-counter;
+  content: counter(list-counter) ".";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent-primary);
+  font-weight: var(--weight-semibold);
+}
+
+/* Nested lists */
+.article__content li ul,
+.article__content li ol {
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+/* Links in content */
+.article__content a {
+  color: var(--color-accent-primary);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color var(--transition-base);
+}
+
+.article__content a:hover {
+  text-decoration-color: var(--color-accent-primary);
+}
+
+/* About Section (for home page) */
+.about-section {
+  padding: var(--space-16) 0;
+  background: var(--color-bg-secondary);
+}
+
+.about-section__content {
+  max-width: var(--width-content-lg);
+  margin: 0 auto;
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .about-section__content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+}
+
+.about-section__text h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.about-section__text p {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.about-section__image img {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Utility Classes for Legacy Support */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
