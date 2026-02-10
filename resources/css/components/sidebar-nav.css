@@ -46,7 +46,7 @@
   display: flex;
   position: fixed;
   top: 90px; /* Below global nav */
-  left: var(--space-4);
+  left: 244px; /* At right edge of sidebar when open */
   width: 44px;
   height: 44px;
   align-items: center;
@@ -59,7 +59,7 @@
   z-index: 21; /* Above sidebar */
   font-size: var(--text-lg);
   font-weight: var(--weight-medium);
-  transition: all var(--transition-base);
+  transition: left var(--transition-base), all var(--transition-base);
   box-shadow: var(--shadow-sm);
 }
 
@@ -241,6 +241,7 @@
 
   .sidebar-nav__toggle {
     top: 76px; /* Adjusted for mobile nav */
+    left: var(--space-4); /* Always left edge on mobile */
   }
 }
 
@@ -254,13 +255,18 @@
     transform: translateX(0);
   }
 
+  /* Toggle button at right edge when sidebar open */
+  .sidebar-nav__toggle {
+    left: 244px;
+  }
+
   /* Collapsed state on desktop */
   .sidebar-nav--collapsed {
     transform: translateX(-100%);
   }
 
-  /* Adjust toggle button position when sidebar collapsed */
-  .sidebar-nav--collapsed .sidebar-nav__toggle {
+  /* Move toggle button to left when sidebar collapsed */
+  .sidebar-nav--collapsed ~ .sidebar-nav__toggle {
     left: var(--space-4);
   }
 
