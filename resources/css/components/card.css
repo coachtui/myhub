@@ -266,3 +266,21 @@ a.card .card__title {
 a.card:hover .card__title {
   color: var(--color-accent-primary);
 }
+
+/* Inactive Card (coming soon, disabled) */
+.card--inactive {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.card--inactive:hover {
+  transform: none;
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+
+.card__link--disabled {
+  color: var(--color-text-tertiary);
+  cursor: not-allowed;
+}
