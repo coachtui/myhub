@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPY Weekly: CPI 4.2%, VIX at 19, FOMC on Deck — Caution Warranted | Gojo Stock Takes</title>
+    <meta name="description" content="SPY pulls back to $742 from its $759.57 June ATH as May CPI reaccelerates to 4.2%. VIX at 19.25 flashes caution ahead of Warsh's first FOMC press conference June 16-17.">
+    <link rel="icon" href="/resources/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/resources/css/style.css">
+    <script src="/resources/js/theme.js"></script>
+    <style>
+        .gojo-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--text-sm, 0.875rem);
+            margin: var(--space-4, 1.5rem) 0;
+        }
+        .gojo-table th {
+            text-align: left;
+            padding: 0.6rem 0.8rem;
+            background: var(--color-surface-secondary, #f4f4f5);
+            font-weight: 600;
+            font-size: var(--text-xs, 0.75rem);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-secondary, #71717a);
+            border-bottom: 2px solid var(--color-border, #e4e4e7);
+        }
+        .gojo-table td {
+            padding: 0.6rem 0.8rem;
+            border-bottom: 1px solid var(--color-border, #e4e4e7);
+            color: var(--color-text-primary, #18181b);
+        }
+        .gojo-table tr:last-child td { border-bottom: none; }
+        .gojo-table tbody tr:hover { background: var(--color-surface-secondary, #f9f9f9); }
+        .badge {
+            display: inline-block;
+            padding: 0.2em 0.6em;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+        .badge--bull { background: #dcfce7; color: #16a34a; }
+        .badge--bear { background: #fee2e2; color: #dc2626; }
+        .badge--neutral { background: #fef9c3; color: #854d0e; }
+        .badge--fear { background: #fed7aa; color: #c2410c; }
+        .badge--greed { background: #dcfce7; color: #15803d; }
+        .callout {
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid;
+        }
+        .callout--warning {
+            background: #fff7ed;
+            border-color: #f97316;
+            color: #7c2d12;
+        }
+        .callout--warning strong { color: #c2410c; }
+        .callout--bear {
+            background: #fef2f2;
+            border-color: #ef4444;
+            color: #7f1d1d;
+        }
+        .vix-scale { list-style: none; padding: 0; margin: 1rem 0; }
+        .vix-scale li {
+            padding: 0.45rem 0.75rem;
+            margin-bottom: 0.35rem;
+            border-radius: 5px;
+            font-size: var(--text-sm, 0.875rem);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .vix-scale li.current { font-weight: 700; outline: 2px solid #f97316; }
+        .vix-calm { background: #dcfce7; color: #15803d; }
+        .vix-normal { background: #fef9c3; color: #854d0e; }
+        .vix-elevated { background: #fed7aa; color: #c2410c; }
+        .vix-crisis { background: #fee2e2; color: #dc2626; }
+    </style>
+</head>
+<body>
+    <nav class="nav-global">
+        <div class="nav-global__container">
+            <a href="/" class="nav-global__logo">Tui</a>
+            <ul class="nav-global__links">
+                <li><a href="/gojo/" class="nav-global__link" aria-current="page">Gojo</a></li>
+                <li><a href="/moneyhub/" class="nav-global__link">Wealth</a></li>
+                <li><a href="/healthhub/" class="nav-global__link">Health</a></li>
+                <li><a href="/#build" class="nav-global__link">Build</a></li>
+            </ul>
+            <div class="nav-global__actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <div class="hamburger"><span></span><span></span><span></span><span></span></div>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <nav class="nav-mobile">
+        <ul class="nav-mobile__links">
+            <li><a href="/" class="nav-mobile__link">Home</a></li>
+            <li><a href="/gojo/" class="nav-mobile__link" aria-current="page">Gojo</a></li>
+            <li><a href="/moneyhub/" class="nav-mobile__link">Wealth</a></li>
+            <li><a href="/healthhub/" class="nav-mobile__link">Health</a></li>
+            <li><a href="/#build" class="nav-mobile__link">Build</a></li>
+        </ul>
+    </nav>
+    <div class="page-layout">
+        <button class="sidebar-nav__toggle" data-sidebar-toggle aria-expanded="false"><span></span></button>
+        <aside class="sidebar-nav">
+            <div class="sidebar-nav__section">
+                <h3 class="sidebar-nav__heading">Gojo</h3>
+                <ul class="sidebar-nav__items">
+                    <li class="sidebar-nav__item"><a href="/gojo/" class="sidebar-nav__link">Overview</a></li>
+                    <li class="sidebar-nav__item"><a href="/gojo/stocks/" class="sidebar-nav__link">&#x1F4C8; Stock Takes</a></li>
+                    <li class="sidebar-nav__item"><a href="/gojo/research/" class="sidebar-nav__link">&#x1F52C; Research</a></li>
+                    <li class="sidebar-nav__item"><a href="/gojo/notes/" class="sidebar-nav__link">&#x1F4DD; Journal</a></li>
+                </ul>
+            </div>
+        </aside>
+        <main class="page-content">
+            <div class="container">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/gojo/">Gojo</a></li>
+                        <li><a href="/gojo/stocks/">Stock Takes</a></li>
+                        <li aria-current="page">SPY Market Review</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="container">
+                <aside class="disclaimer">
+                    <svg class="disclaimer__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                    <p class="disclaimer__text">AI-generated analysis only. Not financial advice. Do your own research.</p>
+                </aside>
+            </div>
+            <article class="article">
+                <header class="article__header">
+                    <div style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-2);">June 15, 2026 · SPY · Gojo</div>
+                    <h1 class="article__title">SPY Weekly: CPI 4.2%, VIX at 19 — FOMC Week Demands Caution</h1>
+                    <p class="article__subtitle">SPY retreats to $742 from its $759.57 all-time high as May inflation reaccelerates; Kevin Warsh's debut SEP and dot plot on June 17 are the week's defining catalyst.</p>
+                </header>
+                <div class="article__content">
+
+                    <h2>Price Action and Technical Structure</h2>
+                    <p>SPY closed Thursday June 12 at <strong>$742.36</strong>, roughly 2.3% below its June 2 all-time closing high of $759.57, as risk-off sentiment swept back into markets on rising bond yields (10-year at 4.47–4.53%) and a hotter-than-expected May CPI print. The week's low of $734.54 (June 11) held as an intraday support test, and SPY recovered into the close — but the ATH rejection at $760 is technically meaningful. The 14-day RSI at <strong>~67.5</strong> remains elevated (overbought territory begins at 70), and the MACD is bullish on the short-term timeframe but showing a sell signal on the 3-month MACD, flagging decelerating momentum. Both moving averages remain firmly below price, keeping the macro uptrend intact despite the near-term air pocket.</p>
+
+                    <table class="gojo-table">
+                        <thead>
+                            <tr>
+                                <th>Indicator</th>
+                                <th>Reading</th>
+                                <th>Signal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SPY Price (June 12 close)</td>
+                                <td><strong>$742.36</strong></td>
+                                <td><span class="badge badge--neutral">Pullback from ATH</span></td>
+                            </tr>
+                            <tr>
+                                <td>RSI (14-day)</td>
+                                <td>~67.5</td>
+                                <td><span class="badge badge--neutral">Elevated — Watch 70</span></td>
+                            </tr>
+                            <tr>
+                                <td>MACD</td>
+                                <td>Bullish (ST) / Sell signal (3M)</td>
+                                <td><span class="badge badge--neutral">Mixed</span></td>
+                            </tr>
+                            <tr>
+                                <td>50-Day MA</td>
+                                <td>$711.90</td>
+                                <td><span class="badge badge--bull">Buy — Price +4.2% above</span></td>
+                            </tr>
+                            <tr>
+                                <td>200-Day MA</td>
+                                <td>$683.44</td>
+                                <td><span class="badge badge--bull">Buy — Price +8.6% above</span></td>
+                            </tr>
+                            <tr>
+                                <td>Support 1 (near-term)</td>
+                                <td>$730–$733</td>
+                                <td>Key intraday level — watch on FOMC day</td>
+                            </tr>
+                            <tr>
+                                <td>Support 2 (50-day MA)</td>
+                                <td>$711.90</td>
+                                <td>Bull/bear line for the intermediate trend</td>
+                            </tr>
+                            <tr>
+                                <td>Resistance (ATH zone)</td>
+                                <td>$759–$760</td>
+                                <td>Rejected once — needs a clean break to resume</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Macro Snapshot</h2>
+                    <p>The macro story this week is uncomfortable: the US is running 4.2% headline CPI on the back of an energy shock driven by the Iran conflict (energy prices +23.5% YoY), while the labor market holds firm at 4.3% unemployment and GDP growth came in at +1.6–2.0% annualized for Q1 2026. The Fed is caught in a box — inflation well above target, but growth not strong enough to warrant aggressive tightening. New Fed Chair Kevin Warsh inherits the mess at the June 16-17 FOMC, where 99.5% of market participants expect no rate change. The real read is in Wednesday's dot plot and press conference.</p>
+
+                    <table class="gojo-table">
+                        <thead>
+                            <tr>
+                                <th>Indicator</th>
+                                <th>Latest Reading</th>
+                                <th>Trend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GDP Growth (Q1 2026)</td>
+                                <td>+1.6–2.0% annualized</td>
+                                <td><span class="badge badge--neutral">Slowing</span></td>
+                            </tr>
+                            <tr>
+                                <td>Headline CPI (May 2026)</td>
+                                <td>4.2% YoY (+0.5% MoM)</td>
+                                <td><span class="badge badge--bear">Reaccelerating ↑ from 3.8%</span></td>
+                            </tr>
+                            <tr>
+                                <td>Core CPI (May 2026)</td>
+                                <td>2.9% YoY</td>
+                                <td><span class="badge badge--bear">3rd consecutive beat ↑</span></td>
+                            </tr>
+                            <tr>
+                                <td>PCE (Annual Estimate)</td>
+                                <td>~2.9%</td>
+                                <td><span class="badge badge--bear">Above 2% target</span></td>
+                            </tr>
+                            <tr>
+                                <td>Unemployment (May 2026)</td>
+                                <td>4.3%</td>
+                                <td><span class="badge badge--neutral">Stable — Sahm Rule 0.10</span></td>
+                            </tr>
+                            <tr>
+                                <td>Fed Funds Rate</td>
+                                <td>3.50–3.75%</td>
+                                <td><span class="badge badge--neutral">On hold — June 16-17 FOMC</span></td>
+                            </tr>
+                            <tr>
+                                <td>Energy (Iran Conflict)</td>
+                                <td>+23.5% YoY</td>
+                                <td><span class="badge badge--bear">Primary inflation driver</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>VIX — The Fear Gauge</h2>
+                    <p>The VIX closed at <strong>19.25</strong> on June 12 (down slightly from 19.44 on June 11), hovering just below the psychologically important 20 threshold. This is not calm — the VIX spent most of May in the 15–17 range before the CPI shock and bond yield spike this week pushed it back toward the 20 line. For context, the VIX briefly surged above 30 in mid-March as Iran tensions first escalated and oil prices spiked. We've recovered from that panic, but we haven't returned to complacency either. A VIX closing above 20 on FOMC week would be a genuine warning shot for the bulls.</p>
+
+                    <ul class="vix-scale">
+                        <li class="vix-calm"><span>Below 15</span> <span>Calm — Low Volatility / Complacency</span></li>
+                        <li class="vix-normal"><span>15–20</span> <span>Normal — Moderate Caution</span></li>
+                        <li class="vix-elevated current"><span>19.25 ← WE ARE HERE</span> <span>Elevated — Approaching Warning Zone</span></li>
+                        <li class="vix-crisis"><span>Above 30</span> <span>Crisis — Panic / Extreme Fear (March 2026 spike)</span></li>
+                    </ul>
+
+                    <div class="callout callout--warning">
+                        <strong>⚠ VIX Watch:</strong> At 19.25, the VIX is within 0.75 points of the 20 threshold — the line that historically marks the shift from "elevated caution" to "institutional hedging mode." With FOMC on Tuesday-Wednesday and bond yields at 16-month highs (4.53%), any hawkish signal from Warsh could push VIX through 20 and trigger forced selling. Monitor closely.
+                    </div>
+
+                    <h2>Fear &amp; Greed Index — Sentiment Read</h2>
+                    <p>The CNN Fear &amp; Greed Index closed the week at <strong>34 — Fear</strong>, a sharp reversal from the Greed territory (~65) the index occupied in April when the market was pricing in Fed cuts and AI momentum was unchallenged. The reacceleration of CPI, the Iran conflict's energy shock, and this week's bond yield spike have collectively drained bullish sentiment. At 34, the index is pricing genuine fear — but not yet Extreme Fear (below 25). The composite reading is consistent with a market that is worried but not panicking.</p>
+
+                    <table class="gojo-table">
+                        <thead>
+                            <tr>
+                                <th>Sub-Index</th>
+                                <th>Signal</th>
+                                <th>Rationale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Market Momentum (SPX vs 125-day MA)</td>
+                                <td><span class="badge badge--neutral">Neutral</span></td>
+                                <td>SPY above 125-day MA but momentum decelerating from ATH</td>
+                            </tr>
+                            <tr>
+                                <td>Stock Price Strength (52-wk highs vs lows)</td>
+                                <td><span class="badge badge--fear">Fear</span></td>
+                                <td>New lows increasing after ATH rejection; narrow breadth</td>
+                            </tr>
+                            <tr>
+                                <td>Stock Price Breadth (McClellan Vol. Osc.)</td>
+                                <td><span class="badge badge--fear">Fear</span></td>
+                                <td>AI/energy concentration — broad market lagging</td>
+                            </tr>
+                            <tr>
+                                <td>Put/Call Options (5-day MA)</td>
+                                <td><span class="badge badge--fear">Fear</span></td>
+                                <td>Elevated put buying as Iran and FOMC hedges accumulate</td>
+                            </tr>
+                            <tr>
+                                <td>Market Volatility (VIX inverted)</td>
+                                <td><span class="badge badge--fear">Fear</span></td>
+                                <td>VIX at 19.25 — approaching 20-line danger zone</td>
+                            </tr>
+                            <tr>
+                                <td>Junk Bond Demand (HYG vs LQD)</td>
+                                <td><span class="badge badge--fear">Fear</span></td>
+                                <td>Credit spreads widening on energy inflation and rate risk</td>
+                            </tr>
+                            <tr>
+                                <td>Safe Haven Demand (TLT vs SPX 20-day)</td>
+                                <td><span class="badge badge--neutral">Neutral</span></td>
+                                <td>Bonds competitive at 4.47–4.53% yield vs equity risk premium</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Key divergence:</strong> Market Momentum is still neutral (SPY is above its 125-day MA), which is the only sub-index preventing a deeper Fear reading. If SPY breaks below its 125-day MA (~$700 area), the composite score would likely drop into the 20s (Extreme Fear). The 5/7 Fear sub-indexes with 2 neutral is consistent with the 34 composite score — and tells you the bulls are hanging on by the technical trend, not by macro fundamentals.</p>
+
+                    <h2>Risk Matrix</h2>
+
+                    <table class="gojo-table">
+                        <thead>
+                            <tr>
+                                <th>Risk</th>
+                                <th>Probability</th>
+                                <th>Market Impact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>FOMC Hawkish Surprise (Warsh dot plot signals hike or fewer cuts)</td>
+                                <td><span class="badge badge--neutral">Medium (25–35%)</span></td>
+                                <td><span class="badge badge--bear">High — VIX spike, SPY -3 to -5%</span></td>
+                            </tr>
+                            <tr>
+                                <td>Iran Conflict Escalation (oil +20%)</td>
+                                <td><span class="badge badge--neutral">Medium (20–30%)</span></td>
+                                <td><span class="badge badge--bear">High — Energy shock, inflation re-spike</span></td>
+                            </tr>
+                            <tr>
+                                <td>Retail Sales Miss (June 17) — consumer slowdown</td>
+                                <td><span class="badge badge--neutral">Medium (30%)</span></td>
+                                <td><span class="badge badge--neutral">Medium — growth scare amplifier</span></td>
+                            </tr>
+                            <tr>
+                                <td>Bond Yield Breakout (10-yr &gt;4.75%)</td>
+                                <td><span class="badge badge--neutral">Medium (25%)</span></td>
+                                <td><span class="badge badge--bear">High — Equity risk premium collapse</span></td>
+                            </tr>
+                            <tr>
+                                <td>Earnings Guidance Cut (FedEx, Micron, Accenture)</td>
+                                <td><span class="badge badge--neutral">Low-Medium (20%)</span></td>
+                                <td><span class="badge badge--neutral">Medium — Sector-specific, contagion risk</span></td>
+                            </tr>
+                            <tr>
+                                <td>AI Bubble Repricing — infrastructure capex disappointment</td>
+                                <td><span class="badge badge--bull">Low (10–15%)</span></td>
+                                <td><span class="badge badge--bear">Very High — Market leadership at risk</span></td>
+                            </tr>
+                            <tr>
+                                <td>FOMC Dovish (Warsh signals cuts H2 2026)</td>
+                                <td><span class="badge badge--neutral">Low-Medium (20%)</span></td>
+                                <td><span class="badge badge--bull">High Bullish — SPY +2 to +4%</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>Recession probability remains contained. Yield-curve models put recession risk below 15% over the next 12 months, and the Sahm Rule indicator at 0.10 is far below its 0.50 recession trigger. Polymarket's market-implied odds price an 84.5% chance of <em>no</em> recession by end-2026. However, if CPI continues accelerating past 4.5% and the Fed is forced to hike into slowing growth, that recession probability could reprice quickly — watch the July CPI release (July 14) as the next major data checkpoint.</p>
+
+                    <h2>Directional Thesis</h2>
+                    <p><strong>Bias: NEUTRAL with bearish tilt — "Wait for FOMC Resolution"</strong></p>
+                    <p>This is not a week to be a hero in either direction. Here is the full read:</p>
+                    <ol>
+                        <li><strong>Technicals are bullish but stalling.</strong> SPY is above its 50-day ($711.90) and 200-day ($683.44) MAs — the uptrend is intact. But the ATH rejection at $760, the 3-month MACD sell signal, and RSI near 70 all say the easy money from the April–June run has already been made. The next 3–5% is earned, not given.</li>
+                        <li><strong>Macro is the headwind.</strong> Three consecutive months of CPI acceleration (4.2% in May), energy up 23.5% driven by the Iran conflict, and 10-year yields hitting 4.53% create a stagflationary overhang. The equity risk premium is thin. Bonds at 4.5%+ are a real competitor to equities for the first time since 2023.</li>
+                        <li><strong>VIX and F&G say "handle with care."</strong> VIX at 19.25 and Fear &amp; Greed at 34 together signal institutional participants are hedging, not buying the dip aggressively. Five of seven F&G sub-indexes are in Fear. This is not contrarian buy-the-fear territory — sentiment is not Extreme Fear (sub-20). It's the uncomfortable middle ground where you wait for a catalyst to resolve direction.</li>
+                        <li><strong>FOMC is the week's fulcrum.</strong> Kevin Warsh's June 17 press conference and the Summary of Economic Projections are the most important events of the coming week — potentially the most important FOMC event of 2026. If the dot plot signals rate hikes later this year, expect SPY to retest $730 support immediately. If Warsh signals patience and pivot readiness for H2 2026, the $760 ATH gets retested by month-end.</li>
+                    </ol>
+
+                    <table class="gojo-table">
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Trigger</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge badge--bull">Bull Confirms</span></td>
+                                <td>Warsh dovish, SPY holds $730 support and closes above $752 by week-end</td>
+                                <td>Add exposure — target retest of $760 ATH. Trail stop at $730.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge--neutral">Neutral / Wait</span></td>
+                                <td>FOMC delivers no change with neutral language, SPY chops $730–$750</td>
+                                <td>Hold current positions. Wait for a clean break above $760 or below $730 before acting.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge--bear">Bear Confirms</span></td>
+                                <td>Warsh hawkish (dot plot signals hike), VIX closes above 20, SPY breaks $730</td>
+                                <td>Reduce equity exposure. Rotate to cash or short-duration bonds. Watch $711.90 (50-day) as next support.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>Current positioning: trim any momentum adds made near the $759 ATH, maintain core equity exposure, and let the FOMC outcome set the next move. This is a <em>wait</em> week, not a trade week.</p>
+
+                    <h2>Wall Street Consensus</h2>
+                    <p>With SPY at $742 (S&amp;P 500 equivalent ~7,420), the Street's year-end targets still have meaningful upside baked in — but the targets were set in a world where inflation was moderating, not reaccelerating:</p>
+                    <table class="gojo-table">
+                        <thead>
+                            <tr>
+                                <th>Firm</th>
+                                <th>S&amp;P 500 Year-End Target</th>
+                                <th>Implied Upside from ~7,420</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Yardeni Research</td><td>8,250</td><td>+11.2%</td></tr>
+                            <tr><td>Oppenheimer</td><td>8,100</td><td>+9.2%</td></tr>
+                            <tr><td>Goldman Sachs</td><td>8,000</td><td>+7.8%</td></tr>
+                            <tr><td>Morgan Stanley</td><td>8,000</td><td>+7.8%</td></tr>
+                            <tr><td>Citi</td><td>7,900</td><td>+6.5%</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Goldman raised its target to 8,000 from 7,600 in late May (CNBC, May 27) on the back of booming AI-driven earnings growth, projecting S&amp;P 500 EPS of $340 for 2026 — a 24% YoY increase. AI infrastructure investment is expected to drive roughly half of that earnings growth. The question is whether 4.2% CPI and the associated risk of a 2026 rate hike puts those EPS targets at risk through margin compression. If the Fed tightens into an earnings cycle, the bull case from Goldman and Yardeni looks increasingly fragile. The current S&amp;P 500 trades at approximately 22x forward earnings — expensive if the cost of capital rises.</p>
+
+                    <h2>Sources</h2>
+                    <ul>
+                        <li><a href="https://altindex.com/ticker/spy/technical-analysis" target="_blank" rel="noopener">AltIndex — SPY Technical Analysis Statistics 2026</a></li>
+                        <li><a href="https://stockinvest.us/stock/SPY" target="_blank" rel="noopener">StockInvest.us — SPY Price Forecast and Technical Analysis</a></li>
+                        <li><a href="https://www.investing.com/etfs/spdr-s-p-500-technical" target="_blank" rel="noopener">Investing.com — SPDR S&amp;P 500 ETF Technical Analysis</a></li>
+                        <li><a href="https://tradingeconomics.com/united-states/cboe-volatility-index-vix-fed-data.html" target="_blank" rel="noopener">Trading Economics — CBOE VIX Historical Data 2026</a></li>
+                        <li><a href="https://streetstats.finance/markets/volatility" target="_blank" rel="noopener">StreetStats — VIX S&amp;P 500 Volatility June 2026</a></li>
+                        <li><a href="https://www.cnn.com/markets/fear-and-greed" target="_blank" rel="noopener">CNN — Fear &amp; Greed Index (current reading: 34)</a></li>
+                        <li><a href="https://feargreedmeter.com/" target="_blank" rel="noopener">FearGreedMeter.com — Fear and Greed Index Today: 34</a></li>
+                        <li><a href="https://www.bls.gov/news.release/pdf/cpi.pdf" target="_blank" rel="noopener">BLS — Consumer Price Index May 2026</a></li>
+                        <li><a href="https://tradingeconomics.com/united-states/unemployment-rate" target="_blank" rel="noopener">Trading Economics — US Unemployment Rate May 2026</a></li>
+                        <li><a href="https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm" target="_blank" rel="noopener">Federal Reserve — FOMC Minutes April 28-29, 2026</a></li>
+                        <li><a href="https://polymarket.com/event/fed-decision-in-june-825" target="_blank" rel="noopener">Polymarket — Fed Decision June 2026 Odds (99.5% no change)</a></li>
+                        <li><a href="https://www.cnbc.com/2026/05/27/goldman-raises-its-sp-500-year-end-forecast-its-for-one-simple-reason.html" target="_blank" rel="noopener">CNBC — Goldman Raises S&amp;P 500 Year-End Forecast to 8,000 (May 27, 2026)</a></li>
+                        <li><a href="https://invezz.com/news/2026/05/31/sp-500-index-forecast-goldman-sachs-citi-yardeni-morgan-stanley/" target="_blank" rel="noopener">Invezz — S&amp;P 500 Forecasts: Goldman, Citi, Yardeni, Morgan Stanley (May 31, 2026)</a></li>
+                        <li><a href="https://wolfstreet.com/2026/06/13/us-government-sold-646-billion-of-treasury-securities-this-week-2nd-wave-of-inflation-of-approaches-10-year-treasury-yield/" target="_blank" rel="noopener">Wolf Street — 10-Year Treasury Yield, June 13, 2026</a></li>
+                        <li><a href="https://www.philadelphiafed.org/surveys-and-data/real-time-data-research/spf-q2-2026" target="_blank" rel="noopener">Philadelphia Fed — Q2 2026 Survey of Professional Forecasters</a></li>
+                        <li><a href="https://polymarket.com/event/us-recession-by-end-of-2026" target="_blank" rel="noopener">Polymarket — US Recession by End of 2026 Probability</a></li>
+                        <li><a href="https://www.tradingkey.com/tools/market-update/us-stock-market-this-week-20260615" target="_blank" rel="noopener">TradingKey — US Stock Market Week Ahead June 15, 2026</a></li>
+                    </ul>
+
+                </div>
+            </article>
+            <nav class="step-nav-footer">
+                <a href="/gojo/stocks/" class="step-nav-footer__home">← All Stock Takes</a>
+            </nav>
+            <footer class="footer">
+                <div class="footer__container">
+                    <div class="footer__content">
+                        <div class="footer__brand">
+                            <a href="/" class="footer__logo">Tui Alailima</a>
+                            <p class="footer__tagline">Documenting lessons on money, health, and long-term thinking.</p>
+                            <div class="footer__social">
+                                <a href="https://www.instagram.com/coach.tui/" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram footer__social-icon"></i></a>
+                                <a href="https://github.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github footer__social-icon"></i></a>
+                                <a href="https://twitter.com/tuialailima" class="footer__social-link" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-twitter footer__social-icon"></i></a>
+                                <a href="https://codepen.com/codepen" class="footer__social-link" target="_blank" rel="noopener" aria-label="CodePen"><i class="fa-brands fa-codepen footer__social-icon"></i></a>
+                            </div>
+                        </div>
+                        <div class="footer__links">
+                            <h3 class="footer__links-title">Gojo</h3>
+                            <ul><li><a href="/gojo/">Overview</a></li><li><a href="/gojo/stocks/">Stock Takes</a></li></ul>
+                        </div>
+                        <div class="footer__links">
+                            <h3 class="footer__links-title">Site</h3>
+                            <ul><li><a href="/moneyhub/">Money Hub</a></li><li><a href="/healthhub/">Health Hub</a></li><li><a href="mailto:tui@tuialailima.com">Contact</a></li></ul>
+                        </div>
+                    </div>
+                    <div class="footer__bottom">
+                        <p class="footer__copyright">© 2026 Tui Alailima. All rights reserved.</p>
+                        <p class="footer__disclaimer">Gojo is an AI assistant. Nothing here is financial advice.</p>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script src="/resources/js/navigation.js"></script>
+</body>
+</html>
