@@ -24,9 +24,16 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: var(--weight-bold);
+  font-weight: 400;
   color: var(--color-text-primary);
   margin-bottom: var(--space-4);
+  letter-spacing: 0;
+}
+
+h1, h2, h3, .article__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 h1 {

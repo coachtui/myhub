@@ -1,293 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tui Alailima | Builder · Investor · Superintendent</title>
-    <meta name="description" content="Building AI-native products, running long-horizon investment research, and managing a $500M+ civil infrastructure job. This is where it all lives.">
-
-    <!-- Favicon -->
-    <link rel="icon" href="./resources/images/favicon.ico">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/resources/css/style.css">
-
-    <!-- JavaScript (load early for theme) -->
-    <script src="/resources/js/theme.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tui Alailima — builder, investor, construction professional</title>
+  <meta name="description" content="The home for my writing on wealth, health, and the work — plus Gojo, my AI market analyst. Social brings you here; the real thinking lives here.">
+  <link rel="icon" href="/resources/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/resources/css/style.css">
+  <script src="/resources/js/theme.js"></script>
 </head>
-
 <body>
-    <!-- Global Navigation -->
-    <nav class="nav-global">
-        <div class="nav-global__container">
-            <a href="/" class="nav-global__logo">Tui</a>
+  <header class="chrome-header" id="site-header" aria-label="Site header"></header>
 
-            <!-- Desktop Navigation -->
-            <ul class="nav-global__links">
-                <li><a href="/healthhub/" class="nav-global__link">Health</a></li>
-                <li><a href="/moneyhub/" class="nav-global__link">Wealth</a></li>
-                <li><a href="/gojo/" class="nav-global__link">Gojo</a></li>
-                <li><a href="/#build" class="nav-global__link">Build</a></li>
-            </ul>
-
-            <!-- Actions -->
-            <div class="nav-global__actions">
-                <!-- Dark Mode Toggle -->
-                <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
-                    <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                    <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                </button>
-
-                <!-- Mobile Menu Toggle -->
-                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </button>
-            </div>
+  <main>
+    <section class="identity">
+      <img class="identity__photo" src="/resources/images/tui-headshot.png" alt="Tui Alailima">
+      <div>
+        <h1 class="identity__name">Tui Alailima</h1>
+        <p class="identity__bio">Builder, investor, construction professional. I publish long-form research with Gojo, my AI analyst — searchable, dated, and built to compound.</p>
+        <div class="identity__cta">
+          <button class="btn btn--primary" type="button" data-search-trigger>Search the archive ⌘K</button>
+          <a class="btn btn--secondary" href="/#about">About me</a>
         </div>
-    </nav>
-
-    <!-- Mobile Navigation Overlay -->
-    <nav class="nav-mobile">
-        <ul class="nav-mobile__links">
-            <li><a href="/" class="nav-mobile__link">Home</a></li>
-            <li><a href="/healthhub/" class="nav-mobile__link">Health</a></li>
-            <li><a href="/moneyhub/" class="nav-mobile__link">Wealth</a></li>
-            <li><a href="/gojo/" class="nav-mobile__link">Gojo</a></li>
-            <li><a href="/#build" class="nav-mobile__link">Build</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero">
-                <div class="hero__content">
-                    <div class="hero__title">
-                        <span class="hero__title-primary">Tui Alailima</span>
-                        <span class="hero__title-secondary">builder &middot; investor &middot; superintendent</span>
-                    </div>
-                    <p class="hero__description">
-                        Building AI-native products under AIGA LLC. Running long-horizon investment research through Gojo.
-                        Managing a $500M+ civil infrastructure job. The construction work is where the domain knowledge comes from.
-                        Everything else is what I&rsquo;m building with it.
-                    </p>
-                    <div class="hero__actions">
-                        <a href="/gojo/" class="btn btn--primary">
-                            <span>Read Gojo</span>
-                            <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                            </svg>
-                        </a>
-                        <a href="/#build" class="btn btn--secondary">
-                            <span>See the Work</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero__image">
-                    <img src="/resources/images/TYR1.00_00_19_20.Still002.JPG" alt="Tui Alailima">
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- Three Pillars Section -->
-    <section class="section" id="build">
-        <div class="container">
-            <div class="text-center" style="margin-bottom: var(--space-12);">
-                <h2 style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--color-text-primary); margin-bottom: var(--space-4);">
-                    What I&rsquo;m Building
-                </h2>
-                <p style="font-size: var(--text-lg); color: var(--color-text-tertiary); max-width: 600px; margin: 0 auto;">
-                    Three areas, all running at the same time
-                </p>
-            </div>
-
-            <div class="grid grid--3" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-                <!-- Build Card -->
-                <a href="https://aigaai.com" class="card" target="_blank" rel="noopener">
-                    <div class="card__header">
-                        <div class="card__icon">🏗</div>
-                    </div>
-                    <h3 class="card__title">Build</h3>
-                    <p class="card__description">
-                        AIGA LLC is a multi-domain intelligence company. Current products: Operator (AI education),
-                        DVRG (investment research), CRU (construction data), AIGA CP (construction OS for field teams).
-                        All built from the same foundation &mdash; deep domain expertise, applied through AI.
-                    </p>
-                    <div class="card__footer">
-                        <span class="card__link">
-                            <span>aigaai.com</span>
-                            <svg class="card__arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                            </svg>
-                        </span>
-                    </div>
-                </a>
-
-                <!-- Wealth Card -->
-                <a href="/moneyhub/" class="card">
-                    <div class="card__header">
-                        <div class="card__icon">💰</div>
-                    </div>
-                    <h3 class="card__title">Wealth</h3>
-                    <p class="card__description">
-                        Personal finance and investing fundamentals &mdash; explained plainly. Budgeting, retirement accounts,
-                        long-term investing strategy. I built this for people who want to understand how money actually works
-                        without needing a finance degree to follow along.
-                    </p>
-                    <div class="card__footer">
-                        <span class="card__link">
-                            <span>Explore Wealth</span>
-                            <svg class="card__arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                            </svg>
-                        </span>
-                    </div>
-                </a>
-
-                <!-- Health Card -->
-                <a href="/healthhub/" class="card">
-                    <div class="card__header">
-                        <div class="card__icon">💪</div>
-                    </div>
-                    <h3 class="card__title">Health</h3>
-                    <p class="card__description">
-                        Physical capability is the foundation everything else runs on. I manage a demanding job,
-                        build products on the side, and stay strong enough to do both &mdash; consistently, over years.
-                        I document what actually works for someone with limited time and high physical output.
-                    </p>
-                    <div class="card__footer">
-                        <span class="card__link">
-                            <span>Explore Health</span>
-                            <svg class="card__arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                            </svg>
-                        </span>
-                    </div>
-                </a>
-
-                <!-- Gojo Card -->
-                <a href="/gojo/" class="card">
-                    <div class="card__header">
-                        <div class="card__icon">🧠</div>
-                    </div>
-                    <h3 class="card__title">Gojo</h3>
-                    <p class="card__description">
-                        An AI operator running across everything AIGA is building. Market research, product decisions,
-                        publishing, execution support, daily journaling. Not a tool you prompt &mdash; a partner you work with.
-                        Still being defined, but already deep in it.
-                    </p>
-                    <div class="card__footer">
-                        <span class="card__link">
-                            <span>Read Gojo</span>
-                            <svg class="card__arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                            </svg>
-                        </span>
-                    </div>
-                </a>
-            </div>
-        </div>
+    <section class="feed">
+      <h2 class="feed__head">Latest</h2>
+      <div id="latest-feed"><p class="feed-empty">Loading…</p></div>
+      <noscript><p class="feed-empty">The feed and navigation require JavaScript. Browse directly: <a href="/gojo/">Gojo</a> · <a href="/moneyhub/">Wealth</a></p></noscript>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="container">
-            <div class="about-section__content">
-                <div class="about-section__text">
-                    <h2>Who I Am</h2>
-                    <p>
-                        I&rsquo;m a civil construction superintendent with 20 years of field experience, currently running a $500M+
-                        infrastructure job. That work taught me how to coordinate complex systems under pressure, read risk clearly,
-                        and make decisions with incomplete information on a deadline.
-                    </p>
-                    <p>
-                        Outside the job site, I&rsquo;m building AIGA LLC &mdash; a set of AI-native products that started in construction
-                        and expanded from there. I run Gojo, an AI analyst I built to help me think through markets and publish
-                        research worth reading. I invest with a long time horizon, stay in the gym, and document what I learn along the way.
-                    </p>
-                </div>
-                <div class="about-section__image">
-                    <img src="/resources/images/TYR1.00_00_21_05.Still001.JPG" alt="Tui Alailima">
-                </div>
-            </div>
-        </div>
+    <section class="identity" id="about">
+      <div class="about__inner">
+        <h2 class="about__heading">Who I am</h2>
+        <p class="about__body">A construction professional building AIGA — a set of AI-native products — investing on a long horizon, and training to stay strong enough to do all of it. I write what I learn, and Gojo (my AI analyst) publishes the market research. <a href="https://aigaai.com" target="_blank" rel="noopener">AIGA →</a></p>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__container">
-            <div class="footer__content">
-                <!-- Brand -->
-                <div class="footer__brand">
-                    <a href="/" class="footer__logo">Tui Alailima</a>
-                    <p class="footer__tagline">
-                        Building products, researching markets, managing infrastructure.
-                    </p>
-                    <div class="footer__social">
-                        <a href="https://www.instagram.com/coach.tui/" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram">
-                            <i class="fa-brands fa-instagram footer__social-icon"></i>
-                        </a>
-                        <a href="https://github.com/coachtui" class="footer__social-link" target="_blank" rel="noopener" aria-label="GitHub">
-                            <i class="fa-brands fa-github footer__social-icon"></i>
-                        </a>
-                        <a href="https://twitter.com/tuialailima" class="footer__social-link" target="_blank" rel="noopener" aria-label="Twitter">
-                            <i class="fa-brands fa-twitter footer__social-icon"></i>
-                        </a>
-                    </div>
-                </div>
+  <footer class="chrome-footer" id="site-footer" aria-label="Site footer"></footer>
 
-                <!-- Gojo -->
-                <div class="footer__links">
-                    <h3 class="footer__links-title">Gojo</h3>
-                    <ul>
-                        <li><a href="/gojo/">Overview</a></li>
-                        <li><a href="/gojo/stocks/">Stock Takes</a></li>
-                        <li><a href="/gojo/research/">Research</a></li>
-                        <li><a href="/gojo/notes/">Journal</a></li>
-                    </ul>
-                </div>
-
-                <!-- Resources -->
-                <div class="footer__links">
-                    <h3 class="footer__links-title">More</h3>
-                    <ul>
-                        <li><a href="/healthhub/">Health Hub</a></li>
-                        <li><a href="/moneyhub/">Money Hub</a></li>
-                        <li><a href="https://aigaai.com" target="_blank" rel="noopener">AIGA LLC</a></li>
-                        <li><a href="mailto:tui@tuialailima.com">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Footer Bottom -->
-            <div class="footer__bottom">
-                <p class="footer__copyright">
-                    &copy; 2026 Tui Alailima. All rights reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="/resources/js/navigation.js"></script>
+  <script type="module" src="/resources/js/chrome.mjs"></script>
+  <script type="module" src="/resources/js/search.mjs"></script>
+  <script type="module" src="/resources/js/feed.mjs"></script>
 </body>
 </html>
