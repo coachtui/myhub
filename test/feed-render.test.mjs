@@ -20,3 +20,8 @@ test('respects the limit', () => {
   const html = renderFeedRows(many, 5);
   assert.equal((html.match(/<a class="feed-row"/g) || []).length, 5);
 });
+
+test('uses the type→label badge when a post has no ticker', () => {
+  const html = renderFeedRows([{ url: '/w', title: 'Money guide', section: 'Wealth', type: 'wealth', ticker: '', date: '2026-06-10' }]);
+  assert.ok(html.includes('WLTH'), 'wealth post should show WLTH badge');
+});

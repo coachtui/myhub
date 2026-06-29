@@ -820,7 +820,7 @@ test('renders one row per post with title, link, badge, date', () => {
 test('respects the limit', () => {
   const many = Array.from({ length: 20 }, (_, i) => ({ url: '/' + i, title: 't' + i, section: 'Gojo', ticker: '', date: '2026-01-' + String(i + 1).padStart(2, '0') }));
   const html = renderFeedRows(many, 5);
-  assert.equal((html.match(/feed-row/g) || []).length, 5);
+  assert.equal((html.match(/<a class="feed-row"/g) || []).length, 5);
 });
 ```
 
