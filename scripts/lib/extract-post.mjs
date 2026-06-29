@@ -8,12 +8,19 @@ const SECTIONS = [
   { re: /\/healthhub\//,       section: 'Health', type: 'health' },
 ];
 
-const ENTITIES = { '&amp;':'&','&mdash;':'—','&ndash;':'–','&rsquo;':'’','&lsquo;':'‘',
-  '&ldquo;':'“','&rdquo;':'”','&middot;':'·','&hellip;':'…','&nbsp;':' ' };
+const ENTITIES = { '&amp;':'&','&mdash;':'—','&ndash;':'–','&rsquo;':'’','&lsquo;':'‘','&ldquo;':'“','&rdquo;':'”','&middot;':'·','&hellip;':'…','&nbsp;':' ','&times;':'×','&deg;':'°','&trade;':'™','&copy;':'©','&rarr;':'→','&larr;':'←' };
 const MONTHS = { January:'01',February:'02',March:'03',April:'04',May:'05',June:'06',
   July:'07',August:'08',September:'09',October:'10',November:'11',December:'12' };
 
-function decode(s) { return s.replace(/&[a-z]+;/g, m => ENTITIES[m] ?? m).replace(/\s+/g, ' ').trim(); }
+function decode(s) {
+  return s
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&[a-zA-Z]+;/g, m => ENTITIES[m] ?? m)
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function pick(re, html) { const m = html.match(re); return m ? decode(m[1]) : ''; }
 function toISO(s) {
   const m = s.match(/([A-Z][a-z]+) (\d{1,2}), (20\d{2})/);
