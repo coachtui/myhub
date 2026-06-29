@@ -30,3 +30,11 @@ test('swapHubChrome is idempotent and injects chrome', () => {
   assert.doesNotMatch(once, /nav-global/);        // old top nav gone
   assert.equal(swapHubChrome(once), once);        // idempotent
 });
+
+test('swapHubChrome does not double-escape head metadata', () => {
+  const html = '<head><title>A &amp; B</title><meta name="description" content="S&amp;P"></head><body><nav class="nav-global">N</nav><nav class="nav-mobile">M</nav><footer class="footer">F</footer></body>';
+  const out = swapHubChrome(html);
+  assert.match(out, /<title>A &amp; B<\/title>/);          // single-escaped
+  assert.doesNotMatch(out, /&amp;amp;/);                     // never double
+  assert.match(out, /content="S&amp;P"/);
+});

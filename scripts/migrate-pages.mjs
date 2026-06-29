@@ -2,6 +2,7 @@ import { readdirSync, readFileSync, writeFileSync, statSync } from 'node:fs';
 import { join, relative, sep, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { extractArticle } from './lib/extract-article.mjs';
+import { decode } from './lib/extract-post.mjs';
 import { renderArticle } from './lib/render-article.mjs';
 import { renderHead } from './lib/page-head.mjs';
 
@@ -19,7 +20,7 @@ export function swapHubChrome(html) {
   if (html.includes('id="site-header"')) return html;
   const title = (html.match(/<title>([\s\S]*?)<\/title>/) || [, ''])[1];
   const description = (html.match(/<meta name="description" content="([\s\S]*?)">/) || [, ''])[1];
-  let out = html.replace(/<head>[\s\S]*?<\/head>/, `<head>${renderHead({ title, description })}\n</head>`);
+  let out = html.replace(/<head>[\s\S]*?<\/head>/, `<head>${renderHead({ title: decode(title), description: decode(description) })}\n</head>`);
   out = out.replace(/<nav class="nav-global">[\s\S]*?<\/nav>[\s\S]*?<nav class="nav-mobile">[\s\S]*?<\/nav>/,
     '<header class="chrome-header" id="site-header" aria-label="Site header"></header>');
   out = out.replace(/<footer class="footer">[\s\S]*?<\/footer>/,

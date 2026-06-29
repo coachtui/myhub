@@ -12,7 +12,7 @@ const ENTITIES = { '&amp;':'&','&mdash;':'—','&ndash;':'–','&rsquo;':'’','
 const MONTHS = { January:'01',February:'02',March:'03',April:'04',May:'05',June:'06',
   July:'07',August:'08',September:'09',October:'10',November:'11',December:'12' };
 
-function decode(s) {
+export function decode(s) {
   return s
     .replace(/&#x([0-9a-fA-F]+);/g, (_, h) => String.fromCodePoint(parseInt(h, 16)))
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
@@ -33,8 +33,9 @@ export function extractPost(html, url) {
 
   const title = pick(/<h1 class="article__title">([\s\S]*?)<\/h1>/, html)
     || decode((pick(/<title>([\s\S]*?)<\/title>/, html).split('|')[0]) || '');
-  const summary = pick(/<meta name="description" content="([\s\S]*?)">/, html)
-    || pick(/<p class="article__subtitle">([\s\S]*?)<\/p>/, html);
+  const descTag = html.match(/<meta\s[^>]*name="description"[^>]*>/i);
+  const metaDesc = descTag ? decode((descTag[0].match(/content="([^"]*)"/) || [, ''])[1]) : '';
+  const summary = metaDesc || pick(/<p class="article__subtitle">([\s\S]*?)<\/p>/, html);
 
   let date = (file.match(/(20\d{2}-\d{2}-\d{2})/) || [])[1] || '';
   if (!date) date = toISO((html.match(/([A-Z][a-z]+ \d{1,2}, 20\d{2})/) || [])[1] || '');

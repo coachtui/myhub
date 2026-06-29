@@ -25,12 +25,10 @@ export function extractArticle(html, url) {
   const contentHtml = inner(/<div class="article__content">([\s\S]*)<\/div>/, articleInner);
   const stepNavHtml = inner(/(<nav class="step-nav-footer">[\s\S]*?<\/nav>)/, html);
   const disc = html.match(/<aside class="disclaimer">[\s\S]*?<p class="disclaimer__text">([\s\S]*?)<\/p>/);
-  const descTag = html.match(/<meta\s[^>]*name="description"[^>]*>/i);
-  const description = descTag ? (descTag[0].match(/content="([^"]*)"/) || [, ''])[1] : '';
   return {
     url,
     title: post.title,
-    description,
+    description: post.summary,
     headerTitle, subtitle, contentHtml,
     breadcrumb: parseBreadcrumb(html),
     hasDisclaimer: !!disc,

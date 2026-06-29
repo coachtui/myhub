@@ -59,3 +59,8 @@ test('preserves raw entities in headerTitle (not decoded)', () => {
   const a = extractArticle('<article class="article"><header class="article__header"><h1 class="article__title">A &mdash; B</h1></header><div class="article__content"><p>x</p></div></article>', '/gojo/stocks/x.html');
   assert.match(a.headerTitle, /&mdash;/);
 });
+
+test('description is decoded (no double-encoding of entities)', () => {
+  const a = extractArticle('<meta name="description" content="S&amp;P and Fear &amp; Greed"><article class="article"><div class="article__content"><p>x</p></div></article>', '/gojo/stocks/x.html');
+  assert.equal(a.description, 'S&P and Fear & Greed');
+});
