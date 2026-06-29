@@ -27,7 +27,12 @@ function scorePost(post, q, terms) {
 }
 
 // ---- browser-only palette ----
+const esc = s => (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+let searchInitialized = false;
+
 export async function initSearch(doc = document) {
+  if (searchInitialized) return;
+  searchInitialized = true;
   let index = [];
   try {
     index = await (await fetch('/resources/data/search-index.json')).json();
@@ -51,10 +56,10 @@ export async function initSearch(doc = document) {
   input.addEventListener('input', () => {
     const rows = rankResults(index, input.value);
     results.innerHTML = rows.map(p => `
-      <li><a href="${p.url}">
-        ${p.ticker ? `<span class="cmdk__tag">${p.ticker}</span>` : `<span class="cmdk__tag cmdk__tag--sec">${p.section}</span>`}
-        <span class="cmdk__title">${p.title}</span>
-        <span class="cmdk__date">${p.date || ''}</span>
+      <li><a href="${esc(p.url)}">
+        ${p.ticker ? `<span class="cmdk__tag">${esc(p.ticker)}</span>` : `<span class="cmdk__tag cmdk__tag--sec">${esc(p.section)}</span>`}
+        <span class="cmdk__title">${esc(p.title)}</span>
+        <span class="cmdk__date">${esc(p.date || '')}</span>
       </a></li>`).join('');
   });
 
