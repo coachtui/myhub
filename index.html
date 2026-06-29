@@ -14,7 +14,7 @@
   <script src="/resources/js/theme.js"></script>
 </head>
 <body>
-  <header class="chrome-header" id="site-header"></header>
+  <header class="chrome-header" id="site-header" aria-label="Site header"></header>
 
   <main>
     <section class="identity">
@@ -23,7 +23,7 @@
         <h1 class="identity__name">Tui Alailima</h1>
         <p class="identity__bio">Builder, investor, construction professional. I publish long-form research with Gojo, my AI analyst — searchable, dated, and built to compound.</p>
         <div class="identity__cta">
-          <button class="btn btn--primary" data-search-trigger>Search the archive ⌘K</button>
+          <button class="btn btn--primary" type="button" data-search-trigger>Search the archive ⌘K</button>
           <a class="btn btn--secondary" href="/#about">About me</a>
         </div>
       </div>
@@ -32,17 +32,18 @@
     <section class="feed">
       <h2 class="feed__head">Latest</h2>
       <div id="latest-feed"><p class="feed-empty">Loading…</p></div>
+      <noscript><p class="feed-empty">The feed and navigation require JavaScript. Browse directly: <a href="/gojo/">Gojo</a> · <a href="/moneyhub/">Wealth</a></p></noscript>
     </section>
 
     <section class="identity" id="about">
-      <div style="grid-column: 1 / -1; max-width: 60ch;">
-        <h2 style="font-family: var(--font-display); font-size: var(--text-2xl);">Who I am</h2>
-        <p style="color: var(--color-text-secondary);">A construction professional building AIGA — a set of AI-native products — investing on a long horizon, and training to stay strong enough to do all of it. I write what I learn, and Gojo (my AI analyst) publishes the market research. <a href="https://aigaai.com" target="_blank" rel="noopener">AIGA →</a></p>
+      <div class="about__inner">
+        <h2 class="about__heading">Who I am</h2>
+        <p class="about__body">A construction professional building AIGA — a set of AI-native products — investing on a long horizon, and training to stay strong enough to do all of it. I write what I learn, and Gojo (my AI analyst) publishes the market research. <a href="https://aigaai.com" target="_blank" rel="noopener">AIGA →</a></p>
       </div>
     </section>
   </main>
 
-  <footer class="chrome-footer" id="site-footer"></footer>
+  <footer class="chrome-footer" id="site-footer" aria-label="Site footer"></footer>
 
   <script type="module" src="/resources/js/chrome.mjs"></script>
   <script type="module" src="/resources/js/search.mjs"></script>

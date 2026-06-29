@@ -23,4 +23,8 @@
 .feed-row__badge--ticker { color: var(--color-ticker-text); background: var(--color-ticker-bg); }
 .feed-row__title { font-size: var(--text-base); color: var(--color-text-primary); }
 .feed-row__date { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-quaternary); }
+/* about section (spans full identity grid width) */
+.about__inner { grid-column: 1 / -1; max-width: 60ch; }
+.about__heading { font-family: var(--font-display); font-size: var(--text-2xl); }
+.about__body { color: var(--color-text-secondary); }
 @media (max-width: 640px) { .identity { grid-template-columns: 1fr; text-align: left; } }

@@ -12,10 +12,10 @@ export function renderHeader(site, currentPath = '/') {
   <a class="chrome-header__logo" href="/">${esc(site.name)}</a>
   <nav class="chrome-nav" aria-label="Primary"><ul>${links}</ul></nav>
   <div class="chrome-header__actions">
-    <button class="chrome-search-pill" data-search-trigger aria-label="Search">
+    <button class="chrome-search-pill" type="button" data-search-trigger aria-label="Search">
       <span>Search</span><kbd>⌘K</kbd>
     </button>
-    <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">◐</button>
   </div>
 </div>`;
 }
