@@ -29,3 +29,9 @@ test('classifies wealth and health by directory', () => {
   assert.equal(extractPost('<h1 class="article__title">X</h1>', '/moneyhub/step4-investing-basics.html').section, 'Wealth');
   assert.equal(extractPost('<h1 class="article__title">X</h1>', '/healthhub/training.html').type, 'health');
 });
+
+test('prose-date fallback converts "Month DD, YYYY" when filename has no date', () => {
+  const note = '<h1 class="article__title">Daily Note</h1><p>Logged June 24, 2026 here.</p>';
+  const p = extractPost(note, '/gojo/notes/daily-note.html');
+  assert.equal(p.date, '2026-06-24');
+});
