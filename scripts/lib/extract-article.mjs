@@ -21,14 +21,16 @@ export function extractArticle(html, url) {
   const post = extractPost(html, url);
   const headerTitle = inner(/<h1 class="article__title">([\s\S]*?)<\/h1>/, html);
   const subtitle = inner(/<p class="article__subtitle">([\s\S]*?)<\/p>/, html);
-  const contentHtml = inner(/<div class="article__content">([\s\S]*?)<\/div>\s*<\/article>/, html)
-    || inner(/<div class="article__content">([\s\S]*?)<\/div>/, html);
+  const articleInner = (html.match(/<article[^>]*>([\s\S]*?)<\/article>/) || [, html])[1];
+  const contentHtml = inner(/<div class="article__content">([\s\S]*)<\/div>/, articleInner);
   const stepNavHtml = inner(/(<nav class="step-nav-footer">[\s\S]*?<\/nav>)/, html);
   const disc = html.match(/<aside class="disclaimer">[\s\S]*?<p class="disclaimer__text">([\s\S]*?)<\/p>/);
+  const descTag = html.match(/<meta\s[^>]*name="description"[^>]*>/i);
+  const description = descTag ? (descTag[0].match(/content="([^"]*)"/) || [, ''])[1] : '';
   return {
     url,
     title: post.title,
-    description: inner(/<meta name="description" content="([\s\S]*?)">/, html),
+    description,
     headerTitle, subtitle, contentHtml,
     breadcrumb: parseBreadcrumb(html),
     hasDisclaimer: !!disc,
