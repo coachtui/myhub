@@ -1,5 +1,5 @@
 import { readdirSync, readFileSync, writeFileSync, statSync } from 'node:fs';
-import { join, relative, sep } from 'node:path';
+import { join, relative, sep, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { extractArticle } from './lib/extract-article.mjs';
 import { renderArticle } from './lib/render-article.mjs';
@@ -10,6 +10,7 @@ const DIRS = ['gojo', 'moneyhub', 'healthhub'];
 
 export function classifyPage(html, url) {
   if (html.includes('id="site-header"')) return 'migrated';
+  if (basename(url) === 'index.html') return 'hub';
   if (html.includes('article__content')) return 'article';
   return 'hub';
 }

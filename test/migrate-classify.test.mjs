@@ -17,6 +17,11 @@ test('non-article content pages (no article__content, not index) are chrome-swap
   assert.match(out, /custom non-article layout/); // body preserved
 });
 
+test('index/listing pages stay hub even when they wrap content in article__content', () => {
+  const html = '<div class="article__content"><div class="stack"><a class="card">post</a></div></div>';
+  assert.equal(classifyPage(html, '/gojo/stocks/index.html'), 'hub');
+});
+
 test('swapHubChrome is idempotent and injects chrome', () => {
   const old = '<html><head><title>T</title><meta name="description" content="d"></head><body><nav class="nav-global">N</nav><nav class="nav-mobile">M</nav><div class="page-layout"><aside class="sidebar-nav">S</aside><main>BODY</main></div><footer class="footer">F</footer></body></html>';
   const once = swapHubChrome(old);
