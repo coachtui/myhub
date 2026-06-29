@@ -40,7 +40,7 @@ export function renderFooter(site) {
 export function mountChrome(doc = document) {
   const header = doc.getElementById('site-header');
   const footer = doc.getElementById('site-footer');
-  if (header) header.innerHTML = renderHeader(SITE, doc.location?.pathname || location.pathname);
+  if (header) header.innerHTML = renderHeader(SITE, doc.location?.pathname ?? '/');
   if (footer) footer.innerHTML = renderFooter(SITE);
 }
 

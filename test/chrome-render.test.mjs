@@ -13,7 +13,7 @@ test('site config exposes nav, bio, social', () => {
 test('header renders all nav links and marks the active one', () => {
   const html = renderHeader(SITE, '/moneyhub/');
   for (const item of SITE.nav) assert.ok(html.includes(item.href), `missing ${item.href}`);
-  assert.match(html, /aria-current="page"[^>]*>Wealth|Wealth<\/a>/);
+  assert.match(html, /aria-current="page"[^>]*>Wealth<\/a>/);
   assert.ok(html.includes('data-search-trigger'), 'has search pill');
   assert.ok(html.includes('data-theme-toggle'), 'has theme toggle');
 });
