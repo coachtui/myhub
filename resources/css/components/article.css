@@ -13,7 +13,7 @@
 .article__content li { margin-bottom: var(--space-2); }
 .callout--ai { display: flex; gap: var(--space-3); background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-left: 3px solid var(--color-accent-primary); border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-6); font-size: var(--text-sm); color: var(--color-text-tertiary); }
 .callout--ai .callout__icon { color: var(--color-accent-primary); }
-.article-rail { position: sticky; top: 90px; font-size: var(--text-sm); }
+.article-rail { position: sticky; top: 90px; max-height: calc(100vh - 110px); overflow-y: auto; padding-bottom: var(--space-4); padding-right: var(--space-2); font-size: var(--text-sm); }
 .article-rail__label { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-quaternary); margin-bottom: var(--space-3); }
 .article-rail__toc a { display: block; color: var(--color-text-tertiary); text-decoration: none; padding: var(--space-1) 0 var(--space-1) var(--space-3); border-left: 2px solid var(--color-border); }
 .article-rail__toc a.is-sub { padding-left: var(--space-5); }
