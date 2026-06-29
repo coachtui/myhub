@@ -8,6 +8,15 @@ test('classifies article vs hub vs already-migrated', () => {
   assert.equal(classifyPage('<header id="site-header"></header>', '/gojo/stocks/a.html'), 'migrated');
 });
 
+test('non-article content pages (no article__content, not index) are chrome-swapped, not skipped', () => {
+  const html = '<head><title>T</title><meta name="description" content="d"></head><body><nav class="nav-global">N</nav><nav class="nav-mobile">M</nav><div class="page-layout"><aside class="sidebar-nav">S</aside><main>custom non-article layout</main></div><footer class="footer">F</footer></body>';
+  assert.equal(classifyPage(html, '/healthhub/training.html'), 'hub');
+  const out = swapHubChrome(html);
+  assert.match(out, /id="site-header"/);     // chrome injected
+  assert.doesNotMatch(out, /nav-global/);      // old nav gone
+  assert.match(out, /custom non-article layout/); // body preserved
+});
+
 test('swapHubChrome is idempotent and injects chrome', () => {
   const old = '<html><head><title>T</title><meta name="description" content="d"></head><body><nav class="nav-global">N</nav><nav class="nav-mobile">M</nav><div class="page-layout"><aside class="sidebar-nav">S</aside><main>BODY</main></div><footer class="footer">F</footer></body></html>';
   const once = swapHubChrome(old);

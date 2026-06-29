@@ -1,5 +1,5 @@
 import { readdirSync, readFileSync, writeFileSync, statSync } from 'node:fs';
-import { join, relative, sep, basename } from 'node:path';
+import { join, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { extractArticle } from './lib/extract-article.mjs';
 import { renderArticle } from './lib/render-article.mjs';
@@ -10,9 +10,8 @@ const DIRS = ['gojo', 'moneyhub', 'healthhub'];
 
 export function classifyPage(html, url) {
   if (html.includes('id="site-header"')) return 'migrated';
-  if (basename(url) === 'index.html') return 'hub';
   if (html.includes('article__content')) return 'article';
-  return 'skip';
+  return 'hub';
 }
 
 export function swapHubChrome(html) {
@@ -20,7 +19,7 @@ export function swapHubChrome(html) {
   const title = (html.match(/<title>([\s\S]*?)<\/title>/) || [, ''])[1];
   const description = (html.match(/<meta name="description" content="([\s\S]*?)">/) || [, ''])[1];
   let out = html.replace(/<head>[\s\S]*?<\/head>/, `<head>${renderHead({ title, description })}\n</head>`);
-  out = out.replace(/<nav class="nav-global">[\s\S]*?<\/nav>\s*<nav class="nav-mobile">[\s\S]*?<\/nav>/,
+  out = out.replace(/<nav class="nav-global">[\s\S]*?<\/nav>[\s\S]*?<nav class="nav-mobile">[\s\S]*?<\/nav>/,
     '<header class="chrome-header" id="site-header" aria-label="Site header"></header>');
   out = out.replace(/<footer class="footer">[\s\S]*?<\/footer>/,
     '<footer class="chrome-footer" id="site-footer" aria-label="Site footer"></footer>');
@@ -40,7 +39,7 @@ function walk(dir) {
 }
 
 function run({ apply }) {
-  const counts = { article: 0, hub: 0, migrated: 0, skip: 0 };
+  const counts = { article: 0, hub: 0, migrated: 0 };
   for (const d of DIRS) {
     const abs = join(ROOT, d); try { statSync(abs); } catch { continue; }
     for (const file of walk(abs)) {
