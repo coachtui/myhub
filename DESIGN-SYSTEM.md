@@ -164,6 +164,16 @@ Dark mode is applied via the `[data-theme="dark"]` attribute on `<html>`. The th
 --color-border-strong: #525252
 ```
 
+**Semantic — Adjusted for dark:**
+```css
+--color-success:    #34d399
+--color-success-bg: #064e3b
+--color-warning:    #fbbf24
+--color-warning-bg: #78350f
+--color-info:       #60a5fa
+--color-info-bg:    #1e3a8a
+```
+
 ---
 
 ## Spacing
@@ -272,20 +282,23 @@ The shared header, primary nav, search pill, theme toggle, and footer — inject
 
 Full-screen modal search, opened by pressing `⌘K` or clicking the search pill. Queries `search-index.json` client-side; returns ranked results by title match, section, and recency. Classes:
 
-- `.command-palette` — the overlay backdrop
-- `.command-palette__dialog` — the search box and results panel
-- `.command-palette__input` — the live search field
-- `.command-palette__result` — individual result rows (title, section badge, date)
+- `.cmdk` — the overlay backdrop
+- `.cmdk__panel` — the search box and results panel
+- `.cmdk__input` — the live search field
+- `.cmdk__results` — results list container
+- `.cmdk__title` / `.cmdk__date` / `.cmdk__tag` — result row parts (title, date, section badge)
+- `.cmdk__active` — highlighted/focused result row
+- `.cmdk__empty` — empty-state message when no results match
 
 ### feed (`feed.css`)
 
 Home page "Latest" section: bordered data rows of recent posts across all sections. Each row shows a section/ticker badge, article title, and date. Classes:
 
 - `.feed` — the list container
-- `.feed__item` — one bordered row
-- `.feed__badge` — section or ticker label (amber tokens for ticker, accent red for section)
-- `.feed__title` — article title link
-- `.feed__date` — mono-styled date
+- `.feed-row` — one bordered row
+- `.feed-row__badge` — section or ticker label (amber tokens for ticker, accent red for section)
+- `.feed-row__title` — article title link
+- `.feed-row__date` — mono-styled date
 
 ### article (`article.css`)
 
@@ -294,28 +307,30 @@ Reading page layout. Defines the prose column, kicker badge, editorial byline, a
 - `.article` — page wrapper with constrained reading width
 - `.article__header` — kicker + title + subtitle block
 - `.article__title` — Instrument Serif display heading
-- `.article__subtitle` — Source Serif lead
-- `.article__meta` — editorial byline (*By Author · Date · N min read*)
+- `.kicker` — section/ticker badge above the title (e.g., `◈ GOJO · SPY`)
+- `.article__lead` — Source Serif lead paragraph (subtitle)
+- `.byline` — editorial byline (*By Author · Date · N min read*)
 - `.article__content` — prose body; `h2`, `h3`, `p`, `ul/ol`, `a` are all styled here
-- `.about-section` / `.about-section__content` — About page two-column layout (headshot + bio)
 
 ### listing (`listing.css`)
 
-Post-card list pages: Market Takes and Journal. Market Takes adds a live filter field and clickable ticker chips above the list; all filtering is client-side via `market-takes.mjs`. Classes:
+Post-card list pages: Market Takes and Journal. Market Takes adds a live text filter above the list; all filtering is client-side via `market-takes.mjs`. Classes:
 
 - `.listing` — the page container
-- `.listing__filters` — ticker chip row and search field (Market Takes only)
-- `.listing__card` — individual post entry (kicker, title, date, summary)
+- `.filter-bar` — text filter field and result count (Market Takes only; `.filter-bar__field` / `.filter-bar__count`)
+- `.post-card` — individual post entry (kicker, title, date, summary)
+- `.post-card__badge` / `.post-card__badge--ticker` — section or ticker badge
+- `.post-card__title` / `.post-card__date` / `.post-card__summary` — card content parts
 
 ### hub (`hub.css`)
 
 Section overview pages (Wealth, Health, Gojo). Two layout patterns: a card grid for topic areas and a numbered-step list for the program sequence. Classes:
 
-- `.hub` — outer section wrapper
-- `.hub__grid` — card grid for topic cards
-- `.hub__card` — one topic area card (icon, heading, description, link)
-- `.hub__steps` — numbered program steps (e.g., the Wealth 5-step progression)
-- `.hub__step` — one step entry with number badge, heading, and description
+- `.hub-page` — outer section wrapper
+- `.hub-grid` — card grid for topic cards
+- `.hub-card` — one topic area card (`.hub-card__icon`, `.hub-card__title`, `.hub-card__desc`)
+- `.hub-steps` — numbered program steps (e.g., the Wealth 5-step progression)
+- `.hub-step` — one step entry (`.hub-step__num`, `.hub-step__title`, `.hub-step__desc`)
 
 ### callout (`callout.css`)
 
@@ -346,23 +361,23 @@ Identity front door: headshot + bio ("Builder, investor, construction profession
 
 ### Article
 
-Kicker badge (e.g., `◈ GOJO · SPY`) → Instrument Serif headline (`.article__title`) → editorial byline (`.article__meta`) → AI disclaimer callout (Gojo posts only) → Source Serif prose body with mono data blocks for numbers. A sticky rail anchors "On this page" navigation and related posts.
+Kicker badge (e.g., `◈ GOJO · SPY`) → Instrument Serif headline (`.article__title`) → optional lead paragraph (`.article__lead`) → editorial byline (`.byline`) → AI disclaimer callout (Gojo posts only) → Source Serif prose body with mono data blocks for numbers. A sticky rail anchors "On this page" navigation and related posts.
 
 ### Listing (Market Takes / Journal)
 
-**Market Takes:** live filter field + clickable ticker chips above a data-row list of takes. Filtering and result counts render from `search-index.json` via `market-takes.mjs`.
+**Market Takes:** live text filter field (`.filter-bar`) above a data-row list of takes. Filtering and result counts render from `search-index.json` via `market-takes.mjs`.
 
-**Journal:** reverse-chronological list of diary entries, no filter chips.
+**Journal:** reverse-chronological list of diary entries, no filter.
 
-Both use `.listing__card` entries showing kicker, title, date, and summary.
+Both use `.post-card` entries showing kicker, title, date, and summary.
 
 ### Hub (Wealth / Health / Gojo)
 
-Section overview with `.hub__steps` for program sequencing (Wealth: Know Your Money through Automate) and `.hub__grid` for topic area cards. Gojo hub includes the "who is Gojo" intro and the AI disclaimer before the two bucket links (Market Takes, Journal).
+Section overview with `.hub-steps` for program sequencing (Wealth: Know Your Money through Automate) and `.hub-grid` for topic area cards. Gojo hub includes the "who is Gojo" intro and the AI disclaimer before the two bucket links (Market Takes, Journal).
 
 ### About
 
-Bio, AIGA/Build story, contact, social. Uses `.about-section` two-column layout on wider viewports.
+Bio, AIGA/Build story, contact, social. Rendered using the standard article-page template (`.article-page` / `.article-page__grid` / `.article` / `.article-rail`) — no unique About-specific layout class.
 
 ---
 
@@ -389,7 +404,7 @@ The following components existed in v1.0 and were deleted during the Phase 1–4
 | `navigation.css` | Old navigation bar component; replaced by `.chrome-nav` in `chrome.css` |
 | `hero.css` | Two-photo hero section (both TYR Still images); replaced by headshot + identity block |
 | `card.css` | Generic card component; hub and listing use their own card patterns |
-| `step-progress.css` | Animated step-progress bar; replaced by `.hub__steps` static list |
+| `step-progress.css` | Animated step-progress bar; replaced by `.hub-steps` static list |
 | `footer.css` | Standalone footer component; footer is now part of the chrome component |
 | TYR photo assets | Both TYR Still images removed; single `tui-headshot.png` used site-wide |
 
