@@ -43,6 +43,22 @@
   --color-ticker-text: #9a6a00;
   --color-ticker-bg: #fdf3e0;
 
+  /* Authored-content compatibility aliases — Gojo/Money/Health article inline
+     styles reference these var names. Defining them here (light values match
+     the inline-style fallbacks, so light mode is unchanged) lets the authored
+     content adapt to dark mode instead of falling back to hardcoded light. */
+  --color-surface-2: #f8fafc;
+  --color-surface-raised: #fafafa;
+  --color-surface-secondary: rgba(0, 0, 0, 0.03);
+  --color-primary: #3b82f6;
+  --color-accent: #2563eb;
+  --color-danger: #ef4444;
+  --color-error: #dc2626;
+  --color-danger-bg: #fef2f2;
+  --color-warning-text: #92400e;
+  --color-warning-border: #f59e0b;
+  --color-success-text: #166534;
+
   /* ============================================
      TYPOGRAPHY
      ============================================ */
@@ -196,6 +212,19 @@
   /* Ticker - Amber Accent */
   --color-ticker-text: #f5b13d;
   --color-ticker-bg: rgba(245,177,61,0.12);
+
+  /* Authored-content compatibility aliases (dark) — see :root note. */
+  --color-surface-2: var(--color-bg-secondary);
+  --color-surface-raised: var(--color-bg-elevated);
+  --color-surface-secondary: rgba(255, 255, 255, 0.05);
+  --color-primary: #60a5fa;
+  --color-accent: #60a5fa;
+  --color-danger: #f87171;
+  --color-error: #f87171;
+  --color-danger-bg: rgba(239, 68, 68, 0.12);
+  --color-warning-text: #fcd34d;
+  --color-warning-border: #fbbf24;
+  --color-success-text: #4ade80;
 
   /* Shadows - Deeper for Dark Mode */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
