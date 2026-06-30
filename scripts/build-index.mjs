@@ -3,9 +3,9 @@ import { join, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { extractPost } from './lib/extract-post.mjs';
 
-const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const CONTENT_DIRS = ['gojo/stocks', 'gojo/research', 'gojo/notes', 'moneyhub', 'healthhub'];
 const SKIP = /index\.html$/;
+export const INDEX_PATH = 'resources/data/search-index.json';
 
 function walk(dir) {
   const out = [];
@@ -17,17 +17,29 @@ function walk(dir) {
   return out;
 }
 
-const posts = [];
-for (const d of CONTENT_DIRS) {
-  const abs = join(ROOT, d);
-  try { statSync(abs); } catch { continue; }
-  for (const file of walk(abs)) {
-    const url = '/' + relative(ROOT, file).split(sep).join('/');
-    posts.push(extractPost(readFileSync(file, 'utf8'), url));
+export function buildIndex(root) {
+  const posts = [];
+  for (const d of CONTENT_DIRS) {
+    const abs = join(root, d);
+    try { statSync(abs); } catch { continue; }
+    for (const file of walk(abs)) {
+      const url = '/' + relative(root, file).split(sep).join('/');
+      posts.push(extractPost(readFileSync(file, 'utf8'), url));
+    }
   }
+  // Total order → identical output on any filesystem: date desc, then url asc.
+  posts.sort((a, b) => (b.date || '').localeCompare(a.date || '') || a.url.localeCompare(b.url));
+  return posts;
 }
-posts.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 
-const outPath = join(ROOT, 'resources/data/search-index.json');
-writeFileSync(outPath, JSON.stringify(posts, null, 0) + '\n');
-console.log(`Indexed ${posts.length} posts → resources/data/search-index.json`);
+export function serializeIndex(posts) {
+  return JSON.stringify(posts, null, 0) + '\n';
+}
+
+const isMain = process.argv[1] && process.argv[1].endsWith('build-index.mjs');
+if (isMain) {
+  const ROOT = fileURLToPath(new URL('..', import.meta.url));
+  const posts = buildIndex(ROOT);
+  writeFileSync(join(ROOT, INDEX_PATH), serializeIndex(posts));
+  console.log(`Indexed ${posts.length} posts → ${INDEX_PATH}`);
+}
