@@ -12,6 +12,12 @@
   gap: var(--space-4);
 }
 
+.callout > p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
 .callout__icon {
   font-size: var(--text-2xl);
   flex-shrink: 0;

@@ -140,6 +140,7 @@
   --z-modal: 40;
   --z-popover: 50;
   --z-tooltip: 60;
+  --z-overlay: 100;
 
   /* ============================================
      TRANSITIONS
