@@ -28,40 +28,69 @@ function scorePost(post, q, terms) {
   return score;
 }
 
-// ---- browser-only palette ----
+export function nextActive(count, current, delta) {
+  if (count <= 0) return -1;
+  return ((current + delta) % count + count) % count;
+}
+
 let searchInitialized = false;
 
 export async function initSearch(doc = document) {
   if (searchInitialized) return;
   searchInitialized = true;
   let index = [];
-  try {
-    index = await (await fetch('/resources/data/search-index.json')).json();
-  } catch { /* offline / file://: search disabled, pill still inert-safe */ }
+  try { index = await (await fetch('/resources/data/search-index.json')).json(); }
+  catch { /* offline: search disabled */ }
 
   const overlay = doc.createElement('div');
   overlay.className = 'cmdk';
   overlay.hidden = true;
   overlay.innerHTML = `
-    <div class="cmdk__panel" role="dialog" aria-label="Search">
+    <div class="cmdk__panel" role="dialog" aria-modal="true" aria-label="Search">
       <input class="cmdk__input" type="text" placeholder="Search takes, tickers, guides — e.g. SPY, emergency fund" aria-label="Search query">
-      <ul class="cmdk__results"></ul>
+      <ul class="cmdk__results" role="listbox"></ul>
     </div>`;
   doc.body.appendChild(overlay);
   const input = overlay.querySelector('.cmdk__input');
   const results = overlay.querySelector('.cmdk__results');
 
-  const close = () => { overlay.hidden = true; input.value = ''; results.innerHTML = ''; };
-  const open = () => { overlay.hidden = false; input.focus(); };
+  let rows = [];
+  let active = -1;
+  let trigger = null;
 
-  input.addEventListener('input', () => {
-    const rows = rankResults(index, input.value);
+  const paint = () => {
+    [...results.children].forEach((li, i) => {
+      const a = li.firstElementChild;
+      const on = i === active;
+      a.classList.toggle('cmdk__active', on);
+      a.setAttribute('aria-selected', on ? 'true' : 'false');
+      if (on) a.scrollIntoView({ block: 'nearest' });
+    });
+  };
+
+  const render = () => {
+    const q = input.value.trim();
+    rows = rankResults(index, input.value);
+    active = rows.length ? 0 : -1;
+    if (!q) { results.innerHTML = ''; return; }
+    if (!rows.length) { results.innerHTML = '<li class="cmdk__empty">No results.</li>'; return; }
     results.innerHTML = rows.map(p => `
-      <li><a href="${esc(p.url)}">
+      <li><a href="${esc(p.url)}" role="option">
         ${p.ticker ? `<span class="cmdk__tag">${esc(p.ticker)}</span>` : `<span class="cmdk__tag cmdk__tag--sec">${esc(p.section)}</span>`}
         <span class="cmdk__title">${esc(p.title)}</span>
         <span class="cmdk__date">${esc(p.date || '')}</span>
       </a></li>`).join('');
+    paint();
+  };
+
+  const open = () => { trigger = doc.activeElement; overlay.hidden = false; input.value = ''; rows = []; active = -1; results.innerHTML = ''; input.focus(); };
+  const close = () => { overlay.hidden = true; input.value = ''; results.innerHTML = ''; if (trigger && trigger.focus) trigger.focus(); };
+
+  input.addEventListener('input', render);
+  input.addEventListener('keydown', e => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); active = nextActive(rows.length, active, 1); paint(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); active = nextActive(rows.length, active, -1); paint(); }
+    else if (e.key === 'Enter' && active >= 0 && rows[active]) { e.preventDefault(); window.location.href = rows[active].url; }
   });
 
   overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
