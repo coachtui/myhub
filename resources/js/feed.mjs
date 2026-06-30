@@ -1,4 +1,4 @@
-const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+import { esc } from './esc.mjs';
 
 const BADGE = { 'market-take': 'GOJO', 'deep-dive': 'GOJO', 'journal': 'JRNL', 'wealth': 'WLTH', 'health': 'HLTH' };
 

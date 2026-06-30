@@ -1,4 +1,5 @@
-const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+import { esc } from './esc.mjs';
+
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const TYPE_LABEL = { 'deep-dive': 'DEEP DIVE', 'journal': 'JOURNAL', 'market-take': 'TAKE', 'wealth': 'WEALTH', 'health': 'HEALTH' };
 

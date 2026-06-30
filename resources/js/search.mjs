@@ -1,3 +1,5 @@
+import { esc } from './esc.mjs';
+
 export function rankResults(index, query, limit = 8) {
   const q = (query || '').trim().toLowerCase();
   if (!q) return [];
@@ -27,7 +29,6 @@ function scorePost(post, q, terms) {
 }
 
 // ---- browser-only palette ----
-const esc = s => (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 let searchInitialized = false;
 
 export async function initSearch(doc = document) {
