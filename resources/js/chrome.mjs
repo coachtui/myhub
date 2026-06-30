@@ -1,6 +1,5 @@
 import { SITE } from './site-config.mjs';
-
-const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+import { esc } from './esc.mjs';
 
 export function renderHeader(site, currentPath = '/') {
   const links = site.nav.map(n => {

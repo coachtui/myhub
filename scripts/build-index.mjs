@@ -28,7 +28,8 @@ export function buildIndex(root) {
     }
   }
   // Total order → identical output on any filesystem: date desc, then url asc.
-  posts.sort((a, b) => (b.date || '').localeCompare(a.date || '') || a.url.localeCompare(b.url));
+  const cmp = (x, y) => (x < y ? -1 : x > y ? 1 : 0);
+  posts.sort((a, b) => cmp(b.date || '', a.date || '') || cmp(a.url, b.url));
   return posts;
 }
 

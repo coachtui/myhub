@@ -1,6 +1,5 @@
 import { renderHead } from './page-head.mjs';
-
-const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+import { esc } from '../../resources/js/esc.mjs';
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 function prettyDate(iso) {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');

@@ -21,15 +21,9 @@
 /* ============================================
    2. COMPONENTS
    ============================================ */
-@import url('components/navigation.css');
-@import url('components/sidebar-nav.css');
 @import url('components/button.css');
-@import url('components/card.css');
 @import url('components/feed.css');
-@import url('components/hero.css');
 @import url('components/callout.css');
-@import url('components/step-progress.css');
-@import url('components/footer.css');
 @import url('components/chrome.css');
 @import url('components/command-palette.css');
 @import url('components/article.css');
@@ -37,14 +31,7 @@
 @import url('components/hub.css');
 
 /* ============================================
-   3. PAGES (Optional page-specific styles)
-   ============================================ */
-/* @import url('pages/home.css'); */
-/* @import url('pages/hub.css'); */
-/* @import url('pages/article.css'); */
-
-/* ============================================
-   4. ADDITIONAL STYLES
+   3. ADDITIONAL STYLES
    ============================================ */
 
 /* Article/Content Wrapper */

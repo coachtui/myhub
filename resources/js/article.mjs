@@ -1,4 +1,4 @@
-const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+import { esc } from './esc.mjs';
 
 export function buildToc(headings) {
   if (!headings || headings.length < 2) return '';

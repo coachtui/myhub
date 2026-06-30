@@ -1,44 +1,110 @@
-# Money Hub Design System Documentation
+# Tui Alailima — Site Design System
 
-**Version:** 1.0
-**Last Updated:** February 2026
-**Inspired by:** brianlovin.com modern app-like aesthetic
+**Version:** 2.0
+**Refactored:** June 2026
+**Philosophy:** Publishing engine with a sharp front door.
 
----
-
-## Overview
-
-This design system creates a modern, clean, app-like experience for the Money Hub personal website. It's built with vanilla CSS using design tokens, follows mobile-first responsive principles, and includes comprehensive dark mode support.
+The site is the owned home for depth — indexed, permanent, proof of work. Social handles distribution; this is where the thinking lives. Design decisions follow from one sentence: *be the best place on the internet to read what Tui and Gojo write, wrapped in an identity that tells a first-timer who he is in five seconds.*
 
 ---
 
-## Color Palette
+## Architecture
+
+**Vanilla static site — no build tools.**
+
+- `resources/css/style.css` orchestrates all CSS via `@import`.
+- `resources/css/tokens.css` is the single source of truth for every design value.
+- Shared chrome (header, nav, search pill, footer, command palette) is JS-injected at runtime by `resources/js/chrome.mjs`, which reads configuration from `resources/js/site-config.mjs`. Every page mounts chrome through a single `<script>` tag; changing `site-config.mjs` or `chrome.mjs` propagates everywhere.
+- Listings, feed rows, and section counts are rendered client-side from `resources/data/search-index.json` — no server required.
+- The index is rebuilt by `npm run build:index` (runs `scripts/build-index.mjs`). A freshness guard test (`test/index-fresh.test.mjs`) fails CI if the committed index is stale.
+- The GitHub Action (`.github/workflows/build-index.yml`) triggers on every push that touches article directories or scripts, runs `npm run build:index`, then commits the refreshed `search-index.json` if it changed.
+
+---
+
+## Typography
+
+Three typefaces, one role each. All served from Google Fonts.
+
+| Token | Family | Role |
+|---|---|---|
+| `--font-display` | **Instrument Serif**, Georgia, serif | Display headings, article titles, hero text. Weight 400 only — no bold variant is available. |
+| `--font-primary` | **Source Serif 4**, Georgia, Times New Roman, serif | All body copy, prose, descriptions, leads. |
+| `--font-mono` | **IBM Plex Mono**, ui-monospace, SF Mono, Menlo, monospace | Kickers, meta lines, dates in data rows, ticker tags, `⌘K` keycaps, code. |
+
+### Fluid Type Scale
+
+All sizes use `clamp()` — one value scales across every viewport.
+
+```css
+--text-xs:   clamp(0.75rem,  0.7rem  + 0.2vw,  0.875rem);    /* 12–14px  */
+--text-sm:   clamp(0.875rem, 0.85rem + 0.2vw,  0.9375rem);   /* 14–15px  */
+--text-base: clamp(1rem,     0.95rem + 0.3vw,  1.0625rem);   /* 16–17px  */
+--text-lg:   clamp(1.125rem, 1.05rem + 0.4vw,  1.25rem);     /* 18–20px  */
+--text-xl:   clamp(1.25rem,  1.15rem + 0.5vw,  1.5rem);      /* 20–24px  */
+--text-2xl:  clamp(1.5rem,   1.3rem  + 1vw,    2rem);        /* 24–32px  */
+--text-3xl:  clamp(1.875rem, 1.6rem  + 1.4vw,  2.5rem);      /* 30–40px  */
+--text-4xl:  clamp(2.25rem,  1.8rem  + 2vw,    3.5rem);      /* 36–56px  */
+--text-5xl:  clamp(3rem,     2.5rem  + 2.5vw,  4.5rem);      /* 48–72px  */
+```
+
+### Line Heights
+
+```css
+--leading-none:    1;
+--leading-tight:   1.25;
+--leading-snug:    1.375;
+--leading-normal:  1.5;
+--leading-relaxed: 1.625;
+--leading-loose:   2;
+```
+
+### Font Weights
+
+```css
+--weight-normal:    400;
+--weight-medium:    500;
+--weight-semibold:  600;
+--weight-bold:      700;
+--weight-extrabold: 800;
+```
+
+---
+
+## Color
 
 ### Light Mode
 
 **Backgrounds:**
 ```css
---color-bg-primary:    #ffffff  /* White */
---color-bg-secondary:  #f8f9fa  /* Light gray */
---color-bg-tertiary:   #f1f3f5  /* Lighter gray */
---color-bg-elevated:   #ffffff  /* Cards with shadow */
---color-bg-overlay:    rgba(0, 0, 0, 0.03)
+--color-bg-primary:   #ffffff
+--color-bg-secondary: #f8f9fa
+--color-bg-tertiary:  #f1f3f5
+--color-bg-elevated:  #ffffff
+--color-bg-overlay:   rgba(0, 0, 0, 0.03)
 ```
 
 **Text Hierarchy:**
 ```css
---color-text-primary:    #1a1a1a  /* Near black */
---color-text-secondary:  #4a4a4a  /* Dark gray */
---color-text-tertiary:   #737373  /* Medium gray */
---color-text-quaternary: #a3a3a3  /* Light gray */
+--color-text-primary:    #1a1a1a
+--color-text-secondary:  #4a4a4a
+--color-text-tertiary:   #737373
+--color-text-quaternary: #a3a3a3
 ```
 
-**Brand Accent (Refined Red):**
+**Brand Accent — Red:**
 ```css
---color-accent-primary:       #dc2626  /* Modern red */
---color-accent-primary-hover: #b91c1c  /* Darker red */
---color-accent-secondary:     #f87171  /* Light red backgrounds */
---color-accent-tertiary:      #fef2f2  /* Very subtle red wash */
+--color-accent-primary:       #dc2626   /* primary links, CTAs, active states */
+--color-accent-primary-hover: #b91c1c
+--color-accent-secondary:     #f87171
+--color-accent-tertiary:      #fef2f2
+```
+
+**Markets / Ticker — Amber:**
+
+Used for ticker tags and Gojo kickers so market data pops without competing with the red accent.
+```css
+--color-ticker-text: #9a6a00
+--color-ticker-bg:   #fdf3e0
 ```
 
 **Borders:**
@@ -47,44 +113,58 @@ This design system creates a modern, clean, app-like experience for the Money Hu
 --color-border-strong: #d1d5db
 ```
 
-**Semantic Colors:**
+**Semantic:**
 ```css
---color-success:    #10b981  /* Green */
+--color-success:    #10b981
 --color-success-bg: #d1fae5
---color-warning:    #f59e0b  /* Orange */
+--color-warning:    #f59e0b
 --color-warning-bg: #fef3c7
---color-info:       #3b82f6  /* Blue */
+--color-info:       #3b82f6
 --color-info-bg:    #dbeafe
 ```
 
 ### Dark Mode
 
+Dark mode is applied via the `[data-theme="dark"]` attribute on `<html>`. The theme toggle in the chrome header writes this attribute and persists the choice in `localStorage`. Every token override is defined in `tokens.css`.
+
 **Backgrounds:**
 ```css
---color-bg-primary:   #0a0a0a  /* True black */
---color-bg-secondary: #171717  /* Near black */
---color-bg-tertiary:  #262626  /* Dark gray */
---color-bg-elevated:  #1a1a1a  /* Slightly lighter */
+--color-bg-primary:   #0a0a0a
+--color-bg-secondary: #171717
+--color-bg-tertiary:  #262626
+--color-bg-elevated:  #1a1a1a
 --color-bg-overlay:   rgba(255, 255, 255, 0.05)
 ```
 
 **Text Hierarchy:**
 ```css
---color-text-primary:    #fafafa  /* Near white */
---color-text-secondary:  #d4d4d4  /* Light gray */
---color-text-tertiary:   #a3a3a3  /* Medium gray */
---color-text-quaternary: #737373  /* Darker gray */
+--color-text-primary:    #fafafa
+--color-text-secondary:  #d4d4d4
+--color-text-tertiary:   #a3a3a3
+--color-text-quaternary: #737373
 ```
 
-**Brand Accent (Softer for Dark):**
+**Brand Accent — Softened for dark:**
 ```css
---color-accent-primary:   #f87171  /* Soft red */
---color-accent-primary-hover: #fca5a5  /* Lighter red */
---color-accent-secondary: #dc2626  /* Deeper red */
---color-accent-tertiary:  #450a0a
+--color-accent-primary:       #f87171
+--color-accent-primary-hover: #fca5a5
+--color-accent-secondary:     #dc2626
+--color-accent-tertiary:      #450a0a
 ```
 
-**Semantic Colors (Adjusted):**
+**Markets / Ticker — Amber (dark):**
+```css
+--color-ticker-text: #f5b13d
+--color-ticker-bg:   rgba(245, 177, 61, 0.12)
+```
+
+**Borders:**
+```css
+--color-border:        #404040
+--color-border-strong: #525252
+```
+
+**Semantic — Adjusted for dark:**
 ```css
 --color-success:    #34d399
 --color-success-bg: #064e3b
@@ -94,535 +174,255 @@ This design system creates a modern, clean, app-like experience for the Money Hu
 --color-info-bg:    #1e3a8a
 ```
 
-### Usage Guidelines
-
-- **Backgrounds:** Use bg-primary for main content areas, bg-secondary for alternating sections, bg-elevated for cards
-- **Text:** Primary for headings/important text, secondary for body, tertiary for captions, quaternary for disabled states
-- **Accent:** Use sparingly for CTAs, links, and brand elements
-- **Semantic:** Success for confirmations, warning for cautions, info for helpful tips
-
 ---
 
-## Typography
+## Spacing
 
-### Font Families
-
-```css
---font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
---font-display: 'Fraunces', 'Source Serif 4', Georgia, serif;
---font-mono:    'JetBrains Mono', 'Source Code Pro', Consolas, monospace;
-```
-
-**Usage:**
-- **Inter (Primary):** Body text, UI elements, navigation
-- **Fraunces (Display):** Headings, hero sections, emphasis
-- **JetBrains Mono:** Code, disclaimers, technical content
-
-### Type Scale (Fluid Typography)
-
-```css
---text-xs:   clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem)    /* 12-14px */
---text-sm:   clamp(0.875rem, 0.85rem + 0.2vw, 0.9375rem) /* 14-15px */
---text-base: clamp(1rem, 0.95rem + 0.3vw, 1.0625rem)     /* 16-17px */
---text-lg:   clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem)   /* 18-20px */
---text-xl:   clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)     /* 20-24px */
---text-2xl:  clamp(1.5rem, 1.3rem + 1vw, 2rem)           /* 24-32px */
---text-3xl:  clamp(1.875rem, 1.6rem + 1.4vw, 2.5rem)     /* 30-40px */
---text-4xl:  clamp(2.25rem, 1.8rem + 2vw, 3.5rem)        /* 36-56px */
---text-5xl:  clamp(3rem, 2.5rem + 2.5vw, 4.5rem)         /* 48-72px */
-```
-
-### Line Heights
-
-```css
---leading-none:    1
---leading-tight:   1.25
---leading-snug:    1.375
---leading-normal:  1.5
---leading-relaxed: 1.625
---leading-loose:   2
-```
-
-### Font Weights
-
-```css
---weight-normal:    400
---weight-medium:    500
---weight-semibold:  600
---weight-bold:      700
---weight-extrabold: 800
-```
-
----
-
-## Spacing System
-
-Based on 8px grid for consistent vertical rhythm and horizontal spacing.
+8px base grid. Steps follow a 4px to 128px scale.
 
 ```css
 --space-0:  0
---space-1:  0.25rem  /*  4px */
---space-2:  0.5rem   /*  8px */
---space-3:  0.75rem  /* 12px */
---space-4:  1rem     /* 16px */
---space-5:  1.25rem  /* 20px */
---space-6:  1.5rem   /* 24px */
---space-8:  2rem     /* 32px */
---space-10: 2.5rem   /* 40px */
---space-12: 3rem     /* 48px */
---space-16: 4rem     /* 64px */
---space-20: 5rem     /* 80px */
---space-24: 6rem     /* 96px */
---space-32: 8rem     /* 128px */
-```
-
-**Common Patterns:**
-- Card padding: `var(--space-6)`
-- Section spacing: `var(--space-16)` mobile, `var(--space-24)` desktop
-- Paragraph margins: `var(--space-6)`
-- Heading margins: `var(--space-8)` to `var(--space-12)`
-
----
-
-## Border Radius
-
-```css
---radius-sm:   0.25rem  /*  4px - subtle */
---radius-md:   0.5rem   /*  8px - cards */
---radius-lg:   0.75rem  /* 12px - elevated cards */
---radius-xl:   1rem     /* 16px - hero sections */
---radius-2xl:  1.5rem   /* 24px - large elements */
---radius-full: 9999px   /* pills, avatars */
+--space-1:  0.25rem   /*   4px */
+--space-2:  0.5rem    /*   8px */
+--space-3:  0.75rem   /*  12px */
+--space-4:  1rem      /*  16px */
+--space-5:  1.25rem   /*  20px */
+--space-6:  1.5rem    /*  24px */
+--space-8:  2rem      /*  32px */
+--space-10: 2.5rem    /*  40px */
+--space-12: 3rem      /*  48px */
+--space-16: 4rem      /*  64px */
+--space-20: 5rem      /*  80px */
+--space-24: 6rem      /*  96px */
+--space-32: 8rem      /* 128px */
 ```
 
 ---
 
-## Shadows (Layered Elevation)
+## Layout
 
-### Light Mode
+**Max widths:**
 ```css
---shadow-sm:  0 1px 2px 0 rgb(0 0 0 / 0.05)
---shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)
---shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)
---shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)
---shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25)
+--width-content-sm: 42rem   /* 672px  — narrow reading */
+--width-content-md: 48rem   /* 768px  — standard reading */
+--width-content-lg: 56rem   /* 896px  — wide content */
+--width-content-xl: 72rem   /* 1152px — hero / hub sections */
+--width-full:       100%
 ```
 
-### Dark Mode (Deeper shadows)
+**Border radius:**
 ```css
---shadow-sm:  0 1px 2px 0 rgb(0 0 0 / 0.3)
---shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4)
---shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5)
---shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6)
---shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.7)
+--radius-none: 0
+--radius-sm:   0.25rem   /*   4px — subtle */
+--radius-md:   0.5rem    /*   8px — cards */
+--radius-lg:   0.75rem   /*  12px — elevated cards */
+--radius-xl:   1rem      /*  16px — hero sections */
+--radius-2xl:  1.5rem    /*  24px — large elements */
+--radius-full: 9999px    /* pills, avatars */
 ```
 
 ---
 
-## Layout System
+## Elevation
 
-### Max Widths
-
+**Box shadows:**
 ```css
---width-content-sm: 42rem   /* 672px - narrow reading */
---width-content-md: 48rem   /* 768px - standard reading */
---width-content-lg: 56rem   /* 896px - wide content */
---width-content-xl: 72rem   /* 1152px - hero sections */
+--shadow-sm:  0 1px 2px 0 rgb(0 0 0 / 0.05);
+--shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+--shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+--shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+--shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 ```
 
-### Breakpoints
+Dark mode overrides deepen shadow alpha (0.3–0.7).
 
-- **Mobile:** < 768px (default, mobile-first)
-- **Tablet/Desktop:** ≥ 768px
-- **Large Desktop:** ≥ 1024px (optional, rarely used)
-
-### Container
-
+**Z-index scale:**
 ```css
-.container {
-  width: 100%;
-  max-width: var(--width-content-xl);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--space-4);
-  padding-right: var(--space-4);
-}
+--z-base:     0
+--z-dropdown: 10
+--z-sticky:   20
+--z-fixed:    30
+--z-modal:    40
+--z-popover:  50
+--z-tooltip:  60
+--z-overlay:  100
 ```
 
-### Grid System
+---
+
+## Transitions
 
 ```css
-.grid--2 { grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
-.grid--3 { grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); }
-```
+--transition-fast:   150ms ease;
+--transition-base:   200ms ease;
+--transition-slow:   300ms ease;
+--transition-slower: 400ms ease;
 
-Automatically adjusts columns based on available space with minimum column widths.
+--ease-in:     cubic-bezier(0.4, 0, 1, 1);
+--ease-out:    cubic-bezier(0, 0, 0.2, 1);
+--ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+```
 
 ---
 
 ## Component Library
 
-### 1. Navigation
+Eight components, one CSS file each under `resources/css/components/`. All are imported in `resources/css/style.css`.
 
-**Global Navigation (`.nav-global`)**
-- Sticky top bar (64px mobile, 72px desktop)
-- Transparent with backdrop blur
-- Logo left, links center (desktop), actions right
-- Shadow on scroll
+### chrome (`chrome.css`)
 
-**Mobile Navigation (`.nav-mobile`)**
-- Full-screen overlay
-- Hamburger menu toggle
-- Smooth 350ms transitions
-- Body scroll lock when open
+The shared header, primary nav, search pill, theme toggle, and footer — injected into every page by `chrome.mjs`. Configuration (site name, nav links, social links) comes from `site-config.mjs`. Key classes:
 
-**Breadcrumb (`.breadcrumb`)**
-- Simple text navigation with separators
-- Accessible with `aria-label="Breadcrumb"`
-- Current page marked with `aria-current="page"`
+- `.chrome-header` / `.chrome-header__inner` — sticky top bar
+- `.chrome-nav` / `.chrome-nav__link` — primary navigation links; `aria-current="page"` marks the active item
+- `.chrome-search-pill` — compact search button triggering the command palette
+- `.chrome-footer` / `.chrome-footer__inner` — footer with logo, nav repeat, and social icon links
 
-### 2. Cards
+### command-palette (`command-palette.css`)
 
-**Standard Card (`.card`)**
-```html
-<a href="#" class="card">
-  <div class="card__header">
-    <div class="card__icon">💰</div>
-  </div>
-  <h3 class="card__title">Card Title</h3>
-  <p class="card__description">Description text</p>
-  <div class="card__footer">
-    <span class="card__link">Read more <span class="card__arrow">→</span></span>
-  </div>
-</a>
-```
+Full-screen modal search, opened by pressing `⌘K` or clicking the search pill. Queries `search-index.json` client-side; returns ranked results by title match, section, and recency. Classes:
 
-**Hover Effects:**
-- Lift: `translateY(-4px)`
-- Border color changes to accent
-- Shadow increases to `--shadow-xl`
+- `.cmdk` — the overlay backdrop
+- `.cmdk__panel` — the search box and results panel
+- `.cmdk__input` — the live search field
+- `.cmdk__results` — results list container
+- `.cmdk__title` / `.cmdk__date` / `.cmdk__tag` — result row parts (title, date, section badge)
+- `.cmdk__active` — highlighted/focused result row
+- `.cmdk__empty` — empty-state message when no results match
 
-**Step Card (`.card.step-card`)**
-- Includes numbered badge
-- Completion status indicators
-- Links to step pages
+### feed (`feed.css`)
 
-### 3. Buttons
+Home page "Latest" section: bordered data rows of recent posts across all sections. Each row shows a section/ticker badge, article title, and date. Classes:
 
-**Variants:**
-- `.button--primary`: Filled with accent color
-- `.button--secondary`: Outlined
-- `.button--ghost`: Transparent
+- `.feed` — the list container
+- `.feed-row` — one bordered row
+- `.feed-row__badge` — section or ticker label (amber tokens for ticker, accent red for section)
+- `.feed-row__title` — article title link
+- `.feed-row__date` — mono-styled date
 
-**Sizes:**
-- `.button--sm`: Small (compact spacing)
-- `.button` (base): Default size
-- `.button--lg`: Large (prominent CTAs)
+### article (`article.css`)
 
-**Icon Support:**
-```html
-<a href="#" class="button button--primary">
-  Get Started <span class="button__icon">→</span>
-</a>
-```
+Reading page layout. Defines the prose column, kicker badge, editorial byline, and content typography. Classes:
 
-### 4. Callouts
+- `.article` — page wrapper with constrained reading width
+- `.article__header` — kicker + title + subtitle block
+- `.article__title` — Instrument Serif display heading
+- `.kicker` — section/ticker badge above the title (e.g., `◈ GOJO · SPY`)
+- `.article__lead` — Source Serif lead paragraph (subtitle)
+- `.byline` — editorial byline (*By Author · Date · N min read*)
+- `.article__content` — prose body; `h2`, `h3`, `p`, `ul/ol`, `a` are all styled here
 
-**Types:**
-- `.callout--info`: Blue (💡)
-- `.callout--warning`: Orange (⚡)
-- `.callout--success`: Green (✓)
-- `.callout--disclaimer`: Gray with icon
+### listing (`listing.css`)
 
-```html
-<aside class="callout callout--info">
-  <div class="callout__icon">💡</div>
-  <div class="callout__content">
-    <h4>Callout Title</h4>
-    <p>Callout content here.</p>
-  </div>
-</aside>
-```
+Post-card list pages: Market Takes and Journal. Market Takes adds a live text filter above the list; all filtering is client-side via `market-takes.mjs`. Classes:
 
-### 5. Hero Sections
+- `.listing` — the page container
+- `.filter-bar` — text filter field and result count (Market Takes only; `.filter-bar__field` / `.filter-bar__count`)
+- `.post-card` — individual post entry (kicker, title, date, summary)
+- `.post-card__badge` / `.post-card__badge--ticker` — section or ticker badge
+- `.post-card__title` / `.post-card__date` / `.post-card__summary` — card content parts
 
-**Primary Hero (`.hero`)**
-- Two-column layout (desktop)
-- Content left, image right
-- Fade-in animations with stagger
+### hub (`hub.css`)
 
-**Section Hero (`.section-hero`)**
-- Centered text
-- Used for hub/landing pages
-- Constrained width
+Section overview pages (Wealth, Health, Gojo). Two layout patterns: a card grid for topic areas and a numbered-step list for the program sequence. Classes:
 
-### 6. Step Progress Indicator
+- `.hub-page` — outer section wrapper
+- `.hub-grid` — card grid for topic cards
+- `.hub-card` — one topic area card (`.hub-card__icon`, `.hub-card__title`, `.hub-card__desc`)
+- `.hub-steps` — numbered program steps (e.g., the Wealth 5-step progression)
+- `.hub-step` — one step entry (`.hub-step__num`, `.hub-step__title`, `.hub-step__desc`)
 
-**Step Progress (`.step-progress`)**
-- Visual progress bar
-- Clickable step circles (1-5)
-- Current, completed, and pending states
-- Compact labels on mobile, full labels on desktop
+### callout (`callout.css`)
 
-### 7. Footer
+Inline callout block for article content — used for the AI-author disclaimer on Gojo posts and for tips or warnings. Renders as a left-bordered block with a semantic background.
 
-**Modern Footer (`.footer`)**
-- Three-column layout (desktop)
-- Brand section with social links
-- Quick links to main sections
-- Copyright and disclaimer
-- Responsive stack on mobile
+- `.callout` — base callout with border-left accent
+- `.callout--warning` — amber-tinted variant
+- `.callout--info` — blue-tinted variant
+- `.callout--ai` — Gojo AI-author disclosure
+
+### button (`button.css`)
+
+Standalone button component used for CTAs and nav-adjacent actions.
+
+- `.btn` — base button (red accent fill)
+- `.btn--secondary` — bordered ghost variant
+- `.btn--sm` / `.btn--lg` — size variants
 
 ---
 
-## Dark Mode Implementation
+## Page Templates
 
-### Theme Switching
+All pages share the same chrome, token, and component kit.
 
-**HTML Attribute:**
-```html
-<html data-theme="light">
-```
+### Home
 
-**JavaScript (theme.js):**
-- Checks localStorage for saved preference
-- Falls back to system preference (`prefers-color-scheme`)
-- Applies theme before render to prevent flash
-- Smooth 200ms transitions on theme change
+Identity front door: headshot + bio ("Builder, investor, construction professional.") + compact identity block. Below the fold: live "Latest" feed (`.feed`) of mixed recent posts from all sections, a prominent `⌘K` search entry point, and section entry cards. Social links in the footer.
 
-**Toggle Button:**
-```html
-<button class="theme-toggle" data-theme-toggle>
-  <svg class="theme-toggle__icon theme-toggle__icon--sun">...</svg>
-  <svg class="theme-toggle__icon theme-toggle__icon--moon">...</svg>
-</button>
-```
+### Article
 
-### CSS Implementation
+Kicker badge (e.g., `◈ GOJO · SPY`) → Instrument Serif headline (`.article__title`) → optional lead paragraph (`.article__lead`) → editorial byline (`.byline`) → AI disclaimer callout (Gojo posts only) → Source Serif prose body with mono data blocks for numbers. A sticky rail anchors "On this page" navigation and related posts.
 
-All color tokens are redefined under `[data-theme="dark"]` selector:
+### Listing (Market Takes / Journal)
 
-```css
-:root {
-  --color-bg-primary: #ffffff;
-  /* ... light mode */
-}
+**Market Takes:** live text filter field (`.filter-bar`) above a data-row list of takes. Filtering and result counts render from `search-index.json` via `market-takes.mjs`.
 
-[data-theme="dark"] {
-  --color-bg-primary: #0a0a0a;
-  /* ... dark mode overrides */
-}
-```
+**Journal:** reverse-chronological list of diary entries, no filter.
+
+Both use `.post-card` entries showing kicker, title, date, and summary.
+
+### Hub (Wealth / Health / Gojo)
+
+Section overview with `.hub-steps` for program sequencing (Wealth: Know Your Money through Automate) and `.hub-grid` for topic area cards. Gojo hub includes the "who is Gojo" intro and the AI disclaimer before the two bucket links (Market Takes, Journal).
+
+### About
+
+Bio, AIGA/Build story, contact, social. Rendered using the standard article-page template (`.article-page` / `.article-page__grid` / `.article` / `.article-rail`) — no unique About-specific layout class.
 
 ---
 
-## Animations & Transitions
+## Build and Publish
 
-### Timing
+| Task | Command |
+|---|---|
+| Rebuild search index | `npm run build:index` |
+| Run all tests | `npm test` (54 tests via `node --test`) |
 
-```css
---transition-fast:   150ms ease
---transition-base:   200ms ease
---transition-slow:   300ms ease
---transition-slower: 400ms ease
-```
+**Freshness guard:** `test/index-fresh.test.mjs` rebuilds the index in memory and compares it to the committed `resources/data/search-index.json`. If they differ, the test fails with: *"search-index.json is stale — run `npm run build:index` and commit the result."*
 
-### Timing Functions
-
-```css
---ease-in:     cubic-bezier(0.4, 0, 1, 1)
---ease-out:    cubic-bezier(0, 0, 0.2, 1)
---ease-in-out: cubic-bezier(0.4, 0, 0.2, 1)
-```
-
-### Common Animations
-
-**Fade In Up:**
-```css
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-```
-
-**Card Hover:**
-```css
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-}
-```
-
-**Reduced Motion:**
-```css
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-```
+**Reindex Action (`.github/workflows/build-index.yml`):** triggered on push to `main` when files under `gojo/`, `moneyhub/`, `healthhub/`, or `scripts/` change. Runs `npm run build:index` then `node --test`, and commits the refreshed `search-index.json` if it changed (`[skip ci]`).
 
 ---
 
-## Accessibility
+## Removed in the Refactor
 
-### WCAG AA Compliance
+The following components existed in v1.0 and were deleted during the Phase 1–4 refactor. Do not reference them as present.
 
-- **Color Contrast:** All text meets 4.5:1 ratio minimum
-- **Focus Indicators:** Visible on all interactive elements
-- **Keyboard Navigation:** Full site accessible via keyboard
-- **Screen Readers:** Proper ARIA labels, semantic HTML
-
-### Best Practices
-
-- Use semantic HTML (`<nav>`, `<article>`, `<aside>`)
-- Provide `alt` text for all images
-- Use `aria-label` for icon buttons
-- Mark current page with `aria-current="page"`
-- Announce dynamic content changes to screen readers
-
----
-
-## File Architecture
-
-```
-/resources/css/
-├── tokens.css              # Design variables
-├── reset.css               # Modern CSS reset
-├── base.css                # Base element styles
-├── utilities.css           # Layout utilities
-├── components/
-│   ├── navigation.css
-│   ├── card.css
-│   ├── button.css
-│   ├── hero.css
-│   ├── callout.css
-│   ├── step-progress.css
-│   └── footer.css
-└── style.css               # Main file (imports all)
-
-/resources/js/
-├── theme.js                # Dark mode toggle
-└── navigation.js           # Mobile menu, scroll effects
-```
-
----
-
-## Usage Examples
-
-### Creating a New Page
-
-```html
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title | Money Hub</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <!-- CSS & JS -->
-    <link rel="stylesheet" href="/resources/css/style.css">
-    <script src="/resources/js/theme.js"></script>
-</head>
-<body>
-    <!-- Include nav-global, nav-mobile, breadcrumb, disclaimer, content, footer -->
-    <script src="/resources/js/navigation.js"></script>
-</body>
-</html>
-```
-
-### Adding a New Component
-
-1. Create CSS file in `/resources/css/components/`
-2. Define base styles using design tokens
-3. Add responsive breakpoints with `@media (min-width: 768px)`
-4. Add dark mode overrides with `[data-theme="dark"]`
-5. Import in `style.css`
-
----
-
-## Performance
-
-### Optimizations
-
-- **Fonts:** Preloaded with `rel="preconnect"`
-- **CSS:** Modular imports, critical CSS inline option
-- **Images:** Lazy loading below fold, WebP with fallbacks
-- **JavaScript:** Defer non-critical scripts
-- **Shadows & Transforms:** GPU-accelerated properties only
-
-### Bundle Size
-
-- **CSS:** ~35KB unminified, ~15KB gzipped
-- **JavaScript:** ~5KB total (theme + navigation)
-- **Fonts:** ~150KB (Inter, Fraunces, JetBrains Mono)
-
----
-
-## Browser Support
-
-- **Modern Browsers:** Chrome, Firefox, Safari, Edge (latest 2 versions)
-- **CSS Features:** CSS Grid, Flexbox, Custom Properties
-- **JavaScript:** ES6+ (modules, arrow functions, template literals)
-- **Fallbacks:** Graceful degradation for older browsers
-
----
-
-## Maintenance
-
-### Updating Colors
-
-1. Edit `/resources/css/tokens.css`
-2. Update both `:root` and `[data-theme="dark"]`
-3. Test contrast ratios with WebAIM tool
-4. Verify across all pages
-
-### Adding Breakpoints
-
-- Keep mobile-first approach
-- Use `min-width` media queries
-- Common breakpoint: 768px
-- Test on real devices
-
-### Design Tokens Best Practices
-
-- Always use variables, never hardcoded values
-- Name semantically (`--color-text-primary` not `--dark-gray`)
-- Keep naming consistent across light/dark modes
-- Document any new additions
-
----
-
-## Credits
-
-**Design Inspiration:** brianlovin.com
-**Fonts:** Inter (Rasmus Andersson), Fraunces (Flavia Zimbardi), JetBrains Mono (JetBrains)
-**Icons:** Font Awesome
-**Framework:** Vanilla CSS + JavaScript (no build tools)
+| Removed | Notes |
+|---|---|
+| `sidebar-nav.css` | Hard-coded per-page sidebar navigation; replaced by JS-injected chrome |
+| `navigation.css` | Old navigation bar component; replaced by `.chrome-nav` in `chrome.css` |
+| `hero.css` | Two-photo hero section (both TYR Still images); replaced by headshot + identity block |
+| `card.css` | Generic card component; hub and listing use their own card patterns |
+| `step-progress.css` | Animated step-progress bar; replaced by `.hub-steps` static list |
+| `footer.css` | Standalone footer component; footer is now part of the chrome component |
+| TYR photo assets | Both TYR Still images removed; single `tui-headshot.png` used site-wide |
 
 ---
 
 ## Version History
 
+**v2.0 (June 2026)**
+- Full rewrite: new typography system (Instrument Serif / Source Serif 4 / IBM Plex Mono)
+- JS-injected shared chrome (`chrome.mjs` + `site-config.mjs`)
+- Site-wide search via `search-index.json` and command palette (`⌘K`)
+- Eight live component files: chrome, command-palette, feed, article, listing, hub, callout, button
+- Amber ticker token pair (`--color-ticker-text` / `--color-ticker-bg`)
+- Freshness guard test + GitHub Actions reindex
+- Single headshot replacing the two TYR photos
+- Removed: sidebar-nav, navigation, hero, card, step-progress, footer component files
+
 **v1.0 (February 2026)**
-- Initial design system implementation
-- Complete color palette (light/dark)
-- Typography system with fluid scaling
-- Component library (7 core components)
-- Full site redesign (8 core pages + 7 secondary pages)
-- Mobile-first responsive design
-- Dark mode with localStorage persistence
+- Initial design system (pre-refactor, "Money Hub" branding)
+- Color palette, fluid type scale, dark mode
+- Seven original components (since removed or replaced)
