@@ -61,6 +61,7 @@ export async function initSearch(doc = document) {
   const paint = () => {
     [...results.children].forEach((li, i) => {
       const a = li.firstElementChild;
+      if (!a) return;
       const on = i === active;
       a.classList.toggle('cmdk__active', on);
       a.setAttribute('aria-selected', on ? 'true' : 'false');
