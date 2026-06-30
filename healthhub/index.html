@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Health Hub | Tui Alailima</title>
-  <meta name="description" content="Health, fitness, and long-term performance optimization.">
+  <title>Health | Tui Alailima</title>
+  <meta name="description" content="Training, nutrition, recovery, and long-term performance — how I build a body and mind that lasts.">
   <link rel="icon" href="/resources/images/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,171 +14,50 @@
   <script src="/resources/js/theme.js"></script>
 </head>
 <body>
-    <!-- Global Navigation -->
-    <header class="chrome-header" id="site-header" aria-label="Site header"></header>
+  <header class="chrome-header" id="site-header" aria-label="Site header"></header>
+  <main class="hub-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol>
+      <li><a href="/">Home</a></li><li aria-current="page">Health</li>
+    </ol></nav>
+    <header class="hub-page__head">
+      <span class="hub-page__kicker">Health &amp; performance</span>
+      <h1 class="hub-page__title">Health</h1>
+      <p class="hub-page__subtitle">Training, nutrition, recovery, and long-term performance. Building a body and mind that lasts.</p>
+    </header>
+    <aside class="callout callout--info">
+      <span class="callout__icon" aria-hidden="true">🚧</span>
+      <p>The Health Hub is currently being built out. I'm working on content covering training principles, nutrition frameworks, recovery protocols, and long-term performance optimization.</p>
+    </aside>
+    <section class="hub-section">
+      <h2 class="hub-section__title">How I think about health</h2>
+      <div class="hub-prose">
+        <p>I approach health the same way I approach money: with a long-term mindset, simple frameworks, and a focus on what I can actually sustain.</p>
 
-    <!-- Page Layout with Sidebar -->
-    <div class="page-layout">
-        <!-- Toggle Button (outside sidebar so it stays visible) -->
-        <button class="sidebar-nav__toggle" data-sidebar-toggle aria-expanded="false">
-            <span></span>
-        </button>
+        <p>I'm not trying to optimize every variable or chase the latest trend. I care about building habits and systems that work for 20, 30, 40+ years. That means focusing on the fundamentals:</p>
 
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar-nav">
-            <!-- Health Section -->
-            <div class="sidebar-nav__section">
-                <h3 class="sidebar-nav__heading">Health</h3>
-                <ul class="sidebar-nav__items">
-                    <li class="sidebar-nav__item">
-                        <a href="/healthhub/" class="sidebar-nav__link">Overview</a>
-                    </li>
-                    <li class="sidebar-nav__item">
-                        <a href="/healthhub/training.html" class="sidebar-nav__link">
-                            💪 Training
-                        </a>
-                    </li>
-                    <li class="sidebar-nav__item">
-                        <a href="/healthhub/nutrition.html" class="sidebar-nav__link">
-                            🍽️ Nutrition
-                        </a>
-                    </li>
-                    <li class="sidebar-nav__item">
-                        <a href="/healthhub/recovery.html" class="sidebar-nav__link">
-                            😴 Recovery
-                        </a>
-                    </li>
-                    <li class="sidebar-nav__item">
-                        <a href="/healthhub/metrics.html" class="sidebar-nav__link">
-                            📊 Metrics
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </aside>
+        <ul>
+          <li><strong>Training:</strong> Consistent strength work, conditioning, and movement quality.</li>
+          <li><strong>Nutrition:</strong> Enough protein, vegetables, and calories to support performance and recovery.</li>
+          <li><strong>Recovery:</strong> Sleep, stress management, and knowing when to push vs back off.</li>
+          <li><strong>Longevity:</strong> Building a body that stays capable and resilient as I age.</li>
+        </ul>
 
-        <!-- Main Content -->
-        <main class="page-content">
-    <!-- Breadcrumb -->
-    <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <ol>
-                <li><a href="/">Home</a></li>
-                <li aria-current="page">Health Hub</li>
-            </ol>
-        </nav>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="section-hero">
-        <div class="container">
-            <div class="section-hero__content">
-                <h1 class="section-hero__title">Health Hub</h1>
-                <p class="section-hero__description">Training, nutrition, recovery, and long-term performance. How I think about building a body and mind that lasts.</p>
-            </div>
-        </div>
+        <p>The goal isn't perfection. It's having a system you can stick with when life gets busy, when motivation is low, and when things don't go according to plan.</p>
+      </div>
     </section>
-
-    <!-- Coming Soon Notice -->
-    <section class="section">
-        <div class="container">
-            <aside class="callout callout--info" style="max-width: var(--width-content-md); margin: 0 auto;">
-                <div class="callout__icon">🚧</div>
-                <div class="callout__content">
-                    <h4>Under Construction</h4>
-                    <p>The Health Hub is currently being built out. I'm working on content covering training principles, nutrition frameworks, recovery protocols, and long-term performance optimization.</p>
-                </div>
-            </aside>
-        </div>
+    <section class="hub-section">
+      <h2 class="hub-section__title">Topics</h2>
+      <p class="hub-section__lead">Areas I'm building out.</p>
+      <div class="hub-grid">
+        <a class="hub-card" href="/healthhub/training.html"><span class="hub-card__icon">💪</span><span class="hub-card__title">Training</span><span class="hub-card__desc">How I structure strength training, conditioning, and movement work for long-term performance and injury prevention.</span><span class="hub-card__meta">Read →</span></a>
+        <a class="hub-card hub-card--soon" href="/healthhub/nutrition.html"><span class="hub-card__icon">🍽️</span><span class="hub-card__title">Nutrition</span><span class="hub-card__desc">Simple, sustainable nutrition principles. Protein targets, calorie awareness, and eating for performance without obsessing over every meal.</span><span class="hub-card__meta">Coming soon</span></a>
+        <a class="hub-card hub-card--soon" href="/healthhub/recovery.html"><span class="hub-card__icon">🌙</span><span class="hub-card__title">Recovery</span><span class="hub-card__desc">Sleep, stress management, and knowing when to push vs back off.</span><span class="hub-card__meta">Coming soon</span></a>
+        <a class="hub-card hub-card--soon" href="/healthhub/metrics.html"><span class="hub-card__icon">📊</span><span class="hub-card__title">Metrics</span><span class="hub-card__desc">What I track and why — the signals worth paying attention to.</span><span class="hub-card__meta">Coming soon</span></a>
+      </div>
     </section>
-
-    <!-- Philosophy Section -->
-    <section class="section" style="background: var(--color-bg-secondary);">
-        <div class="container">
-            <h2 style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--color-text-primary); text-align: center; margin-bottom: var(--space-4);">How I Think About Health</h2>
-            <p style="text-align: center; color: var(--color-text-secondary); font-size: var(--text-lg); max-width: 600px; margin: 0 auto var(--space-12) auto;">Simple principles, consistent effort, and systems built to last decades.</p>
-
-            <div style="max-width: var(--width-content-md); margin: 0 auto;">
-                <p>I approach health the same way I approach money: with a long-term mindset, simple frameworks, and a focus on what I can actually sustain.</p>
-
-                <p>I'm not trying to optimize every variable or chase the latest trend. I care about building habits and systems that work for 20, 30, 40+ years. That means focusing on the fundamentals:</p>
-
-                <ul>
-                    <li><strong>Training:</strong> Consistent strength work, conditioning, and movement quality.</li>
-                    <li><strong>Nutrition:</strong> Enough protein, vegetables, and calories to support performance and recovery.</li>
-                    <li><strong>Recovery:</strong> Sleep, stress management, and knowing when to push vs back off.</li>
-                    <li><strong>Longevity:</strong> Building a body that stays capable and resilient as I age.</li>
-                </ul>
-
-                <p>The goal isn't perfection. It's having a system you can stick with when life gets busy, when motivation is low, and when things don't go according to plan.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Planned Topics -->
-    <section class="section">
-        <div class="container">
-            <h2 style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--color-text-primary); text-align: center; margin-bottom: var(--space-4);">Planned Topics</h2>
-            <p style="text-align: center; color: var(--color-text-secondary); font-size: var(--text-lg); max-width: 600px; margin: 0 auto var(--space-12) auto;">Areas I'll be covering as the Health Hub develops.</p>
-
-            <div class="grid grid--2" style="max-width: var(--width-content-xl); margin: 0 auto;">
-                <!-- Topic 1 -->
-                <div class="card card--inactive">
-                    <div class="card__header">
-                        <div class="card__icon">💪</div>
-                    </div>
-                    <h3 class="card__title">Training Frameworks</h3>
-                    <p class="card__description">How I structure strength training, conditioning, and movement work for long-term performance and injury prevention.</p>
-                    <div class="card__footer">
-                        <span class="card__link card__link--disabled">Coming soon</span>
-                    </div>
-                </div>
-
-                <!-- Topic 2 -->
-                <div class="card card--inactive">
-                    <div class="card__header">
-                        <div class="card__icon">🍽️</div>
-                    </div>
-                    <h3 class="card__title">Nutrition Basics</h3>
-                    <p class="card__description">Simple, sustainable nutrition principles. Protein targets, calorie awareness, and eating for performance without obsessing over every meal.</p>
-                    <div class="card__footer">
-                        <span class="card__link card__link--disabled">Coming soon</span>
-                    </div>
-                </div>
-
-                <!-- Topic 3 -->
-                <div class="card card--inactive">
-                    <div class="card__header">
-                        <div class="card__icon">😴</div>
-                    </div>
-                    <h3 class="card__title">Recovery & Sleep</h3>
-                    <p class="card__description">Why recovery matters as much as training. Sleep hygiene, stress management, and knowing when to push vs when to back off.</p>
-                    <div class="card__footer">
-                        <span class="card__link card__link--disabled">Coming soon</span>
-                    </div>
-                </div>
-
-                <!-- Topic 4 -->
-                <div class="card card--inactive">
-                    <div class="card__header">
-                        <div class="card__icon">🎯</div>
-                    </div>
-                    <h3 class="card__title">Longevity & Performance</h3>
-                    <p class="card__description">Building a body that performs well now and stays capable for decades. Long-term thinking applied to health and fitness.</p>
-                    <div class="card__footer">
-                        <span class="card__link card__link--disabled">Coming soon</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="chrome-footer" id="site-footer" aria-label="Site footer"></footer>
-        </main>
-    </div>
-
-    <script type="module" src="/resources/js/chrome.mjs"></script>
-<script type="module" src="/resources/js/search.mjs"></script>
+  </main>
+  <footer class="chrome-footer" id="site-footer" aria-label="Site footer"></footer>
+  <script type="module" src="/resources/js/chrome.mjs"></script>
+  <script type="module" src="/resources/js/search.mjs"></script>
 </body>
 </html>
