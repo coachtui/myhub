@@ -17,7 +17,7 @@ const ORDER = [
 ];
 
 // Pages rebuilt so far. Each page task appends its slug here.
-const REBUILT = ['brokerage-basics'];
+const REBUILT = ['brokerage-basics', 'account-types'];
 
 test('investing hub lists the five guides in reading-chain order', () => {
   const html = readFileSync(join(DIR, 'index.html'), 'utf8');
