@@ -24,7 +24,7 @@ export const SERIES = {
   },
   '20Y': {
     label: '20 years',
-    note: 'Same fund, twenty years -- including two brutal crashes you can barely see. Zoom out.',
+    note: 'Same fund, twenty years — including two brutal crashes you can barely see. Zoom out.',
     values: [127, 132, 90, 102, 114, 114, 130, 168, 187, 186, 205, 245, 240, 300, 340, 430, 380, 455, 540, 620, 744.78],
   },
 };
@@ -86,10 +86,15 @@ function makeButtons(container, items, onPick) {
     const b = document.createElement('button');
     b.type = 'button';
     b.className = 'widget__btn' + (i === 0 ? ' is-active' : '');
+    b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
     b.textContent = item;
     b.addEventListener('click', () => {
-      wrap.querySelectorAll('.widget__btn').forEach(x => x.classList.remove('is-active'));
+      wrap.querySelectorAll('.widget__btn').forEach(x => {
+        x.classList.remove('is-active');
+        x.setAttribute('aria-pressed', 'false');
+      });
       b.classList.add('is-active');
+      b.setAttribute('aria-pressed', 'true');
       onPick(item, i);
     });
     wrap.appendChild(b);
@@ -153,10 +158,10 @@ function mountAnatomy(body) {
     return `<rect x="${(x - 4).toFixed(1)}" y="${(H - PAD - v).toFixed(1)}" width="8" height="${v}" fill="var(--color-border)"/>`;
   }).join('');
   const parts = {
-    'Price line': { sel: 'g[data-part="price"]', text: 'The line is the price over time -- each point is what the fund cost that day. Up and to the right is what you want over years, not days.' },
+    'Price line': { sel: 'g[data-part="price"]', text: 'The line is the price over time — each point is what the fund cost that day. Up and to the right is what you want over years, not days.' },
     'Price axis': { sel: 'g[data-part="yaxis"]', text: 'The vertical axis is price in dollars. Careful: it often does not start at zero, which makes small moves look dramatic.' },
-    'Time axis': { sel: 'g[data-part="xaxis"]', text: 'The horizontal axis is time. Always check it first -- a scary cliff on a 1-day chart is invisible on a 10-year chart.' },
-    'Volume': { sel: 'g[data-part="volume"]', text: 'The bars along the bottom are volume -- how many shares changed hands. Tall bars mean busy days, usually around news.' },
+    'Time axis': { sel: 'g[data-part="xaxis"]', text: 'The horizontal axis is time. Always check it first — a scary cliff on a 1-day chart is invisible on a 10-year chart.' },
+    'Volume': { sel: 'g[data-part="volume"]', text: 'The bars along the bottom are volume — how many shares changed hands. Tall bars mean busy days, usually around news.' },
   };
   const chart = document.createElement('div');
   chart.innerHTML = svgOpen('Anatomy of a price chart') +
@@ -168,14 +173,15 @@ function mountAnatomy(body) {
   const note = document.createElement('p');
   note.className = 'widget__note';
   note.setAttribute('aria-live', 'polite');
-  note.textContent = 'Tap a label to highlight that part of the chart.';
-  makeButtons(body, Object.keys(parts), name => {
+  const onPick = name => {
     chart.querySelectorAll('g[data-part]').forEach(g => (g.style.opacity = '0.25'));
     chart.querySelector(parts[name].sel).style.opacity = '1';
     note.textContent = parts[name].text;
-  });
+  };
+  makeButtons(body, Object.keys(parts), onPick);
   body.appendChild(chart);
   body.appendChild(note);
+  onPick(Object.keys(parts)[0]);
 }
 
 function mountCrash(body) {
@@ -228,6 +234,7 @@ function mountCandles(body) {
       g.addEventListener('click', show);
       g.addEventListener('focus', show);
       g.addEventListener('mouseenter', show);
+      g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(); } });
     });
   };
   makeButtons(body, ['Candles', 'Line'], name => { mode = name; draw(); });
