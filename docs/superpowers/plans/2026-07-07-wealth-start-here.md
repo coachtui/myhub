@@ -1454,7 +1454,7 @@ git commit -m "Add Start Here lesson 7: Bulls, Bears, and Crashes with crash-his
 
 - [ ] **Step 3: Create the page from §SHELL**
 
-Slots: `TITLE` = `Volatility and the VIX` · `SLUG` = `volatility-and-the-vix` · `DESC` = `The VIX — the market's "fear index" — explained in plain language, and why a long-term investor treats it as a weather report, not an instruction.` · `PREV_SLUG` = `bulls-bears-and-crashes` · `PREV_TITLE` = `Bulls, Bears, and Crashes` · `NEXT_HREF` = `/moneyhub/start-here/earnings-sectors-analyst-talk.html` · `NEXT_TITLE` = `Earnings, Sectors, and Analyst Talk`
+Slots: `TITLE` = `Volatility and the VIX` · `SLUG` = `volatility-and-the-vix` · `DESC` = `The VIX — the market's fear index — explained in plain language, and why a long-term investor treats it as a weather report, not an instruction.` · `PREV_SLUG` = `bulls-bears-and-crashes` · `PREV_TITLE` = `Bulls, Bears, and Crashes` · `NEXT_HREF` = `/moneyhub/start-here/earnings-sectors-analyst-talk.html` · `NEXT_TITLE` = `Earnings, Sectors, and Analyst Talk`
 
 `CONTENT`:
 
