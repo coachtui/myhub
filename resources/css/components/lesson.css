@@ -1,0 +1,191 @@
+/* ============================================
+   LESSON — Start Here beginner series
+   TL;DR box, Gojo opener quote, terms recap,
+   self-check quiz, interactive widget frame.
+   Tokens only — dark mode comes for free.
+   ============================================ */
+
+.lesson-tldr {
+  background: var(--color-bg-secondary);
+  border-left: 3px solid var(--color-accent-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+.lesson-tldr__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  margin-bottom: var(--space-2);
+}
+
+.lesson-tldr p {
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+  line-height: var(--leading-snug);
+  margin: 0;
+}
+
+.lesson-opener {
+  border-left: 3px solid var(--color-border-strong);
+  padding: var(--space-2) var(--space-5);
+  margin: 0 0 var(--space-2);
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+.lesson-opener p { margin-bottom: var(--space-2); }
+
+.lesson-opener cite {
+  display: block;
+  font-style: normal;
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+.lesson-opener__note {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-8);
+}
+
+.lesson-terms {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  margin-top: var(--space-12);
+}
+
+.lesson-terms h2 {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin: 0 0 var(--space-4);
+}
+
+.lesson-terms ul { margin-bottom: 0; }
+.lesson-terms li { font-size: var(--text-sm); }
+
+.quiz { margin-top: var(--space-8); }
+
+.quiz h2 {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-4);
+}
+
+.quiz__item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+  background: var(--color-bg-primary);
+}
+
+.quiz__item summary {
+  cursor: pointer;
+  padding: var(--space-4) var(--space-5);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  list-style: none;
+}
+
+.quiz__item summary::before {
+  content: "Q ";
+  font-family: var(--font-mono);
+  color: var(--color-accent-primary);
+  font-weight: var(--weight-bold);
+}
+
+.quiz__item[open] summary { border-bottom: 1px solid var(--color-border); }
+
+.quiz__item p {
+  padding: var(--space-4) var(--space-5);
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.widget {
+  margin: var(--space-8) 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  background: var(--color-bg-primary);
+}
+
+.widget__body svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.widget__fallback {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.widget__caption {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  margin-top: var(--space-3);
+}
+
+.widget__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.widget__btn {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  min-height: 36px;
+  transition: all var(--transition-fast);
+}
+
+.widget__btn:hover { border-color: var(--color-accent-primary); }
+
+.widget__btn:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+.widget__btn.is-active {
+  background: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: var(--color-bg-primary);
+}
+
+.widget__note,
+.widget__readout {
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-3);
+  min-height: 2.5em;
+}
+
+.widget [tabindex="0"]:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+}
