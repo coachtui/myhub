@@ -30,13 +30,15 @@ export const SERIES = {
 };
 
 export const CRASHES = {
-  years: [1990, 1992, 1994, 1996, 1998, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024, 2026],
-  values: [330, 435, 459, 740, 1229, 1320, 880, 1212, 1418, 903, 1258, 1426, 2059, 2239, 2507, 3756, 3840, 5882, 7450],
+  // Includes each crash's peak AND trough so the drawdowns are actually visible;
+  // markers sit on the troughs.
+  years: [1990, 1992, 1994, 1996, 1998, 2000, 2002, 2004, 2006, 2007, 2009, 2011, 2013, 2015, 2017, 2019, 2020, 2021, 2022, 2024, 2026],
+  values: [330, 435, 459, 740, 1229, 1527, 777, 1212, 1418, 1565, 677, 1258, 1848, 2044, 2674, 3386, 2237, 4766, 3577, 5882, 7450],
   markers: [
-    { year: 2000, label: 'Dot-com bust -49%' },
-    { year: 2008, label: 'Financial crisis -57%' },
-    { year: 2020, label: 'COVID crash -34%' },
-    { year: 2022, label: 'Rate-hike bear -25%' },
+    { year: 2002, label: 'Dot-com bust −49%' },
+    { year: 2009, label: 'Financial crisis −57%' },
+    { year: 2020, label: 'COVID crash −34%' },
+    { year: 2022, label: 'Rate-hike bear −25%' },
   ],
 };
 
@@ -188,13 +190,18 @@ function mountCrash(body) {
   body.textContent = '';
   const { years, values, markers } = CRASHES;
   const [lo, hi] = extent(values);
+  // Amber dots mark each crash's trough; labels stack as a legend in the
+  // chart's empty top-left corner so they never collide with the line or
+  // each other. Years tie legend rows to dots (both run chronologically).
   const dots = markers.map(m => {
     const i = years.indexOf(m.year);
     const x = scale(i, 0, years.length - 1, PAD, W - PAD);
     const y = scale(values[i], lo, hi, H - PAD, PAD);
-    return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5" fill="var(--color-warning)"/>` +
-           `<text x="${Math.min(x + 8, W - 150).toFixed(1)}" y="${Math.max(y - 8, 14).toFixed(1)}" font-size="12" fill="var(--color-text-secondary)">${m.year} ${m.label}</text>`;
-  }).join('');
+    return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5" fill="var(--color-warning)"/>`;
+  }).join('') + markers.map((m, k) =>
+    `<circle cx="${PAD + 12}" cy="${24 + k * 22 - 4}" r="4" fill="var(--color-warning)"/>` +
+    `<text x="${PAD + 24}" y="${24 + k * 22}" font-size="13" fill="var(--color-text-secondary)">${m.year} ${m.label}</text>`
+  ).join('');
   const chart = document.createElement('div');
   chart.innerHTML = lineSvg(values, 'US market since 1990 with major crashes marked', dots);
   const note = document.createElement('p');
