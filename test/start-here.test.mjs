@@ -46,8 +46,9 @@ for (const slug of CREATED) {
     assert.match(html, /<meta name="description" content="[^"]+"/);
     assert.match(html, /class="callout callout--ai"/);
     assert.match(html, /class="lesson-tldr"/);
-    assert.ok((html.match(/<li>/g) || []).length >= 3, 'terms recap has >= 3 items');
-    assert.match(html, /class="lesson-terms"/);
+    const terms = html.match(/<section class="lesson-terms">([\s\S]*?)<\/section>/);
+    assert.ok(terms, 'has a lesson-terms section');
+    assert.ok((terms[1].match(/<li>/g) || []).length >= 3, 'terms recap has >= 3 items');
     assert.ok(
       (html.match(/<details class="quiz__item">/g) || []).length >= 2,
       'has >= 2 self-check questions'
