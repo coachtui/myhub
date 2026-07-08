@@ -39,3 +39,12 @@ test('candleGeometry: up candle when close >= open, wicks span high/low', () => 
   assert.ok(geo[0].wickY2 >= geo[0].bodyY + geo[0].bodyH);
   assert.ok(geo[0].bodyH >= 1);
 });
+
+test('candleGeometry survives a fully flat series (no NaN)', () => {
+  const geo = candleGeometry([{ o: 10, h: 10, l: 10, c: 10 }], 200, 100, 10);
+  for (const g of geo) {
+    for (const v of [g.x, g.w, g.xMid, g.bodyY, g.bodyH, g.wickY1, g.wickY2]) {
+      assert.ok(Number.isFinite(v), `expected finite, got ${v}`);
+    }
+  }
+});

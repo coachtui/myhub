@@ -27,8 +27,7 @@ export function linePath(values, w, h, pad = 10) {
 }
 
 export function candleGeometry(ohlc, w, h, pad = 10) {
-  const lo = Math.min(...ohlc.map(c => c.l));
-  const hi = Math.max(...ohlc.map(c => c.h));
+  const [lo, hi] = extent(ohlc.flatMap(c => [c.l, c.h]));
   const slot = (w - pad * 2) / ohlc.length;
   const bodyW = slot * 0.6;
   const y = v => scale(v, lo, hi, h - pad, pad);
