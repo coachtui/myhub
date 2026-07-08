@@ -131,7 +131,7 @@ function mountCompound(body) {
   const draw = label => {
     const years = parseInt(label, 10);
     const invested = compoundSeries(200, 0.08, years);
-    const cash = compoundSeries(200, 0.005, years);
+    const cash = compoundSeries(200, 0, years);
     const [, hi] = extent(invested);
     const path = v => v.map((n, i) =>
       `${i === 0 ? 'M' : 'L'}${scale(i, 0, years, PAD, W - PAD).toFixed(1)},${scale(n, 0, hi, H - PAD, PAD).toFixed(1)}`
@@ -140,7 +140,7 @@ function mountCompound(body) {
       `<path d="${path(cash)}" fill="none" stroke="var(--color-text-tertiary)" stroke-width="2" stroke-dasharray="4 4"/>` +
       `<path d="${path(invested)}" fill="none" stroke="var(--color-accent-primary)" stroke-width="2.5"/>` +
       '</svg>';
-    note.textContent = `$200/month for ${years} years — cash: ${fmt(cash[years])}. Invested at 8%/yr: ${fmt(invested[years])}. Same deposits, different machine.`;
+    note.textContent = `$200/month for ${years} years — kept as cash: ${fmt(cash[years])} (just your deposits, growing by $0). Invested at 8%/yr: ${fmt(invested[years])}. Same deposits, different machine.`;
   };
   makeButtons(body, ['10 years', '20 years', '30 years'], draw);
   body.appendChild(chart);
