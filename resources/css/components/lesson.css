@@ -189,3 +189,35 @@
 .widget [tabindex="0"]:focus-visible {
   outline: 2px solid var(--color-accent-primary);
 }
+
+/* Collapsible detail sections — dense reference material lives here */
+.lesson-details {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin: var(--space-4) 0;
+  background: var(--color-bg-secondary);
+}
+
+.lesson-details summary {
+  cursor: pointer;
+  padding: var(--space-4) var(--space-5);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  list-style: none;
+}
+
+.lesson-details summary::before {
+  content: "▸ ";
+  color: var(--color-accent-primary);
+  font-weight: var(--weight-bold);
+}
+
+.lesson-details[open] summary::before { content: "▾ "; }
+
+.lesson-details[open] summary { border-bottom: 1px solid var(--color-border); }
+
+.lesson-details__body {
+  padding: var(--space-4) var(--space-5);
+}
+
+.lesson-details__body > :last-child { margin-bottom: 0; }
