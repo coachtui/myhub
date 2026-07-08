@@ -3,8 +3,7 @@
 // Data is synthetic/simplified — shapes echo real history, values are illustrative.
 
 import { linePath, candleGeometry, extent, scale } from './lib/chart-svg.mjs';
-
-const W = 640, H = 280, PAD = 16;
+import { W, H, PAD, svgOpen, axes, makeButtons } from './lib/widget-ui.mjs';
 
 export const SERIES = {
   '1D': {
@@ -66,43 +65,10 @@ export function compoundSeries(monthly, annualRate, years) {
 
 const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
 
-function svgOpen(label) {
-  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${label}" preserveAspectRatio="xMidYMid meet">`;
-}
-
-function axes() {
-  return `<line x1="${PAD}" y1="${H - PAD}" x2="${W - PAD}" y2="${H - PAD}" stroke="var(--color-border-strong)" stroke-width="1"/>` +
-         `<line x1="${PAD}" y1="${PAD}" x2="${PAD}" y2="${H - PAD}" stroke="var(--color-border-strong)" stroke-width="1"/>`;
-}
-
 function lineSvg(values, label, extra = '') {
   return svgOpen(label) + axes() +
     `<path d="${linePath(values, W, H, PAD)}" fill="none" stroke="var(--color-accent-primary)" stroke-width="2.5"/>` +
     extra + '</svg>';
-}
-
-function makeButtons(container, items, onPick) {
-  const wrap = document.createElement('div');
-  wrap.className = 'widget__controls';
-  items.forEach((item, i) => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'widget__btn' + (i === 0 ? ' is-active' : '');
-    b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
-    b.textContent = item;
-    b.addEventListener('click', () => {
-      wrap.querySelectorAll('.widget__btn').forEach(x => {
-        x.classList.remove('is-active');
-        x.setAttribute('aria-pressed', 'false');
-      });
-      b.classList.add('is-active');
-      b.setAttribute('aria-pressed', 'true');
-      onPick(item, i);
-    });
-    wrap.appendChild(b);
-  });
-  container.appendChild(wrap);
-  return wrap;
 }
 
 /* ---------- widget mounts ---------- */
