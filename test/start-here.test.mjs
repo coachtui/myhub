@@ -80,3 +80,15 @@ for (const slug of CREATED) {
     assert.ok(html.includes(`href="${BASE}/" class="step-nav-footer__home"`), 'home link');
   });
 }
+
+test('wealth hub links the Start Here series', () => {
+  const html = readFileSync(join(ROOT, 'moneyhub', 'index.html'), 'utf8');
+  const i = html.indexOf('href="/moneyhub/start-here/"');
+  assert.ok(i > -1, 'moneyhub index links start-here');
+  assert.ok(i < html.indexOf('the 5-step path'), 'start-here card appears before the 5-step path');
+});
+
+test('market takes page points beginners at Start Here', () => {
+  const html = readFileSync(join(ROOT, 'gojo', 'stocks', 'index.html'), 'utf8');
+  assert.ok(html.includes('href="/moneyhub/start-here/"'), 'market takes links start-here');
+});
