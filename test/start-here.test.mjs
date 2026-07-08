@@ -22,7 +22,7 @@ const ORDER = [
 ];
 
 // Pages built so far. Each lesson task appends its slug here.
-const CREATED = [];
+const CREATED = ['what-is-a-stock'];
 
 const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
