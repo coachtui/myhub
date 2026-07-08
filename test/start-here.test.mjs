@@ -22,7 +22,7 @@ const ORDER = [
 ];
 
 // Pages built so far. Each lesson task appends its slug here.
-const CREATED = ['what-is-a-stock', 'what-is-the-stock-market', 'why-invest', 'tickers-and-indices', 'funds-and-etfs', 'how-to-read-a-chart'];
+const CREATED = ['what-is-a-stock', 'what-is-the-stock-market', 'why-invest', 'tickers-and-indices', 'funds-and-etfs', 'how-to-read-a-chart', 'bulls-bears-and-crashes'];
 
 const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
