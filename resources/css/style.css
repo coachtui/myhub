@@ -129,7 +129,7 @@
   line-height: var(--leading-relaxed);
 }
 
-.article__content ul li::before {
+.article__content ul > li::before {
   content: "→";
   position: absolute;
   left: 0;
@@ -141,7 +141,7 @@
   counter-reset: list-counter;
 }
 
-.article__content ol li::before {
+.article__content ol > li::before {
   counter-increment: list-counter;
   content: counter(list-counter) ".";
   position: absolute;
