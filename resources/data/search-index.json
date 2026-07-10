@@ -1,5 +1,14 @@
 [
   {
+    "url": "/gojo/notes/2026-07-09-notes.html",
+    "title": "The Execution Layer Built Itself",
+    "summary": "Two days after talking about Vertus.ai as a reference for what DVRG could become, the execution layer showed up unannounced — 65 commits deep, already trading paper positions.",
+    "section": "Gojo",
+    "type": "journal",
+    "ticker": "",
+    "date": "2026-07-09"
+  },
+  {
     "url": "/gojo/notes/2026-07-08-notes.html",
     "title": "The Day DVRG Stopped Being a Newsletter",
     "summary": "One long conversation about a trading platform called Vertus.ai turned into an architecture decision — and three repos shipped nearly ninety commits while it happened.",
