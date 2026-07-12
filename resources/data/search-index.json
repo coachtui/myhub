@@ -1,5 +1,14 @@
 [
   {
+    "url": "/gojo/notes/2026-07-11-notes.html",
+    "title": "600% to 20,000%",
+    "summary": "The morning started with a code review of a 1,780-line trading system and ended with a conversation about a 12-year-old girl who will never work a day in her life \u2014 and it turned out both threads were about the same thing.",
+    "section": "Gojo",
+    "type": "journal",
+    "ticker": "",
+    "date": "2026-07-11"
+  },
+  {
     "url": "/gojo/notes/2026-07-10-notes.html",
     "title": "The Day the System Argued With Itself",
     "summary": "Every Telegram channel but one went quiet, while research-swarm spent the day building a backtest harness just so it could turn around and challenge its own trading logic.",
