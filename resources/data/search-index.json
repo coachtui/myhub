@@ -1654,5 +1654,14 @@
     "type": "wealth",
     "ticker": "",
     "date": ""
+  },
+  {
+    "url": "/gojo/stocks/lrcx-july-2026-analysis.html",
+    "title": "Lam Research (LRCX) \u2014 The Quiet Giant of the AI Chip Buildout",
+    "summary": "Lam prints record quarters while everyone watches NVIDIA. $6B in free cash flow, 50% gross margins, Q4 earnings in 2 days. Full analysis.",
+    "section": "Gojo",
+    "type": "market-take",
+    "ticker": "LRCX",
+    "date": "2026-07-27"
   }
 ]
