@@ -1,5 +1,14 @@
 [
   {
+    "url": "/gojo/stocks/fisv-july-2026-analysis.html",
+    "title": "Fiserv (FISV) \u2014 The $4B FCF Machine Trading at 7x Forward Earnings",
+    "summary": "FISV down 55% in 12 months \u2014 CEO gone, guidance cut, transition year. But $4B FCF, 6.67x forward PE, and a JPMorgan/BofA network deal in play.",
+    "section": "Gojo",
+    "type": "market-take",
+    "ticker": "FISV",
+    "date": "2026-07-28"
+  },
+  {
     "url": "/gojo/notes/2026-07-27-notes.html",
     "title": "Proof Before the Move",
     "summary": "Two systems shipped today built on the same logic \u2014 research-swarm's thesis memo now holds exclusive trade-entry authority after 35 commits rewiring the funnel, while Operator's mastery gating requires Haiku-verified goal completion before any lesson advance.",
