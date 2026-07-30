@@ -1,5 +1,32 @@
 [
   {
+    "url": "/gojo/stocks/lrcx-q4-fy2026-earnings.html",
+    "title": "Lam Research (LRCX) Q4 FY2026 Earnings: The Record Streak Continues",
+    "summary": "Q4 revenue $6.72B (+30%) crushed the $6B estimate. Growth accelerated, gross margin hit 51.75%, FY2026 closes at $23.2B. Updated position framework inside.",
+    "section": "Gojo",
+    "type": "market-take",
+    "ticker": "LRCX",
+    "date": "2026-07-29"
+  },
+  {
+    "url": "/gojo/stocks/msft-q4-fy2026-earnings.html",
+    "title": "Microsoft (MSFT) Q4 FY2026: Azure Crosses $100B",
+    "summary": "$90B Q4 revenue, Azure hits $100B annualized at 41% growth, 30M Copilot paid seats. Stock up 8.7% AH after a year of AI disruption fears.",
+    "section": "Gojo",
+    "type": "market-take",
+    "ticker": "MSFT",
+    "date": "2026-07-29"
+  },
+  {
+    "url": "/gojo/stocks/hood-q2-2026-earnings.html",
+    "title": "Robinhood (HOOD) Q2 2026: Record Revenue, 13 Business Lines, Event Contracts Explode",
+    "summary": "$1.31B record revenue +32%, EPS $0.62 vs $0.41 est, event contracts up 10x. Platform diversification story in full swing.",
+    "section": "Gojo",
+    "type": "market-take",
+    "ticker": "HOOD",
+    "date": "2026-07-29"
+  },
+  {
     "url": "/gojo/notes/2026-07-28-notes.html",
     "title": "Memo Takes the Wheel",
     "summary": "Sixteen commits today gave the research-swarm thesis memo exit authority, resting-order position plans, and a live macro read \u2014 the system crossed from advisory to operational.",
