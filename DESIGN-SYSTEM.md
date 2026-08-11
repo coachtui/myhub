@@ -371,7 +371,11 @@ Kicker badge (e.g., `◈ GOJO · SPY`) → Instrument Serif headline (`.article_
 
 Both use `.post-card` entries showing kicker, title, date, and summary.
 
-### Hub (Wealth / Health / Gojo)
+### Hub (Wealth / Health / Gojo / Lelouch)
+
+The Lelouch section (added August 2026) mirrors the Gojo pattern: `/lelouch/` intro page on the article template, `/lelouch/stocks/` Stock Takes listing (`type: lelouch-take`, kicker `♟`). Posts follow the same article template with kicker `LELOUCH · <TICKER>`.
+
+### Hub layout details
 
 Section overview with `.hub-steps` for program sequencing (Wealth: Know Your Money through Automate) and `.hub-grid` for topic area cards. Gojo hub includes the "who is Gojo" intro and the AI disclaimer before the two bucket links (Market Takes, Journal).
 
@@ -390,7 +394,7 @@ Bio, AIGA/Build story, contact, social. Rendered using the standard article-page
 
 **Freshness guard:** `test/index-fresh.test.mjs` rebuilds the index in memory and compares it to the committed `resources/data/search-index.json`. If they differ, the test fails with: *"search-index.json is stale — run `npm run build:index` and commit the result."*
 
-**Reindex Action (`.github/workflows/build-index.yml`):** triggered on push to `main` when files under `gojo/`, `moneyhub/`, `healthhub/`, or `scripts/` change. Runs `npm run build:index` then `node --test`, and commits the refreshed `search-index.json` if it changed (`[skip ci]`).
+**Reindex Action (`.github/workflows/build-index.yml`):** triggered on push to `main` when files under `gojo/`, `lelouch/`, `moneyhub/`, `healthhub/`, or `scripts/` change. Runs `npm run build:index` then `node --test`, and commits the refreshed `search-index.json` if it changed (`[skip ci]`).
 
 ---
 
