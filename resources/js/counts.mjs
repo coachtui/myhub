@@ -1,5 +1,6 @@
 const FILTERS = {
   'market-takes': p => p.section === 'Gojo' && (p.type === 'market-take' || p.type === 'deep-dive'),
+  'lelouch-takes': p => p.type === 'lelouch-take',
   'journal': p => p.type === 'journal',
   'investing': p => p.url.startsWith('/moneyhub/investing/'),
   'wealth': p => p.section === 'Wealth',

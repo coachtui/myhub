@@ -14,6 +14,7 @@ const index = [
 test('computeCounts tallies the listing filters', () => {
   const c = computeCounts(index);
   assert.equal(c['market-takes'], 2); // market-take + deep-dive
+  assert.equal(c['lelouch-takes'], 0);
   assert.equal(c['journal'], 1);
   assert.equal(c['investing'], 1);   // url under /moneyhub/investing/
   assert.equal(c['wealth'], 2);
