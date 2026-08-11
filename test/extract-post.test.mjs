@@ -25,6 +25,13 @@ test('classifies a journal note and falls back to prose date', () => {
   assert.equal(p.date, '2026-05-21');
 });
 
+test('classifies a lelouch stock take with ticker from filename', () => {
+  const p = extractPost(html, '/lelouch/stocks/myrg-august-2026-analysis.html');
+  assert.equal(p.section, 'Lelouch');
+  assert.equal(p.type, 'lelouch-take');
+  assert.equal(p.ticker, 'MYRG');
+});
+
 test('classifies wealth and health by directory', () => {
   assert.equal(extractPost('<h1 class="article__title">X</h1>', '/moneyhub/step4-investing-basics.html').section, 'Wealth');
   assert.equal(extractPost('<h1 class="article__title">X</h1>', '/healthhub/training.html').type, 'health');

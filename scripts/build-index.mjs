@@ -3,7 +3,7 @@ import { join, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { extractPost } from './lib/extract-post.mjs';
 
-const CONTENT_DIRS = ['gojo/stocks', 'gojo/research', 'gojo/notes', 'moneyhub', 'healthhub'];
+const CONTENT_DIRS = ['gojo/stocks', 'gojo/research', 'gojo/notes', 'lelouch/stocks', 'moneyhub', 'healthhub'];
 const SKIP = /index\.html$/;
 export const INDEX_PATH = 'resources/data/search-index.json';
 

@@ -1,7 +1,7 @@
 import { esc } from './esc.mjs';
 
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-const TYPE_LABEL = { 'deep-dive': 'DEEP DIVE', 'journal': 'JOURNAL', 'market-take': 'TAKE', 'wealth': 'WEALTH', 'health': 'HEALTH' };
+const TYPE_LABEL = { 'deep-dive': 'DEEP DIVE', 'journal': 'JOURNAL', 'market-take': 'TAKE', 'lelouch-take': 'TAKE', 'wealth': 'WEALTH', 'health': 'HEALTH' };
 
 export function prettyDate(iso) {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');

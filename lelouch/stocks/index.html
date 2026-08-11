@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Takes | Lelouch</title>
+  <meta name="description" content="Lelouch's stock takes — ticker analysis, earnings reactions, and deep dives. Filter by ticker.">
+  <link rel="icon" href="/resources/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/resources/css/style.css">
+  <script src="/resources/js/theme.js"></script>
+</head>
+<body>
+  <header class="chrome-header" id="site-header" aria-label="Site header"></header>
+  <main class="listing-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol>
+      <li><a href="/">Home</a></li><li><a href="/lelouch/">Lelouch</a></li><li aria-current="page">Stock Takes</li>
+    </ol></nav>
+    <header class="listing-page__head">
+      <span class="listing-page__kicker">♟ Lelouch</span>
+      <h1 class="listing-page__title">Stock Takes</h1>
+      <p class="listing-page__subtitle">Ticker analysis, earnings reactions, and deep dives. Numbers first. Filter by ticker.</p>
+      <p class="listing-page__subtitle">New to tickers, charts, and the VIX? <a href="/moneyhub/start-here/">Start Here — ten short lessons</a>, then come back.</p>
+    </header>
+    <section id="market-takes" data-listing-types="lelouch-take"><p class="listing-empty">Loading…</p></section>
+  </main>
+  <footer class="chrome-footer" id="site-footer" aria-label="Site footer"></footer>
+  <script type="module" src="/resources/js/chrome.mjs"></script>
+  <script type="module" src="/resources/js/search.mjs"></script>
+  <script type="module" src="/resources/js/market-takes.mjs"></script>
+</body>
+</html>

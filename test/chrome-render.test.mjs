@@ -5,8 +5,8 @@ import { renderHeader, renderFooter } from '../resources/js/chrome.mjs';
 
 test('site config exposes nav, bio, social', () => {
   assert.equal(SITE.bio, 'Builder, investor, construction professional.');
-  assert.deepEqual(SITE.nav.map(n => n.label), ['Wealth', 'Health', 'Gojo', 'About']);
-  assert.deepEqual(SITE.nav.map(n => n.href), ['/moneyhub/', '/healthhub/', '/gojo/', '/#about']);
+  assert.deepEqual(SITE.nav.map(n => n.label), ['Wealth', 'Health', 'Gojo', 'Lelouch', 'About']);
+  assert.deepEqual(SITE.nav.map(n => n.href), ['/moneyhub/', '/healthhub/', '/gojo/', '/lelouch/', '/#about']);
   assert.ok(SITE.social.length >= 3);
 });
 

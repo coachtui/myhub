@@ -33,7 +33,7 @@ export function renderFooter(site) {
   </div>
   <nav class="chrome-footer__nav" aria-label="Footer"><ul>${links}</ul></nav>
 </div>
-<div class="chrome-footer__bottom">© 2026 ${esc(site.name)}. Gojo content is AI-generated — not financial advice.</div>`;
+<div class="chrome-footer__bottom">© 2026 ${esc(site.name)}. Gojo &amp; Lelouch content is AI-generated — not financial advice.</div>`;
 }
 
 export function mountChrome(doc = document) {

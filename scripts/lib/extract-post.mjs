@@ -1,6 +1,7 @@
 import { basename } from 'node:path';
 
 const SECTIONS = [
+  { re: /\/lelouch\/stocks\//, section: 'Lelouch', type: 'lelouch-take' },
   { re: /\/gojo\/stocks\//,   section: 'Gojo',   type: 'market-take' },
   { re: /\/gojo\/research\//,  section: 'Gojo',   type: 'deep-dive' },
   { re: /\/gojo\/notes\//,     section: 'Gojo',   type: 'journal' },
@@ -41,7 +42,7 @@ export function extractPost(html, url) {
   if (!date) date = toISO((html.match(/([A-Z][a-z]+ \d{1,2}, 20\d{2})/) || [])[1] || '');
 
   let ticker = '';
-  if (klass.type === 'market-take' || klass.type === 'deep-dive') {
+  if (klass.type === 'market-take' || klass.type === 'deep-dive' || klass.type === 'lelouch-take') {
     const seg = file.split('-')[0];
     if (/^[a-z]{2,5}$/.test(seg)) ticker = seg.toUpperCase();
   }

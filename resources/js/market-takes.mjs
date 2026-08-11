@@ -5,6 +5,9 @@ const TYPES = ['market-take', 'deep-dive'];
 export async function mountMarketTakes(doc = document) {
   const root = doc.getElementById('market-takes');
   if (!root) return;
+  const types = root.dataset.listingTypes
+    ? root.dataset.listingTypes.split(',').map(s => s.trim()).filter(Boolean)
+    : TYPES;
   let index = [];
   try { index = await (await fetch('/resources/data/search-index.json')).json(); }
   catch { root.innerHTML = '<p class="listing-empty">Serve over HTTP to load posts.</p>'; return; }
@@ -24,7 +27,7 @@ export async function mountMarketTakes(doc = document) {
   const listEl = root.querySelector('#mt-listing');
 
   const render = () => {
-    const rows = filterPosts(index, { types: TYPES, query });
+    const rows = filterPosts(index, { types, query });
     listEl.innerHTML = renderListing(rows);
     countEl.textContent = `${rows.length} post${rows.length === 1 ? '' : 's'}`;
   };

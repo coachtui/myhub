@@ -5,6 +5,7 @@ export const SITE = {
     { label: 'Wealth', href: '/moneyhub/' },
     { label: 'Health', href: '/healthhub/' },
     { label: 'Gojo',   href: '/gojo/' },
+    { label: 'Lelouch', href: '/lelouch/' },
     { label: 'About',  href: '/#about' },
   ],
   social: [
