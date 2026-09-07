@@ -1,10 +1,9 @@
 import { esc } from './esc.mjs';
-
-const BADGE = { 'market-take': 'GOJO', 'deep-dive': 'GOJO', 'journal': 'JRNL', 'wealth': 'WLTH', 'health': 'HLTH' };
+import { feedBadge } from './sections.mjs';
 
 export function renderFeedRows(index, limit = 8) {
   return index.slice(0, limit).map(p => {
-    const label = p.ticker || BADGE[p.type] || (p.section || '').toUpperCase().slice(0, 4);
+    const label = p.ticker || feedBadge(p);
     const isTicker = !!p.ticker;
     return `<a class="feed-row" href="${esc(p.url)}">
   <span class="feed-row__badge${isTicker ? ' feed-row__badge--ticker' : ''}">${esc(label)}</span>

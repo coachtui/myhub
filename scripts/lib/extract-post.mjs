@@ -1,13 +1,5 @@
 import { basename } from 'node:path';
-
-const SECTIONS = [
-  { re: /\/lelouch\/stocks\//, section: 'Lelouch', type: 'lelouch-take' },
-  { re: /\/gojo\/stocks\//,   section: 'Gojo',   type: 'market-take' },
-  { re: /\/gojo\/research\//,  section: 'Gojo',   type: 'deep-dive' },
-  { re: /\/gojo\/notes\//,     section: 'Gojo',   type: 'journal' },
-  { re: /\/moneyhub\//,        section: 'Wealth', type: 'wealth' },
-  { re: /\/healthhub\//,       section: 'Health', type: 'health' },
-];
+import { classifyUrl } from '../../resources/js/sections.mjs';
 
 const ENTITIES = { '&amp;':'&','&mdash;':'—','&ndash;':'–','&rsquo;':'’','&lsquo;':'‘','&ldquo;':'“','&rdquo;':'”','&middot;':'·','&hellip;':'…','&nbsp;':' ','&times;':'×','&deg;':'°','&trade;':'™','&copy;':'©','&rarr;':'→','&larr;':'←' };
 const MONTHS = { January:'01',February:'02',March:'03',April:'04',May:'05',June:'06',
@@ -30,7 +22,7 @@ function toISO(s) {
 
 export function extractPost(html, url) {
   const file = basename(url);
-  const klass = SECTIONS.find(s => s.re.test(url)) || { section: 'Site', type: 'page' };
+  const klass = classifyUrl(url);
 
   const title = pick(/<h1 class="article__title">([\s\S]*?)<\/h1>/, html)
     || decode((pick(/<title>([\s\S]*?)<\/title>/, html).split('|')[0]) || '');
@@ -42,7 +34,7 @@ export function extractPost(html, url) {
   if (!date) date = toISO((html.match(/([A-Z][a-z]+ \d{1,2}, 20\d{2})/) || [])[1] || '');
 
   let ticker = '';
-  if (klass.type === 'market-take' || klass.type === 'deep-dive' || klass.type === 'lelouch-take') {
+  if (klass.ticker) {
     const seg = file.split('-')[0];
     if (/^[a-z]{2,5}$/.test(seg)) ticker = seg.toUpperCase();
   }

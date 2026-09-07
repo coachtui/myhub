@@ -1,11 +1,11 @@
 import { renderHead } from './page-head.mjs';
 import { esc } from '../../resources/js/esc.mjs';
+import { kickerFor } from '../../resources/js/sections.mjs';
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 function prettyDate(iso) {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
   return m ? `${MONTHS[+m[2]-1]} ${+m[3]}, ${m[1]}` : '';
 }
-const BADGE = { 'market-take':'GOJO','deep-dive':'GOJO','journal':'GOJO','wealth':'WEALTH','health':'HEALTH' };
 
 function crumbs(items) {
   return items.map(c => c.href
@@ -14,7 +14,7 @@ function crumbs(items) {
 }
 
 export function renderArticle(f) {
-  const kicker = [BADGE[f.type] || (f.section || '').toUpperCase(), f.ticker].filter(Boolean).map(esc).join(' · ');
+  const kicker = [kickerFor(f), f.ticker].filter(Boolean).map(esc).join(' · ');
   const dateBits = [prettyDate(f.date), f.readTime ? `${f.readTime} min read` : ''].filter(Boolean).map(esc).join(' · ');
   const byline = `By <b>${esc(f.author)}</b>${dateBits ? ' · ' + dateBits : ''}`;
   const disclaimer = f.hasDisclaimer ? `

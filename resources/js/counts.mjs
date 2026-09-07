@@ -1,10 +1,16 @@
+import { sectionById } from './sections.mjs';
+
+const ofTypes = (...types) => p => types.includes(p.type);
+const ofSection = id => { const name = sectionById(id).index; return p => p.section === name; };
+
+// Keys are the values used by [data-count="…"] in hub pages.
 const FILTERS = {
-  'market-takes': p => p.section === 'Gojo' && (p.type === 'market-take' || p.type === 'deep-dive'),
-  'lelouch-takes': p => p.type === 'lelouch-take',
-  'journal': p => p.type === 'journal',
+  'market-takes': ofTypes('market-take', 'deep-dive'),
+  'lelouch-takes': ofTypes('lelouch-take'),
+  'journal': ofTypes('journal'),
   'investing': p => p.url.startsWith('/moneyhub/investing/'),
-  'wealth': p => p.section === 'Wealth',
-  'health': p => p.section === 'Health',
+  'wealth': ofSection('money'),
+  'health': ofSection('health'),
 };
 
 export function computeCounts(index) {

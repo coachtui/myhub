@@ -15,6 +15,7 @@ The site is the owned home for depth — indexed, permanent, proof of work. Soci
 - `resources/css/style.css` orchestrates all CSS via `@import`.
 - `resources/css/tokens.css` is the single source of truth for every design value.
 - Shared chrome (header, nav, search pill, footer, command palette) is JS-injected at runtime by `resources/js/chrome.mjs`, which reads configuration from `resources/js/site-config.mjs`. Every page mounts chrome through a single `<script>` tag; changing `site-config.mjs` or `chrome.mjs` propagates everywhere.
+- `resources/js/sections.mjs` is the single registry of sections and content types (nav order and labels, URL prefixes, index section names, default authors, badge and kicker text). The nav, the index builder, the article renderer, and the feed/listing/count modules all import it; add a section or type there and nowhere else.
 - Listings, feed rows, and section counts are rendered client-side from `resources/data/search-index.json` — no server required.
 - The index is rebuilt by `npm run build:index` (runs `scripts/build-index.mjs`). A freshness guard test (`test/index-fresh.test.mjs`) fails CI if the committed index is stale.
 - The GitHub Action (`.github/workflows/build-index.yml`) triggers on every push that touches article directories or scripts, runs `npm run build:index`, then commits the refreshed `search-index.json` if it changed.

@@ -1,4 +1,5 @@
 import { extractPost } from './extract-post.mjs';
+import { sectionForUrl } from '../../resources/js/sections.mjs';
 
 function inner(re, html) { const m = html.match(re); return m ? m[1].trim() : ''; }
 
@@ -34,7 +35,7 @@ export function extractArticle(html, url) {
     hasDisclaimer: !!disc,
     disclaimerText: disc ? disc[1].replace(/\s+/g, ' ').trim() : '',
     stepNavHtml,
-    author: url.startsWith('/gojo/') ? 'Gojo (AI analyst)' : 'Tui Alailima',
+    author: sectionForUrl(url)?.author || 'Tui Alailima',
     date: post.date, section: post.section, type: post.type, ticker: post.ticker,
     readTime: Math.max(1, Math.round(wordCount(contentHtml) / 220)),
   };

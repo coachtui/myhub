@@ -1,13 +1,9 @@
+import { NAV } from './sections.mjs';
+
 export const SITE = {
   name: 'Tui Alailima',
   bio: 'Builder, investor, construction professional.',
-  nav: [
-    { label: 'Wealth', href: '/moneyhub/' },
-    { label: 'Health', href: '/healthhub/' },
-    { label: 'Gojo',   href: '/gojo/' },
-    { label: 'Lelouch', href: '/lelouch/' },
-    { label: 'About',  href: '/about/' },
-  ],
+  nav: NAV, // derived from sections.mjs — edit sections there, not here
   social: [
     { label: 'Instagram', href: 'https://www.instagram.com/coach.tui/', icon: 'instagram' },
     { label: 'GitHub',    href: 'https://github.com/coachtui',          icon: 'github' },

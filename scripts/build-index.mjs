@@ -2,8 +2,8 @@ import { readdirSync, readFileSync, writeFileSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { extractPost } from './lib/extract-post.mjs';
+import { CONTENT_DIRS } from '../resources/js/sections.mjs';
 
-const CONTENT_DIRS = ['gojo/stocks', 'gojo/research', 'gojo/notes', 'lelouch/stocks', 'moneyhub', 'healthhub'];
 const SKIP = /index\.html$/;
 export const INDEX_PATH = 'resources/data/search-index.json';
 

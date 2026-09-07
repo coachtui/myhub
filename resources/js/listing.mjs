@@ -1,7 +1,7 @@
 import { esc } from './esc.mjs';
+import { typeLabel } from './sections.mjs';
 
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-const TYPE_LABEL = { 'deep-dive': 'DEEP DIVE', 'journal': 'JOURNAL', 'market-take': 'TAKE', 'lelouch-take': 'TAKE', 'wealth': 'WEALTH', 'health': 'HEALTH' };
 
 export function prettyDate(iso) {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
@@ -23,7 +23,7 @@ export function renderListing(posts) {
   if (!posts.length) return '<p class="listing-empty">No posts match.</p>';
   return posts.map(p => {
     const isTicker = !!p.ticker;
-    const label = isTicker ? p.ticker : (TYPE_LABEL[p.type] || (p.section || '').toUpperCase());
+    const label = isTicker ? p.ticker : typeLabel(p);
     return `<a class="post-card" href="${esc(p.url)}">
   <div class="post-card__meta">
     <span class="post-card__badge${isTicker ? ' post-card__badge--ticker' : ''}">${esc(label)}</span>
