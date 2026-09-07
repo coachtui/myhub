@@ -382,7 +382,7 @@ All pages share the same chrome, token, and component kit.
 
 ### Home
 
-Identity front door: headshot + bio ("Builder, investor, construction professional.") + compact identity block. Below the fold: live "Latest" feed (`.feed`) of mixed recent posts from all sections, a prominent `⌘K` search entry point, and section entry cards. Social links in the footer.
+Identity front door: headshot, name, the positioning line ("I build systems for stronger work, health, and financial lives."), one line of context, and three CTAs (Start with money, About, Search). Then four path cards (Money, Health, Work & Projects, Research & Notes), three "good places to start" cards, and a short note introducing the two AI desks by role with a five-item latest-research feed (`#latest-feed` with `data-feed-types` and `data-feed-limit`). The homepage is a map, not an index: AI market content is confined to that last section.
 
 ### Article
 
