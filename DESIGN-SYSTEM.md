@@ -22,6 +22,28 @@ The site is the owned home for depth — indexed, permanent, proof of work. Soci
 
 ---
 
+## Page Metadata
+
+Each page's `<head>` carries its metadata as `<meta name="site:…">` tags — the page is the single source of truth; `resources/data/search-index.json`, `sitemap.xml`, breadcrumbs, bylines and listings are derived from it, never hand-maintained in parallel.
+
+| Key | Values |
+|---|---|
+| `site:section` | a `SECTIONS` id from `resources/js/sections.mjs` |
+| `site:kind` | `hub` · `page` · `guide` · `reference` · `research` · `journal` · `tool` · `project` · `note` |
+| `site:author` | an `AUTHORS` id: `tui` · `gojo` · `lelouch` |
+| `site:level` | `beginner` · `intermediate` · `advanced` |
+| `site:series` / `site:order` | reading chain and 1-based position (`five-steps`, `market-basics`, `investing-guides`) |
+| `site:topics` | comma list of purpose or subject tags (Money: `manage-the-month`, `handle-debt`, `prepare-for-emergencies`, `start-investing`, `understand-markets`) |
+| `site:tickers` | comma list; the first is the index's `ticker` |
+| `site:published` / `site:updated` | ISO dates |
+| `site:disclaimer` | `ai-market` · `ai-journal` · `personal-finance` · `health` |
+
+The shared head (fonts, icon, CSS, theme script, canonical link, Open Graph tags, and these keys in fixed order) is rendered by `scripts/lib/page-head.mjs`. `test/page-head.test.mjs` fails if any page's head drifts from it.
+
+**Adding or editing metadata:** put the tag in the page (or add a rule in `scripts/lib/page-metadata-rules.mjs` for series, topics and multi-ticker posts), then run `npm run stamp`. The stamper keeps existing tags, fills gaps from the rules, infers the rest (section and author from the URL, published from the byline, filename, or first git commit), rewrites the head, and rebuilds the index, sitemap and robots.txt. A dry run is `node scripts/stamp-metadata.mjs`.
+
+---
+
 ## Typography
 
 Three typefaces, one role each. All served from Google Fonts.

@@ -8,7 +8,7 @@ const ROOT = fileURLToPath(new URL('..', import.meta.url));
 test('buildIndex returns the shaped, sorted post list', () => {
   const posts = buildIndex(ROOT);
   assert.ok(posts.length > 100, `expected >100 posts, got ${posts.length}`);
-  assert.deepEqual(Object.keys(posts[0]).sort(), ['date', 'section', 'summary', 'ticker', 'title', 'type', 'url']);
+  assert.deepEqual(Object.keys(posts[0]).sort(), ['author', 'date', 'disclaimer', 'headings', 'kind', 'level', 'order', 'readTime', 'section', 'series', 'summary', 'ticker', 'tickers', 'title', 'topics', 'type', 'updated', 'url', 'words']);
 });
 
 test('sorted by date desc, then url asc within a date (deterministic)', () => {
@@ -24,7 +24,7 @@ test('sorted by date desc, then url asc within a date (deterministic)', () => {
 });
 
 test('serializeIndex is single-line JSON with trailing newline', () => {
-  const s = serializeIndex([{ url: '/a', title: 't', summary: 's', section: 'Gojo', type: 'journal', ticker: '', date: '2026-01-01' }]);
+  const s = serializeIndex([{ url: '/a', title: 't', summary: 's', section: 'Gojo', type: 'journal', ticker: '', date: '2026-01-01', topics: ['a'] }]);
   assert.ok(s.endsWith('\n'));
   assert.equal(s.indexOf('\n'), s.length - 1, 'should be exactly one line + trailing newline');
 });
