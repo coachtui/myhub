@@ -50,6 +50,7 @@ export const TOOL_TOPICS = {
   '/moneyhub/tools/money-reset.html': ['manage-the-month'],
   '/moneyhub/tools/savings-ladder.html': ['prepare-for-emergencies'],
   '/moneyhub/tools/debt-cost.html': ['handle-debt'],
+  '/moneyhub/tools/compound-growth.html': ['start-investing'],
 };
 
 // Pages that are reference material rather than a guided read.
