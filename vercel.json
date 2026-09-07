@@ -7,9 +7,9 @@
     { "source": "/gojo/:path*", "destination": "/research/gojo/:path*", "permanent": true },
     { "source": "/lelouch", "destination": "/research/lelouch/", "permanent": true },
     { "source": "/lelouch/:path*", "destination": "/research/lelouch/:path*", "permanent": true },
-    { "source": "/moneyhub/analysis.html", "destination": "/research/", "permanent": true },
-    { "source": "/moneyhub/portfolio.html", "destination": "/research/", "permanent": true },
-    { "source": "/moneyhub/trading-journal.html", "destination": "/research/", "permanent": true }
+    { "source": "/moneyhub/analysis.html", "destination": "/moneyhub/market-lab/", "permanent": true },
+    { "source": "/moneyhub/portfolio.html", "destination": "/moneyhub/market-lab/", "permanent": true },
+    { "source": "/moneyhub/trading-journal.html", "destination": "/moneyhub/market-lab/", "permanent": true }
   ],
   "rewrites": [
     { "source": "/research/lelouch/:path*", "destination": "/lelouch/:path*" }

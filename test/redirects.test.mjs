@@ -51,7 +51,7 @@ test('old section roots and the retired research stub redirect', () => {
   assert.equal(redirect('/lelouch/'), '/research/lelouch/');
   assert.equal(redirect('/gojo/research/'), '/research/gojo/stocks/');
   assert.equal(redirect('/gojo/notes/'), '/research/gojo/notes/');
-  assert.equal(redirect('/moneyhub/portfolio.html'), '/research/');
+  assert.equal(redirect('/moneyhub/portfolio.html'), '/moneyhub/market-lab/');
 });
 
 test('no old-path directory remains to shadow a redirect', () => {
