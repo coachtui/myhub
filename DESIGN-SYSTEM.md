@@ -404,6 +404,10 @@ The Lelouch section (added August 2026) mirrors the Gojo pattern: `/research/lel
 
 `/moneyhub/` is action-first: hero with the investing hook and the core argument, then six situation cards (stage written out as Survive / Stabilize / Grow), the two-minute runway checkup (`#checkup`, `money-checkup.mjs`), the three-stage framework, the Money Library cards, and the personal note last. Layout lives in `sections/moneyhub.css`.
 
+### Money Library, Your Foundation, Market Lab
+
+`/moneyhub/library/` renders every Money guide, tool and reference page from the index (`money-library.mjs`), grouped by purpose topic in `PURPOSES` order and filterable by stage, topic, level and reading time; each card shows kind, stage, level and reading time. `/moneyhub/foundation/` is the Survive · Stabilize · Grow hub for the five steps and the tools. `/moneyhub/market-lab/` lists both AI desks' research with the "advanced and optional" framing (its `site:disclaimer` is `ai-market` because the content it fronts is AI-generated), visibly separate from beginner material.
+
 ### Tools
 
 Interactive tools live under `/moneyhub/tools/` (`site:kind` = `tool`) and share `components/tools.css` (two-column shell, result panel) and `components/forms.css` (labelled fields, money inputs, radio choices). Each tool's logic is a pure exported function with tests (`computeReset`, `recommend`); the DOM wiring only renders. Inputs are never stored or transmitted, every tool states that, and every result panel is `aria-live` and focusable with a clear-my-numbers action.

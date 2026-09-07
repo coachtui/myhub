@@ -172,3 +172,111 @@
     border-bottom: 0;
   }
 }
+
+/* Money Library: filter bar and grouped cards */
+.library-filters {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  margin-bottom: var(--space-8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-secondary);
+}
+
+.library-filters__group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.library-filters__group legend {
+  float: left;
+  margin-right: var(--space-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 40px;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  cursor: pointer;
+}
+
+.chip input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.chip:has(input:checked) {
+  border-color: var(--color-accent-primary);
+  background: var(--color-accent-primary);
+  color: #ffffff;
+}
+
+.chip:has(input:focus-visible) {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+.library-filters__selects {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--space-4);
+}
+
+.field--inline {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.field--inline select {
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  font: inherit;
+}
+
+.library-filters__status {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+.library-group {
+  margin-top: var(--space-10);
+}
+
+.library-group__count {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-quaternary);
+  margin-left: var(--space-2);
+}
+
+.library-card__meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
