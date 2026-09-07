@@ -88,33 +88,6 @@
   --callout-bg: var(--color-bg-tertiary);
 }
 
-/* Disclaimer Component (Special styling for Money Hub) */
-.disclaimer {
-  padding: var(--space-5);
-  background: var(--color-bg-secondary);
-  border-left: 3px solid var(--color-border-strong);
-  border-radius: var(--radius-md);
-  margin: var(--space-6) 0;
-  display: flex;
-  gap: var(--space-3);
-  align-items: flex-start;
-}
-
-.disclaimer__icon {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  color: var(--color-text-tertiary);
-}
-
-.disclaimer__text {
-  font-size: var(--text-sm);
-  font-family: var(--font-mono);
-  color: var(--color-text-tertiary);
-  line-height: var(--leading-relaxed);
-  margin: 0;
-}
-
 /* Principle/Quote Box */
 .principle {
   padding: var(--space-6);
