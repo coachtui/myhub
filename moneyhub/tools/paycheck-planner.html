@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paycheck Planner | Moneyhub | Tui Alailima</title>
+  <meta name="description" content="What each paycheck has to set aside for required costs and savings, what is left, and how to use the months with an extra paycheck. Your numbers stay in your browser.">
+  <link rel="canonical" href="https://www.tuialailima.com/moneyhub/tools/paycheck-planner.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Paycheck Planner | Moneyhub | Tui Alailima">
+  <meta property="og:description" content="What each paycheck has to set aside for required costs and savings, what is left, and how to use the months with an extra paycheck. Your numbers stay in your browser.">
+  <meta property="og:url" content="https://www.tuialailima.com/moneyhub/tools/paycheck-planner.html">
+  <meta name="site:section" content="money">
+  <meta name="site:kind" content="tool">
+  <meta name="site:author" content="tui">
+  <meta name="site:level" content="beginner">
+  <meta name="site:topics" content="manage-the-month">
+  <meta name="site:published" content="2026-09-07">
+  <meta name="site:disclaimer" content="personal-finance">
+  <link rel="icon" href="/resources/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/resources/css/style.css">
+  <script src="/resources/js/theme.js"></script>
+</head>
+<body>
+  <header class="chrome-header" id="site-header" aria-label="Site header"></header>
+  <main class="hub-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol>
+      <li><a href="/">Home</a></li><li><a href="/moneyhub/">Moneyhub</a></li><li aria-current="page">Paycheck Planner</li>
+    </ol></nav>
+    <header class="hub-page__head">
+      <span class="hub-page__kicker">Moneyhub · Tool · Survive</span>
+      <h1 class="hub-page__title">Paycheck Planner</h1>
+      <p class="hub-page__subtitle">Bills arrive monthly; pay often does not. See what each paycheck has to set aside so the month works, and what the extra-paycheck months are for.</p>
+    </header>
+
+    <section class="tool" id="paycheck-planner" aria-labelledby="planner-title">
+      <div>
+        <div class="tool__intro">
+          <h2 class="hub-section__title" id="planner-title">Your numbers</h2>
+          <p>One normal paycheck, how often it comes, and your monthly required costs. The savings goal is optional. Estimates are fine.</p>
+          <p>Your numbers never leave this page. They are not saved, sent, or tracked.</p>
+        </div>
+        <form class="tool__form" novalidate>
+          <label class="field" for="pp-pay">
+            <span class="field__label">Take-home pay per paycheck</span>
+            <span class="field__hint">What actually lands in your account on a normal payday</span>
+            <span class="money-input"><span class="money-input__prefix" aria-hidden="true">$</span><input id="pp-pay" name="pay" inputmode="decimal" autocomplete="off" placeholder="0"></span>
+          </label>
+          <label class="field field--inline" for="pp-frequency">
+            <span class="field__label">How often you are paid</span>
+            <select id="pp-frequency" name="frequency">
+              <option value="weekly">Every week</option>
+              <option value="biweekly" selected>Every two weeks</option>
+              <option value="semimonthly">Twice a month</option>
+              <option value="monthly">Once a month</option>
+            </select>
+          </label>
+          <label class="field" for="pp-required">
+            <span class="field__label">Monthly required costs</span>
+            <span class="field__hint">Housing, utilities, insurance, minimum payments, groceries, transport, for a whole month</span>
+            <span class="money-input"><span class="money-input__prefix" aria-hidden="true">$</span><input id="pp-required" name="required" inputmode="decimal" autocomplete="off" placeholder="0"></span>
+          </label>
+          <label class="field" for="pp-savings">
+            <span class="field__label">Monthly savings goal</span>
+            <span class="field__hint">Optional. Cushion, debt payoff above the minimum, or investing.</span>
+            <span class="money-input"><span class="money-input__prefix" aria-hidden="true">$</span><input id="pp-savings" name="savings" inputmode="decimal" autocomplete="off" placeholder="0"></span>
+          </label>
+          <button class="btn btn--primary" type="submit">Plan my paycheck</button>
+        </form>
+      </div>
+      <div class="tool__result" data-result tabindex="-1" aria-live="polite">
+        <div class="tool__empty">
+          <h2>What you will get</h2>
+          <p>How one paycheck divides: the share to set aside for required costs, the share for savings, and what is left. If you are paid weekly or every two weeks, what the extra-paycheck months are worth. Then one next move.</p>
+        </div>
+      </div>
+      <noscript><p class="tool__empty">This tool needs JavaScript. The reasoning on paper is in <a href="/moneyhub/step1-know-your-money.html">Know your money</a>.</p></noscript>
+    </section>
+
+    <section class="hub-section">
+      <h2 class="hub-section__title">Then keep going</h2>
+      <div class="hub-grid">
+        <a class="hub-card" href="/moneyhub/tools/money-reset.html"><span class="hub-card__title">Money Reset</span><span class="hub-card__desc">Not sure of your required number? Four estimates find it in ten minutes.</span><span class="hub-card__meta">Tool →</span></a>
+        <a class="hub-card" href="/moneyhub/step5-automation.html"><span class="hub-card__title">Automate your money</span><span class="hub-card__desc">Payday transfers to a bills account and a savings account, set once.</span><span class="hub-card__meta">Guide →</span></a>
+        <a class="hub-card" href="/moneyhub/tools/savings-ladder.html"><span class="hub-card__title">Emergency Savings Ladder</span><span class="hub-card__desc">Where the savings share goes first.</span><span class="hub-card__meta">Tool →</span></a>
+      </div>
+    </section>
+
+    <aside class="callout callout--personal">
+      <span class="callout__icon" aria-hidden="true">▲</span>
+      <p>I'm not a CPA or licensed financial advisor. This explains how I personally think about money. It's for education only, not advice tailored to you.</p>
+    </aside>
+  </main>
+  <footer class="chrome-footer" id="site-footer" aria-label="Site footer"></footer>
+  <script type="module" src="/resources/js/chrome.mjs"></script>
+  <script type="module" src="/resources/js/search.mjs"></script>
+  <script type="module" src="/resources/js/paycheck-planner.mjs"></script>
+</body>
+</html>
