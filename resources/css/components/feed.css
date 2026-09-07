@@ -1,22 +1,8 @@
 /* ============================================
    FEED
-   Home "Latest" list: bordered data rows with a section or ticker badge.
+   "Latest" lists: bordered data rows with a section or ticker badge.
+   Mounted on #latest-feed (data-feed-types, data-feed-limit) by feed.mjs.
    ============================================ */
-
-.feed {
-  max-width: var(--width-content-lg);
-  margin: 0 auto var(--space-16);
-  padding: 0 var(--space-5);
-}
-
-.feed__head {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--color-text-quaternary);
-  margin-bottom: var(--space-3);
-}
 
 .feed-row {
   display: grid;

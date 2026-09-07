@@ -21,6 +21,13 @@ test('respects the limit', () => {
   assert.equal((html.match(/<a class="feed-row"/g) || []).length, 5);
 });
 
+test('filters by type when types are given', () => {
+  const html = renderFeedRows(index, 8, ['market-take']);
+  assert.ok(html.includes('href="/a"'));
+  assert.ok(!html.includes('href="/b"'));
+  assert.equal(renderFeedRows(index, 8, []).match(/feed-row"/g).length, 2, 'empty types = no filter');
+});
+
 test('uses the type→label badge when a post has no ticker', () => {
   const html = renderFeedRows([{ url: '/w', title: 'Money guide', section: 'Wealth', type: 'wealth', ticker: '', date: '2026-06-10' }]);
   assert.ok(html.includes('>WEALTH<'), 'wealth post should show a full-word WEALTH badge');
