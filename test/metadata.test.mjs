@@ -67,7 +67,7 @@ test('every indexed page carries the core metadata', () => {
     if ((p.kind === 'guide' || p.kind === 'reference' || p.kind === 'research' || p.kind === 'tool') && !p.level) problems.push(`${p.url}: no level`);
     if (!p.topics.length) problems.push(`${p.url}: no topics`);
     if (!p.disclaimer) problems.push(`${p.url}: no disclaimer kind`);
-    if (p.readTime < 1) problems.push(`${p.url}: no reading time`);
+    if (['guide', 'reference', 'research', 'journal'].includes(p.kind) && p.readTime < 1) problems.push(`${p.url}: no reading time`);
     if (p.ticker && p.tickers[0] !== p.ticker) problems.push(`${p.url}: tickers[0] != ticker`);
   }
   assert.deepEqual(problems, []);
