@@ -166,6 +166,101 @@
   color: var(--color-accent-primary);
 }
 
+/* Savings ladder rungs */
+.ladder {
+  list-style: none;
+  margin: var(--space-5) 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.ladder__rung {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-elevated);
+}
+
+.ladder__rung.is-next {
+  border-color: var(--color-accent-primary);
+}
+
+.ladder__rung.is-reached {
+  opacity: .75;
+}
+
+.ladder__row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+}
+
+.ladder__target {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.ladder__bar {
+  height: 8px;
+  margin: var(--space-2) 0;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-tertiary);
+  overflow: hidden;
+}
+
+.ladder__bar span {
+  display: block;
+  height: 100%;
+  background: var(--color-accent-primary);
+  border-radius: var(--radius-full);
+}
+
+.ladder__note {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* Debt comparison table */
+.debt-table {
+  width: 100%;
+  margin: var(--space-5) 0;
+  font-size: var(--text-base);
+  font-variant-numeric: tabular-nums;
+}
+
+.debt-table th,
+.debt-table td {
+  padding: var(--space-2) var(--space-2);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.debt-table td:nth-child(3) {
+  white-space: nowrap;
+}
+
+.debt-bar {
+  display: inline-block;
+  width: 72px;
+  height: 8px;
+  margin-right: var(--space-2);
+  vertical-align: middle;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-tertiary);
+  overflow: hidden;
+}
+
+.debt-bar span {
+  display: block;
+  height: 100%;
+  background: var(--color-warning);
+  border-radius: var(--radius-full);
+}
+
 @media (max-width: 760px) {
   .tool {
     grid-template-columns: 1fr;

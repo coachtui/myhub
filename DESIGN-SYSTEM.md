@@ -429,7 +429,7 @@ The Lelouch section (added August 2026) mirrors the Gojo pattern: `/research/lel
 
 ### Tools
 
-Interactive tools live under `/moneyhub/tools/` (`site:kind` = `tool`) and share `components/tools.css` (two-column shell, result panel) and `components/forms.css` (labelled fields, money inputs, radio choices). Each tool's logic is a pure exported function with tests (`computeReset`, `recommend`); the DOM wiring only renders. Inputs are never stored or transmitted, every tool states that, and every result panel is `aria-live` and focusable with a clear-my-numbers action.
+Interactive tools live under `/moneyhub/tools/` (`site:kind` = `tool`) and share `components/tools.css` (two-column shell, result panel) and `components/forms.css` (labelled fields, money inputs, radio choices). Each tool's logic is a pure exported function with tests (`computeReset`, `recommend`, `buildLadder`, `computeDebt`), input parsing is shared in `resources/js/lib/money.mjs`, and the DOM wiring only renders. Live tools: Money Reset, Emergency Savings Ladder, Debt Cost Visualizer. Inputs are never stored or transmitted, every tool states that, and every result panel is `aria-live` and focusable with a clear-my-numbers action.
 
 ### Hub layout details
 

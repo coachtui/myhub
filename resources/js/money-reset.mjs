@@ -2,15 +2,8 @@
 // Pure logic is exported for tests; the DOM wiring runs only in a browser.
 // Nothing entered here is stored or sent anywhere.
 
-// Accepts "1,250", "$1250.50", "", "abc", -5, 1e12. Missing or invalid → 0;
-// negatives are clamped to 0 and reported so the result can say so.
-export function parseMoney(raw) {
-  const str = String(raw ?? '').replace(/[$,\s]/g, '');
-  const n = Number(str);
-  if (str === '' || !Number.isFinite(n)) return { value: 0, note: 'blank' };
-  if (n < 0) return { value: 0, note: 'negative' };
-  return { value: Math.round(n * 100) / 100, note: '' };
-}
+import { parseMoney } from './lib/money.mjs';
+export { parseMoney };
 
 export const FIELDS = [
   { id: 'income',     label: 'Monthly take-home pay',   hint: 'What actually reaches your accounts after tax and deductions' },

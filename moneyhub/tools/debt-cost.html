@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debt Cost Visualizer | Moneyhub | Tui Alailima</title>
+  <meta name="description" content="See how long one debt takes to pay off, what the interest really costs, and what a little more each month changes. Your numbers stay in your browser.">
+  <link rel="canonical" href="https://www.tuialailima.com/moneyhub/tools/debt-cost.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Debt Cost Visualizer | Moneyhub | Tui Alailima">
+  <meta property="og:description" content="See how long one debt takes to pay off, what the interest really costs, and what a little more each month changes. Your numbers stay in your browser.">
+  <meta property="og:url" content="https://www.tuialailima.com/moneyhub/tools/debt-cost.html">
+  <meta name="site:section" content="money">
+  <meta name="site:kind" content="tool">
+  <meta name="site:author" content="tui">
+  <meta name="site:level" content="beginner">
+  <meta name="site:topics" content="handle-debt">
+  <meta name="site:published" content="2026-09-07">
+  <meta name="site:disclaimer" content="personal-finance">
+  <link rel="icon" href="/resources/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ed35775394.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/resources/css/style.css">
+  <script src="/resources/js/theme.js"></script>
+</head>
+<body>
+  <header class="chrome-header" id="site-header" aria-label="Site header"></header>
+  <main class="hub-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol>
+      <li><a href="/">Home</a></li><li><a href="/moneyhub/">Moneyhub</a></li><li aria-current="page">Debt Cost Visualizer</li>
+    </ol></nav>
+    <header class="hub-page__head">
+      <span class="hub-page__kicker">Moneyhub · Tool · Stabilize</span>
+      <h1 class="hub-page__title">Debt Cost Visualizer</h1>
+      <p class="hub-page__subtitle">One debt at a time: how long it takes at your payment, what the interest costs, and what $50 more a month changes. No verdicts, just the maths.</p>
+    </header>
+
+    <section class="tool" id="debt-cost" aria-labelledby="debt-title">
+      <div>
+        <div class="tool__intro">
+          <h2 class="hub-section__title" id="debt-title">Your numbers</h2>
+          <p>All three are on a statement. If you have several debts, run this once for each, starting with the highest interest rate.</p>
+          <p>Your numbers never leave this page. They are not saved, sent, or tracked.</p>
+        </div>
+        <form class="tool__form" novalidate>
+          <label class="field" for="debt-balance">
+            <span class="field__label">Balance owed</span>
+            <span class="field__hint">What you owe on this one debt today</span>
+            <span class="money-input"><span class="money-input__prefix" aria-hidden="true">$</span><input id="debt-balance" name="balance" inputmode="decimal" autocomplete="off" placeholder="0"></span>
+          </label>
+          <label class="field" for="debt-apr">
+            <span class="field__label">Interest rate per year</span>
+            <span class="field__hint">The APR on the statement. Credit cards are often 20 to 30; a car loan might be 6 to 10.</span>
+            <span class="money-input"><span class="money-input__prefix" aria-hidden="true">%</span><input id="debt-apr" name="apr" inputmode="decimal" autocomplete="off" placeholder="0"></span>
+          </label>
+          <label class="field" for="debt-payment">
+            <span class="field__label">Monthly payment</span>
+            <span class="field__hint">What you pay now, or the minimum on the statement</span>
+            <span class="money-input"><span class="money-input__prefix" aria-hidden="true">$</span><input id="debt-payment" name="payment" inputmode="decimal" autocomplete="off" placeholder="0"></span>
+          </label>
+          <button class="btn btn--primary" type="submit">Show the cost</button>
+        </form>
+      </div>
+      <div class="tool__result" data-result tabindex="-1" aria-live="polite">
+        <div class="tool__empty">
+          <h2>What you will get</h2>
+          <p>The total interest at your payment, how many months it takes, and a small comparison showing what paying $50, $100 or $250 more each month saves. Then one next move.</p>
+        </div>
+      </div>
+      <noscript><p class="tool__empty">This tool needs JavaScript. The reasoning, without the calculator, is in <a href="/moneyhub/step2-high-interest-debt.html">Kill high-interest debt</a>.</p></noscript>
+    </section>
+
+    <section class="hub-section">
+      <h2 class="hub-section__title">Then keep going</h2>
+      <div class="hub-grid">
+        <a class="hub-card" href="/moneyhub/step2-high-interest-debt.html"><span class="hub-card__title">Kill high-interest debt</span><span class="hub-card__desc">The avalanche method, what counts as expensive, and how debt competes with investing.</span><span class="hub-card__meta">Guide →</span></a>
+        <a class="hub-card" href="/moneyhub/tools/savings-ladder.html"><span class="hub-card__title">Emergency Savings Ladder</span><span class="hub-card__desc">A small cushion alongside the payoff keeps the next surprise off the card.</span><span class="hub-card__meta">Tool →</span></a>
+        <a class="hub-card" href="/moneyhub/#checkup"><span class="hub-card__title">Check your investing runway</span><span class="hub-card__desc">Five questions, one next move toward investing.</span><span class="hub-card__meta">2 minutes →</span></a>
+      </div>
+    </section>
+
+    <aside class="callout callout--personal">
+      <span class="callout__icon" aria-hidden="true">▲</span>
+      <p>I'm not a CPA or licensed financial advisor. This explains how I personally think about money. It's for education only, not advice tailored to you.</p>
+    </aside>
+  </main>
+  <footer class="chrome-footer" id="site-footer" aria-label="Site footer"></footer>
+  <script type="module" src="/resources/js/chrome.mjs"></script>
+  <script type="module" src="/resources/js/search.mjs"></script>
+  <script type="module" src="/resources/js/debt-cost.mjs"></script>
+</body>
+</html>
