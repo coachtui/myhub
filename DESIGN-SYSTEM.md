@@ -15,6 +15,7 @@ The site is the owned home for depth — indexed, permanent, proof of work. Soci
 - `resources/css/style.css` orchestrates all CSS via `@import` and contains no rules of its own. Reusable UI lives in `components/`, layouts owned by one area of the site in `sections/` (currently `sections/home.css` for the identity block).
 - `resources/css/tokens.css` is the single source of truth for every design value.
 - Shared chrome (header, nav, search pill, footer, command palette) is JS-injected at runtime by `resources/js/chrome.mjs`, which reads configuration from `resources/js/site-config.mjs`. Every page mounts chrome through a single `<script>` tag; changing `site-config.mjs` or `chrome.mjs` propagates everywhere.
+- Primary navigation is **Money · Health · Work & Projects · Research & Notes · About** (the logo is Home). Gojo and Lelouch are AI desks that live under Research & Notes, introduced there with a one-line role each; they are never unexplained top-level items.
 - `resources/js/sections.mjs` is the single registry of sections and content types (nav order and labels, URL prefixes, index section names, default authors, badge and kicker text). The nav, the index builder, the article renderer, and the feed/listing/count modules all import it; add a section or type there and nowhere else.
 - Listings, feed rows, and section counts are rendered client-side from `resources/data/search-index.json` — no server required.
 - The index is rebuilt by `npm run build:index` (runs `scripts/build-index.mjs`). A freshness guard test (`test/index-fresh.test.mjs`) fails CI if the committed index is stale.
@@ -347,7 +348,7 @@ Post-card list pages: Market Takes and Journal. Market Takes adds a live text fi
 
 ### hub (`hub.css`)
 
-Section overview pages (Wealth, Health, Gojo). Two layout patterns: a card grid for topic areas and a numbered-step list for the program sequence. Classes:
+Section overview pages (Money, Health, Work & Projects, Research & Notes, and the Gojo/Lelouch desks). Two layout patterns: a card grid for topic areas and a numbered-step list for the program sequence. Classes:
 
 - `.hub-page` — outer section wrapper
 - `.hub-grid` — card grid for topic cards

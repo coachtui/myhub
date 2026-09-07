@@ -34,12 +34,16 @@ export const DISCLAIMERS = {
 // published / updated – ISO dates    disclaimer – ai-market | ai-journal | personal-finance | health
 export const META_KEYS = ['section', 'kind', 'author', 'level', 'series', 'order', 'topics', 'tickers', 'published', 'updated', 'disclaimer'];
 
+// label – primary nav text; brand – the name used on the section's own pages
+// and in breadcrumbs; parent – the nav section a non-nav section sits under.
 export const SECTIONS = [
-  { id: 'money',   label: 'Wealth',  href: '/moneyhub/',  index: 'Wealth',  author: 'Tui Alailima',        ai: false, nav: true },
-  { id: 'health',  label: 'Health',  href: '/healthhub/', index: 'Health',  author: 'Tui Alailima',        ai: false, nav: true },
-  { id: 'gojo',    label: 'Gojo',    href: '/gojo/',      index: 'Gojo',    author: 'Gojo (AI analyst)',    ai: true,  nav: true },
-  { id: 'lelouch', label: 'Lelouch', href: '/lelouch/',   index: 'Lelouch', author: 'Lelouch (AI analyst)', ai: true,  nav: true },
-  { id: 'about',   label: 'About',   href: '/about/',     index: null,      author: 'Tui Alailima',        ai: false, nav: true },
+  { id: 'money',    label: 'Money',            brand: 'Moneyhub',         href: '/moneyhub/',  index: 'Wealth',  author: 'Tui Alailima',        ai: false, nav: true },
+  { id: 'health',   label: 'Health',           brand: 'Healthhub',        href: '/healthhub/', index: 'Health',  author: 'Tui Alailima',        ai: false, nav: true },
+  { id: 'projects', label: 'Work & Projects',  brand: 'Work & Projects',  href: '/projects/',  index: null,      author: 'Tui Alailima',        ai: false, nav: true },
+  { id: 'research', label: 'Research & Notes', brand: 'Research & Notes', href: '/research/',  index: null,      author: 'Tui Alailima',        ai: false, nav: true },
+  { id: 'about',    label: 'About',            brand: 'About',            href: '/about/',     index: null,      author: 'Tui Alailima',        ai: false, nav: true },
+  { id: 'gojo',     label: 'Gojo',             brand: 'Gojo',             href: '/gojo/',      index: 'Gojo',    author: 'Gojo (AI analyst)',    ai: true,  nav: false, parent: 'research' },
+  { id: 'lelouch',  label: 'Lelouch',          brand: 'Lelouch',          href: '/lelouch/',   index: 'Lelouch', author: 'Lelouch (AI analyst)', ai: true,  nav: false, parent: 'research' },
 ];
 
 // Content types, keyed by the `type` value stored in search-index.json.

@@ -43,7 +43,9 @@ export async function mountListings(doc = document) {
   catch { mounts.forEach(el => { el.innerHTML = '<p class="listing-empty">Serve over HTTP to load posts.</p>'; }); return; }
   for (const el of mounts) {
     const types = el.dataset.listingTypes.split(',').map(s => s.trim()).filter(Boolean);
-    el.innerHTML = renderListing(filterPosts(index, { types }));
+    const limit = Number(el.dataset.listingLimit) || 0;
+    const rows = filterPosts(index, { types });
+    el.innerHTML = renderListing(limit ? rows.slice(0, limit) : rows);
   }
 }
 

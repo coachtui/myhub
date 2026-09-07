@@ -7,6 +7,7 @@ const ofSection = id => { const name = sectionById(id).index; return p => p.sect
 const FILTERS = {
   'market-takes': ofTypes('market-take', 'deep-dive'),
   'lelouch-takes': ofTypes('lelouch-take'),
+  'research': ofTypes('market-take', 'deep-dive', 'lelouch-take'),
   'journal': ofTypes('journal'),
   'investing': p => p.url.startsWith('/moneyhub/investing/'),
   'wealth': ofSection('money'),

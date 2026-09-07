@@ -31,7 +31,8 @@ test('sectionForUrl resolves author defaults by URL prefix', () => {
 });
 
 test('nav is derived from sections in order', () => {
-  assert.deepEqual(NAV.map(n => n.label), ['Wealth', 'Health', 'Gojo', 'Lelouch', 'About']);
+  assert.deepEqual(NAV.map(n => n.label), ['Money', 'Health', 'Work & Projects', 'Research & Notes', 'About']);
+  for (const s of SECTIONS.filter(x => !x.nav)) assert.ok(SECTIONS.some(p => p.id === s.parent && p.nav), `${s.id} has a nav parent`);
   assert.ok(NAV.every(n => n.href.startsWith('/') && n.href.endsWith('/')));
 });
 
