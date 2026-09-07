@@ -23,5 +23,6 @@ test('respects the limit', () => {
 
 test('uses the type→label badge when a post has no ticker', () => {
   const html = renderFeedRows([{ url: '/w', title: 'Money guide', section: 'Wealth', type: 'wealth', ticker: '', date: '2026-06-10' }]);
-  assert.ok(html.includes('WLTH'), 'wealth post should show WLTH badge');
+  assert.ok(html.includes('>WEALTH<'), 'wealth post should show a full-word WEALTH badge');
+  assert.ok(!/>(WLTH|HLTH|JRNL)</.test(html), 'no abbreviated badges');
 });

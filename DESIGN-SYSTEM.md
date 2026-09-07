@@ -275,7 +275,7 @@ One CSS file per component under `resources/css/components/`, all imported by `r
 The shared header, primary nav, search pill, theme toggle, and footer — injected into every page by `chrome.mjs`. Configuration (site name, nav links, social links) comes from `site-config.mjs`. Key classes:
 
 - `.chrome-header` / `.chrome-header__inner` — sticky top bar
-- `.chrome-nav` / `.chrome-nav__link` — primary navigation links; `aria-current="page"` marks the active item
+- `.chrome-nav` / `.chrome-nav__link` — primary navigation links; `aria-current="page"` marks the active item. Under 640px the nav is collapsed behind `.chrome-menu-toggle` (a text button, `aria-expanded` + `aria-controls`) and opens as a panel below the header; Escape, a click outside, or choosing a link closes it.
 - `.chrome-search-pill` — compact search button triggering the command palette
 - `.chrome-footer` / `.chrome-footer__inner` — footer with logo, nav repeat, and social icon links
 
@@ -297,7 +297,7 @@ Home page "Latest" section: bordered data rows of recent posts across all sectio
 
 - `.feed` — the list container
 - `.feed-row` — one bordered row
-- `.feed-row__badge` — section or ticker label (amber tokens for ticker, accent red for section)
+- `.feed-row__badge` — section or ticker label (amber tokens for ticker, accent red for section). Section badges are full words (WEALTH, HEALTH, JOURNAL), never abbreviations, so meaning does not depend on decoding a code.
 - `.feed-row__title` — article title link
 - `.feed-row__date` — mono-styled date
 

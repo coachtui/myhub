@@ -16,6 +16,8 @@ test('header renders all nav links and marks the active one', () => {
   assert.match(html, /aria-current="page"[^>]*>Wealth<\/a>/);
   assert.ok(html.includes('data-search-trigger'), 'has search pill');
   assert.ok(html.includes('data-theme-toggle'), 'has theme toggle');
+  assert.match(html, /<nav class="chrome-nav" id="chrome-nav"/, 'nav has an id for aria-controls');
+  assert.match(html, /data-menu-toggle[^>]*aria-expanded="false"[^>]*aria-controls="chrome-nav"[^>]*>Menu</, 'labelled menu toggle wired to the nav');
 });
 
 test('footer renders bio and social links', () => {

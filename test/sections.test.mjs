@@ -40,7 +40,8 @@ test('labels fall back to the section name for unknown types', () => {
   assert.equal(typeLabel(p), 'GOJO');
   assert.equal(feedBadge(p), 'GOJO');
   assert.equal(kickerFor(p), 'GOJO');
-  assert.equal(feedBadge({ type: 'wealth', section: 'Wealth' }), 'WLTH');
+  assert.equal(feedBadge({ type: 'wealth', section: 'Wealth' }), 'WEALTH');
+  assert.equal(feedBadge({ type: 'journal', section: 'Gojo' }), 'JOURNAL');
   assert.equal(typeLabel({ type: 'deep-dive', section: 'Gojo' }), 'DEEP DIVE');
   assert.equal(kickerFor({ type: 'journal', section: 'Gojo' }), 'GOJO');
 });

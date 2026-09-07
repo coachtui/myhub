@@ -19,15 +19,15 @@ export const SECTIONS = [
 //   dir     – repo directory whose pages carry this type (URL prefix "/<dir>/")
 //   ticker  – whether the first filename segment is a ticker symbol
 //   label   – listing card badge when there is no ticker
-//   badge   – compact home-feed badge when there is no ticker
+//   badge   – home-feed badge when there is no ticker (full words, never abbreviations)
 //   kicker  – first word of the article kicker
 export const TYPES = {
-  'lelouch-take': { section: 'lelouch', dir: 'lelouch/stocks', ticker: true,  label: 'TAKE',      badge: 'LELO', kicker: 'LELOUCH' },
+  'lelouch-take': { section: 'lelouch', dir: 'lelouch/stocks', ticker: true,  label: 'TAKE',      badge: 'LELOUCH', kicker: 'LELOUCH' },
   'market-take':  { section: 'gojo',    dir: 'gojo/stocks',    ticker: true,  label: 'TAKE',      badge: 'GOJO', kicker: 'GOJO' },
   'deep-dive':    { section: 'gojo',    dir: 'gojo/research',  ticker: true,  label: 'DEEP DIVE', badge: 'GOJO', kicker: 'GOJO' },
-  'journal':      { section: 'gojo',    dir: 'gojo/notes',     ticker: false, label: 'JOURNAL',   badge: 'JRNL', kicker: 'GOJO' },
-  'wealth':       { section: 'money',   dir: 'moneyhub',       ticker: false, label: 'WEALTH',    badge: 'WLTH', kicker: 'WEALTH' },
-  'health':       { section: 'health',  dir: 'healthhub',      ticker: false, label: 'HEALTH',    badge: 'HLTH', kicker: 'HEALTH' },
+  'journal':      { section: 'gojo',    dir: 'gojo/notes',     ticker: false, label: 'JOURNAL',   badge: 'JOURNAL', kicker: 'GOJO' },
+  'wealth':       { section: 'money',   dir: 'moneyhub',       ticker: false, label: 'WEALTH',    badge: 'WEALTH', kicker: 'WEALTH' },
+  'health':       { section: 'health',  dir: 'healthhub',      ticker: false, label: 'HEALTH',    badge: 'HEALTH', kicker: 'HEALTH' },
 };
 
 export const NAV = SECTIONS.filter(s => s.nav).map(({ label, href }) => ({ label, href }));
@@ -49,5 +49,5 @@ export function classifyUrl(url) {
 
 const upper = s => (s || '').toUpperCase();
 export const typeLabel = post => TYPES[post.type]?.label || upper(post.section);
-export const feedBadge = post => TYPES[post.type]?.badge || upper(post.section).slice(0, 4);
+export const feedBadge = post => TYPES[post.type]?.badge || upper(post.section);
 export const kickerFor = post => TYPES[post.type]?.kicker || upper(post.section);
