@@ -6,7 +6,7 @@ export const SITE = {
     { label: 'Health', href: '/healthhub/' },
     { label: 'Gojo',   href: '/gojo/' },
     { label: 'Lelouch', href: '/lelouch/' },
-    { label: 'About',  href: '/#about' },
+    { label: 'About',  href: '/about/' },
   ],
   social: [
     { label: 'Instagram', href: 'https://www.instagram.com/coach.tui/', icon: 'instagram' },
