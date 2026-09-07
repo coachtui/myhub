@@ -1,0 +1,10 @@
+const form = document.querySelector('#money-reset');
+if (form) {
+  const output=document.querySelector('#reset-result'), money=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+  form.addEventListener('submit',event=>{event.preventDefault();const values=Object.fromEntries([...new FormData(form)].map(([key,value])=>[key,Number(value)]));const committed=values.bills+values.essentials+values.flexible,remainder=values.income-committed,ratio=values.income>0?committed/values.income:1;let title,body,action;
+    if(remainder<0){title='This month is carrying more than your income.';body=`Your estimate is short by ${money.format(Math.abs(remainder))}. That is not a character judgment—it is a signal to look for timing problems, flexible costs, or bills that may need a different plan.`;action='<a href="/moneyhub/step1-know-your-money.html">Review where the pressure is →</a>';}
+    else if(ratio>.9){title='Your margin is thin.';body=`About ${money.format(remainder)} remains after these categories. Protecting even a small part can begin a cushion, but leave room for expenses this estimate may have missed.`;action='<a href="/moneyhub/step3-emergency-fund.html">Choose a starter savings target →</a>';}
+    else{title='You have room to assign on purpose.';body=`About ${money.format(remainder)} remains after these categories. It does not all need one job: a cushion, expensive debt, investing, and enjoyment can each have a place.`;action='<a href="/moneyhub/#checkup">Check your investing runway →</a>';}
+    output.innerHTML=`<span class="reset-result__label">Monthly starting point</span><strong class="reset-result__number">${money.format(remainder)}</strong><small>estimated after listed spending</small><hr><h2>${title}</h2><p>${body}</p>${action}<button type="button" class="reset-clear">Clear my numbers</button>`;output.querySelector('.reset-clear').addEventListener('click',()=>{form.reset();output.innerHTML='<div class="reset-result__empty"><span>Four numbers</span><p>That is enough to begin. Estimates are better than waiting for perfect data.</p></div>';form.querySelector('input').focus();});
+  });
+}

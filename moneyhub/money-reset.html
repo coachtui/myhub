@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10-Minute Money Reset | Moneyhub</title><meta name="description" content="Turn four monthly numbers into a clear next money move. Your numbers stay in your browser.">
+  <link rel="icon" href="/resources/images/favicon.ico"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/resources/css/style.css"><script src="/resources/js/theme.js"></script>
+</head><body>
+  <header class="chrome-header" id="site-header" aria-label="Site header"></header>
+  <main class="hub-page reset-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/moneyhub/">Moneyhub</a></li><li aria-current="page">Money Reset</li></ol></nav>
+    <header class="reset-head"><span class="hub-page__kicker">A private 10-minute exercise</span><h1 class="hub-page__title">Give every month a starting point.</h1><p class="hub-page__subtitle">Enter four estimates. See what is left, where the pressure is, and one useful next move. Your numbers never leave this page.</p></header>
+    <section class="reset-shell">
+      <form class="reset-form" id="money-reset">
+        <label><span>Monthly take-home pay</span><small>What actually reaches your accounts</small><span class="money-input"><b>$</b><input name="income" aria-label="Monthly take-home pay" inputmode="decimal" min="0" step="1" type="number" required></span></label>
+        <label><span>Required bills</span><small>Housing, utilities, insurance, minimum payments</small><span class="money-input"><b>$</b><input name="bills" aria-label="Required bills" inputmode="decimal" min="0" step="1" type="number" required></span></label>
+        <label><span>Everyday essentials</span><small>Groceries, fuel, medicine, necessary care</small><span class="money-input"><b>$</b><input name="essentials" aria-label="Everyday essentials" inputmode="decimal" min="0" step="1" type="number" required></span></label>
+        <label><span>Flexible spending</span><small>Dining, shopping, subscriptions, and fun</small><span class="money-input"><b>$</b><input name="flexible" aria-label="Flexible spending" inputmode="decimal" min="0" step="1" type="number" required></span></label>
+        <button type="submit">See my starting point →</button>
+      </form>
+      <div class="reset-result" id="reset-result" aria-live="polite"><div class="reset-result__empty"><span>Four numbers</span><p>That is enough to begin. Estimates are better than waiting for perfect data.</p></div></div>
+    </section>
+    <aside class="callout callout--disclaimer money-disclaimer"><span class="callout__icon" aria-hidden="true">▲</span><p>This educational estimate is not a full budget or personalized financial advice. Check your actual statements before making decisions.</p></aside>
+  </main>
+  <footer class="chrome-footer" id="site-footer" aria-label="Site footer"></footer>
+  <script type="module" src="/resources/js/chrome.mjs"></script><script type="module" src="/resources/js/search.mjs"></script><script type="module" src="/resources/js/money-reset.mjs"></script>
+</body></html>

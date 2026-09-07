@@ -85,7 +85,7 @@ test('wealth hub links the Start Here series', () => {
   const html = readFileSync(join(ROOT, 'moneyhub', 'index.html'), 'utf8');
   const i = html.indexOf('href="/moneyhub/start-here/"');
   assert.ok(i > -1, 'moneyhub index links start-here');
-  assert.ok(i < html.indexOf('the 5-step path'), 'start-here card appears before the 5-step path');
+  assert.ok(i > html.indexOf('Money Library'), 'start-here series lives in the reference library');
 });
 
 test('market takes page points beginners at Start Here', () => {
