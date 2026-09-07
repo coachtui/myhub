@@ -45,6 +45,11 @@ export const MONEY_TOPICS = {
   '/moneyhub/topics.html': ['manage-the-month', 'prepare-for-emergencies', 'start-investing'],
 };
 
+// Interactive tools and the purpose group each serves.
+export const TOOL_TOPICS = {
+  '/moneyhub/tools/money-reset.html': ['manage-the-month'],
+};
+
 // Pages that are reference material rather than a guided read.
 export const REFERENCE_PAGES = new Set([
   '/moneyhub/qa.html', '/moneyhub/topics.html',
@@ -82,18 +87,20 @@ export function rulesFor(post) {
   else if (isIndex) meta.kind = 'page';
   else if (type === 'market-take' || type === 'deep-dive' || type === 'lelouch-take') meta.kind = 'research';
   else if (type === 'journal') meta.kind = 'journal';
+  else if (type === 'wealth' && url.startsWith('/moneyhub/tools/')) meta.kind = 'tool';
   else if (type === 'wealth') meta.kind = REFERENCE_PAGES.has(url) ? 'reference' : 'guide';
   else if (type === 'health') meta.kind = 'guide';
   else meta.kind = 'page';
 
   if (meta.kind === 'research') meta.level = 'advanced';
-  else if (meta.kind === 'guide' || meta.kind === 'reference') meta.level = 'beginner';
+  else if (meta.kind === 'guide' || meta.kind === 'reference' || meta.kind === 'tool') meta.level = 'beginner';
 
   const s = seriesFor(url);
   if (s) { meta.series = s.series; meta.order = String(s.order); }
 
   if (type === 'wealth') {
-    if (url.startsWith('/moneyhub/start-here/')) meta.topics = ['understand-markets'];
+    if (url.startsWith('/moneyhub/tools/')) meta.topics = TOOL_TOPICS[url] || ['manage-the-month'];
+    else if (url.startsWith('/moneyhub/start-here/')) meta.topics = ['understand-markets'];
     else if (url.startsWith('/moneyhub/investing/')) meta.topics = ['start-investing'];
     else if (MONEY_TOPICS[url]) meta.topics = MONEY_TOPICS[url];
   } else if (type === 'health') {

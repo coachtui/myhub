@@ -64,7 +64,7 @@ test('every indexed page carries the core metadata', () => {
     if (!p.kind) problems.push(`${p.url}: no kind`);
     if (!AUTHORS[p.author]) problems.push(`${p.url}: unknown author "${p.author}"`);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(p.date)) problems.push(`${p.url}: no published date`);
-    if ((p.kind === 'guide' || p.kind === 'reference' || p.kind === 'research') && !p.level) problems.push(`${p.url}: no level`);
+    if ((p.kind === 'guide' || p.kind === 'reference' || p.kind === 'research' || p.kind === 'tool') && !p.level) problems.push(`${p.url}: no level`);
     if (!p.topics.length) problems.push(`${p.url}: no topics`);
     if (!p.disclaimer) problems.push(`${p.url}: no disclaimer kind`);
     if (p.readTime < 1) problems.push(`${p.url}: no reading time`);

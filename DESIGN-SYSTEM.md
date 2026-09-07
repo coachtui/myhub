@@ -400,6 +400,14 @@ Both use `.post-card` entries showing kicker, title, date, and summary.
 
 The Lelouch section (added August 2026) mirrors the Gojo pattern: `/research/lelouch/` intro page on the article template, `/research/lelouch/stocks/` Stock Takes listing (`type: lelouch-take`, kicker `♟`). Posts follow the same article template with kicker `LELOUCH · <TICKER>`.
 
+### Money landing (Moneyhub)
+
+`/moneyhub/` is action-first: hero with the investing hook and the core argument, then six situation cards (stage written out as Survive / Stabilize / Grow), the two-minute runway checkup (`#checkup`, `money-checkup.mjs`), the three-stage framework, the Money Library cards, and the personal note last. Layout lives in `sections/moneyhub.css`.
+
+### Tools
+
+Interactive tools live under `/moneyhub/tools/` (`site:kind` = `tool`) and share `components/tools.css` (two-column shell, result panel) and `components/forms.css` (labelled fields, money inputs, radio choices). Each tool's logic is a pure exported function with tests (`computeReset`, `recommend`); the DOM wiring only renders. Inputs are never stored or transmitted, every tool states that, and every result panel is `aria-live` and focusable with a clear-my-numbers action.
+
 ### Hub layout details
 
 Section overview with `.hub-steps` for program sequencing (Wealth: Know Your Money through Automate) and `.hub-grid` for topic area cards. Gojo hub includes the "who is Gojo" intro and the AI disclaimer before the two bucket links (Market Takes, Journal).

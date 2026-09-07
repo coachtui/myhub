@@ -1,0 +1,99 @@
+/* ============================================
+   FORMS
+   Field primitives shared by the interactive tools: labelled inputs with a
+   hint, money inputs with a currency prefix, and radio "choice" rows.
+   Tokens only; dark mode comes for free.
+   ============================================ */
+
+.field {
+  display: block;
+}
+
+.field__label {
+  display: block;
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  font-size: var(--text-base);
+}
+
+.field__hint {
+  display: block;
+  color: var(--color-text-tertiary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.money-input {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-elevated);
+}
+
+.money-input:focus-within {
+  border-color: var(--color-accent-primary);
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 1px;
+}
+
+.money-input__prefix {
+  padding-left: var(--space-4);
+  color: var(--color-text-tertiary);
+  font-family: var(--font-mono);
+}
+
+.money-input input {
+  width: 100%;
+  min-height: 48px;
+  padding: var(--space-3);
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Radio rows */
+.choice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 48px;
+  margin-top: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  font-size: var(--text-base);
+  cursor: pointer;
+}
+
+.choice input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--color-accent-primary);
+  flex-shrink: 0;
+}
+
+.choice:has(input:checked) {
+  border-color: var(--color-accent-primary);
+  background: var(--color-accent-tertiary);
+}
+
+.choice:has(input:focus-visible) {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+.form-error {
+  color: var(--color-accent-primary);
+  font-size: var(--text-base);
+  margin-top: var(--space-3);
+}

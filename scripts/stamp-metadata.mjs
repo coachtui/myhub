@@ -39,12 +39,13 @@ export function computeMeta(html, url, file) {
   const post = extractPost(html, url);
   const rules = rulesFor(post);
   // Articles date themselves (filename or byline); hubs and plain pages take
-  // the date the file first entered the repository.
+  // the date the file first entered the repository. A page with no history yet
+  // is being published today.
   const isArticle = !['hub', 'page'].includes(existing.kind ?? rules.kind);
   const inferred = {
     section: sectionForUrl(url)?.id || '',
     author: authorIdFor(url),
-    published: (isArticle && post.date) || (file ? firstCommitDate(file) : '') || post.date,
+    published: (isArticle && post.date) || (file ? firstCommitDate(file) : '') || post.date || new Date().toISOString().slice(0, 10),
   };
   const meta = {};
   for (const k of META_KEYS) {

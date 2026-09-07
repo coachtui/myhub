@@ -1,0 +1,174 @@
+/* ============================================
+   TOOLS
+   Shell for the interactive money tools: an intro, a form, and a result
+   panel that shows one prominent figure, what it means, one next action,
+   an educational note, and a clear button. Stacks on narrow screens.
+   ============================================ */
+
+.tool {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: start;
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-elevated);
+  scroll-margin-top: 80px;
+}
+
+.tool__intro p {
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+}
+
+.tool__form {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.tool__form .btn {
+  justify-self: start;
+}
+
+.tool__progress {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-3);
+}
+
+.checkup__step {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.checkup__question {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+  padding: 0;
+}
+
+.checkup__controls {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.checkup__controls .btn:last-child {
+  margin-left: auto;
+}
+
+/* Result panel */
+.tool__result {
+  min-height: 12rem;
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-secondary);
+}
+
+.tool__result:focus {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+.tool__result[hidden] {
+  display: none;
+}
+
+.tool__empty {
+  color: var(--color-text-secondary);
+}
+
+.tool__empty h2,
+.tool__empty h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-2);
+}
+
+.tool__label,
+.tool__stage {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-1);
+}
+
+.tool__stage b {
+  color: var(--color-accent-primary);
+}
+
+.tool__number {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  line-height: 1;
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+  margin: 0 0 var(--space-2);
+}
+
+.tool__sub {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-5);
+}
+
+.tool__headline {
+  font-family: var(--font-display);
+  font-weight: var(--weight-normal);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.tool__meaning {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-5);
+}
+
+.tool__action {
+  margin-bottom: var(--space-3);
+}
+
+.tool__secondary {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-5);
+}
+
+.tool__note {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-3);
+}
+
+.tool__clear {
+  padding: var(--space-2) 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tool__clear:hover {
+  color: var(--color-accent-primary);
+}
+
+@media (max-width: 760px) {
+  .tool {
+    grid-template-columns: 1fr;
+    padding: var(--space-5);
+  }
+}
