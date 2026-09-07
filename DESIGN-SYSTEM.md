@@ -305,7 +305,7 @@ The shared header, primary nav, search pill, theme toggle, and footer — inject
 
 ### command-palette (`command-palette.css`)
 
-Full-screen modal search, opened by pressing `⌘K` or clicking the search pill. Queries `search-index.json` client-side; returns ranked results by title match, section, and recency. Classes:
+Full-screen modal search, opened by pressing `⌘K` or clicking the search pill. Queries `search-index.json` client-side. Ranks by ticker (all tickers of a post), title, headings, topics, summary, kind, section and author, with question scaffolding stripped ("how do I start investing" → investing). Scope chips (Everything · Guides & tools · Market research · Journal & notes) keep beginner education and advanced research apart, and every result row says what it is (Beginner guide, Tool, Market research, Journal), who wrote it, whether it is AI-generated, and its reading time. The dialog traps Tab, announces result counts, and has a Close button. Classes:
 
 - `.cmdk` — the overlay backdrop
 - `.cmdk__panel` — the search box and results panel
