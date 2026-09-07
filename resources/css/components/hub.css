@@ -5,7 +5,7 @@
    ============================================ */
 
 .hub-page {
-  max-width: var(--width-content-lg);
+  max-width: var(--width-content-xl);
   margin: 0 auto;
   padding: var(--space-12) var(--space-5) var(--space-16);
 }

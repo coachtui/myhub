@@ -128,6 +128,25 @@
   text-decoration-color: var(--color-accent-primary);
 }
 
+/* Buttons inside prose keep their own colours; the link rule above must not win */
+.article__content .btn,
+.article__content .btn:hover {
+  text-decoration: none;
+}
+
+.article__content .btn--primary,
+.article__content .btn--primary:hover {
+  color: #ffffff;
+}
+
+.article__content .btn--secondary {
+  color: var(--color-text-primary);
+}
+
+.article__content .btn--secondary:hover {
+  color: var(--color-accent-primary);
+}
+
 /* Lists: no native markers; arrow bullets and accent numerals */
 .article__content ul,
 .article__content ol {

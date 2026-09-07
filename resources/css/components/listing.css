@@ -1,4 +1,4 @@
-.listing-page { max-width: var(--width-content-lg); margin: 0 auto; padding: var(--space-12) var(--space-5) var(--space-16); }
+.listing-page { max-width: var(--width-content-xl); margin: 0 auto; padding: var(--space-12) var(--space-5) var(--space-16); }
 .listing-page__head { margin-bottom: var(--space-8); }
 .listing-page__kicker { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: .12em; text-transform: uppercase; color: var(--color-ticker-text); }
 .listing-page__title { font-family: var(--font-display); font-weight: var(--weight-normal); font-size: var(--text-4xl); line-height: 1.05; margin: var(--space-2) 0; }

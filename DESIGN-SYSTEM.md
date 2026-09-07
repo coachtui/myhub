@@ -226,6 +226,8 @@ Dark mode is applied via the `[data-theme="dark"]` attribute on `<html>`. The th
 
 ## Layout
 
+**Page width, one rule:** every page container (`.hub-page`, `.listing-page`, `.article-page`, the home sections) is `--width-content-xl` (1152px), the same edge the header and footer use, so pages line up with the chrome. Reading measure is kept *inside* that: article prose is `--width-content-md` (768px), hub intros `.hub-prose` are md, subtitles are capped at 56ch. Tool shells split two-fifths form to three-fifths result, and anything wide (a chart, a year table) renders full-width below the row in `.tool__detail`. Buttons inside prose keep their own colours (`article.css` overrides the prose link rule for `.btn`).
+
 **Max widths:**
 ```css
 --width-content-sm: 42rem   /* 672px  — narrow reading */

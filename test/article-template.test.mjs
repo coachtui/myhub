@@ -57,3 +57,20 @@ test('buildRelatedList favours topic and series, and keeps advanced research off
   const r = buildRelatedList(index, vst, 4);
   assert.match(r, /\/research\//);
 });
+
+test('buttons inside prose keep their own colours (the prose link rule must not win)', () => {
+  const css = readFileSync(join(ROOT, 'resources/css/components/article.css'), 'utf8');
+  assert.match(css, /\.article__content \.btn--primary,\s*\.article__content \.btn--primary:hover \{\s*color: #ffffff;/);
+  assert.match(css, /\.article__content \.btn--secondary \{\s*color: var\(--color-text-primary\);/);
+  assert.match(css, /\.article__content \.btn,\s*\.article__content \.btn:hover \{\s*text-decoration: none;/);
+});
+
+test('every page container shares the header width; prose keeps its reading measure', () => {
+  const read = f => readFileSync(join(ROOT, 'resources/css', f), 'utf8');
+  assert.match(read('components/hub.css'), /\.hub-page \{\s*max-width: var\(--width-content-xl\)/);
+  assert.match(read('components/listing.css'), /\.listing-page \{ max-width: var\(--width-content-xl\)/);
+  assert.match(read('components/article.css'), /\.article-page \{\s*max-width: var\(--width-content-xl\)/);
+  assert.match(read('components/article.css'), /\.article \{\s*min-width: 0;\s*max-width: var\(--width-content-md\)/);
+  assert.match(read('sections/home.css'), /\.home-section \{\s*max-width: var\(--width-content-xl\)/);
+  assert.match(read('components/chrome.css'), /\.chrome-header__inner \{\s*max-width: var\(--width-content-xl\)/);
+});

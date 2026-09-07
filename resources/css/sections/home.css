@@ -10,7 +10,7 @@
   grid-template-columns: 132px 1fr;
   gap: var(--space-6);
   align-items: center;
-  max-width: var(--width-content-lg);
+  max-width: var(--width-content-xl);
   margin: var(--space-16) auto var(--space-12);
   padding: 0 var(--space-5);
 }
@@ -65,7 +65,7 @@
 
 /* Sections below the identity block share the identity column */
 .home-section {
-  max-width: var(--width-content-lg);
+  max-width: var(--width-content-xl);
   margin: 0 auto var(--space-16);
   padding: 0 var(--space-5);
 }
