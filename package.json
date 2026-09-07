@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "build:index": "node scripts/build-index.mjs"
+    "build:index": "node scripts/build-index.mjs",
+    "stamp": "node scripts/stamp-metadata.mjs --apply && node scripts/build-index.mjs"
   }
 }

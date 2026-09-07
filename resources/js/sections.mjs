@@ -7,6 +7,23 @@
 //
 // Browser-safe: no Node imports. Order of SECTIONS is nav order.
 
+export const SITE_ORIGIN = 'https://www.tuialailima.com';
+
+// Authors, keyed by the id stored in <meta name="site:author"> and the index.
+export const AUTHORS = {
+  tui:     { name: 'Tui Alailima',        ai: false },
+  gojo:    { name: 'Gojo (AI analyst)',    ai: true, role: 'Market Research Agent (retired)' },
+  lelouch: { name: 'Lelouch (AI analyst)', ai: true, role: 'Operating and Investment Analyst' },
+};
+
+// Page metadata keys, in the order they are written to <meta name="site:…">.
+// section  – SECTIONS id            kind    – hub | page | guide | reference | research | journal | tool | project | note
+// author   – AUTHORS id             level   – beginner | intermediate | advanced
+// series/order – reading chain      topics  – purpose or subject tags (comma list)
+// tickers  – all tickers (comma list; the first is the index's `ticker`)
+// published / updated – ISO dates    disclaimer – ai-market | ai-journal | personal-finance | health
+export const META_KEYS = ['section', 'kind', 'author', 'level', 'series', 'order', 'topics', 'tickers', 'published', 'updated', 'disclaimer'];
+
 export const SECTIONS = [
   { id: 'money',   label: 'Wealth',  href: '/moneyhub/',  index: 'Wealth',  author: 'Tui Alailima',        ai: false, nav: true },
   { id: 'health',  label: 'Health',  href: '/healthhub/', index: 'Health',  author: 'Tui Alailima',        ai: false, nav: true },

@@ -9,7 +9,7 @@ import { SITE } from '../resources/js/site-config.mjs';
 // site can silently break: a moved or renamed file that something still links to.
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
-const SKIP_DIRS = new Set(['.git', 'node_modules', 'docs', 'test', 'scripts', '.cto']);
+const SKIP_DIRS = new Set(['.git', 'node_modules', 'docs', 'test', 'scripts', '.cto', 'resources']);
 
 function walk(dir) {
   const out = [];
