@@ -48,6 +48,7 @@ export const MONEY_TOPICS = {
 // Interactive tools and the purpose group each serves.
 export const TOOL_TOPICS = {
   '/moneyhub/tools/money-reset.html': ['manage-the-month'],
+  '/moneyhub/tools/paycheck-planner.html': ['manage-the-month'],
   '/moneyhub/tools/savings-ladder.html': ['prepare-for-emergencies'],
   '/moneyhub/tools/debt-cost.html': ['handle-debt'],
   '/moneyhub/tools/compound-growth.html': ['start-investing'],
