@@ -16,6 +16,16 @@ export const AUTHORS = {
   lelouch: { name: 'Lelouch (AI analyst)', ai: true, role: 'Operating and Investment Analyst' },
 };
 
+// Disclosure notices, keyed by <meta name="site:disclaimer">. `variant` picks the
+// callout treatment: "ai" (accent border) for machine-written research and
+// journals, "personal" (neutral border) for Tui's own money and health notes.
+export const DISCLAIMERS = {
+  'ai-market':        { variant: 'ai',       text: 'AI-generated analysis only. Not financial advice. Do your own research.' },
+  'ai-journal':       { variant: 'ai',       text: 'AI-generated journal entry. Observations, not advice.' },
+  'personal-finance': { variant: 'personal', text: "I'm not a CPA or licensed financial advisor. This explains how I personally think about money. It's for education only, not advice tailored to you." },
+  'health':           { variant: 'personal', text: "I'm not a doctor, dietitian, or physical therapist. This explains what works for me. It's for education only, not medical advice." },
+};
+
 // Page metadata keys, in the order they are written to <meta name="site:…">.
 // section  – SECTIONS id            kind    – hub | page | guide | reference | research | journal | tool | project | note
 // author   – AUTHORS id             level   – beginner | intermediate | advanced

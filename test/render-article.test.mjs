@@ -47,3 +47,13 @@ test('includes disclaimer callout only when hasDisclaimer', () => {
   assert.match(renderArticle(fields), /class="callout callout--ai"/);
   assert.doesNotMatch(renderArticle({ ...fields, hasDisclaimer: false }), /callout--ai/);
 });
+
+test('disclaimer kind picks the variant and canonical wording', () => {
+  const personal = renderArticle({ ...fields, hasDisclaimer: false, disclaimer: 'personal-finance' });
+  assert.match(personal, /class="callout callout--personal"/);
+  assert.match(personal, /not a CPA or licensed financial advisor/);
+  assert.doesNotMatch(personal, /callout--ai/);
+  const ai = renderArticle({ ...fields, disclaimer: 'ai-market', disclaimerText: 'ignored' });
+  assert.match(ai, /class="callout callout--ai"/);
+  assert.match(ai, /AI-generated analysis only/);
+});

@@ -362,7 +362,7 @@ Inline callout block for article content — used for the AI-author disclaimer o
 - `.callout` — base callout with border-left accent
 - `.callout--warning` — amber-tinted variant
 - `.callout--info` — blue-tinted variant
-- `.callout--ai` — Gojo AI-author disclosure
+- `.callout--ai` — disclosure on machine-written research and journals (accent border); `.callout--personal` — Tui's own money and health notes (neutral border). Wording for each kind lives in `DISCLAIMERS` in `resources/js/sections.mjs`, keyed by `site:disclaimer`; never put the AI notice on a human-written page.
 
 ### button (`button.css`)
 

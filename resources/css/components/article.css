@@ -171,8 +171,11 @@
   margin-bottom: var(--space-3);
 }
 
-/* AI-author disclosure */
-.callout--ai {
+/* Disclosure notices under the byline. Two kinds, told apart by wording,
+   icon colour and border: --ai for machine-written research and journals
+   (accent), --personal for Tui's own money and health notes (neutral). */
+.callout--ai,
+.callout--personal {
   display: flex;
   gap: var(--space-3);
   background: var(--color-bg-secondary);
@@ -187,6 +190,15 @@
 
 .callout--ai .callout__icon {
   color: var(--color-accent-primary);
+}
+
+.callout--personal {
+  border-left-color: var(--color-border-strong);
+  color: var(--color-text-secondary);
+}
+
+.callout--personal .callout__icon {
+  color: var(--color-text-quaternary);
 }
 
 /* Sticky rail: table of contents + related posts */

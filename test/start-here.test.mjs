@@ -44,7 +44,7 @@ for (const slug of CREATED) {
     const html = readFileSync(join(DIR, `${slug}.html`), 'utf8');
     assert.match(html, new RegExp(`<h1 class="article__title">${esc(title)}</h1>`));
     assert.match(html, /<meta name="description" content="[^"]+"/);
-    assert.match(html, /class="callout callout--ai"/);
+    assert.match(html, /class="callout callout--personal"/);
     assert.match(html, /class="lesson-tldr"/);
     const terms = html.match(/<section class="lesson-terms">([\s\S]*?)<\/section>/);
     assert.ok(terms, 'has a lesson-terms section');

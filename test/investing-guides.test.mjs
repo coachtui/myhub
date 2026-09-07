@@ -36,7 +36,7 @@ for (const slug of REBUILT) {
     const html = readFileSync(join(DIR, `${slug}.html`), 'utf8');
     assert.match(html, new RegExp(`<h1 class="article__title">${title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</h1>`));
     assert.match(html, /<meta name="description" content="[^"]+"/);
-    assert.match(html, /class="callout callout--ai"/);
+    assert.match(html, /class="callout callout--personal"/);
     assert.match(html, /class="lesson-tldr"/);
     assert.ok((html.match(/<details class="lesson-details">/g) || []).length >= 1, 'has >= 1 collapsible');
     const terms = html.match(/<section class="lesson-terms">([\s\S]*?)<\/section>/);

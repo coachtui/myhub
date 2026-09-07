@@ -1,5 +1,6 @@
 import { extractPost } from './extract-post.mjs';
 import { sectionForUrl } from '../../resources/js/sections.mjs';
+import { parseSiteMeta } from './page-head.mjs';
 
 function inner(re, html) { const m = html.match(re); return m ? m[1].trim() : ''; }
 
@@ -32,7 +33,8 @@ export function extractArticle(html, url) {
     description: post.summary,
     headerTitle, subtitle, contentHtml,
     breadcrumb: parseBreadcrumb(html),
-    hasDisclaimer: !!disc,
+    hasDisclaimer: !!disc || /callout--(ai|personal)/.test(html),
+    disclaimer: parseSiteMeta(html).disclaimer || '',
     disclaimerText: disc ? disc[1].replace(/\s+/g, ' ').trim() : '',
     stepNavHtml,
     author: sectionForUrl(url)?.author || 'Tui Alailima',
