@@ -44,7 +44,7 @@ for (const slug of CREATED) {
     const html = readFileSync(join(DIR, `${slug}.html`), 'utf8');
     assert.match(html, new RegExp(`<h1 class="article__title">${esc(title)}</h1>`));
     assert.match(html, /<meta name="description" content="[^"]+"/);
-    assert.match(html, /class="callout callout--ai"/);
+    assert.match(html, /class="callout callout--personal"/);
     assert.match(html, /class="lesson-tldr"/);
     const terms = html.match(/<section class="lesson-terms">([\s\S]*?)<\/section>/);
     assert.ok(terms, 'has a lesson-terms section');
@@ -85,10 +85,10 @@ test('wealth hub links the Start Here series', () => {
   const html = readFileSync(join(ROOT, 'moneyhub', 'index.html'), 'utf8');
   const i = html.indexOf('href="/moneyhub/start-here/"');
   assert.ok(i > -1, 'moneyhub index links start-here');
-  assert.ok(i < html.indexOf('the 5-step path'), 'start-here card appears before the 5-step path');
+  assert.ok(i > html.indexOf('Money Library'), 'Market Basics is filed in the Money Library, below the action-first sections');
 });
 
 test('market takes page points beginners at Start Here', () => {
-  const html = readFileSync(join(ROOT, 'gojo', 'stocks', 'index.html'), 'utf8');
+  const html = readFileSync(join(ROOT, 'research', 'gojo', 'stocks', 'index.html'), 'utf8');
   assert.ok(html.includes('href="/moneyhub/start-here/"'), 'market takes links start-here');
 });

@@ -9,7 +9,7 @@ import { SITE } from '../resources/js/site-config.mjs';
 // site can silently break: a moved or renamed file that something still links to.
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
-const SKIP_DIRS = new Set(['.git', 'node_modules', 'docs', 'test', 'scripts', '.cto']);
+const SKIP_DIRS = new Set(['.git', 'node_modules', 'docs', 'test', 'scripts', '.cto', 'resources']);
 
 function walk(dir) {
   const out = [];
@@ -64,7 +64,7 @@ test('every page is reachable: linked from a page, listed from the index, or in 
   const navTargets = new Set(SITE.nav.map(n => (n.href.endsWith('/') ? n.href + 'index.html' : n.href)));
   const inbound = new Set(refs.map(r => r.target));
   // Soft-redirect stubs are intentionally unlinked; remove entries here as they gain real redirects.
-  const allowed = new Set(['/gojo/research/index.html']);
+  const allowed = new Set(['/research/gojo/research/index.html']);
   const orphans = pages
     .map(p => p.url)
     .filter(u => u !== '/index.html' && !allowed.has(u) && !inbound.has(u) && !indexed.has(u) && !navTargets.has(u));

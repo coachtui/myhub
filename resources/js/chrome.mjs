@@ -9,12 +9,13 @@ export function renderHeader(site, currentPath = '/') {
   return `
 <div class="chrome-header__inner">
   <a class="chrome-header__logo" href="/">${esc(site.name)}</a>
-  <nav class="chrome-nav" aria-label="Primary"><ul>${links}</ul></nav>
+  <nav class="chrome-nav" id="chrome-nav" aria-label="Primary"><ul>${links}</ul></nav>
   <div class="chrome-header__actions">
     <button class="chrome-search-pill" type="button" data-search-trigger aria-label="Search">
       <span>Search</span><kbd>⌘K</kbd>
     </button>
     <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+    <button class="chrome-menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="chrome-nav">Menu</button>
   </div>
 </div>`;
 }
@@ -36,10 +37,31 @@ export function renderFooter(site) {
 <div class="chrome-footer__bottom">© 2026 ${esc(site.name)}. Gojo &amp; Lelouch content is AI-generated — not financial advice.</div>`;
 }
 
+// Small-screen menu: the primary nav is hidden under 640px (see chrome.css)
+// and revealed by a labelled toggle. Escape closes and returns focus; a click
+// outside the header or on a nav link closes it too.
+export function wireMenu(header, doc = document) {
+  const button = header.querySelector('[data-menu-toggle]');
+  const nav = header.querySelector('#chrome-nav');
+  if (!button || !nav) return;
+  const isOpen = () => nav.classList.contains('is-open');
+  const setOpen = open => {
+    nav.classList.toggle('is-open', open);
+    button.setAttribute('aria-expanded', String(open));
+    button.textContent = open ? 'Close' : 'Menu';
+  };
+  button.addEventListener('click', () => setOpen(!isOpen()));
+  nav.addEventListener('click', e => { if (e.target.closest('a')) setOpen(false); });
+  doc.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && isOpen()) { setOpen(false); button.focus(); }
+  });
+  doc.addEventListener('click', e => { if (isOpen() && !header.contains(e.target)) setOpen(false); });
+}
+
 export function mountChrome(doc = document) {
   const header = doc.getElementById('site-header');
   const footer = doc.getElementById('site-footer');
-  if (header) header.innerHTML = renderHeader(SITE, doc.location?.pathname ?? '/');
+  if (header) { header.innerHTML = renderHeader(SITE, doc.location?.pathname ?? '/'); wireMenu(header, doc); }
   if (footer) footer.innerHTML = renderFooter(SITE);
 }
 

@@ -12,12 +12,37 @@ The site is the owned home for depth — indexed, permanent, proof of work. Soci
 
 **Vanilla static site — no build tools.**
 
-- `resources/css/style.css` orchestrates all CSS via `@import`.
+- `resources/css/style.css` orchestrates all CSS via `@import` and contains no rules of its own. Reusable UI lives in `components/`, layouts owned by one area of the site in `sections/` (currently `sections/home.css` for the identity block).
 - `resources/css/tokens.css` is the single source of truth for every design value.
 - Shared chrome (header, nav, search pill, footer, command palette) is JS-injected at runtime by `resources/js/chrome.mjs`, which reads configuration from `resources/js/site-config.mjs`. Every page mounts chrome through a single `<script>` tag; changing `site-config.mjs` or `chrome.mjs` propagates everywhere.
+- Primary navigation is **Money · Health · Work & Projects · Research & Notes · About** (the logo is Home). Gojo and Lelouch are AI desks that live under Research & Notes, introduced there with a one-line role each; they are never unexplained top-level items.
+- `resources/js/sections.mjs` is the single registry of sections and content types (nav order and labels, URL prefixes, index section names, default authors, badge and kicker text). The nav, the index builder, the article renderer, and the feed/listing/count modules all import it; add a section or type there and nowhere else.
 - Listings, feed rows, and section counts are rendered client-side from `resources/data/search-index.json` — no server required.
 - The index is rebuilt by `npm run build:index` (runs `scripts/build-index.mjs`). A freshness guard test (`test/index-fresh.test.mjs`) fails CI if the committed index is stale.
+- `vercel.json` holds permanent redirects for retired URLs (the desks moved from `/gojo/` and `/lelouch/` to `/research/gojo/` and `/research/lelouch/` in September 2026) and a fallback rewrite that serves a new Lelouch post from the old folder until the publishing agent is updated. `test/redirects.test.mjs` proves every moved page is reachable from its old URL.
 - The GitHub Action (`.github/workflows/build-index.yml`) triggers on every push that touches article directories or scripts, runs `npm run build:index`, then commits the refreshed `search-index.json` if it changed.
+
+---
+
+## Page Metadata
+
+Each page's `<head>` carries its metadata as `<meta name="site:…">` tags — the page is the single source of truth; `resources/data/search-index.json`, `sitemap.xml`, breadcrumbs, bylines and listings are derived from it, never hand-maintained in parallel.
+
+| Key | Values |
+|---|---|
+| `site:section` | a `SECTIONS` id from `resources/js/sections.mjs` |
+| `site:kind` | `hub` · `page` · `guide` · `reference` · `research` · `journal` · `tool` · `project` · `note` |
+| `site:author` | an `AUTHORS` id: `tui` · `gojo` · `lelouch` |
+| `site:level` | `beginner` · `intermediate` · `advanced` |
+| `site:series` / `site:order` | reading chain and 1-based position (`five-steps`, `market-basics`, `investing-guides`) |
+| `site:topics` | comma list of purpose or subject tags (Money: `manage-the-month`, `handle-debt`, `prepare-for-emergencies`, `start-investing`, `understand-markets`) |
+| `site:tickers` | comma list; the first is the index's `ticker` |
+| `site:published` / `site:updated` | ISO dates |
+| `site:disclaimer` | `ai-market` · `ai-journal` · `personal-finance` · `health` |
+
+The shared head (fonts, icon, CSS, theme script, canonical link, Open Graph tags, and these keys in fixed order) is rendered by `scripts/lib/page-head.mjs`. `test/page-head.test.mjs` fails if any page's head drifts from it.
+
+**Adding or editing metadata:** put the tag in the page (or add a rule in `scripts/lib/page-metadata-rules.mjs` for series, topics and multi-ticker posts), then run `npm run stamp`. The stamper keeps existing tags, fills gaps from the rules, infers the rest (section and author from the URL, published from the byline, filename, or first git commit), rewrites the head, and rebuilds the index, sitemap and robots.txt. A dry run is `node scripts/stamp-metadata.mjs`.
 
 ---
 
@@ -267,20 +292,20 @@ Dark mode overrides deepen shadow alpha (0.3–0.7).
 
 ## Component Library
 
-Eight components, one CSS file each under `resources/css/components/`. All are imported in `resources/css/style.css`.
+One CSS file per component under `resources/css/components/`, all imported by `resources/css/style.css`. Unused classes are removed rather than kept "just in case"; add a variant when a page needs it.
 
 ### chrome (`chrome.css`)
 
 The shared header, primary nav, search pill, theme toggle, and footer — injected into every page by `chrome.mjs`. Configuration (site name, nav links, social links) comes from `site-config.mjs`. Key classes:
 
 - `.chrome-header` / `.chrome-header__inner` — sticky top bar
-- `.chrome-nav` / `.chrome-nav__link` — primary navigation links; `aria-current="page"` marks the active item
+- `.chrome-nav` / `.chrome-nav__link` — primary navigation links; `aria-current="page"` marks the active item. Under 640px the nav is collapsed behind `.chrome-menu-toggle` (a text button, `aria-expanded` + `aria-controls`) and opens as a panel below the header; Escape, a click outside, or choosing a link closes it.
 - `.chrome-search-pill` — compact search button triggering the command palette
 - `.chrome-footer` / `.chrome-footer__inner` — footer with logo, nav repeat, and social icon links
 
 ### command-palette (`command-palette.css`)
 
-Full-screen modal search, opened by pressing `⌘K` or clicking the search pill. Queries `search-index.json` client-side; returns ranked results by title match, section, and recency. Classes:
+Full-screen modal search, opened by pressing `⌘K` or clicking the search pill. Queries `search-index.json` client-side. Ranks by ticker (all tickers of a post), title, headings, topics, summary, kind, section and author, with question scaffolding stripped ("how do I start investing" → investing). Scope chips (Everything · Guides & tools · Market research · Journal & notes) keep beginner education and advanced research apart, and every result row says what it is (Beginner guide, Tool, Market research, Journal), who wrote it, whether it is AI-generated, and its reading time. The dialog traps Tab, announces result counts, and has a Close button. Classes:
 
 - `.cmdk` — the overlay backdrop
 - `.cmdk__panel` — the search box and results panel
@@ -296,7 +321,7 @@ Home page "Latest" section: bordered data rows of recent posts across all sectio
 
 - `.feed` — the list container
 - `.feed-row` — one bordered row
-- `.feed-row__badge` — section or ticker label (amber tokens for ticker, accent red for section)
+- `.feed-row__badge` — section or ticker label (amber tokens for ticker, accent red for section). Section badges are full words (WEALTH, HEALTH, JOURNAL), never abbreviations, so meaning does not depend on decoding a code.
 - `.feed-row__title` — article title link
 - `.feed-row__date` — mono-styled date
 
@@ -304,7 +329,7 @@ Home page "Latest" section: bordered data rows of recent posts across all sectio
 
 Reading page layout. Defines the prose column, kicker badge, editorial byline, and content typography. Classes:
 
-- `.article` — page wrapper with constrained reading width
+- `.article` — page wrapper with constrained reading width (centred header, arrow bullets and accent numerals for lists are deliberate and live here)
 - `.article__header` — kicker + title + subtitle block
 - `.article__title` — Instrument Serif display heading
 - `.kicker` — section/ticker badge above the title (e.g., `◈ GOJO · SPY`)
@@ -324,7 +349,7 @@ Post-card list pages: Market Takes and Journal. Market Takes adds a live text fi
 
 ### hub (`hub.css`)
 
-Section overview pages (Wealth, Health, Gojo). Two layout patterns: a card grid for topic areas and a numbered-step list for the program sequence. Classes:
+Section overview pages (Money, Health, Work & Projects, Research & Notes, and the Gojo/Lelouch desks). Two layout patterns: a card grid for topic areas and a numbered-step list for the program sequence. Classes:
 
 - `.hub-page` — outer section wrapper
 - `.hub-grid` — card grid for topic cards
@@ -339,7 +364,7 @@ Inline callout block for article content — used for the AI-author disclaimer o
 - `.callout` — base callout with border-left accent
 - `.callout--warning` — amber-tinted variant
 - `.callout--info` — blue-tinted variant
-- `.callout--ai` — Gojo AI-author disclosure
+- `.callout--ai` — disclosure on machine-written research and journals (accent border); `.callout--personal` — Tui's own money and health notes (neutral border). Wording for each kind lives in `DISCLAIMERS` in `resources/js/sections.mjs`, keyed by `site:disclaimer`; never put the AI notice on a human-written page.
 
 ### button (`button.css`)
 
@@ -357,11 +382,30 @@ All pages share the same chrome, token, and component kit.
 
 ### Home
 
-Identity front door: headshot + bio ("Builder, investor, construction professional.") + compact identity block. Below the fold: live "Latest" feed (`.feed`) of mixed recent posts from all sections, a prominent `⌘K` search entry point, and section entry cards. Social links in the footer.
+Identity front door: headshot, name, the positioning line ("I build systems for stronger work, health, and financial lives."), one line of context, and three CTAs (Start with money, About, Search). Then four path cards (Money, Health, Work & Projects, Research & Notes), three "good places to start" cards, and a short note introducing the two AI desks by role with a five-item latest-research feed (`#latest-feed` with `data-feed-types` and `data-feed-limit`). The homepage is a map, not an index: AI market content is confined to that last section.
 
 ### Article
 
 Kicker badge (e.g., `◈ GOJO · SPY`) → Instrument Serif headline (`.article__title`) → optional lead paragraph (`.article__lead`) → editorial byline (`.byline`) → AI disclaimer callout (Gojo posts only) → Source Serif prose body with mono data blocks for numbers. A sticky rail anchors "On this page" navigation and related posts.
+
+### Article template (shared by Money, Health, Research and Projects articles)
+
+Piloted on `moneyhub/step3-emergency-fund.html` and `research/lelouch/stocks/vst-ai-power-selloff-august-2026.html`. Slots, in order; not every article needs every slot:
+
+1. Plain-language title (`.article__title`) under a kicker
+2. One sentence on why it matters (`.article__lead`)
+3. Byline: author · date · reading time · `.byline__tag` with kind, level, and "AI-generated" where true
+4. Disclosure callout (`.callout--ai` or `.callout--personal`, by `site:disclaimer`)
+5. "What you need to know" summary (`.article__summary`, three to five points)
+6. Primary explanation with h2 sections, acronyms expanded on first use
+7. Realistic example (`.article__example`)
+8. Expandable details for exceptions and depth (`<details class="lesson-details">`)
+9. Terms recap (`.lesson-terms`)
+10. One practical next action with a button (`.next-action`)
+11. Sources, when factual claims need them (`.article__sources`)
+12. Related content (`.article__related [data-related]`, rendered from the index by `article.mjs` with a static fallback) and previous / section home / next (`.step-nav-footer[data-series-nav]`, rendered from the index for pages in a series)
+
+Headings stay within h1–h3. Related-content scoring favours shared topics and series, then section, and never recommends advanced research from a beginner page.
 
 ### Listing (Market Takes / Journal)
 
@@ -373,7 +417,19 @@ Both use `.post-card` entries showing kicker, title, date, and summary.
 
 ### Hub (Wealth / Health / Gojo / Lelouch)
 
-The Lelouch section (added August 2026) mirrors the Gojo pattern: `/lelouch/` intro page on the article template, `/lelouch/stocks/` Stock Takes listing (`type: lelouch-take`, kicker `♟`). Posts follow the same article template with kicker `LELOUCH · <TICKER>`.
+The Lelouch section (added August 2026) mirrors the Gojo pattern: `/research/lelouch/` intro page on the article template, `/research/lelouch/stocks/` Stock Takes listing (`type: lelouch-take`, kicker `♟`). Posts follow the same article template with kicker `LELOUCH · <TICKER>`.
+
+### Money landing (Moneyhub)
+
+`/moneyhub/` is action-first: hero with the investing hook and the core argument, then six situation cards (stage written out as Survive / Stabilize / Grow), the two-minute runway checkup (`#checkup`, `money-checkup.mjs`), the three-stage framework, the Money Library cards, and the personal note last. Layout lives in `sections/moneyhub.css`.
+
+### Money Library, Your Foundation, Market Lab
+
+`/moneyhub/library/` renders every Money guide, tool and reference page from the index (`money-library.mjs`), grouped by purpose topic in `PURPOSES` order and filterable by stage, topic, level and reading time; each card shows kind, stage, level and reading time. `/moneyhub/foundation/` is the Survive · Stabilize · Grow hub for the five steps and the tools. `/moneyhub/market-lab/` lists both AI desks' research with the "advanced and optional" framing (its `site:disclaimer` is `ai-market` because the content it fronts is AI-generated), visibly separate from beginner material.
+
+### Tools
+
+Interactive tools live under `/moneyhub/tools/` (`site:kind` = `tool`) and share `components/tools.css` (two-column shell, result panel) and `components/forms.css` (labelled fields, money inputs, radio choices). Each tool's logic is a pure exported function with tests (`computeReset`, `recommend`, `buildLadder`, `computeDebt`), input parsing is shared in `resources/js/lib/money.mjs`, and the DOM wiring only renders. Live tools: Money Reset, Emergency Savings Ladder, Debt Cost Visualizer. Inputs are never stored or transmitted, every tool states that, and every result panel is `aria-live` and focusable with a clear-my-numbers action.
 
 ### Hub layout details
 

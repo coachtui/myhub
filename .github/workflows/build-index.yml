@@ -4,11 +4,9 @@ on:
   push:
     branches: [main]
     paths:
-      - 'gojo/**'
-      - 'lelouch/**'
-      - 'moneyhub/**'
-      - 'healthhub/**'
+      - '**.html'
       - 'scripts/**'
+      - 'resources/js/sections.mjs'
 
 permissions:
   contents: write
@@ -31,11 +29,11 @@ jobs:
         run: node --test
       - name: Commit refreshed index if changed
         run: |
-          if [ -n "$(git status --porcelain resources/data/search-index.json)" ]; then
+          if [ -n "$(git status --porcelain resources/data/search-index.json sitemap.xml robots.txt)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add resources/data/search-index.json
-            git commit -m "chore: rebuild search index [skip ci]"
+            git add resources/data/search-index.json sitemap.xml robots.txt
+            git commit -m "chore: rebuild search index and sitemap [skip ci]"
             git push
           else
             echo "Index already current — nothing to commit."

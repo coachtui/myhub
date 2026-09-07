@@ -3,9 +3,9 @@ import assert from 'node:assert/strict';
 import { classifyPage, swapHubChrome } from '../scripts/migrate-pages.mjs';
 
 test('classifies article vs hub vs already-migrated', () => {
-  assert.equal(classifyPage('<div class="article__content">x</div>', '/gojo/stocks/a.html'), 'article');
-  assert.equal(classifyPage('<aside class="sidebar-nav"></aside>', '/gojo/stocks/index.html'), 'hub');
-  assert.equal(classifyPage('<header id="site-header"></header>', '/gojo/stocks/a.html'), 'migrated');
+  assert.equal(classifyPage('<div class="article__content">x</div>', '/research/gojo/stocks/a.html'), 'article');
+  assert.equal(classifyPage('<aside class="sidebar-nav"></aside>', '/research/gojo/stocks/index.html'), 'hub');
+  assert.equal(classifyPage('<header id="site-header"></header>', '/research/gojo/stocks/a.html'), 'migrated');
 });
 
 test('non-article content pages (no article__content, not index) are chrome-swapped, not skipped', () => {
@@ -19,7 +19,7 @@ test('non-article content pages (no article__content, not index) are chrome-swap
 
 test('index/listing pages stay hub even when they wrap content in article__content', () => {
   const html = '<div class="article__content"><div class="stack"><a class="card">post</a></div></div>';
-  assert.equal(classifyPage(html, '/gojo/stocks/index.html'), 'hub');
+  assert.equal(classifyPage(html, '/research/gojo/stocks/index.html'), 'hub');
 });
 
 test('swapHubChrome is idempotent and injects chrome', () => {

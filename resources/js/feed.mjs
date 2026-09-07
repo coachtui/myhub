@@ -1,10 +1,11 @@
 import { esc } from './esc.mjs';
+import { feedBadge } from './sections.mjs';
 
-const BADGE = { 'market-take': 'GOJO', 'deep-dive': 'GOJO', 'journal': 'JRNL', 'wealth': 'WLTH', 'health': 'HLTH' };
-
-export function renderFeedRows(index, limit = 8) {
-  return index.slice(0, limit).map(p => {
-    const label = p.ticker || BADGE[p.type] || (p.section || '').toUpperCase().slice(0, 4);
+// Optional filter by index type; the index is already date-sorted.
+export function renderFeedRows(index, limit = 8, types = null) {
+  const rows = types && types.length ? index.filter(p => types.includes(p.type)) : index;
+  return rows.slice(0, limit).map(p => {
+    const label = p.ticker || feedBadge(p);
     const isTicker = !!p.ticker;
     return `<a class="feed-row" href="${esc(p.url)}">
   <span class="feed-row__badge${isTicker ? ' feed-row__badge--ticker' : ''}">${esc(label)}</span>
@@ -19,7 +20,9 @@ export async function mountFeed(doc = document) {
   if (!el) return;
   try {
     const index = await (await fetch('/resources/data/search-index.json')).json();
-    el.innerHTML = renderFeedRows(index, 8);
+    const limit = Number(el.dataset.feedLimit) || 8;
+    const types = (el.dataset.feedTypes || '').split(',').map(s => s.trim()).filter(Boolean);
+    el.innerHTML = renderFeedRows(index, limit, types);
   } catch { el.innerHTML = '<p class="feed-empty">Run <code>npm run build:index</code> and serve over HTTP to load the feed.</p>'; }
 }
 
