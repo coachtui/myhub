@@ -388,6 +388,25 @@ Identity front door: headshot, name, the positioning line ("I build systems for 
 
 Kicker badge (e.g., `◈ GOJO · SPY`) → Instrument Serif headline (`.article__title`) → optional lead paragraph (`.article__lead`) → editorial byline (`.byline`) → AI disclaimer callout (Gojo posts only) → Source Serif prose body with mono data blocks for numbers. A sticky rail anchors "On this page" navigation and related posts.
 
+### Article template (shared by Money, Health, Research and Projects articles)
+
+Piloted on `moneyhub/step3-emergency-fund.html` and `research/lelouch/stocks/vst-ai-power-selloff-august-2026.html`. Slots, in order; not every article needs every slot:
+
+1. Plain-language title (`.article__title`) under a kicker
+2. One sentence on why it matters (`.article__lead`)
+3. Byline: author · date · reading time · `.byline__tag` with kind, level, and "AI-generated" where true
+4. Disclosure callout (`.callout--ai` or `.callout--personal`, by `site:disclaimer`)
+5. "What you need to know" summary (`.article__summary`, three to five points)
+6. Primary explanation with h2 sections, acronyms expanded on first use
+7. Realistic example (`.article__example`)
+8. Expandable details for exceptions and depth (`<details class="lesson-details">`)
+9. Terms recap (`.lesson-terms`)
+10. One practical next action with a button (`.next-action`)
+11. Sources, when factual claims need them (`.article__sources`)
+12. Related content (`.article__related [data-related]`, rendered from the index by `article.mjs` with a static fallback) and previous / section home / next (`.step-nav-footer[data-series-nav]`, rendered from the index for pages in a series)
+
+Headings stay within h1–h3. Related-content scoring favours shared topics and series, then section, and never recommends advanced research from a beginner page.
+
 ### Listing (Market Takes / Journal)
 
 **Market Takes:** live text filter field (`.filter-bar`) above a data-row list of takes. Filtering and result counts render from `search-index.json` via `market-takes.mjs`.

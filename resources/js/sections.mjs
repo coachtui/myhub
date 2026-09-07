@@ -61,6 +61,16 @@ export const TYPES = {
   'health':       { section: 'health',  dir: 'healthhub',      ticker: false, label: 'HEALTH',    badge: 'HEALTH', kicker: 'HEALTH' },
 };
 
+// Reading chains: the "section home" link between previous and next.
+export const SERIES_HOME = {
+  'five-steps':       { href: '/moneyhub/foundation/', label: 'Your Foundation' },
+  'market-basics':    { href: '/moneyhub/start-here/', label: 'Market Basics' },
+  'investing-guides': { href: '/moneyhub/investing/',  label: 'Start Investing' },
+};
+
+export const LEVEL_LABEL = { beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced' };
+export const KIND_LABEL = { hub: 'Hub', page: 'Page', guide: 'Guide', reference: 'Reference', research: 'Market research', journal: 'Journal', tool: 'Tool', project: 'Project', note: 'Note' };
+
 export const NAV = SECTIONS.filter(s => s.nav).map(({ label, href }) => ({ label, href }));
 
 export const CONTENT_DIRS = Object.values(TYPES).map(t => t.dir);
