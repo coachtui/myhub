@@ -20,9 +20,9 @@ test('Research & Notes introduces both desks by role and keeps beginners pointed
   const html = read('research/index.html');
   assert.match(html, /Lelouch — Operating and Investment Analyst/);
   assert.match(html, /Gojo — Market Research Agent/);
-  assert.match(html, /href="\/lelouch\/stocks\/"/);
-  assert.match(html, /href="\/gojo\/stocks\/"/);
-  assert.match(html, /href="\/gojo\/notes\/"/);
+  assert.match(html, /href="\/research\/lelouch\/stocks\/"/);
+  assert.match(html, /href="\/research\/gojo\/stocks\/"/);
+  assert.match(html, /href="\/research\/gojo\/notes\/"/);
   assert.match(html, /class="callout callout--ai"/, 'AI disclosure on the hub');
   assert.match(html, /data-listing-types="lelouch-take,market-take,deep-dive" data-listing-limit="6"/);
   assert.match(html, /href="\/moneyhub\/start-here\/"/);

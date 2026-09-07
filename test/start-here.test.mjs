@@ -89,6 +89,6 @@ test('wealth hub links the Start Here series', () => {
 });
 
 test('market takes page points beginners at Start Here', () => {
-  const html = readFileSync(join(ROOT, 'gojo', 'stocks', 'index.html'), 'utf8');
+  const html = readFileSync(join(ROOT, 'research', 'gojo', 'stocks', 'index.html'), 'utf8');
   assert.ok(html.includes('href="/moneyhub/start-here/"'), 'market takes links start-here');
 });

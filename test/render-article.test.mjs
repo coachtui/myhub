@@ -16,9 +16,9 @@ test('head includes new fonts, css, theme, and escaped title/description', () =>
 });
 
 const fields = {
-  url: '/gojo/stocks/spy-x.html', title: 'SPY Review', description: 'desc',
+  url: '/research/gojo/stocks/spy-x.html', title: 'SPY Review', description: 'desc',
   headerTitle: 'SPY Review', subtitle: 'A close read.', contentHtml: '<p>Body</p><h2>Section</h2>',
-  breadcrumb: [{label:'Home',href:'/'},{label:'Gojo',href:'/gojo/'},{label:'SPY Review',href:null}],
+  breadcrumb: [{label:'Home',href:'/'},{label:'Gojo',href:'/research/gojo/'},{label:'SPY Review',href:null}],
   hasDisclaimer: true, disclaimerText: 'AI-generated. Not advice.', stepNavHtml: '',
   author: 'Gojo (AI analyst)', date: '2026-06-28', section: 'Gojo', type: 'market-take', ticker: 'SPY', readTime: 6,
 };

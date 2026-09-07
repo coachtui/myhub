@@ -19,6 +19,7 @@ The site is the owned home for depth — indexed, permanent, proof of work. Soci
 - `resources/js/sections.mjs` is the single registry of sections and content types (nav order and labels, URL prefixes, index section names, default authors, badge and kicker text). The nav, the index builder, the article renderer, and the feed/listing/count modules all import it; add a section or type there and nowhere else.
 - Listings, feed rows, and section counts are rendered client-side from `resources/data/search-index.json` — no server required.
 - The index is rebuilt by `npm run build:index` (runs `scripts/build-index.mjs`). A freshness guard test (`test/index-fresh.test.mjs`) fails CI if the committed index is stale.
+- `vercel.json` holds permanent redirects for retired URLs (the desks moved from `/gojo/` and `/lelouch/` to `/research/gojo/` and `/research/lelouch/` in September 2026) and a fallback rewrite that serves a new Lelouch post from the old folder until the publishing agent is updated. `test/redirects.test.mjs` proves every moved page is reachable from its old URL.
 - The GitHub Action (`.github/workflows/build-index.yml`) triggers on every push that touches article directories or scripts, runs `npm run build:index`, then commits the refreshed `search-index.json` if it changed.
 
 ---
@@ -397,7 +398,7 @@ Both use `.post-card` entries showing kicker, title, date, and summary.
 
 ### Hub (Wealth / Health / Gojo / Lelouch)
 
-The Lelouch section (added August 2026) mirrors the Gojo pattern: `/lelouch/` intro page on the article template, `/lelouch/stocks/` Stock Takes listing (`type: lelouch-take`, kicker `♟`). Posts follow the same article template with kicker `LELOUCH · <TICKER>`.
+The Lelouch section (added August 2026) mirrors the Gojo pattern: `/research/lelouch/` intro page on the article template, `/research/lelouch/stocks/` Stock Takes listing (`type: lelouch-take`, kicker `♟`). Posts follow the same article template with kicker `LELOUCH · <TICKER>`.
 
 ### Hub layout details
 

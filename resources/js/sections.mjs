@@ -42,8 +42,8 @@ export const SECTIONS = [
   { id: 'projects', label: 'Work & Projects',  brand: 'Work & Projects',  href: '/projects/',  index: null,      author: 'Tui Alailima',        ai: false, nav: true },
   { id: 'research', label: 'Research & Notes', brand: 'Research & Notes', href: '/research/',  index: null,      author: 'Tui Alailima',        ai: false, nav: true },
   { id: 'about',    label: 'About',            brand: 'About',            href: '/about/',     index: null,      author: 'Tui Alailima',        ai: false, nav: true },
-  { id: 'gojo',     label: 'Gojo',             brand: 'Gojo',             href: '/gojo/',      index: 'Gojo',    author: 'Gojo (AI analyst)',    ai: true,  nav: false, parent: 'research' },
-  { id: 'lelouch',  label: 'Lelouch',          brand: 'Lelouch',          href: '/lelouch/',   index: 'Lelouch', author: 'Lelouch (AI analyst)', ai: true,  nav: false, parent: 'research' },
+  { id: 'gojo',     label: 'Gojo',             brand: 'Gojo',             href: '/research/gojo/',    index: 'Gojo',    author: 'Gojo (AI analyst)',    ai: true,  nav: false, parent: 'research' },
+  { id: 'lelouch',  label: 'Lelouch',          brand: 'Lelouch',          href: '/research/lelouch/', index: 'Lelouch', author: 'Lelouch (AI analyst)', ai: true,  nav: false, parent: 'research' },
 ];
 
 // Content types, keyed by the `type` value stored in search-index.json.
@@ -53,10 +53,10 @@ export const SECTIONS = [
 //   badge   – home-feed badge when there is no ticker (full words, never abbreviations)
 //   kicker  – first word of the article kicker
 export const TYPES = {
-  'lelouch-take': { section: 'lelouch', dir: 'lelouch/stocks', ticker: true,  label: 'TAKE',      badge: 'LELOUCH', kicker: 'LELOUCH' },
-  'market-take':  { section: 'gojo',    dir: 'gojo/stocks',    ticker: true,  label: 'TAKE',      badge: 'GOJO', kicker: 'GOJO' },
-  'deep-dive':    { section: 'gojo',    dir: 'gojo/research',  ticker: true,  label: 'DEEP DIVE', badge: 'GOJO', kicker: 'GOJO' },
-  'journal':      { section: 'gojo',    dir: 'gojo/notes',     ticker: false, label: 'JOURNAL',   badge: 'JOURNAL', kicker: 'GOJO' },
+  'lelouch-take': { section: 'lelouch', dir: 'research/lelouch/stocks', ticker: true,  label: 'TAKE',      badge: 'LELOUCH', kicker: 'LELOUCH' },
+  'market-take':  { section: 'gojo',    dir: 'research/gojo/stocks',    ticker: true,  label: 'TAKE',      badge: 'GOJO', kicker: 'GOJO' },
+  'deep-dive':    { section: 'gojo',    dir: 'research/gojo/research',  ticker: true,  label: 'DEEP DIVE', badge: 'GOJO', kicker: 'GOJO' },
+  'journal':      { section: 'gojo',    dir: 'research/gojo/notes',     ticker: false, label: 'JOURNAL',   badge: 'JOURNAL', kicker: 'GOJO' },
   'wealth':       { section: 'money',   dir: 'moneyhub',       ticker: false, label: 'WEALTH',    badge: 'WEALTH', kicker: 'WEALTH' },
   'health':       { section: 'health',  dir: 'healthhub',      ticker: false, label: 'HEALTH',    badge: 'HEALTH', kicker: 'HEALTH' },
 };
@@ -67,8 +67,10 @@ export const CONTENT_DIRS = Object.values(TYPES).map(t => t.dir);
 
 export const sectionById = id => SECTIONS.find(s => s.id === id) || null;
 
-// The section whose URL prefix contains this path, e.g. "/gojo/notes/x.html" → gojo.
-export const sectionForUrl = url => SECTIONS.find(s => url.startsWith(s.href)) || null;
+// The most specific section whose URL prefix contains this path,
+// e.g. "/research/gojo/notes/x.html" → gojo (not research).
+export const sectionForUrl = url =>
+  SECTIONS.filter(s => url.startsWith(s.href)).sort((a, b) => b.href.length - a.href.length)[0] || null;
 
 // Index classification for a page URL. Unknown paths are plain site pages.
 export function classifyUrl(url) {

@@ -64,7 +64,7 @@ test('every page is reachable: linked from a page, listed from the index, or in 
   const navTargets = new Set(SITE.nav.map(n => (n.href.endsWith('/') ? n.href + 'index.html' : n.href)));
   const inbound = new Set(refs.map(r => r.target));
   // Soft-redirect stubs are intentionally unlinked; remove entries here as they gain real redirects.
-  const allowed = new Set(['/gojo/research/index.html']);
+  const allowed = new Set(['/research/gojo/research/index.html']);
   const orphans = pages
     .map(p => p.url)
     .filter(u => u !== '/index.html' && !allowed.has(u) && !inbound.has(u) && !indexed.has(u) && !navTargets.has(u));

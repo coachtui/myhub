@@ -35,15 +35,15 @@ test('site:* tags in a page win over inference and rules', () => {
 
 test('rules classify each family sensibly', () => {
   const r = (url, type, ticker = '') => rulesFor({ url, type, ticker });
-  assert.equal(r('/gojo/stocks/spy-market-review-2026-08-30.html', 'market-take', 'SPY').kind, 'research');
-  assert.deepEqual(r('/gojo/stocks/spy-market-review-2026-08-30.html', 'market-take', 'SPY').topics, ['market-review']);
-  assert.equal(r('/gojo/notes/2026-08-04-notes.html', 'journal').disclaimer, 'ai-journal');
+  assert.equal(r('/research/gojo/stocks/spy-market-review-2026-08-30.html', 'market-take', 'SPY').kind, 'research');
+  assert.deepEqual(r('/research/gojo/stocks/spy-market-review-2026-08-30.html', 'market-take', 'SPY').topics, ['market-review']);
+  assert.equal(r('/research/gojo/notes/2026-08-04-notes.html', 'journal').disclaimer, 'ai-journal');
   assert.equal(r('/moneyhub/qa.html', 'wealth').kind, 'reference');
   assert.equal(r('/moneyhub/start-here/why-invest.html', 'wealth').series, 'market-basics');
   assert.equal(r('/moneyhub/index.html', 'wealth').kind, 'hub');
   assert.equal(r('/index.html', 'page').kind, 'page');
   assert.equal(r('/about/index.html', 'page').kind, 'page');
-  assert.deepEqual(r('/lelouch/stocks/etn-gev-vrt-fps-datacenter-equipment-august-2026.html', 'lelouch-take', 'ETN').tickers, ['ETN', 'GEV', 'VRT', 'FPS']);
+  assert.deepEqual(r('/research/lelouch/stocks/etn-gev-vrt-fps-datacenter-equipment-august-2026.html', 'lelouch-take', 'ETN').tickers, ['ETN', 'GEV', 'VRT', 'FPS']);
 });
 
 test('stampHead rewrites only the head and is idempotent', () => {

@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { extractArticle } from '../scripts/lib/extract-article.mjs';
 
 const html = readFileSync(new URL('./fixtures/full-article.html', import.meta.url), 'utf8');
-const a = extractArticle(html, '/gojo/stocks/spy-market-review-2026-06-28.html');
+const a = extractArticle(html, '/research/gojo/stocks/spy-market-review-2026-06-28.html');
 
 test('extracts header, subtitle, and verbatim content', () => {
   assert.match(a.headerTitle, /SPY Market Review/);
@@ -16,7 +16,7 @@ test('extracts header, subtitle, and verbatim content', () => {
 test('parses the breadcrumb trail', () => {
   assert.deepEqual(a.breadcrumb, [
     { label: 'Home', href: '/' },
-    { label: 'Gojo', href: '/gojo/' },
+    { label: 'Gojo', href: '/research/gojo/' },
     { label: 'SPY Market Review', href: null },
   ]);
 });
@@ -56,11 +56,11 @@ test('reads description regardless of attribute order or self-closing slash', ()
 });
 
 test('preserves raw entities in headerTitle (not decoded)', () => {
-  const a = extractArticle('<article class="article"><header class="article__header"><h1 class="article__title">A &mdash; B</h1></header><div class="article__content"><p>x</p></div></article>', '/gojo/stocks/x.html');
+  const a = extractArticle('<article class="article"><header class="article__header"><h1 class="article__title">A &mdash; B</h1></header><div class="article__content"><p>x</p></div></article>', '/research/gojo/stocks/x.html');
   assert.match(a.headerTitle, /&mdash;/);
 });
 
 test('description is decoded (no double-encoding of entities)', () => {
-  const a = extractArticle('<meta name="description" content="S&amp;P and Fear &amp; Greed"><article class="article"><div class="article__content"><p>x</p></div></article>', '/gojo/stocks/x.html');
+  const a = extractArticle('<meta name="description" content="S&amp;P and Fear &amp; Greed"><article class="article"><div class="article__content"><p>x</p></div></article>', '/research/gojo/stocks/x.html');
   assert.equal(a.description, 'S&P and Fear & Greed');
 });

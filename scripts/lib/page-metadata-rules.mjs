@@ -43,27 +43,23 @@ export const MONEY_TOPICS = {
   '/moneyhub/step5-automation.html': ['manage-the-month', 'start-investing'],
   '/moneyhub/qa.html': ['manage-the-month', 'handle-debt', 'prepare-for-emergencies', 'start-investing'],
   '/moneyhub/topics.html': ['manage-the-month', 'prepare-for-emergencies', 'start-investing'],
-  '/moneyhub/analysis.html': ['understand-markets'],
-  '/moneyhub/portfolio.html': ['understand-markets'],
-  '/moneyhub/trading-journal.html': ['understand-markets'],
 };
 
 // Pages that are reference material rather than a guided read.
 export const REFERENCE_PAGES = new Set([
   '/moneyhub/qa.html', '/moneyhub/topics.html',
-  '/moneyhub/analysis.html', '/moneyhub/portfolio.html', '/moneyhub/trading-journal.html',
 ]);
 
 // Posts whose slug names several tickers. The first is still `ticker`.
 export const TICKER_OVERRIDES = {
-  '/lelouch/stocks/axti-cohr-indium-phosphide-bottleneck-august-2026.html': ['AXTI', 'COHR'],
-  '/lelouch/stocks/cohr-lite-nvidia-cpo-laser-august-2026.html': ['COHR', 'LITE'],
-  '/lelouch/stocks/eqix-dlr-datacenter-reits-august-2026.html': ['EQIX', 'DLR'],
-  '/lelouch/stocks/etn-gev-vrt-fps-datacenter-equipment-august-2026.html': ['ETN', 'GEV', 'VRT', 'FPS'],
-  '/lelouch/stocks/mtz-myrg-acm-prim-flr-agx-august-2026.html': ['MTZ', 'MYRG', 'ACM', 'PRIM', 'FLR', 'AGX'],
-  '/lelouch/stocks/strl-fix-eme-pwr-datacenter-build-august-2026.html': ['STRL', 'FIX', 'EME', 'PWR'],
-  '/gojo/stocks/ktos-vs-rklb-april-2026.html': ['KTOS', 'RKLB'],
-  '/gojo/stocks/lly-vs-amgn-april-2026.html': ['LLY', 'AMGN'],
+  '/research/lelouch/stocks/axti-cohr-indium-phosphide-bottleneck-august-2026.html': ['AXTI', 'COHR'],
+  '/research/lelouch/stocks/cohr-lite-nvidia-cpo-laser-august-2026.html': ['COHR', 'LITE'],
+  '/research/lelouch/stocks/eqix-dlr-datacenter-reits-august-2026.html': ['EQIX', 'DLR'],
+  '/research/lelouch/stocks/etn-gev-vrt-fps-datacenter-equipment-august-2026.html': ['ETN', 'GEV', 'VRT', 'FPS'],
+  '/research/lelouch/stocks/mtz-myrg-acm-prim-flr-agx-august-2026.html': ['MTZ', 'MYRG', 'ACM', 'PRIM', 'FLR', 'AGX'],
+  '/research/lelouch/stocks/strl-fix-eme-pwr-datacenter-build-august-2026.html': ['STRL', 'FIX', 'EME', 'PWR'],
+  '/research/gojo/stocks/ktos-vs-rklb-april-2026.html': ['KTOS', 'RKLB'],
+  '/research/gojo/stocks/lly-vs-amgn-april-2026.html': ['LLY', 'AMGN'],
 };
 
 export function seriesFor(url) {

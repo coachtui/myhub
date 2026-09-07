@@ -3,9 +3,9 @@ import assert from 'node:assert/strict';
 import { computeCounts } from '../resources/js/counts.mjs';
 
 const index = [
-  { url: '/gojo/stocks/a.html', section: 'Gojo', type: 'market-take', ticker: 'SPY', date: '2026-06-01' },
-  { url: '/gojo/research/b.html', section: 'Gojo', type: 'deep-dive', ticker: 'NVDA', date: '2026-05-01' },
-  { url: '/gojo/notes/c.html', section: 'Gojo', type: 'journal', ticker: '', date: '2026-06-02' },
+  { url: '/research/gojo/stocks/a.html', section: 'Gojo', type: 'market-take', ticker: 'SPY', date: '2026-06-01' },
+  { url: '/research/gojo/research/b.html', section: 'Gojo', type: 'deep-dive', ticker: 'NVDA', date: '2026-05-01' },
+  { url: '/research/gojo/notes/c.html', section: 'Gojo', type: 'journal', ticker: '', date: '2026-06-02' },
   { url: '/moneyhub/investing/d.html', section: 'Wealth', type: 'wealth', ticker: '', date: '2026-04-01' },
   { url: '/moneyhub/step1.html', section: 'Wealth', type: 'wealth', ticker: '', date: '2026-03-01' },
   { url: '/healthhub/training.html', section: 'Health', type: 'health', ticker: '', date: '2026-02-01' },

@@ -6,7 +6,7 @@ import { join, relative, sep } from 'node:path';
 const SKIP_DIRS = new Set(['.git', 'node_modules', 'docs', 'test', 'scripts', 'resources', '.cto']);
 
 // Soft-redirect stubs: not stamped, not in the sitemap.
-export const REDIRECT_STUBS = new Set(['/gojo/research/index.html']);
+export const REDIRECT_STUBS = new Set([]);
 
 export function walkPages(root) {
   const out = [];
