@@ -19,8 +19,12 @@ function apply(rule, path) {
   const m = rule.source.match(/^(.*?)\/:(\w+)\*$/);
   if (!m) return rule.source === path ? rule.destination : null;
   const [, prefix, name] = m;
-  if (path !== prefix && !path.startsWith(prefix + '/')) return null;
+  // Vercel's ":name*" matches one or more real segments; it does not match the
+  // bare directory or a trailing-slash directory URL (verified in production),
+  // so those need explicit rules.
+  if (!path.startsWith(prefix + '/')) return null;
   const rest = path.slice(prefix.length + 1);
+  if (rest === '' || rest.endsWith('/')) return null;
   return rule.destination.replace(`:${name}*`, rest);
 }
 const redirect = path => { for (const r of config.redirects) { const d = apply(r, path); if (d !== null) return d; } return null; };
@@ -43,6 +47,13 @@ test('every moved desk page is reachable from its old URL', () => {
     if (!dest || !existsSync(fileFor(dest))) broken.push(`${oldUrl} -> ${dest}`);
   }
   assert.deepEqual(broken, []);
+});
+
+test('every old directory URL redirects in both slash forms to the canonical slash form', () => {
+  for (const d of ['/gojo', '/gojo/stocks', '/gojo/notes', '/lelouch', '/lelouch/stocks']) {
+    assert.equal(redirect(d), '/research' + d + '/', d);
+    assert.equal(redirect(d + '/'), '/research' + d + '/', d + '/');
+  }
 });
 
 test('old section roots and the retired research stub redirect', () => {
