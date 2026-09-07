@@ -115,6 +115,7 @@ test('page and script: labelled inputs, live result, evidence mount, sources, pr
   for (const id of ['cg-years', 'cg-delay']) assert.match(html, new RegExp(`for="${id}"[\\s\\S]*?<select id="${id}"`));
   assert.match(html, /data-result tabindex="-1" aria-live="polite"/);
   assert.match(html, /data-evidence/);
+  assert.match(html, /<section class="tool__detail" data-detail aria-live="polite" hidden>/, 'chart and table render full-width below the tool');
   assert.match(html, /class="article__sources"/);
   assert.match(html, /never leave this page/);
   assert.match(html, /rewarded patience, but outcomes are uncertain and losses can occur/);

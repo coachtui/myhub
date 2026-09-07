@@ -80,24 +80,24 @@ export function computeCompound(raw = {}, history) {
 
 /* ---------- rendering ---------- */
 
-const W = 640, H = 280, PAD = 36;
+const W = 640, H = 280, PAD = 36, PAD_LEFT = 76;
 
 export function renderChart(r) {
   const n = r.years;
   const all = [...r.paths.cash, ...r.paths.cautious, ...r.paths.middle];
   const hi = Math.max(...all, 1);
-  const x = i => scale(i, 0, n, PAD, W - PAD / 2);
+  const x = i => scale(i, 0, n, PAD_LEFT, W - PAD / 2);
   const y = v => scale(v, 0, hi, H - PAD, PAD / 2);
   const path = vals => vals.map((v, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
   const line = (vals, stroke, dash = '') => `<path d="${path(vals)}" fill="none" stroke="${stroke}" stroke-width="2.5"${dash ? ` stroke-dasharray="${dash}"` : ''}/>`;
   const label = `Projected value over ${n} years: contributions only, cautious assumption, and middle assumption`;
   return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${escHtml(label)}" preserveAspectRatio="xMidYMid meet" class="compound-chart">
-    <line x1="${PAD}" y1="${H - PAD}" x2="${W - PAD / 2}" y2="${H - PAD}" stroke="var(--color-border-strong)"/>
-    <line x1="${PAD}" y1="${PAD / 2}" x2="${PAD}" y2="${H - PAD}" stroke="var(--color-border-strong)"/>
-    <text x="${PAD - 6}" y="${PAD / 2 + 4}" text-anchor="end" font-size="11" fill="var(--color-text-tertiary)">${escHtml(formatMoney(hi))}</text>
-    <text x="${PAD - 6}" y="${H - PAD + 4}" text-anchor="end" font-size="11" fill="var(--color-text-tertiary)">$0</text>
-    <text x="${PAD}" y="${H - PAD + 16}" font-size="11" fill="var(--color-text-tertiary)">now</text>
-    <text x="${W - PAD / 2}" y="${H - PAD + 16}" text-anchor="end" font-size="11" fill="var(--color-text-tertiary)">${n} years</text>
+    <line x1="${PAD_LEFT}" y1="${H - PAD}" x2="${W - PAD / 2}" y2="${H - PAD}" stroke="var(--color-border-strong)"/>
+    <line x1="${PAD_LEFT}" y1="${PAD / 2}" x2="${PAD_LEFT}" y2="${H - PAD}" stroke="var(--color-border-strong)"/>
+    <text x="${PAD_LEFT - 8}" y="${PAD / 2 + 4}" text-anchor="end" font-size="12" fill="var(--color-text-tertiary)">${escHtml(formatMoney(hi))}</text>
+    <text x="${PAD_LEFT - 8}" y="${H - PAD + 4}" text-anchor="end" font-size="12" fill="var(--color-text-tertiary)">$0</text>
+    <text x="${PAD_LEFT}" y="${H - PAD + 16}" font-size="12" fill="var(--color-text-tertiary)">now</text>
+    <text x="${W - PAD / 2}" y="${H - PAD + 16}" text-anchor="end" font-size="12" fill="var(--color-text-tertiary)">${n} years</text>
     ${line(r.paths.cash, 'var(--color-text-quaternary)', '4 4')}
     ${line(r.paths.cautious, 'var(--color-info)')}
     ${line(r.paths.middle, 'var(--color-accent-primary)')}
@@ -134,6 +134,7 @@ export function mountCompound(root, history) {
   const form = root.querySelector('form');
   const out = root.querySelector('[data-result]');
   const evidence = root.ownerDocument.querySelector('[data-evidence]');
+  const detail = root.ownerDocument.querySelector('[data-detail]');
   if (!form || !out) return;
   if (evidence) evidence.innerHTML = renderEvidence(history);
   const empty = out.innerHTML;
@@ -145,13 +146,17 @@ export function mountCompound(root, history) {
     out.innerHTML = `${head}
       <h2 class="tool__headline">${escHtml(r.title)}</h2>
       <p class="tool__meaning">${escHtml(r.meaning)}</p>
-      ${r.status === 'ok' ? renderChart(r) + renderTable(r) : ''}
+      ${r.status === 'ok' && !detail ? renderChart(r) + renderTable(r) : ''}
       <p class="tool__action"><a class="btn btn--primary" href="${escHtml(r.action.href)}">${escHtml(r.action.label)}</a></p>
       ${notes}
       <p class="tool__note">Historically, diversified long-term investing has rewarded patience, but outcomes are uncertain and losses can occur. Nothing here promises a return. Educational, not personalised financial advice. Your numbers were not saved or sent anywhere.</p>
       <button type="button" class="tool__clear" data-clear>Clear my numbers</button>`;
+    if (detail) {
+      detail.hidden = r.status !== 'ok';
+      detail.innerHTML = r.status === 'ok' ? `<h2 class="hub-section__title">Year by year</h2>${renderChart(r)}${renderTable(r)}` : '';
+    }
     out.focus();
-    out.querySelector('[data-clear]').addEventListener('click', () => { form.reset(); out.innerHTML = empty; form.querySelector('input')?.focus(); });
+    out.querySelector('[data-clear]').addEventListener('click', () => { form.reset(); out.innerHTML = empty; if (detail) { detail.hidden = true; detail.innerHTML = ''; } form.querySelector('input')?.focus(); });
   });
 }
 

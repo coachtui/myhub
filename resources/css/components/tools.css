@@ -7,7 +7,7 @@
 
 .tool {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   gap: var(--space-8);
   align-items: start;
   padding: var(--space-8);
@@ -272,8 +272,9 @@
 .compound-chart {
   display: block;
   width: 100%;
+  max-width: 900px;
   height: auto;
-  margin: var(--space-5) 0 var(--space-2);
+  margin: 0 auto var(--space-2);
 }
 
 .compound-legend {
@@ -318,7 +319,24 @@
 
 /* Sorting activity (account vs investment) */
 .tool--single {
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+}
+
+/* Full-width detail (chart, table) rendered below the form-and-result row */
+.tool__detail {
+  margin-top: var(--space-6);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-elevated);
+}
+
+.tool__detail[hidden] {
+  display: none;
+}
+
+.tool__detail .debt-table {
+  margin-bottom: 0;
 }
 
 .sort-grid {
