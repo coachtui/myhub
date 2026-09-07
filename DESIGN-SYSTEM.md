@@ -12,7 +12,7 @@ The site is the owned home for depth — indexed, permanent, proof of work. Soci
 
 **Vanilla static site — no build tools.**
 
-- `resources/css/style.css` orchestrates all CSS via `@import`.
+- `resources/css/style.css` orchestrates all CSS via `@import` and contains no rules of its own. Reusable UI lives in `components/`, layouts owned by one area of the site in `sections/` (currently `sections/home.css` for the identity block).
 - `resources/css/tokens.css` is the single source of truth for every design value.
 - Shared chrome (header, nav, search pill, footer, command palette) is JS-injected at runtime by `resources/js/chrome.mjs`, which reads configuration from `resources/js/site-config.mjs`. Every page mounts chrome through a single `<script>` tag; changing `site-config.mjs` or `chrome.mjs` propagates everywhere.
 - `resources/js/sections.mjs` is the single registry of sections and content types (nav order and labels, URL prefixes, index section names, default authors, badge and kicker text). The nav, the index builder, the article renderer, and the feed/listing/count modules all import it; add a section or type there and nowhere else.
@@ -268,7 +268,7 @@ Dark mode overrides deepen shadow alpha (0.3–0.7).
 
 ## Component Library
 
-Eight components, one CSS file each under `resources/css/components/`. All are imported in `resources/css/style.css`.
+One CSS file per component under `resources/css/components/`, all imported by `resources/css/style.css`. Unused classes are removed rather than kept "just in case"; add a variant when a page needs it.
 
 ### chrome (`chrome.css`)
 
@@ -305,7 +305,7 @@ Home page "Latest" section: bordered data rows of recent posts across all sectio
 
 Reading page layout. Defines the prose column, kicker badge, editorial byline, and content typography. Classes:
 
-- `.article` — page wrapper with constrained reading width
+- `.article` — page wrapper with constrained reading width (centred header, arrow bullets and accent numerals for lists are deliberate and live here)
 - `.article__header` — kicker + title + subtitle block
 - `.article__title` — Instrument Serif display heading
 - `.kicker` — section/ticker badge above the title (e.g., `◈ GOJO · SPY`)

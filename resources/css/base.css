@@ -209,8 +209,6 @@ img {
 }
 
 /* Exclude elements that should transition immediately */
-.nav-toggle,
-.hamburger,
 [data-transition="none"],
 button,
 input,
@@ -220,7 +218,7 @@ textarea {
 }
 
 /* Re-enable specific transitions where needed */
-button:not(.no-transition) {
+button {
   transition: background-color var(--transition-base),
               border-color var(--transition-base),
               color var(--transition-base),
