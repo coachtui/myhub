@@ -1,0 +1,66 @@
+/* Shared visual language keeps the front door and existing guides connected. */
+:root, [data-theme="light"] {
+  --font-interface: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --color-bg-primary: #f8f7f2;
+  --color-bg-secondary: #eeeee5;
+  --color-bg-tertiary: #e6e7dc;
+  --color-bg-elevated: #fdfcf8;
+  --color-text-primary: #292f25;
+  --color-text-secondary: #41483b;
+  --color-text-tertiary: #626859;
+  --color-text-quaternary: #6f7366;
+  --color-accent-primary: #52613d;
+  --color-accent-primary-hover: #354629;
+  --color-accent-secondary: #788960;
+  --color-accent-tertiary: #e9eedf;
+  --color-border: #d9dbce;
+  --color-border-strong: #b9bdae;
+}
+[data-theme="dark"] {
+  --color-bg-primary: #1c231c;
+  --color-bg-secondary: #252e23;
+  --color-bg-tertiary: #303c2c;
+  --color-bg-elevated: #283125;
+  --color-text-primary: #f1f0e5;
+  --color-text-secondary: #dcdfd1;
+  --color-text-tertiary: #b4bda8;
+  --color-text-quaternary: #a2ad95;
+  --color-accent-primary: #bdcc9f;
+  --color-accent-primary-hover: #d8e5bf;
+  --color-accent-tertiary: #36462d;
+  --color-border: #45503d;
+  --color-border-strong: #66725b;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+.chrome-header__inner { max-width: 1280px; padding: 22px 48px; gap: 38px; }
+.chrome-header__logo { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; font-size: 26px; letter-spacing: -.025em; }
+.chrome-header__logo::before { content: 'ta'; display: grid; place-items: center; width: 29px; height: 32px; border: 1px solid var(--color-accent-primary); color: var(--color-accent-primary); font: italic 22px var(--font-display); }
+.chrome-nav { margin-left: auto; }
+.chrome-nav ul { gap: 23px; }
+.chrome-nav li { margin: 0; }
+.chrome-nav__link { font: 13px var(--font-interface); white-space: nowrap; padding-block: 12px; }
+.chrome-nav__link[aria-current="page"] { text-decoration: underline; text-underline-offset: 7px; }
+.chrome-header__actions { margin-left: 0; gap: 12px; }
+.chrome-search-pill { background: transparent; border: 0; padding: 8px 0; font: 11px var(--font-interface); }
+.chrome-search-pill kbd { font-size: 9px; }
+.theme-toggle { font-size: 18px; min-width: 30px; min-height: 36px; padding: 4px; }
+.chrome-footer { margin-top: 75px; background: var(--color-bg-secondary); }
+.chrome-footer__inner, .chrome-footer__bottom { max-width: 1184px; }
+.chrome-footer__brand p, .chrome-footer__nav a { font-family: var(--font-interface); font-size: 12px; }
+.chrome-footer__logo { font-size: 30px; }
+.chrome-footer__bottom { font-size: 10px; padding-block: 23px; }
+.chrome-footer__social a { font-family: var(--font-interface); font-size: 12px; }
+.skip-link { position: fixed; z-index: 100; top: 8px; left: 12px; transform: translateY(-150%); padding: 12px 20px; background: var(--color-bg-elevated); border: 1px solid var(--color-border-strong); }
+.skip-link:focus { transform: translateY(0); }
+.hub-page__kicker, .hub-card__meta { color: var(--color-accent-primary); }
+.hub-card, .situation-card, .stage-card, .tool { border-radius: 2px; }
+@media (max-width: 1100px) { .chrome-header__inner { padding-inline: 30px; gap: 22px; } .chrome-nav ul { gap: 15px; } }
+@media (min-width: 641px) and (max-width: 900px) {
+  .chrome-nav { display: none; }
+  .chrome-menu-toggle { display: inline-flex; align-items: center; }
+  .chrome-nav.is-open { display: block; position: absolute; top: 100%; left: 0; right: 0; padding: 18px 30px; background: var(--color-bg-primary); border-bottom: 1px solid var(--color-border); }
+  .chrome-nav.is-open ul { flex-direction: column; gap: 0; }
+  .chrome-nav.is-open a { display: block; padding: 14px 0; }
+}
+@media (max-width: 900px) { .chrome-header__actions { margin-left: auto; } }
+@media (max-width: 640px) { .chrome-header__inner { padding: 16px 22px; gap: 12px; } .chrome-header__logo { font-size: 22px; gap: 8px; } .chrome-search-pill kbd { display: none; } .chrome-header__actions { gap: 9px; } .chrome-menu-toggle { min-height: 40px; } .chrome-footer { margin-top: 50px; } }

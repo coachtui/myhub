@@ -1,5 +1,22 @@
 import { SITE } from './site-config.mjs';
 import { esc } from './esc.mjs';
+import { mountExperience } from './experience.mjs';
+
+export function renderSectionNav(path) {
+  let label, links;
+  if (path.startsWith('/moneyhub/')) {
+    label = 'THE MONEY GUIDE';
+    links = [['Overview', '/moneyhub/'], ['Your foundation', '/moneyhub/foundation/'], ['Market basics', '/moneyhub/start-here/'], ['Investing', '/moneyhub/investing/'], ['Library & tools', '/moneyhub/library/']];
+  } else if (path.startsWith('/healthhub/')) {
+    label = 'THE HEALTH JOURNAL';
+    links = [['Overview', '/healthhub/'], ['Training', '/healthhub/training.html'], ['Nutrition', '/healthhub/nutrition.html'], ['Recovery', '/healthhub/recovery.html'], ['Metrics', '/healthhub/metrics.html']];
+  } else if (path.startsWith('/research/')) {
+    label = 'THE RESEARCH DESK';
+    links = [['Overview', '/research/'], ['Lelouch', '/research/lelouch/'], ['Gojo archive', '/research/gojo/'], ['Market Lab', '/moneyhub/market-lab/']];
+  } else return '';
+  const sectionName = label === 'THE MONEY GUIDE' ? 'Money' : label === 'THE HEALTH JOURNAL' ? 'Health' : 'Research';
+  return `<nav class="section-nav" aria-label="${sectionName} section"><div class="section-nav__inner"><span>${label}</span><ul>${links.map(([name, href]) => `<li><a href="${href}"${path === href || (href !== '/moneyhub/' && href.endsWith('/') && path.startsWith(href)) ? ' aria-current="page"' : ''}>${name}</a></li>`).join('')}</ul></div></nav>`;
+}
 
 export function renderHeader(site, currentPath = '/') {
   const links = site.nav.map(n => {
@@ -17,12 +34,12 @@ export function renderHeader(site, currentPath = '/') {
     <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">◐</button>
     <button class="chrome-menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="chrome-nav">Menu</button>
   </div>
-</div>`;
+</div>${renderSectionNav(currentPath)}`;
 }
 
 export function renderFooter(site) {
   const social = site.social.map(s =>
-    `<a href="${esc(s.href)}" target="_blank" rel="noopener" aria-label="${esc(s.label)}"><i class="fa-brands fa-${esc(s.icon)}"></i></a>`
+    `<a href="${esc(s.href)}" target="_blank" rel="noopener" aria-label="${esc(s.label)}">${esc(s.label)} ↗</a>`
   ).join('');
   const links = site.nav.map(n => `<li><a href="${esc(n.href)}">${esc(n.label)}</a></li>`).join('');
   return `
@@ -63,6 +80,7 @@ export function mountChrome(doc = document) {
   const footer = doc.getElementById('site-footer');
   if (header) { header.innerHTML = renderHeader(SITE, doc.location?.pathname ?? '/'); wireMenu(header, doc); }
   if (footer) footer.innerHTML = renderFooter(SITE);
+  mountExperience(doc);
 }
 
 if (typeof document !== 'undefined') {

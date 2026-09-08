@@ -30,7 +30,7 @@ test('Research & Notes introduces both desks by role and keeps beginners pointed
 
 test('Work & Projects names the construction background and the AIGA products', () => {
   const html = read('projects/index.html');
-  for (const name of ['BedrockOS', 'CRU', 'DVRG', 'Operator', 'aigaai.com']) assert.ok(html.includes(name), `mentions ${name}`);
+  for (const name of ['BedrockOS', 'Offload', 'DVRG', 'Operator', 'aigaai.com']) assert.ok(html.includes(name), `mentions ${name}`);
   assert.match(html, /civil construction/);
 });
 

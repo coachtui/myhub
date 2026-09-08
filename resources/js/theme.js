@@ -52,19 +52,10 @@
 
   // Attach to toggle button when DOM is ready
   document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.querySelector('[data-theme-toggle]');
-
-    if (toggleButton) {
-      toggleButton.addEventListener('click', toggleTheme);
-
-      // Add keyboard support
-      toggleButton.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggleTheme();
-        }
-      });
-    }
+    // Chrome mounts asynchronously. Native buttons handle Enter and Space.
+    document.addEventListener('click', (event) => {
+      if (event.target.closest('[data-theme-toggle]')) toggleTheme();
+    });
 
     // Listen for system theme changes
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');

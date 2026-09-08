@@ -21,52 +21,76 @@
   <link rel="stylesheet" href="/resources/css/style.css">
   <script src="/resources/js/theme.js"></script>
 </head>
-<body>
+<body class="field-guide">
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="chrome-header" id="site-header" aria-label="Site header"></header>
 
-  <main>
-    <section class="identity" aria-labelledby="identity-name">
+  <main id="main-content">
+    <section class="opening" aria-labelledby="opening-title">
+      <div class="opening__copy">
+        <p class="eyebrow"><span class="small-star" aria-hidden="true">✳</span> A personal field guide to living well</p>
+        <h1 id="opening-title">Build a life<br>with more<br><em>possibility.</em></h1>
+        <p class="opening__description">A little clarity with money. A stronger foundation for life. Practical things I’m learning, building, and sharing along the way.</p>
+        <div class="opening__actions"><a class="field-button" href="#your-start">Find your starting point <span aria-hidden="true">↗</span></a><a class="text-link" href="/moneyhub/">Explore money <span aria-hidden="true">→</span></a></div>
+        <div class="opening__byline"><img src="/resources/images/tui-headshot.png" alt=""><p>A work in progress. Just like us.<br><span>By Tui Alailima · Builder &amp; lifelong learner</span></p></div>
+      </div>
+      <figure class="opening__art">
+        <div class="art-topline"><span>THE LONG VIEW</span><span>FIG. 01</span></div>
+        <img src="/resources/images/architecture-steps.webp" alt="Sunlight falls across sharply defined limestone steps in an olive-walled courtyard." width="1122" height="1402" fetchpriority="high">
+        <figcaption><span>Small steps. A different horizon.</span><span aria-hidden="true">↗</span></figcaption>
+      </figure>
+    </section>
+
+    <div class="principles"><span>A little better, for a long time.</span><p>Understand the basics <i aria-hidden="true">/</i> Put them into practice <i aria-hidden="true">/</i> Keep building</p><span aria-hidden="true">↓</span></div>
+
+    <section class="starting-point" id="your-start" aria-labelledby="start-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / YOUR NEXT CHAPTER</p><h2 id="start-title">Start where you are.</h2></div><p>You don’t need to figure everything out.<br>Just find your next useful step.</p></div>
+      <div class="path-layout">
+        <article class="money-path">
+          <div class="path-top"><span class="eyebrow">MONEY / THE FOUNDATION</span><span aria-hidden="true">↗</span></div>
+          <h3>Less money stress.<br>More room to live.</h3>
+          <p>From making the month work to putting your money to work. Simple tools and clear guides, without the jargon or judgment.</p>
+          <div class="path-options">
+            <a href="/moneyhub/tools/money-reset.html"><span><small>01</small> Get a clear picture of my money</span><span aria-hidden="true">→</span></a>
+            <a href="/moneyhub/foundation/"><span><small>02</small> Build a stronger financial foundation</span><span aria-hidden="true">→</span></a>
+            <a href="/moneyhub/investing/"><span><small>03</small> Feel confident getting into investing</span><span aria-hidden="true">→</span></a>
+          </div>
+          <a class="path-bottom" href="/moneyhub/">Explore the money guide <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="health-path">
+          <div class="path-top"><span class="eyebrow">HEALTH / THE LONG GAME</span><span class="status-badge">Taking shape</span></div>
+          <img class="health-path__image" src="/resources/images/health-courtyard.webp" alt="A quiet stone bench under an olive tree, with space to pause." width="1536" height="1024" loading="lazy">
+          <h3>A stronger life.<br>Built to last.</h3>
+          <p>Movement, food, recovery, and the habits that hold it all together. This part of the field guide is just getting started.</p>
+          <a class="path-bottom" href="/healthhub/">See the direction <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="first-reads" aria-labelledby="reads-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / GOOD PLACES TO START</p><h2 id="reads-title">A little knowledge. A lasting difference.</h2></div><a class="text-link" href="/moneyhub/library/">The full library <span aria-hidden="true">↗</span></a></div>
+      <div class="reads-grid">
+        <a class="reading-card" href="/moneyhub/step1-know-your-money.html"><div class="reading-art reading-art--foundation"><img src="/resources/images/architecture-steps.webp" alt="" width="1122" height="1402" loading="lazy"><span class="art-index">FIELD NOTE / 01</span><span class="art-word">Clarity first.</span></div><p class="eyebrow">THE FOUNDATION · STEP 1 OF 5</p><h3>Know your money.<span aria-hidden="true">↗</span></h3><p>See where it goes. Decide where it takes you.</p></a>
+        <a class="reading-card" href="/moneyhub/start-here/"><div class="reading-art reading-art--markets"><img src="/resources/images/learning-library.webp" alt="" width="1536" height="1024" loading="lazy"><span class="art-index">FIELD NOTE / 02</span><span class="art-word">Make sense of it.</span></div><p class="eyebrow">MARKET BASICS · 10 SHORT LESSONS</p><h3>The market, in plain English.<span aria-hidden="true">↗</span></h3><p>Start with what a stock actually is. Build from there.</p></a>
+        <a class="reading-card" href="/moneyhub/tools/compound-growth.html"><div class="reading-art reading-art--growth"><img src="/resources/images/money-foundations.webp" alt="" width="1536" height="1024" loading="lazy"><span class="art-index">INTERACTIVE / 03</span><span class="art-word">Give it time.</span></div><p class="eyebrow">COMPOUND GROWTH · INTERACTIVE TOOL</p><h3>Small amounts. Long horizons.<span aria-hidden="true">↗</span></h3><p>Explore how time and consistency can add up.</p></a>
+      </div>
+    </section>
+
+    <section class="personal-note" aria-labelledby="personal-title">
       <img class="identity__photo" src="/resources/images/tui-headshot.png" alt="Tui Alailima">
       <div>
-        <h1 class="identity__name" id="identity-name">Tui Alailima</h1>
-        <p class="identity__bio">I build systems for stronger work, health, and financial lives.</p>
-        <p class="identity__context">Construction leader, investor, technology builder, and lifelong learner. This site is where I document what I build and what I learn — searchable, dated, and written to be useful for years.</p>
-        <div class="identity__cta">
-          <a class="btn btn--primary" href="/moneyhub/">Start with money</a>
-          <a class="btn btn--secondary" href="/about/">About me</a>
-          <button class="btn btn--secondary" type="button" data-search-trigger>Search <kbd>⌘K</kbd></button>
-        </div>
+        <p class="eyebrow">A NOTE FROM TUI</p>
+        <h2 id="personal-title">Good foundations change everything.</h2>
+        <p>I’ve spent twenty years in construction. You learn quickly that what’s underneath matters most. I approach money, health, and the things I build the same way: get the fundamentals right, then keep improving.</p>
+        <p>This is where I share what I learn. I’m building it as I go, with the hope that something here makes your next step a little easier.</p>
+        <a class="text-link" href="/about/">A little more about me <span aria-hidden="true">↗</span></a>
       </div>
+      <span class="personal-note__signature" aria-hidden="true">Tui.</span>
     </section>
 
-    <section class="home-section home-paths" aria-labelledby="paths-title">
-      <h2 class="hub-section__title" id="paths-title">Where do you want to go?</h2>
-      <div class="hub-grid">
-        <a class="hub-card" href="/moneyhub/"><span class="hub-card__title">Build financial stability</span><span class="hub-card__desc">Make the month work, build a cushion, and start investing without having to master everything first. Plain language, no judgement.</span><span class="hub-card__meta">Moneyhub →</span></a>
-        <a class="hub-card" href="/healthhub/"><span class="hub-card__title">Build a healthier life</span><span class="hub-card__desc">Training, nutrition, recovery, and the simple systems that keep them going when life gets busy.</span><span class="hub-card__meta">Healthhub →</span></a>
-        <a class="hub-card" href="/projects/"><span class="hub-card__title">Explore work and projects</span><span class="hub-card__desc">Twenty years running civil construction, the AI products I build at AIGA, and the systems behind this site.</span><span class="hub-card__meta">Work &amp; Projects →</span></a>
-        <a class="hub-card" href="/research/"><span class="hub-card__title">Read research and notes</span><span class="hub-card__desc">Market research and working notes from two AI desks I run, clearly labelled and kept as an archive.</span><span class="hub-card__meta">Research &amp; Notes →</span></a>
-      </div>
-    </section>
-
-    <section class="home-section" aria-labelledby="start-title">
-      <h2 class="hub-section__title" id="start-title">Good places to start</h2>
-      <div class="hub-grid">
-        <a class="hub-card" href="/moneyhub/start-here/"><span class="hub-card__title">Market Basics</span><span class="hub-card__desc">Ten short lessons for total beginners: what a stock is, what a ticker means, how to read a chart.</span><span class="hub-card__meta">10 lessons →</span></a>
-        <a class="hub-card" href="/moneyhub/step1-know-your-money.html"><span class="hub-card__title">Know your money</span><span class="hub-card__desc">Step one of five: see where the money actually goes before changing anything.</span><span class="hub-card__meta">5-step path →</span></a>
-        <a class="hub-card" href="/moneyhub/investing/"><span class="hub-card__title">Start investing</span><span class="hub-card__desc">Accounts, brokerages, starter portfolios, automation, and staying invested through the dips.</span><span class="hub-card__meta">5 guides →</span></a>
-      </div>
-    </section>
-
-    <section class="home-section home-desks" aria-labelledby="desks-title">
-      <h2 class="hub-section__title" id="desks-title">Two AI desks write here</h2>
-      <div class="hub-prose">
-        <p>Alongside my own writing, two AI systems I built publish under their own names: <a href="/research/lelouch/">Lelouch</a>, an operating and investment analyst that is publishing now, and <a href="/research/gojo/">Gojo</a>, a market research agent that is retired but whose archive stays up. Everything they write is labelled AI-generated and is research, not financial advice. You do not need any of it to manage money well — it lives under <a href="/research/">Research &amp; Notes</a> for readers who want to go deeper.</p>
-      </div>
-      <h3 class="home-feed__head">Latest research</h3>
-      <div id="latest-feed" data-feed-types="lelouch-take,market-take,deep-dive" data-feed-limit="5"><p class="feed-empty">Loading…</p></div>
-      <p class="home-feed__more"><a href="/research/">All research and notes →</a></p>
-      <noscript><p class="feed-empty">The feed and navigation require JavaScript. Browse directly: <a href="/moneyhub/">Money</a> · <a href="/healthhub/">Health</a> · <a href="/projects/">Work &amp; Projects</a> · <a href="/research/">Research &amp; Notes</a> · <a href="/about/">About</a></p></noscript>
+    <section class="beyond-basics" aria-labelledby="beyond-title">
+      <div class="research-intro"><p class="eyebrow">03 / FOR THE CURIOUS</p><h2 id="beyond-title">Beyond the basics.</h2><p>Experiments, working notes, and a deeper look at markets. Follow the ideas that interest you.</p><a class="text-link" href="/projects/">Explore work &amp; projects <span aria-hidden="true">↗</span></a></div>
+      <div class="research-preview"><div class="research-preview__head"><h3>From the research desk</h3><span class="status-badge">AI-generated</span></div><p>Research by <a href="/research/lelouch/">Lelouch</a>, an operating and investment analyst, and the archive of <a href="/research/gojo/">Gojo</a>, a market research agent. All labelled AI-generated; research, not financial advice.</p><div id="latest-feed" data-feed-types="lelouch-take,market-take,deep-dive" data-feed-limit="3"><p class="feed-empty">Explore the research archive below.</p></div><a class="text-link" href="/research/">All research &amp; notes <span aria-hidden="true">↗</span></a></div>
     </section>
   </main>
 

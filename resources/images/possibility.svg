@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 680" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="320" y1="0" x2="320" y2="680" gradientUnits="userSpaceOnUse"><stop stop-color="#deded0"/><stop offset="1" stop-color="#ede9dd"/></linearGradient>
+    <linearGradient id="stone" x1="80" y1="250" x2="480" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#e4e0cf"/><stop offset="1" stop-color="#b3b3a1"/></linearGradient>
+    <linearGradient id="side" x1="430" y1="280" x2="570" y2="570" gradientUnits="userSpaceOnUse"><stop stop-color="#797f67"/><stop offset="1" stop-color="#555e47"/></linearGradient>
+    <radialGradient id="sun"><stop stop-color="#e9bc75"/><stop offset="1" stop-color="#dba45e"/></radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".09"/></feComponentTransfer><feBlend in="SourceGraphic" mode="multiply"/></filter>
+    <filter id="shadow"><feGaussianBlur stdDeviation="12"/></filter>
+  </defs>
+  <g filter="url(#grain)">
+    <path fill="url(#sky)" d="M0 0h640v680H0z"/>
+    <circle cx="425" cy="161" r="67" fill="url(#sun)"/>
+    <path d="M-50 482 690 315M-30 552 670 392M90 680 640 535" stroke="#c7c8b8" stroke-width="1"/>
+    <path d="m268 582 240-46 127 56-246 67z" fill="#72765e" opacity=".2" filter="url(#shadow)"/>
+    <path d="m357 250 130-55v346L357 598z" fill="url(#side)"/>
+    <path d="M77 499v81l280 66V300l-56-13v64l-56-13v66l-56-13v65l-56-13v67z" fill="url(#stone)"/>
+    <path d="m301 287 130-55 56 13-130 55z" fill="#f4f0e2"/>
+    <path d="m245 338 130-55 56 13-130 55z" fill="#f4f0e2"/>
+    <path d="m189 391 130-55 56 13-130 55z" fill="#f4f0e2"/>
+    <path d="m133 443 130-55 56 13-130 55z" fill="#f4f0e2"/>
+    <path d="m77 499 130-55 56 13-130 55z" fill="#f4f0e2"/>
+    <path d="m357 300 130-55v-50l-56-13v50l-130 55" fill="#d3d2bf"/>
+    <path d="m301 351 130-55v-64l-56 51-130 55" fill="#d7d5c3"/>
+    <path d="m245 404 130-55v-66l-56 53-130 55" fill="#d9d7c5"/>
+    <path d="m189 456 130-55v-65l-56 52-130 55" fill="#dbd9c7"/>
+    <path d="m133 512 130-55v-69l-56 56-130 55" fill="#dedbca"/>
+    <path d="M77 580 357 646l130-105V245L357 300v346" fill="url(#side)"/>
+    <path d="M77 499v81l280 66V300l-56-13v64l-56-13v66l-56-13v65l-56-13v69z" fill="url(#stone)"/>
+    <path d="m77 499 56 13m0-69 56 13m0-65 56 13m0-66 56 13m0-64 56 13" stroke="#f5f2e8" opacity=".8"/>
+    <path d="M73 150h45m-22-22v45" stroke="#7e836d" stroke-width="1"/>
+    <circle cx="518" cy="467" r="80" stroke="#e7e7d8" opacity=".3"/>
+  </g>
+</svg>

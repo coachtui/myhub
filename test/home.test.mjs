@@ -8,20 +8,20 @@ import { SECTIONS } from '../resources/js/sections.mjs';
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const html = readFileSync(join(ROOT, 'index.html'), 'utf8');
 
-test('home introduces Tui and the positioning line first', () => {
-  assert.match(html, /<h1 class="identity__name"[^>]*>Tui Alailima<\/h1>/);
-  assert.match(html, /I build systems for stronger work, health, and financial lives\./);
-  assert.ok(html.indexOf('identity__bio') < html.indexOf('home-paths'), 'identity comes before the paths');
+test('home introduces the purpose and author before the learning paths', () => {
+  assert.equal((html.match(/<h1\b/g) || []).length, 1);
+  assert.match(html, /Build a life<br>with more<br><em>possibility\.<\/em>/);
+  assert.ok(html.indexOf('By Tui Alailima') < html.indexOf('class="starting-point"'));
+  assert.match(html, /href="#your-start"/);
+  assert.match(html, /id="your-start"/);
 });
 
-test('home offers the four paths, one per nav section other than About', () => {
+test('home keeps all sections reachable and marks health as developing', () => {
   for (const s of SECTIONS.filter(x => x.nav && x.id !== 'about')) {
-    assert.match(html, new RegExp(`<a class="hub-card" href="${s.href}"`), `path card to ${s.href}`);
+    assert.ok(html.includes(`href="${s.href}"`), `path to ${s.href}`);
   }
-  assert.match(html, /Build financial stability/);
-  assert.match(html, /Build a healthier life/);
-  assert.match(html, /Explore work and projects/);
-  assert.match(html, /Read research and notes/);
+  assert.match(html, /Taking shape/);
+  assert.ok(html.indexOf('money-path') < html.indexOf('beyond-basics'));
 });
 
 test('home explains both AI desks by role before linking them', () => {
@@ -31,8 +31,8 @@ test('home explains both AI desks by role before linking them', () => {
 });
 
 test('AI market content is confined to a small labelled feed', () => {
-  assert.match(html, /id="latest-feed" data-feed-types="lelouch-take,market-take,deep-dive" data-feed-limit="5"/);
-  assert.ok(html.indexOf('latest-feed') > html.indexOf('Good places to start'), 'feed sits below the evergreen entry points');
+  assert.match(html, /id="latest-feed" data-feed-types="lelouch-take,market-take,deep-dive" data-feed-limit="3"/);
+  assert.ok(html.indexOf('latest-feed') > html.indexOf('class="first-reads"'), 'feed sits below the evergreen entry points');
 });
 
 test('home is not a site index: a bounded number of links', () => {
